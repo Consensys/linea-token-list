@@ -1,0 +1,44 @@
+{
+  "type": "CanonicalTokenList",
+  "tokenListId": "https://ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew",
+  "name": "Aggregate Canonical Token List",
+  "createdAt": "2022-05-08",
+  "updatedAt": "2022-05-09",
+  "versions": [
+    {
+      "major": 1,
+      "minor": 1,
+      "patch": 1
+    }
+  ],
+  "tokens": [
+    {
+      "chainId": 137,
+      "chainURI": "https://polygonscan.com/block/0",
+      "tokenId": "https://polygonscan.com/address/0x0000000000000000000000000000000000001010",
+      "tokenType": ["fungible", "transferable"],
+      "address": "0x0000000000000000000000000000000000001010",
+      "name": "Matic",
+      "symbol": "MATIC",
+      "decimals": 18,
+      "createdAt": "2020-05-31",
+      "updatedAt": "2020-05-31",
+      "genesisBlockHash": "0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b",
+      "tokenIssuerId": "https://polygonscan.com/address/0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b",
+      "tokenIssuerName": "Matic",
+      "tokenDesc": "Protocol Token for the Matic Network",
+      "standard": "https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md",
+      "addressType": "MaticNameSpace",
+      "addressAlg": "CREATE2",
+      "humanReadableTokenSymbol": "MATIC-137",
+      "logoURI": "https://polygonscan.com/token/images/matic_32.png",
+      "extensions": [
+        {
+          "rootChainId": 137,
+          "rootChainURI": "https://polygonscan.com/block/0",
+          "rootAddress": "0x0000000000000000000000000000000000001010"
+        }
+      ]
+    }
+  ] 
+}

@@ -1,0 +1,26 @@
+name: Validate JSON
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install jsonschema
+
+      - name: Validate JSON
+        run: |
+          jsonschema -i ./json/l2-token-list.json ./json/schema/l2-token-list-schema.json
