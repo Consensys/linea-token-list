@@ -46,7 +46,7 @@ git commit -m "feat: new token <name>"
 git push origin feat/<token-name>
 ```
 
-6. Go to https://github.com/ConsenSys/linea-token-list/pulls and click on `New pull request` to create a new PR.
+6. Go to https://github.com/ConsenSys/linea-token-list/pulls and click on `New pull request` to create a new PR. Make sure to set the base branch as `main`.
 
 A GitHub Actions workflow will automatically verify the integrity of your JSON. If the check passes, validators will review the new list. If all the information are correct, they will approve the token addition.
 
