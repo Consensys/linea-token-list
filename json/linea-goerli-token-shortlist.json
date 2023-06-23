@@ -2,8 +2,8 @@
   "type": "LineaTokenList",
   "tokenListId": "TBD",
   "name": "Linea Goerli Token List",
-  "createdAt": "2022-05-08",
-  "updatedAt": "2022-05-09",
+  "createdAt": "2023-06-23",
+  "updatedAt": "2023-06-23",
   "versions": [
     {
       "major": 1,
