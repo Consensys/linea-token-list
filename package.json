@@ -6,13 +6,13 @@
   "author": "wantedsystem <amine.harty@consensys.net>",
   "license": "",
   "scripts": {
-    "prettify": "prettier --write 'json/linea-goerli-token-shortlist.json'",
+    "prettify": "prettier --config .prettierrc --write 'json/linea-goerli-token-shortlist.json'",
     "precommit": "yarn prettify",
     "husky-run": "node husky.js"
   },
   "devDependencies": {
-    "prettier": "^2.0.5",
-    "husky": "^4.3.8"
+    "husky": "^8.0.3",
+    "prettier": "^2.0.5"
   },
   "husky": {
     "hooks": {
