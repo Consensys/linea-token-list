@@ -7,7 +7,7 @@
   "license": "",
   "scripts": {
     "prettify": "prettier --write 'json/linea-goerli-token-shortlist.json'",
-    "precommit": "npm run prettify",
+    "precommit": "yarn prettify",
     "husky-run": "node husky.js"
   },
   "devDependencies": {
@@ -16,7 +16,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precommit"
+      "pre-commit": "yarn precommit"
     }
   }
 }
