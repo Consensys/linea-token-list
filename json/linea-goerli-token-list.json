@@ -22,7 +22,15 @@
       "symbol": "MATIC",
       "decimals": 18,
       "createdAt": "2020-05-31",
-      "updatedAt": "2020-05-31"
+      "updatedAt": "2020-05-31",
+      "logoURI": "https://polygonscan.com/token/images/matic_32.png",
+      "extensions": [
+        {
+          "rootChainId": 137,
+          "rootChainURI": "https://polygonscan.com/block/0",
+          "rootAddress": "0x0000000000000000000000000000000000001010"
+        }
+      ]
     }
   ] 
 }
