@@ -6,22 +6,17 @@
   "author": "wantedsystem <amine.harty@consensys.net>",
   "license": "",
   "scripts": {
-    "prettier": "prettier --write '*.js' '*.json'",
-    "precommit": "lint-staged"
+    "prettify": "prettier --write 'json/linea-goerli-token-shortlist.json'",
+    "precommit": "npm run prettify",
+    "husky-run": "node husky.js"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "husky": "^4.3.8"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettify && npm run precommit"
+      "pre-commit": "npm run precommit"
     }
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }
