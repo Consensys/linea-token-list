@@ -23,7 +23,7 @@ git checkout -b feat/<token-name>
 
 <b>Note</b>: please ensure the completed JSON follows the schema outlined in [./json/schema/l2-token-list-schema.json](./json/schema/l2-token-list-schema.json).
 
-4. Add the completed JSON to the `tokens` array in [./json/linea-goerli-token-shortlist.json](./json/linea-goerli-token-shortlist.json).
+4. Add the completed JSON to the `tokens` array in [./json/linea-goerli-token-shortlist.json](./json/linea-goerli-token-shortlist.json). Make sure to add the token following alphabetical order of the `symbol` field.
 
 ```
 {
