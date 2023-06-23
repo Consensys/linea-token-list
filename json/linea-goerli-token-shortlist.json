@@ -31,9 +31,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0x7823e8dcc8bfc23ea3ac899eb86921f90e80f499",
-      "tokenType": [
-        "bridged"
-      ],
+      "tokenType": ["bridged"],
       "address": "0x7823e8dcc8bfc23ea3ac899eb86921f90e80f499",
       "name": "Uniswap",
       "symbol": "UNI",
