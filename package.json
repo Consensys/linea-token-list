@@ -8,10 +8,11 @@
   "scripts": {
     "prettify": "prettier --config .prettierrc --write 'json/linea-goerli-token-shortlist.json'",
     "precommit": "yarn prettify",
-    "husky-run": "node husky.js"
+    "husky-run": "node husky.js",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "prettier": "^2.0.5"
   },
   "husky": {
