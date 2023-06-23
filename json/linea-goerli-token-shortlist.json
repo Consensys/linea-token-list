@@ -15,6 +15,21 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0x5471ea8f739dd37E9B81Be9c5c77754D8AA953E4",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x5471ea8f739dd37E9B81Be9c5c77754D8AA953E4",
+      "name": "Binance Smart Chain",
+      "symbol": "BNB",
+      "decimals": 18,
+      "createdAt": "2023-06-23",
+      "updatedAt": "2023-06-23",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png"
+    },
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0x7823e8dcc8bfc23ea3ac899eb86921f90e80f499",
       "tokenType": [
         "bridged"
