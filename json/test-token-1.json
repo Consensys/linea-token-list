@@ -18,7 +18,7 @@
       "tokenId": "https://polygonscan.com/address/0x0000000000000000000000000000000000001010",
       "tokenType": ["fungible", "transferable"],
       "address": "0x0000000000000000000000000000000000001010",
-      "name": "Test",
+      "name": "Test2",
       "symbol": "TST",
       "decimals": 18,
       "genesisBlockHash": "0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b",
