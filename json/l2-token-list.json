@@ -13,14 +13,14 @@
   ],
   "tokens": [
     {
-      "chainId": 137,
+      "chainId": "testChainId",
       "chainURI": "https://polygonscan.com/block/0",
       "tokenId": "https://polygonscan.com/address/0x0000000000000000000000000000000000001010",
-      "tokenType": ["fungible", "transferable"],
+      "tokenType": "nonarray",
       "address": "0x0000000000000000000000000000000000001010",
       "name": "Matic",
       "symbol": "MATIC",
-      "decimals": 18,
+      "decimals": "testDecimal",
       "createdAt": "2020-05-31",
       "updatedAt": "2020-05-31",
       "genesisBlockHash": "0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b",
