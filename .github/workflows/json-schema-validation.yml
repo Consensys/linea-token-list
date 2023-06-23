@@ -26,4 +26,4 @@ jobs:
 
       - name: Validate JSON
         run: |
-          jsonschema -i ./json/l2-token-list.json ./json/schema/l2-token-list-schema.json
+          jsonschema -i ./json/linea-goerli-token-shortlist.json ./json/schema/l2-token-list-schema.json
