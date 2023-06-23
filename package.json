@@ -1,0 +1,23 @@
+{
+  "name": "linea-token-list",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ConsenSys/linea-token-list.git",
+  "author": "wantedsystem <amine.harty@consensys.net>",
+  "license": "",
+  "scripts": {
+    "prettify": "prettier --config .prettierrc --write 'json/linea-goerli-token-shortlist.json'",
+    "precommit": "yarn prettify",
+    "husky-run": "node husky.js",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn precommit"
+    }
+  }
+}
