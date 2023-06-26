@@ -33,6 +33,19 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0xDbcd5BafBAA8c1B326f14EC0c8B125DB57A5cC4c",
+      "tokenType": ["native"],
+      "address": "0xDbcd5BafBAA8c1B326f14EC0c8B125DB57A5cC4c",
+      "name": "Wrapped Bitcoin",
+      "symbol": "WBTC",
+      "decimals": 18,
+      "createdAt": "2023-06-23",
+      "updatedAt": "2023-06-23",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png"
+    },
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0x2C1b868d6596a18e32E61B901E4060C872647b6C",
       "tokenType": ["native"],
       "address": "0x2C1b868d6596a18e32E61B901E4060C872647b6C",
