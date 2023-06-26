@@ -15,14 +15,27 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0x5471ea8f739dd37E9B81Be9c5c77754D8AA953E4",
+      "tokenType": ["native"],
+      "address": "0x5471ea8f739dd37E9B81Be9c5c77754D8AA953E4",
+      "name": "BNB",
+      "symbol": "BNB",
+      "decimals": 18,
+      "createdAt": "2023-06-23",
+      "updatedAt": "2023-06-23",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png"
+    },
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0x7823e8dcc8bfc23ea3ac899eb86921f90e80f499",
       "tokenType": ["bridged"],
       "address": "0x7823e8dcc8bfc23ea3ac899eb86921f90e80f499",
       "name": "Uniswap",
       "symbol": "UNI",
       "decimals": 18,
-      "createdAt": "2023-06-23",
-      "updatedAt": "2023-06-23",
+      "createdAt": "2023-06-26",
+      "updatedAt": "2023-06-26",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/7083.png",
       "extension": {
         "rootChainId": 5,
@@ -47,6 +60,32 @@
         "rootChainURI": "https://goerli.etherscan.io/block/0",
         "rootAddress": "0xd35cceead182dcee0f148ebac9447da2c4d449c4"
       }
+    },
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0xDbcd5BafBAA8c1B326f14EC0c8B125DB57A5cC4c",
+      "tokenType": ["native"],
+      "address": "0xDbcd5BafBAA8c1B326f14EC0c8B125DB57A5cC4c",
+      "name": "Wrapped Bitcoin",
+      "symbol": "WBTC",
+      "decimals": 18,
+      "createdAt": "2023-06-23",
+      "updatedAt": "2023-06-23",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png"
+    },
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0x2C1b868d6596a18e32E61B901E4060C872647b6C",
+      "tokenType": ["native"],
+      "address": "0x2C1b868d6596a18e32E61B901E4060C872647b6C",
+      "name": "Wrapped Ethereum",
+      "symbol": "WETH",
+      "decimals": 18,
+      "createdAt": "2023-06-26",
+      "updatedAt": "2023-06-26",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
     }
   ]
 }
