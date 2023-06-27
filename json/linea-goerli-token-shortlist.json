@@ -28,6 +28,19 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0xeEfF322f4590A1A84BB3486d4BA0038669A811aD",
+      "tokenType": ["native"],
+      "address": "0xeEfF322f4590A1A84BB3486d4BA0038669A811aD",
+      "name": "DOGE",
+      "symbol": "DOGE",
+      "decimals": 18,
+      "createdAt": "2023-06-27",
+      "updatedAt": "2023-06-27",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/74.png"
+    },
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0xcAA61BCAe7D37Fe9C33c0D8671448254eef44D63",
       "tokenType": ["native"],
       "address": "0xcAA61BCAe7D37Fe9C33c0D8671448254eef44D63",
