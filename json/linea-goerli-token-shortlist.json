@@ -3,7 +3,7 @@
   "tokenListId": "TBD",
   "name": "Linea Goerli Token List",
   "createdAt": "2023-06-23",
-  "updatedAt": "2023-06-27",
+  "updatedAt": "2023-06-29",
   "versions": [
     {
       "major": 1,
@@ -12,6 +12,37 @@
     }
   ],
   "tokens": [
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0x8741Ba6225A6BF91f9D73531A98A89807857a2B3",
+      "tokenType": ["bridged"],
+      "address": "0x8741Ba6225A6BF91f9D73531A98A89807857a2B3",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "createdAt": "2023-06-29",
+      "updatedAt": "2023-06-29",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/4943.png",
+      "extension": {
+        "rootChainId": 5,
+        "rootChainURI": "https://goerli.etherscan.io/block/0",
+        "rootAddress": "0xb93cba7013f4557cDFB590fD152d24Ef4063485f"
+      }
+    },
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0x5471ea8f739dd37E9B81Be9c5c77754D8AA953E4",
+      "tokenType": ["native"],
+      "address": "0x5471ea8f739dd37E9B81Be9c5c77754D8AA953E4",
+      "name": "BNB",
+      "symbol": "BNB",
+      "decimals": 18,
+      "createdAt": "2023-06-23",
+      "updatedAt": "2023-06-23",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png"
+    },
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
