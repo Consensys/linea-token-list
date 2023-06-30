@@ -3,7 +3,7 @@
   "tokenListId": "TBD",
   "name": "Linea Goerli Token List",
   "createdAt": "2023-06-23",
-  "updatedAt": "2023-06-27",
+  "updatedAt": "2023-06-30",
   "versions": [
     {
       "major": 1,
@@ -12,6 +12,19 @@
     }
   ],
   "tokens": [
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0xD2340c4ec834bf43c05B9EcCd60EeD3a20892Dcc",
+      "tokenType": ["native"],
+      "address": "0xD2340c4ec834bf43c05B9EcCd60EeD3a20892Dcc",
+      "name": "APE",
+      "symbol": "APE",
+      "decimals": 18,
+      "createdAt": "2023-04-10",
+      "updatedAt": "2023-04-10",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/18876.png"
+    },
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
@@ -37,6 +50,24 @@
       "createdAt": "2023-06-27",
       "updatedAt": "2023-06-27",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/74.png"
+    },
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0x6F03052743CD99ce1b29265E377e320CD24Eb632",
+      "tokenType": ["bridged"],
+      "address": "0x6F03052743CD99ce1b29265E377e320CD24Eb632",
+      "name": "HOP",
+      "symbol": "HOP",
+      "decimals": 18,
+      "createdAt": "2023-04-27",
+      "updatedAt": "2023-04-27",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/20547.png",
+      "extension": {
+        "rootChainId": 5,
+        "rootChainURI": "https://goerli.etherscan.io/block/0",
+        "rootAddress": "0x38aF6928BF1Fd6B3c768752e716C49eb8206e20c"
+      }
     },
     {
       "chainId": 59140,
