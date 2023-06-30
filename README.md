@@ -18,12 +18,9 @@ cd linea-token-list
 git checkout -b feat/<token-name>
 ```
 
-2. Copy the JSON token template from [./json/templates/linea-goerli-token-version-template.json](./json/templates/linea-goerli-token-version-template.json).
-3. Fill out the copied template with your token's information.
+2. Fill out the ./json/linea-goerli-token-shortlist.json with your token's information.
 
-<b>Note</b>: please ensure the completed JSON follows the schema outlined in [./json/schema/l2-token-list-schema.json](./json/schema/l2-token-list-schema.json).
-
-4. Add the completed JSON to the `tokens` array in [./json/linea-goerli-token-shortlist.json](./json/linea-goerli-token-shortlist.json). Make sure to add the token following alphabetical order of the `symbol` field.
+<b>Note</b>: please ensure the completed JSON follows the schema outlined in [./json/schema/l2-token-list-schema.json](./json/schema/l2-token-list-schema.json). Make sure to add the token following alphabetical order of the `symbol` field.
 
 ```
 {
@@ -34,7 +31,7 @@ git checkout -b feat/<token-name>
 }
 ```
 
-5. Commit your changes and push your branch.
+3. Commit your changes and push your branch.
 
 <b>Note</b>: Only commit the list file. Do not modify the schema or the templates.
 
@@ -46,7 +43,7 @@ git commit -m "feat: new token <name>"
 git push origin feat/<token-name>
 ```
 
-6. Go to https://github.com/ConsenSys/linea-token-list/pulls and click on `New pull request` to create a new PR. Make sure to set the base branch as `main`.
+4. Go to https://github.com/ConsenSys/linea-token-list/pulls and click on `New pull request` to create a new PR. Make sure to set the base branch as `main`.
 
 A GitHub Actions workflow will automatically verify the integrity of your JSON. If the check passes, validators will review the new list. If all the information are correct, they will approve the token addition.
 
