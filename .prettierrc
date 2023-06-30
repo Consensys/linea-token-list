@@ -1,0 +1,17 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "arrowParens": "always",
+  "printWidth": 120,
+  "overrides": [
+    {
+      "files": ["*.md", "*.json"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ],
+  "exclude": ["node_modules/**"]
+}

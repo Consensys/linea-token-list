@@ -1,0 +1,308 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/eea-oasis/l2/schemas/CanonicalTokenList.json",
+  "$comment": "{\"term\": \"CanonicalTokenList\", \"@id\": \"https://github.com/eea-oasis/l2#CanonicalTokenList\"}",
+  "title": "CanonicalTokenList",
+  "description": "Canonical Token List",
+  "type": "object",
+  "required": [
+    "type",
+    "tokenListId",
+    "name",
+    "createdAt",
+    "updatedAt",
+    "versions",
+    "tokens"
+  ],
+  "properties": {
+    "@context": {
+      "type": "array"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array"
+        }
+      ],
+      "examples": ["CanonicalTokenList"]
+    },
+    "tokenListId": {
+      "$comment": "{\"term\": \"tokenListId\", \"@id\": \"https://schema.org/identifier\"}",
+      "title": "tokenListId",
+      "description": "A resolvable URI to the publicly accessible place where this list can be found following the RFC 3986 standard.",
+      "type": "string",
+      "examples": [
+        "https://ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew"
+      ]
+    },
+    "name": {
+      "$comment": "{\"term\": \"name\", \"@id\": \"https://schema.org/name\"}",
+      "title": "name",
+      "description": "Token List name",
+      "type": "string",
+      "examples": ["Aggregate Canonical Token List"]
+    },
+    "logoURI": {
+      "$comment": "{\"term\": \"logoURI\", \"@id\": \"https://schema.org/identifier\"}",
+      "title": "logoURI",
+      "description": "URI or URL of the token list logo following the RFC 3986 standard",
+      "type": "string",
+      "examples": [
+        "https://ipfs.io/ipns/k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl"
+      ]
+    },
+    "keywords": {
+      "$comment": "{\"term\": \"keywords\", \"@id\": \"https://schema.org/DefinedTerm\"}",
+      "title": "keywords",
+      "description": "List of key words for the token list",
+      "type": "array",
+      "examples": ["Aggregate Token List"]
+    },
+    "createdAt": {
+      "$comment": "{\"term\": \"createdAt\", \"@id\": \"https://schema.org/datePublished\"}",
+      "title": "createdAt",
+      "description": "Date and time token list was created",
+      "type": "string",
+      "examples": ["2022-05-08"]
+    },
+    "updatedAt": {
+      "$comment": "{\"term\": \"updatedAt\", \"@id\": \"https://schema.org/dateModified\"}",
+      "title": "updatedAt",
+      "description": "Date and time token list was updated",
+      "type": "string",
+      "examples": ["2022-05-09"]
+    },
+    "versions": {
+      "$comment": "{\"term\": \"versions\", \"@id\": \"https://schema.org/version\"}",
+      "title": "versions",
+      "description": "Versions of the canonical token list",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["major", "minor", "patch"],
+        "properties": {
+          "major": {
+            "$comment": "{\"term\": \"major\", \"@id\": \"https://schema.org/Number\"}",
+            "title": "major",
+            "description": "Major Version Number of the Token List",
+            "type": "integer",
+            "examples": [1]
+          },
+          "minor": {
+            "$comment": "{\"term\": \"minor\", \"@id\": \"https://schema.org/Number\"}",
+            "title": "minor",
+            "description": "Minor Version Number of the Token List",
+            "type": "integer",
+            "examples": [1]
+          },
+          "patch": {
+            "$comment": "{\"term\": \"patch\", \"@id\": \"https://schema.org/Number\"}",
+            "title": "patch",
+            "description": "Patch Number of the Token List",
+            "type": "integer",
+            "examples": [1]
+          }
+        }
+      }
+    },
+    "tokens": {
+      "title": "Listed Token Entry",
+      "description": "Listed Token Entry",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "chainId",
+          "chainURI",
+          "tokenId",
+          "tokenType",
+          "address",
+          "name",
+          "symbol",
+          "decimals",
+          "createdAt",
+          "updatedAt"
+        ],
+        "properties": {
+          "chainId": {
+            "$comment": "{\"term\": \"chainId\", \"@id\": \"https://schema.org/identifier\"}",
+            "title": "chainId",
+            "description": "The typically used number identifier for the chain on which the token was issued.",
+            "type": "number",
+            "examples": [137]
+          },
+          "chainURI": {
+            "$comment": "{\"term\": \"chainURI\", \"@id\": \"https://schema.org/identifier\"}",
+            "title": "chainURI",
+            "description": "A resolvable URI to the genesis block of the chain on which the token was issued following the RFC 3986 standard.",
+            "type": "string",
+            "examples": ["https://polygonscan.com/block/0"]
+          },
+          "genesisBlockHash": {
+            "$comment": "{\"term\": \"genesisBlockHash\", \"@id\": \"https://schema.org/sha256\"}",
+            "title": "genesisBlockHash",
+            "description": "The hash of the genesis block of the chain on which the token was issued.",
+            "type": "string",
+            "examples": [
+              "0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b"
+            ]
+          },
+          "tokenIssuerId": {
+            "$comment": "{\"term\": \"tokenIssuerId\", \"@id\": \"https://schema.org/identifier\"}",
+            "title": "tokenIssuerId",
+            "description": "A resolvable URI identifying the token issuer following the RFC 3986 standard.",
+            "type": "string",
+            "examples": [
+              "https://polygonscan.com/address/0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b"
+            ]
+          },
+          "tokenIssuerName": {
+            "$comment": "{\"term\": \"tokenIssuerName\", \"@id\": \"https://schema.org/name\"}",
+            "title": "tokenIssuerName",
+            "description": "The name oof the token issuer.",
+            "type": "string",
+            "examples": ["Matic"]
+          },
+          "tokenId": {
+            "$comment": "{\"term\": \"tokenId\", \"@id\": \"https://schema.org/identifier\"}",
+            "title": "tokenId",
+            "description": "A resolvable URI of the token following the RFC 3986 standard to for example the deployment transaction of the token, or a DID identifying the token and its issuer.",
+            "type": "string",
+            "example": [
+              "https://polygonscan.com/address/0x0000000000000000000000000000000000001010"
+            ]
+          },
+          "tokenType": {
+            "$comment": "{\"term\": \"tokenType\", \"@id\": \"https://schema.org/StructuredValue\"}",
+            "title": "tokenType",
+            "description": "Describes the type of token.",
+            "type": "array",
+            "examples": [["fungible", "transferable"]]
+          },
+          "tokenDesc": {
+            "$comment": "{\"term\": \"tokenDesc\", \"@id\": \"https://schema.org/description\"}",
+            "title": "tokenDesc",
+            "description": "Brief description of the token and its functionality.",
+            "type": "string",
+            "examples": ["Protocol Token for the Matic Network"]
+          },
+          "standard": {
+            "$comment": "{\"term\": \"standard\", \"@id\": \"https://schema.org/citation\"}",
+            "title": "standard",
+            "description": "A resolvable URI to the description of the token standard.",
+            "type": "string",
+            "examples": [
+              "https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md"
+            ]
+          },
+          "address": {
+            "$comment": "{\"term\": \"address\", \"@id\": \"https://schema.org/identifier\"}",
+            "title": "address",
+            "description": "Address of the token smart contract.",
+            "type": "string",
+            "examples": ["0x0000000000000000000000000000000000001010"]
+          },
+          "addressType": {
+            "$comment": "{\"term\": \"address\", \"@id\": \"https://schema.org/Intangible\"}",
+            "title": "addressType",
+            "description": "AddressType of the token smart contract.",
+            "type": "string",
+            "examples": ["MaticNameSpace"]
+          },
+          "addressAlg": {
+            "$comment": "{\"term\": \"addressAlg\", \"@id\": \"https://schema.org/algorithm\"}",
+            "title": "addressAlg",
+            "description": "Algorithm used to create the address e.g. CREATE2 or the standard ethereum address construction which is the last 40 characters/20 bytes of the Keccak-256 hash of a secp256k1 public key.",
+            "type": "string",
+            "examples": ["CREATE2"]
+          },
+          "name": {
+            "$comment": "{\"term\": \"name\", \"@id\": \"https://schema.org/name\"}",
+            "title": "name",
+            "description": "Token name.",
+            "type": "string",
+            "examples": ["Matic"]
+          },
+          "symbol": {
+            "$comment": "{\"term\": \"symbol\", \"@id\": \"https://schema.org/currency\"}",
+            "title": "symbol",
+            "description": "Token symbol e.g. ETH.",
+            "type": "string",
+            "examples": ["MATIC"]
+          },
+          "humanReadableTokenSymbol": {
+            "$comment": "{\"term\": \"humanReadableTokenSymbol\", \"@id\": \"https://schema.org/currency\"}",
+            "title": "humanReadableTokenSymbol",
+            "description": "A Token symbol e.g. ETH, concatenated with the `chainId` the token was issued on or bridged to, e.g. ETH-1",
+            "type": "string",
+            "examples": ["MATIC-137"]
+          },
+          "decimals": {
+            "$comment": "{\"term\": \"decimals\", \"@id\": \"https://schema.org/Number\"}",
+            "title": "decimals",
+            "description": "Allowed number of decimals for the listed token. This property may be named differently by token standards e.g. granularity for ERC-777",
+            "type": "integer",
+            "examples": [18]
+          },
+          "logoURI": {
+            "$comment": "{\"term\": \"logoURI\", \"@id\": \"https://schema.org/identifier\"}",
+            "title": "logoURI",
+            "description": "URI or URL of the token logo following the RFC 3986 standard.",
+            "type": "string",
+            "examples": ["https://polygonscan.com/token/images/matic_32.png"]
+          },
+          "createdAt": {
+            "$comment": "{\"term\": \"createdAt\", \"@id\": \"https://schema.org/datePublished\"}",
+            "title": "createdAt",
+            "description": "Date and time token was created",
+            "type": "string",
+            "examples": ["2020-05-31"]
+          },
+          "updatedAt": {
+            "$comment": "{\"term\": \"updatedAt\", \"@id\": \"https://schema.org/dateModified\"}",
+            "title": "updatedAt",
+            "description": "Date and time token was updated",
+            "type": "string",
+            "examples": ["2020-05-31"]
+          },
+          "extensions": {
+            "title": "extensions",
+            "description": "Extension to the token list entry to specify an origin chain if the token entry refers to another chain other than the origin chain of the token",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["rootChainId", "rootChainURI", "rootAddress"],
+              "properties": {
+                "rootChainId": {
+                  "$comment": "{\"term\": \"rootChainId\", \"@id\": \"https://schema.org/identifier\"}",
+                  "title": "rootChainId",
+                  "description": "The typically used number identifier for the root chain on which the token was originally issued.",
+                  "type": "number",
+                  "examples": [137]
+                },
+                "rootChainURI": {
+                  "$comment": "{\"term\": \"rootChainURI\", \"@id\": \"https://schema.org/identifier\"}",
+                  "title": "rootChainURI",
+                  "description": "A resolvable URI to the genesis block of the root chain on which the token was originally issued following the RFC 3986 standard.",
+                  "type": "string",
+                  "examples": ["https://polygonscan.com/block/0"]
+                },
+                "rootAddress": {
+                  "$comment": "{\"term\": \"rootAddress\", \"@id\": \"https://schema.org/identifier\"}",
+                  "title": "rootAddress",
+                  "description": "Root address of the token smart contract.",
+                  "type": "string",
+                  "examples": ["0x0000000000000000000000000000000000001010"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
