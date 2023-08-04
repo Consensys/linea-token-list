@@ -13,7 +13,7 @@
   ],
   "tokens": [
     {
-      "chainId": 59140,
+      "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x176211869cA2b568f2A7D4EE941E073a821EE1ff",
       "tokenType": [
@@ -33,7 +33,7 @@
       }
     },
     {
-      "chainId": 59140,
+      "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x3aAB2285ddcDdaD8edf438C1bAB47e1a9D05a9b4",
       "tokenType": [
