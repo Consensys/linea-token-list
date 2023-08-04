@@ -27,7 +27,7 @@
       "updatedAt": "2023-08-04",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
       "extension": {
-        "rootChainId": 5,
+        "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
       }
@@ -47,7 +47,7 @@
       "updatedAt": "2023-08-04",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
       "extension": {
-        "rootChainId": 5,
+        "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
       }
