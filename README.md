@@ -58,7 +58,7 @@ Description of the fields:
 | name | Token name | string | Mandatory |
 | symbol | Token symbol e.g. UNI | string | Mandatory |
 | decimals | Allowed number of decimals for the listed token | integer | Mandatory |
-| createdAt | Date and time token was added in this least | string | Mandatory |
+| createdAt | Date and time token was added in this list | string | Mandatory |
 | updateAt | Date and time token was last updated in this list | string | Mandatory |
 | logoURI | URI or URL of the token logo following the RFC 3986 standard | string | Optional |
 | extension | Extension to specify information about the token on its native chain if it was bridged | Array | Mandatory if the token has been bridged, otherwise optional |
