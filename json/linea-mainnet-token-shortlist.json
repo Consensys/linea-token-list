@@ -3,15 +3,35 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2023-08-04",
+  "updatedAt": "2023-08-07",
   "versions": [
     {
       "major": 1,
-      "minor": 2,
-      "patch": 1
+      "minor": 3,
+      "patch": 0
     }
   ],
   "tokens": [
+     {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x0e5F2ee8C29e7eBc14e45dA7FF90566d8c407dB7",
+      "tokenType": [
+        "bridged"
+      ],
+      "address": "0x0e5F2ee8C29e7eBc14e45dA7FF90566d8c407dB7",
+      "name": "HAPI Protocol",
+      "symbol": "HAPI",
+      "decimals": 18,
+      "createdAt": "2023-08-07",
+      "updatedAt": "2023-08-07",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/8567.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xd9c2d319cd7e6177336b0a9c93c21cb48d84fb54"
+      }
+    },
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
