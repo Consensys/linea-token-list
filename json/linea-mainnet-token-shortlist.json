@@ -7,8 +7,8 @@
   "versions": [
     {
       "major": 1,
-      "minor": 2,
-      "patch": 2
+      "minor": 3,
+      "patch": 1
     }
   ],
   "tokens": [
@@ -64,7 +64,7 @@
       "symbol": "WBTC",
       "decimals": 8,
       "createdAt": "2023-08-04",
-      "updatedAt": "2023-08-04",
+      "updatedAt": "2023-08-07",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
       "extension": {
         "rootChainId": 1,
