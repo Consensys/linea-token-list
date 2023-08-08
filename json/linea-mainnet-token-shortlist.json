@@ -8,7 +8,7 @@
     {
       "major": 1,
       "minor": 4,
-      "patch": 0
+      "patch": 1
     }
   ],
   "tokens": [
@@ -245,7 +245,7 @@
       "decimals": 8,
       "createdAt": "2023-08-04",
       "updatedAt": "2023-08-04",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png",
       "extension": {
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
@@ -263,7 +263,7 @@
       "decimals": 18,
       "createdAt": "2023-08-08",
       "updatedAt": "2023-08-08",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
     }
   ]
 }
