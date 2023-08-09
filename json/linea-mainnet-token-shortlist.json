@@ -55,6 +55,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1f031f8c523b339c7a831355879e3568fa3eb263",
+      "tokenType": [
+        "bridged"
+      ],
+      "address": "0x1f031f8c523b339c7a831355879e3568fa3eb263",
+      "name": "DeversiFi Token",
+      "symbol": "DVF",
+      "decimals": 18,
+      "createdAt": "2023-08-09",
+      "updatedAt": "2023-08-09",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/10759.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xdddddd4301a082e62e84e43f474f044423921918"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x0e5F2ee8C29e7eBc14e45dA7FF90566d8c407dB7",
       "tokenType": [
         "bridged"
