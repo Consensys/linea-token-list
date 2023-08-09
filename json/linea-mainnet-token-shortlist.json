@@ -264,6 +264,19 @@
       "createdAt": "2023-08-08",
       "updatedAt": "2023-08-08",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xf3B001D64C656e30a62fbaacA003B1336b4ce12A",
+      "tokenType": [],
+      "address": "0xf3B001D64C656e30a62fbaacA003B1336b4ce12A",
+      "name": "Mai Stablecoin",
+      "symbol": "MAI",
+      "decimals": 18,
+      "createdAt": "2023-08-09",
+      "updatedAt": "2023-08-09",
+      "logoURI": "https://assets.coingecko.com/coins/images/15264/small/mimatic-red.png"
     }
   ]
 }
