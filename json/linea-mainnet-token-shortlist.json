@@ -115,6 +115,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/token/0xB97F21D1f2508fF5c73E7B5AF02847640B1ff75d",
+      "tokenType": [
+        "bridged"
+      ],
+      "address": "0xB97F21D1f2508fF5c73E7B5AF02847640B1ff75d",
+      "name": "LineaBank Token",
+      "symbol": "LAB",
+      "decimals": 18,
+      "createdAt": "2023-08-14",
+      "updatedAt": "2023-08-14",
+      "logoURI": "https://cdn.lineabank.finance/token-100x100.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x0e076AAFd86a71dCEAC65508DAF975425c9D0cB6",
       "tokenType": [
         "bridged"
