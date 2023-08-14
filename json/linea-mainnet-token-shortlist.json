@@ -116,9 +116,7 @@
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/token/0xB97F21D1f2508fF5c73E7B5AF02847640B1ff75d",
-      "tokenType": [
-        "bridged"
-      ],
+      "tokenType": [],
       "address": "0xB97F21D1f2508fF5c73E7B5AF02847640B1ff75d",
       "name": "LineaBank Token",
       "symbol": "LAB",
