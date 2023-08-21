@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2023-08-15",
+  "updatedAt": "2023-08-21",
   "versions": [
     {
       "major": 1,
-      "minor": 6,
+      "minor": 8,
       "patch": 0
     }
   ],
@@ -70,6 +70,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xdddddd4301a082e62e84e43f474f044423921918"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xe516a5CFf996cc399EFBb48355FD5Ab83438E7a9",
+      "tokenType": [
+        "bridged"
+      ],
+      "address": "0xe516a5CFf996cc399EFBb48355FD5Ab83438E7a9",
+      "name": "Gnosis Token",
+      "symbol": "GNO",
+      "decimals": 18,
+      "createdAt": "2023-08-21",
+      "updatedAt": "2023-08-21",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/1659.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x6810e776880C02933D47DB1b9fc05908e5386b96"
       }
     },
     {
@@ -250,6 +270,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
+      "tokenType": [
+        "bridged"
+      ],
+      "address": "0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
+      "name": "Pax Dollar",
+      "symbol": "USDP",
+      "decimals": 18,
+      "createdAt": "2023-08-21",
+      "updatedAt": "2023-08-21",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3330.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x8E870D67F660D95d5be530380D0eC0bd388289E1"
       }
     },
     {
