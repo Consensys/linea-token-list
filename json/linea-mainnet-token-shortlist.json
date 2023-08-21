@@ -35,6 +35,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x5B16228B94b68C7cE33AF2ACc5663eBdE4dCFA2d",
+      "tokenType": [
+        "bridged"
+      ],
+      "address": "0x5B16228B94b68C7cE33AF2ACc5663eBdE4dCFA2d",
+      "name": "ChainLink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "createdAt": "2023-08-08",
+      "updatedAt": "2023-08-08",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/1975.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x514910771af9ca656af840dff83e8264ecf986ca"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x4AF15ec2A0BD43Db75dd04E62FAA3B8EF36b00d5",
       "tokenType": [
         "bridged"
@@ -155,21 +175,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x5B16228B94b68C7cE33AF2ACc5663eBdE4dCFA2d",
+      "tokenId": "https://lineascan.build/address/0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
       "tokenType": [
         "bridged"
       ],
-      "address": "0x5B16228B94b68C7cE33AF2ACc5663eBdE4dCFA2d",
-      "name": "ChainLink Token",
-      "symbol": "LINK",
+      "address": "0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
+      "name": "Pax Dollar",
+      "symbol": "USDP",
       "decimals": 18,
-      "createdAt": "2023-08-08",
-      "updatedAt": "2023-08-08",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/1975.png",
+      "createdAt": "2023-08-21",
+      "updatedAt": "2023-08-21",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3330.png",
       "extension": {
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0x514910771af9ca656af840dff83e8264ecf986ca"
+        "rootAddress": "0x8E870D67F660D95d5be530380D0eC0bd388289E1"
       }
     },
     {
@@ -215,26 +235,6 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x636B22bC471c955A8DB60f28D4795066a8201fa3",
-      "tokenType": [
-        "bridged"
-      ],
-      "address": "0x636B22bC471c955A8DB60f28D4795066a8201fa3",
-      "name": "Uniswap",
-      "symbol": "UNI",
-      "decimals": 18,
-      "createdAt": "2023-08-08",
-      "updatedAt": "2023-08-08",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/7083.png",
-      "extension": {
-        "rootChainId": 1,
-        "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"
-      }
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xA219439258ca9da29E9Cc4cE5596924745e12B93",
       "tokenType": [
         "bridged"
@@ -255,6 +255,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x636B22bC471c955A8DB60f28D4795066a8201fa3",
+      "tokenType": [
+        "bridged"
+      ],
+      "address": "0x636B22bC471c955A8DB60f28D4795066a8201fa3",
+      "name": "Uniswap",
+      "symbol": "UNI",
+      "decimals": 18,
+      "createdAt": "2023-08-08",
+      "updatedAt": "2023-08-08",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/7083.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x176211869cA2b568f2A7D4EE941E073a821EE1ff",
       "tokenType": [
         "bridged"
@@ -270,26 +290,6 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
-      }
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
-      "tokenType": [
-        "bridged"
-      ],
-      "address": "0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
-      "name": "Pax Dollar",
-      "symbol": "USDP",
-      "decimals": 18,
-      "createdAt": "2023-08-21",
-      "updatedAt": "2023-08-21",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3330.png",
-      "extension": {
-        "rootChainId": 1,
-        "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0x8E870D67F660D95d5be530380D0eC0bd388289E1"
       }
     },
     {
