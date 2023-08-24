@@ -155,16 +155,16 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x76cfA539706215B3296De65a701dfb69E000F85E",
+      "tokenId": "https://lineascan.build/address/0xA6eb75B11b36FB9175fB94C5b96959879A26C2A8",
       "tokenType": [
         "bridged"
       ],
-      "address": "0x76cfA539706215B3296De65a701dfb69E000F85E",
+      "address": "0xA6eb75B11b36FB9175fB94C5b96959879A26C2A8",
       "name": "Meta Apes Peel",
       "symbol": "PEEL",
       "decimals": 18,
-      "createdAt": "2023-08-21",
-      "updatedAt": "2023-08-21",
+      "createdAt": "2023-08-24",
+      "updatedAt": "2023-08-24",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/21013.png",
       "extension": {
         "rootChainId": 1,
