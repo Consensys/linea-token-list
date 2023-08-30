@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-goerli-token-shortlist.json",
   "name": "Linea Goerli Token List",
   "createdAt": "2023-06-23",
-  "updatedAt": "2023-06-30",
+  "updatedAt": "2023-08-30",
   "versions": [
     {
       "major": 1,
-      "minor": 1,
+      "minor": 2,
       "patch": 1
     }
   ],
@@ -81,6 +81,24 @@
       "createdAt": "2023-06-23",
       "updatedAt": "2023-06-23",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png"
+    },
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0xD14754f4db08D19b5def26D33B94bdb5c3084c8a",
+      "tokenType": ["bridged"],
+      "address": "0xD14754f4db08D19b5def26D33B94bdb5c3084c8a",
+      "name": "Meta Apes Peel",
+      "symbol": "PEEL",
+      "decimals": 18,
+      "createdAt": "2023-08-24",
+      "updatedAt": "2023-08-30",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/21013.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xd707E82E79660B7576CCd4319595C80C0e303e4A"
+      }
     },
     {
       "chainId": 59140,

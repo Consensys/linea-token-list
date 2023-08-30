@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2023-08-21",
+  "updatedAt": "2023-08-30",
   "versions": [
     {
       "major": 1,
-      "minor": 8,
+      "minor": 9,
       "patch": 0
     }
   ],
@@ -190,6 +190,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x8E870D67F660D95d5be530380D0eC0bd388289E1"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xA6eb75B11b36FB9175fB94C5b96959879A26C2A8",
+      "tokenType": [
+        "bridged"
+      ],
+      "address": "0xA6eb75B11b36FB9175fB94C5b96959879A26C2A8",
+      "name": "Meta Apes Peel",
+      "symbol": "PEEL",
+      "decimals": 18,
+      "createdAt": "2023-08-24",
+      "updatedAt": "2023-08-30",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/21013.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x1ed81e03d7ddb67a21755d02ed2f24da71c27c55"
       }
     },
     {
