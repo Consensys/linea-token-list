@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2023-08-30",
+  "updatedAt": "2023-09-01",
   "versions": [
     {
       "major": 1,
-      "minor": 9,
+      "minor": 10,
       "patch": 0
     }
   ],
@@ -332,7 +332,7 @@
         "rootAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
       }
     },
-    {
+     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x99AD925C1Dc14Ac7cc6ca1244eeF8043C74E99d5",
@@ -350,6 +350,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x13a7f090d46c74acba98c51786a5c46ed9a474f0",
+      "tokenType": [
+        "bridged"
+      ],
+      "address": "0x13a7f090d46c74acba98c51786a5c46ed9a474f0",
+      "name": "ScamFari",
+      "symbol": "SCM",
+      "decimals": 18,
+      "createdAt": "2023-08-11",
+      "updatedAt": "2023-09-01",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/27863.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x8353b92201f19B4812EeE32EFd325f7EDe123718"
       }
     },
     {
