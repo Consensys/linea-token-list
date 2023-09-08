@@ -3,12 +3,12 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-goerli-token-shortlist.json",
   "name": "Linea Goerli Token List",
   "createdAt": "2023-06-23",
-  "updatedAt": "2023-08-30",
+  "updatedAt": "2023-09-08",
   "versions": [
     {
       "major": 1,
       "minor": 2,
-      "patch": 1
+      "patch": 2
     }
   ],
   "tokens": [
@@ -121,19 +121,19 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
-      "tokenId": "https://goerli.lineascan.build/token/0xf56dc6695cF1f5c364eDEbC7Dc7077ac9B586068",
+      "tokenId": "https://goerli.lineascan.build/token/0xB4257F31750961C8e536f5cfCBb3079437700416",
       "tokenType": ["bridged"],
-      "address": "0xf56dc6695cF1f5c364eDEbC7Dc7077ac9B586068",
+      "address": "0xB4257F31750961C8e536f5cfCBb3079437700416",
       "name": "USD Coin",
       "symbol": "USDC",
       "decimals": 18,
       "createdAt": "2023-06-23",
-      "updatedAt": "2023-06-23",
+      "updatedAt": "2023-09-08",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
       "extension": {
         "rootChainId": 5,
         "rootChainURI": "https://goerli.etherscan.io/block/0",
-        "rootAddress": "0xd35cceead182dcee0f148ebac9447da2c4d449c4"
+        "rootAddress": "0x07865c6e87b9f70255377e024ace6630c1eaa37f"
       }
     },
     {
