@@ -1,11 +1,8 @@
 name: On chain Token List
 
 on:
-  # schedule:
-  #   - cron: "0 * * * *"
-  push:
-    branches:
-      - CZK-458
+  schedule:
+    - cron: "0 * * * *"
 
 jobs:
   build:
@@ -43,7 +40,7 @@ jobs:
 
       - name: Check for changes
         run: |
-          git diff --quiet || { git add . && git commit -m "Update linea-mainnet-token-fulllist.json" && git push origin CZK-458; }
+          git diff --quiet || { git add . && git commit -m "Update linea-mainnet-token-fulllist.json" && git push origin main; }
 
       - name: Clean up temporary-dist directory
         run: rm -rf temporary-dist
