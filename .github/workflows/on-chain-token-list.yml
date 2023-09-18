@@ -41,11 +41,9 @@ jobs:
           git config user.email "amine.harty@consensys.net"
           git config user.name "Amine Harty"
 
+      - name: Check for changes
+        run: |
+          git diff --quiet || { git add . && git commit -m "Update linea-mainnet-token-fulllist.json" && git push origin CZK-458; }
+
       - name: Clean up temporary-dist directory
         run: rm -rf temporary-dist
-      
-      - name: Commit and push changes
-        run: |
-          git add .
-          git commit -m "Update linea-mainnet-token-fulllist.json"
-          git push origin CZK-458
