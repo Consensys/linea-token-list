@@ -9,7 +9,8 @@
     "prettify": "prettier --config .prettierrc --write 'json/linea-goerli-token-shortlist.json'",
     "precommit": "yarn prettify",
     "husky-run": "node husky.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "tsc && node scripts/dist/createOnChainTokenList.js"
   },
   "devDependencies": {
     "husky": "^8.0.0",
@@ -19,5 +20,12 @@
     "hooks": {
       "pre-commit": "yarn precommit"
     }
+  },
+  "dependencies": {
+    "@types/node": "^20.6.0",
+    "axios": "^1.5.0",
+    "dotenv": "^16.3.1",
+    "fs-extra": "^11.1.1",
+    "typescript": "^5.2.2"
   }
 }

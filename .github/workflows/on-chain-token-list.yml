@@ -1,0 +1,36 @@
+name: On chain Token List
+
+on:
+  # schedule:
+  #   - cron: "0 * * * *"
+  push:
+    branches:
+      - CZK-458
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+        
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Transpile TypeScript to JavaScript
+        run: npx tsc --outDir dist
+      
+      - name: Execute JavaScript
+        run: node dist/createOnChainTokenList.js
+      
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "Update linea-mainnet-token-fulllist.json"
+          git push origin CZK-458
