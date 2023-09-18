@@ -29,6 +29,11 @@ jobs:
       - name: Execute JavaScript
         run: node dist/createOnChainTokenList.js
       
+      - name: Configure Git identity
+        run: |
+          git config user.email "amine.harty@consensys.net"
+          git config user.name "Amine Harty"
+
       - name: Commit and push changes
         run: |
           git add .
