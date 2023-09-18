@@ -43,5 +43,9 @@ jobs:
 
       - name: Clean up temporary-dist directory
         run: rm -rf temporary-dist
-
-
+      
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "Update linea-mainnet-token-fulllist.json"
+          git push origin CZK-458
