@@ -72,9 +72,9 @@ if (!existingTokenList.tokens) {
 // Add existing tokens to the set
 for (const token of existingTokenList.tokens) {
   if (token.chainId === 59144) {
-    uniqueTokenAddresses.add(token.extension?.rootAddress.toLowerCase());
+    uniqueTokenAddresses.add(ethers.utils.getAddress(token.extension?.rootAddress));
   } else if (token.chainId === 1) {
-    uniqueTokenAddresses.add(token.address.toLowerCase());
+    uniqueTokenAddresses.add(ethers.utils.getAddress(token.address));
   }
 }
 
@@ -90,6 +90,7 @@ async function main() {
     updateTokenList(tokenInfoArray);
   } catch (error) {
     logger.error(`Error while reading events: ${error}`);
+    throw error;
   }
 }
 
@@ -97,39 +98,13 @@ async function main() {
 async function processTokenEvents(events: ethers.Event[], isDeployedEvent: boolean = false): Promise<void> {
   for (const event of events) {
     try {
-      let tokenAddress = event?.args?.token;
-      let nativeTokenAddress;
-      if (isDeployedEvent) {
-        tokenAddress = event?.args?.bridgedToken;
-        nativeTokenAddress = event?.args?.nativeToken;
-      }
+      const { tokenAddress, nativeTokenAddress } = getEventTokenAddresses(event, isDeployedEvent);
 
-      if (!tokenAddress) {
-        logger.info("Event doesn't contain a valid token address.");
-        continue; // Skip this event and continue with the next one
-      }
-
-      let tokenContract = new ethers.Contract(tokenAddress, erc20ContractABI, provider);
-
-      let tokenInfo: TokenInfo | undefined;
-
-      try {
-        tokenInfo = await fetchTokenInfo(tokenContract, tokenAddress);
-      } catch (error) {
-        logger.info(`Error calling contract with ERC20 ABI: ${error}`);
-
-        const tokenContractAlt = new ethers.Contract(tokenAddress, erc20Byte32ContractABI, provider);
-        try {
-          tokenInfo = await fetchTokenInfo(tokenContractAlt, tokenAddress, true);
-        } catch (error) {
-          logger.info(`Error calling contract with ERC20 Byte32 ABI: ${error}`);
-          continue;
-        }
-      }
+      const tokenInfo = await getERC20Token(tokenAddress);
 
       if (tokenInfo) {
         logger.info(tokenInfo);
-        const tokenAddressLowerCase = tokenAddress.toLowerCase();
+        const tokenAddressLowerCase = ethers.utils.getAddress(tokenAddress);
         const LINEA_MAINNET_CHAIN_ID = 59144;
         const ETHEREUM_MAINNET_CHAIN_ID = 1;
 
@@ -138,7 +113,7 @@ async function processTokenEvents(events: ethers.Event[], isDeployedEvent: boole
           tokenInfo.chainId = ETHEREUM_MAINNET_CHAIN_ID;
           tokenInfo.chainURI = 'https://etherscan.io/block/0';
           tokenInfo.tokenId = `https://etherscan.io/address/${tokenAddress}`;
-          if (tokenInfo.extension) {
+          if (tokenInfo.extension && nativeTokenAddress) {
             tokenInfo.extension.rootChainId = LINEA_MAINNET_CHAIN_ID;
             tokenInfo.extension.rootChainURI = 'https://lineascan.build/block/0';
             tokenInfo.extension.rootAddress = nativeTokenAddress;
@@ -148,7 +123,7 @@ async function processTokenEvents(events: ethers.Event[], isDeployedEvent: boole
           tokenInfo.address = address;
           tokenInfo.tokenId = `https://lineascan.build/address/${address}`;
           if (tokenInfo.chainId === 1) {
-            uniqueTokenAddresses.add(tokenInfo.address.toLowerCase()); // Add address when chainId is 1
+            uniqueTokenAddresses.add(ethers.utils.getAddress(tokenInfo.address)); // Add address when chainId is 1
           }
         }
 
@@ -159,8 +134,40 @@ async function processTokenEvents(events: ethers.Event[], isDeployedEvent: boole
       }
     } catch (error) {
       logger.error(`Error processing token event: ${error}`);
+      throw error;
     }
   }
+}
+
+async function getERC20Token(tokenAddress: string): Promise<TokenInfo | undefined> {
+  try {
+    return await fetchTokenInfo(new ethers.Contract(tokenAddress, erc20ContractABI, provider), tokenAddress);
+  } catch (error) {
+    logger.info(`Error calling contract with ERC20 ABI: ${error}`);
+
+    const tokenContractAlt = new ethers.Contract(tokenAddress, erc20Byte32ContractABI, provider);
+    try {
+      return await fetchTokenInfo(tokenContractAlt, tokenAddress, true);
+    } catch (error) {
+      logger.info(`Error calling contract with ERC20 Byte32 ABI: ${error}`);
+      return undefined;
+    }
+  }
+}
+
+function getEventTokenAddresses(
+  event: ethers.Event,
+  isDeployedEvent: boolean
+): { tokenAddress: string; nativeTokenAddress?: string } {
+  let tokenAddress = event?.args?.token;
+  let nativeTokenAddress;
+
+  if (isDeployedEvent) {
+    tokenAddress = event?.args?.bridgedToken;
+    nativeTokenAddress = event?.args?.nativeToken;
+  }
+
+  return { tokenAddress, nativeTokenAddress };
 }
 
 // Fetch token info
@@ -249,16 +256,16 @@ function updateTokenList(tokenInfoArray: TokenInfo[]): void {
 
     for (const token of existingTokenList.tokens) {
       if (token.chainId === 59144) {
-        existingTokenAddresses.add(token.extension?.rootAddress.toLowerCase());
+        existingTokenAddresses.add(ethers.utils.getAddress(token.extension?.rootAddress));
       } else if (token.chainId === 1) {
-        existingTokenAddresses.add(token.address.toLowerCase());
+        existingTokenAddresses.add(ethers.utils.getAddress(token.address));
       }
     }
 
     // Filter out tokens that are already in the existing token list
 
     const newTokens = tokenInfoArray.filter((info) => {
-      const addressLowerCase = info.extension?.rootAddress?.toLowerCase();
+      const addressLowerCase = ethers.utils.getAddress(info.extension?.rootAddress!);
       return addressLowerCase && !existingTokenAddresses.has(addressLowerCase);
     });
 
@@ -272,6 +279,7 @@ function updateTokenList(tokenInfoArray: TokenInfo[]): void {
     }
   } catch (error) {
     logger.error(`Error updating token list: ${error}`);
+    throw error;
   }
 }
 
