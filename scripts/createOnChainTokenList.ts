@@ -1,6 +1,7 @@
 import { ethers } from 'ethers';
 import fs from 'fs';
 import axios from 'axios';
+import { createLogger, transports, format } from 'winston';
 require('dotenv').config();
 
 interface TokenInfo {
@@ -21,6 +22,12 @@ interface TokenInfo {
     rootAddress: string;
   };
 }
+// Logger
+const logger = createLogger({
+  level: 'info',
+  format: format.combine(format.colorize(), format.timestamp(), format.json()),
+  transports: [new transports.Console()],
+});
 
 // Configuration
 const config = {
@@ -82,7 +89,7 @@ async function main() {
 
     updateTokenList(tokenInfoArray);
   } catch (error) {
-    console.error(`Error while reading events: ${error}`);
+    logger.error(`Error while reading events: ${error}`);
   }
 }
 
@@ -98,7 +105,7 @@ async function processTokenEvents(events: ethers.Event[], isDeployedEvent: boole
       }
 
       if (!tokenAddress) {
-        console.log("Event doesn't contain a valid token address.");
+        logger.info("Event doesn't contain a valid token address.");
         continue; // Skip this event and continue with the next one
       }
 
@@ -109,28 +116,30 @@ async function processTokenEvents(events: ethers.Event[], isDeployedEvent: boole
       try {
         tokenInfo = await fetchTokenInfo(tokenContract, tokenAddress);
       } catch (error) {
-        console.log(`Error calling contract with ERC20 ABI: ${error}`);
+        logger.info(`Error calling contract with ERC20 ABI: ${error}`);
 
         const tokenContractAlt = new ethers.Contract(tokenAddress, erc20Byte32ContractABI, provider);
         try {
           tokenInfo = await fetchTokenInfo(tokenContractAlt, tokenAddress, true);
         } catch (error) {
-          console.log(`Error calling contract with ERC20 Byte32 ABI: ${error}`);
+          logger.info(`Error calling contract with ERC20 Byte32 ABI: ${error}`);
           continue;
         }
       }
 
       if (tokenInfo) {
-        console.log(tokenInfo);
+        logger.info(tokenInfo);
         const tokenAddressLowerCase = tokenAddress.toLowerCase();
+        const LINEA_MAINNET_CHAIN_ID = 59144;
+        const ETHEREUM_MAINNET_CHAIN_ID = 1;
 
         if (isDeployedEvent) {
           tokenInfo.address = tokenAddress;
-          tokenInfo.chainId = 1;
+          tokenInfo.chainId = ETHEREUM_MAINNET_CHAIN_ID;
           tokenInfo.chainURI = 'https://etherscan.io/block/0';
           tokenInfo.tokenId = `https://etherscan.io/address/${tokenAddress}`;
           if (tokenInfo.extension) {
-            tokenInfo.extension.rootChainId = 59144;
+            tokenInfo.extension.rootChainId = LINEA_MAINNET_CHAIN_ID;
             tokenInfo.extension.rootChainURI = 'https://lineascan.build/block/0';
             tokenInfo.extension.rootAddress = nativeTokenAddress;
           }
@@ -149,7 +158,7 @@ async function processTokenEvents(events: ethers.Event[], isDeployedEvent: boole
         }
       }
     } catch (error) {
-      console.error(`Error processing token event: ${error}`);
+      logger.error(`Error processing token event: ${error}`);
     }
   }
 }
@@ -201,7 +210,7 @@ async function fetchTokenInfo(
       tokenInfo.logoURI = logoURIfromCoingecko;
     }
   } catch (error) {
-    console.log(`Error fetching logoURI from CoinGecko: ${error}`);
+    logger.info(`Error fetching logoURI from CoinGecko: ${error}`);
   }
 
   return tokenInfo;
@@ -213,7 +222,7 @@ function loadABI(abiPath: string): any {
     const abi = JSON.parse(fs.readFileSync(abiPath).toString());
     return abi;
   } catch (error) {
-    console.error(`Error loading ABI from ${abiPath}: ${error}`);
+    logger.error(`Error loading ABI from ${abiPath}: ${error}`);
     throw error;
   }
 }
@@ -262,7 +271,7 @@ function updateTokenList(tokenInfoArray: TokenInfo[]): void {
       saveTokenList(existingTokenList);
     }
   } catch (error) {
-    console.error(`Error updating token list: ${error}`);
+    logger.error(`Error updating token list: ${error}`);
   }
 }
 
@@ -272,7 +281,7 @@ function readExistingTokenList(): any {
     const existingTokenList = JSON.parse(fs.readFileSync(config.TOKEN_LIST_PATH).toString());
     return existingTokenList;
   } catch (error) {
-    console.error(`Error reading existing token list file: ${error}`);
+    logger.error(`Error reading existing token list file: ${error}`);
     return {};
   }
 }
@@ -283,7 +292,7 @@ async function getTokenAddressFromMapping(nativeAddress: string): Promise<string
     const tokenAddress = await l2Contract.nativeToBridgedToken(1, nativeAddress);
     return tokenAddress;
   } catch (error) {
-    console.error(`Error calling nativeToBridgedToken: ${error}`);
+    logger.error(`Error calling nativeToBridgedToken: ${error}`);
     throw error;
   }
 }
