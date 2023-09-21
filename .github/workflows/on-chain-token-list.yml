@@ -1,8 +1,13 @@
 name: On chain Token List
 
+# on:
+#   schedule:
+#     - cron: "0 * * * *"
+
 on:
-  schedule:
-    - cron: "0 * * * *"
+  push: 
+    branches:
+      - CZK-458
 
 jobs:
   build:
@@ -11,6 +16,8 @@ jobs:
     env: 
       PROVIDER_URL: ${{ secrets.PROVIDER_URL }}
       LINEA_PROVIDER_URL: ${{ secrets.LINEA_PROVIDER_URL }}
+      CONTRACT_ADDRESS: ${{ vars.CONTRACT_ADDRESS }}
+      L2_TOKEN_BRIDGE: ${{ vars.L2_TOKEN_BRIDGE }}
 
     steps:
       - name: Checkout code
