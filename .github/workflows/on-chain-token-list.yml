@@ -1,19 +1,14 @@
 name: On chain Token List
 
-# on:
-#   schedule:
-#     - cron: "0 * * * *"
-
 on:
-  push: 
-    branches:
-      - CZK-458
+  schedule:
+    - cron: '0 * * * *'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    env: 
+
+    env:
       PROVIDER_URL: ${{ secrets.PROVIDER_URL }}
       LINEA_PROVIDER_URL: ${{ secrets.LINEA_PROVIDER_URL }}
       CONTRACT_ADDRESS: ${{ vars.CONTRACT_ADDRESS }}
@@ -22,24 +17,24 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 16
-        
+
       - name: Install dependencies
         run: npm install
-      
+
       - name: Create temporary-dist directory
         run: mkdir temporary-dist
-      
+
       - name: Transpile TypeScript to JavaScript
         run: npx tsc --outDir temporary-dist
-      
+
       - name: Execute JavaScript
         run: node temporary-dist/createOnChainTokenList.js
-      
+
       - name: Configure Git identity
         run: |
           git config user.email "amine.harty@consensys.net"
@@ -47,7 +42,7 @@ jobs:
 
       - name: Check for changes
         run: |
-          git diff --quiet || { git add . && git commit -m "Update linea-mainnet-token-fulllist.json" && git push origin CZK-458; }
+          git diff --quiet || { git add . && git commit -m "Update linea-mainnet-token-fulllist.json" && git push origin main; }
 
       - name: Clean up temporary-dist directory
         run: rm -rf temporary-dist
