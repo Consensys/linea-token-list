@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2023-08-30",
+  "updatedAt": "2023-09-28",
   "versions": [
     {
       "major": 1,
-      "minor": 9,
+      "minor": 10,
       "patch": 0
     }
   ],
@@ -376,13 +376,14 @@
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x80137510979822322193FC997d400D5A6C747bf7",
+      "tokenType": [],
       "address": "0x80137510979822322193FC997d400D5A6C747bf7",
       "name": "Stone Liquidity Ether Token",
       "symbol": "STONE",
       "decimals": 18,
-      "createdAt": "2023-09-26",
-      "updatedAt": "2023-09-26",
-      "logoURI": ""
+      "createdAt": "2023-09-28",
+      "updatedAt": "2023-09-28",
+      "logoURI": "https://static.shieldex.io/assets/imgs/stone/logo_stone.svg"
     },
     {
       "chainId": 59144,
