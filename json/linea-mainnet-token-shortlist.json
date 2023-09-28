@@ -375,9 +375,9 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x80137510979822322193FC997d400D5A6C747bf7",
+      "tokenId": "https://lineascan.build/address/0x93F4d0ab6a8B4271f4a28Db399b5E30612D21116",
       "tokenType": [],
-      "address": "0x80137510979822322193FC997d400D5A6C747bf7",
+      "address": "0x93F4d0ab6a8B4271f4a28Db399b5E30612D21116",
       "name": "Stone Liquidity Ether Token",
       "symbol": "STONE",
       "decimals": 18,
