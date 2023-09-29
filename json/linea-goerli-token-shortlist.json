@@ -60,7 +60,7 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
-      "tokenId": "https://goerli.lineascan.build/token/0x6F03052743CD99ce1b29265E377e320CD24Eb632",
+      "tokenId": "https://goerli.lineascan.build/token/0x76292f4799f692C4d3C3a09F44982D4229A0d04B",
       "tokenType": [
         "bridged"
       ],
@@ -115,7 +115,7 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
-      "tokenId": "https://goerli.lineascan.build/token/0x7823e8dcc8bfc23ea3ac899eb86921f90e80f499",
+      "tokenId": "https://goerli.lineascan.build/token/0x0a981c2EBE4395562B4EE29FeBd137F2f843b115",
       "tokenType": [
         "bridged"
       ],
@@ -155,7 +155,7 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
-      "tokenId": "https://goerli.lineascan.build/token/0x1990BC6dfe2ef605Bfc08f5A23564dB75642Ad73",
+      "tokenId": "https://goerli.lineascan.build/token/0x43a4f69Fa1d2d69397393F6A4Deca9fA05714Af9",
       "tokenType": [
         "bridged"
       ],
