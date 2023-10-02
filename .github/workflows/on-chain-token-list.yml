@@ -39,10 +39,13 @@ jobs:
         run: |
           git config user.email "amine.harty@consensys.net"
           git config user.name "Amine Harty"
+      
+      - name: Pull latest changes from remote
+        run: git pull origin main
 
       - name: Check for changes
         run: |
-          git diff --quiet || { git add . && git commit -m "Update linea-mainnet-token-fulllist.json" && git push origin main; }
+          git diff --quiet || { git add . && git commit -m "Update linea-mainnet-token-fulllist.json" && git push -f origin main; }
 
       - name: Clean up temporary-dist directory
         run: rm -rf temporary-dist
