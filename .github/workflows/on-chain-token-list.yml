@@ -39,8 +39,6 @@ jobs:
       - name: Check for changes
         run: |
           if [[ -n $(git diff --exit-code) ]]; then
-            git config user.email "actions@github.com"
-            git config user.name "GitHub Actions"
             echo "Changes detected. Creating a Pull Request."
           else
             echo "No changes detected. Skipping pull request creation."
@@ -49,7 +47,11 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          branch: production-promotion
+          token: ${{ secrets.GITHUB_TOKEN }}
+          committer: GitHub <noreply@github.com>
+          delete-branch: true
+          title: 'Update linea-mainnet-token-fulllist.json'
+          branch: token-automatic-list
 
       - name: Clean up temporary-dist directory
         run: rm -rf temporary-dist

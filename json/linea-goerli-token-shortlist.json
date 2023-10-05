@@ -16,9 +16,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0xD2340c4ec834bf43c05B9EcCd60EeD3a20892Dcc",
-      "tokenType": [
-        "native"
-      ],
+      "tokenType": ["native"],
       "address": "0xD2340c4ec834bf43c05B9EcCd60EeD3a20892Dcc",
       "name": "APE",
       "symbol": "APE",
@@ -31,9 +29,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0x5471ea8f739dd37E9B81Be9c5c77754D8AA953E4",
-      "tokenType": [
-        "native"
-      ],
+      "tokenType": ["native"],
       "address": "0x5471ea8f739dd37E9B81Be9c5c77754D8AA953E4",
       "name": "BNB",
       "symbol": "BNB",
@@ -46,9 +42,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0xeEfF322f4590A1A84BB3486d4BA0038669A811aD",
-      "tokenType": [
-        "native"
-      ],
+      "tokenType": ["native"],
       "address": "0xeEfF322f4590A1A84BB3486d4BA0038669A811aD",
       "name": "DOGE",
       "symbol": "DOGE",
@@ -61,9 +55,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0x76292f4799f692C4d3C3a09F44982D4229A0d04B",
-      "tokenType": [
-        "bridged"
-      ],
+      "tokenType": ["bridged"],
       "address": "0x76292f4799f692C4d3C3a09F44982D4229A0d04B",
       "name": "HOP",
       "symbol": "HOP",
@@ -81,9 +73,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0xcAA61BCAe7D37Fe9C33c0D8671448254eef44D63",
-      "tokenType": [
-        "native"
-      ],
+      "tokenType": ["native"],
       "address": "0xcAA61BCAe7D37Fe9C33c0D8671448254eef44D63",
       "name": "Matic",
       "symbol": "MATIC",
@@ -96,9 +86,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0xD14754f4db08D19b5def26D33B94bdb5c3084c8a",
-      "tokenType": [
-        "bridged"
-      ],
+      "tokenType": ["bridged"],
       "address": "0xD14754f4db08D19b5def26D33B94bdb5c3084c8a",
       "name": "Meta Apes Peel",
       "symbol": "PEEL",
@@ -116,9 +104,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0x0a981c2EBE4395562B4EE29FeBd137F2f843b115",
-      "tokenType": [
-        "bridged"
-      ],
+      "tokenType": ["bridged"],
       "address": "0x0a981c2EBE4395562B4EE29FeBd137F2f843b115",
       "name": "Uniswap",
       "symbol": "UNI",
@@ -136,9 +122,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0xB4257F31750961C8e536f5cfCBb3079437700416",
-      "tokenType": [
-        "bridged"
-      ],
+      "tokenType": ["bridged"],
       "address": "0xB4257F31750961C8e536f5cfCBb3079437700416",
       "name": "USD Coin",
       "symbol": "USDC",
@@ -156,9 +140,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0x43a4f69Fa1d2d69397393F6A4Deca9fA05714Af9",
-      "tokenType": [
-        "bridged"
-      ],
+      "tokenType": ["bridged"],
       "address": "0x43a4f69Fa1d2d69397393F6A4Deca9fA05714Af9",
       "name": "USD Tether",
       "symbol": "USDT",
@@ -176,9 +158,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0xDbcd5BafBAA8c1B326f14EC0c8B125DB57A5cC4c",
-      "tokenType": [
-        "native"
-      ],
+      "tokenType": ["native"],
       "address": "0xDbcd5BafBAA8c1B326f14EC0c8B125DB57A5cC4c",
       "name": "Wrapped Bitcoin",
       "symbol": "WBTC",
@@ -191,9 +171,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0x2C1b868d6596a18e32E61B901E4060C872647b6C",
-      "tokenType": [
-        "native"
-      ],
+      "tokenType": ["native"],
       "address": "0x2C1b868d6596a18e32E61B901E4060C872647b6C",
       "name": "Wrapped Ethereum",
       "symbol": "WETH",
