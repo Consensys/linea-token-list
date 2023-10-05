@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 12,
+      "minor": 13,
       "patch": 0
     }
   ],
@@ -557,6 +557,44 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io",
         "rootAddress": "0xE95A203B1a91a908F9B9CE46459d101078c2c3cb"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x536e731a8Ae166173D8875Ad55567B00F264b7b4",
+      "tokenType": [
+        "bridged"
+      ],
+      "address": "0x536e731a8Ae166173D8875Ad55567B00F264b7b4",
+      "name": "SIDUS",
+      "symbol": "SIDUS",
+      "decimals": 18,
+      "createdAt": "2023-10-05",
+      "updatedAt": "2023-10-05",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io",
+        "rootAddress": "0x549020a9Cb845220D66d3E9c6D9F9eF61C981102"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x6729659F4D81DdbD6Ac48ddDA9C5D62c01081B5D",
+      "tokenType": [
+        "bridged"
+      ],
+      "address": "0x6729659F4D81DdbD6Ac48ddDA9C5D62c01081B5D",
+      "name": "Velocore LP: SCM + ETH",
+      "symbol": "SCM-ETH-VLP",
+      "decimals": 18,
+      "createdAt": "2023-10-05",
+      "updatedAt": "2023-10-05",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0xd4e9b2e8d6B360980A3a75a3C69B3C3040a89008"
       }
     }
   ]
