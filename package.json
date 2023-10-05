@@ -4,7 +4,7 @@
   "main": "index.js",
   "repository": "git@github.com:ConsenSys/linea-token-list.git",
   "author": "wantedsystem <amine.harty@consensys.net>",
-  "license": "",
+  "license": "MIT",
   "scripts": {
     "prettify": "prettier --config .prettierrc --write 'json/linea-goerli-token-shortlist.json'",
     "precommit": "yarn prettify",
