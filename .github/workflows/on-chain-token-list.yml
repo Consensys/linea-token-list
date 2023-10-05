@@ -1,8 +1,9 @@
 name: On chain Token List
 
 on:
-  schedule:
-    - cron: '0 * * * *'
+  push:
+    branches:
+      - feat/main
 
 jobs:
   build:
@@ -11,8 +12,8 @@ jobs:
     env:
       PROVIDER_URL: ${{ secrets.PROVIDER_URL }}
       LINEA_PROVIDER_URL: ${{ secrets.LINEA_PROVIDER_URL }}
-      CONTRACT_ADDRESS: ${{ vars.CONTRACT_ADDRESS }}
-      L2_TOKEN_BRIDGE: ${{ vars.L2_TOKEN_BRIDGE }}
+      CONTRACT_ADDRESS: ${{ secrets.CONTRACT_ADDRESS }}
+      L2_TOKEN_BRIDGE: ${{ secrets.L2_TOKEN_BRIDGE }}
 
     steps:
       - name: Checkout code
@@ -35,17 +36,20 @@ jobs:
       - name: Execute JavaScript
         run: node temporary-dist/createOnChainTokenList.js
 
-      - name: Configure Git identity
-        run: |
-          git config user.email "amine.harty@consensys.net"
-          git config user.name "Amine Harty"
-      
-      - name: Pull latest changes from remote
-        run: git pull origin main
-
       - name: Check for changes
         run: |
-          git diff --quiet || { git add . && git commit -m "Update linea-mainnet-token-fulllist.json" && git push -f origin main; }
+          if [[ -n $(git diff --exit-code) ]]; then
+            git config user.email "actions@github.com"
+            git config user.name "GitHub Actions"
+            echo "Changes detected. Creating a Pull Request."
+          else
+            echo "No changes detected. Skipping pull request creation."
+            exit 0
+          fi
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: production-promotion
 
       - name: Clean up temporary-dist directory
         run: rm -rf temporary-dist
