@@ -57,10 +57,11 @@ jobs:
       - name: Pull Request Automerge
         id: merge-pr
         if: steps.create-pr.outputs.pull-request-operation == 'created'
-        run: |
-          gh pr merge --merge --auto "1"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
+            merge-method: squash
 
       - name: Delete Pull Request Branch
         if: steps.merge-pr.outputs.pull-request-number == ${{ steps.create-pr.outputs.pull-request-number }}
