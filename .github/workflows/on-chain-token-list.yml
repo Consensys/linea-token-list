@@ -52,15 +52,19 @@ jobs:
           committer: GitHub <noreply@github.com>
           delete-branch: true
           title: 'Update linea-mainnet-token-fulllist.json'
-          branch: token-automatic-list-test
+          branch: token-automatic-list
 
       - name: Pull Request Automerge
         if: steps.create-pr.outputs.pull-request-operation == 'created'
-        uses: peter-evans/enable-pull-request-automerge@v3
-        with:
-            token: ${{ secrets.GITHUB_TOKEN }}
-            pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
-            merge-method: squash
+        run: |
+            gh pr merge --merge --auto "1"
+        env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete Pull Request Branch
+        if: steps.create-pr.outputs.pull-request-operation == 'created'
+        run: |
+              git push origin --delete token-automatic-list
 
       - name: Clean up temporary-dist directory
         run: rm -rf temporary-dist
