@@ -33,17 +33,17 @@ jobs:
       - name: Transpile TypeScript to JavaScript
         run: npx tsc --outDir temporary-dist
 
-      - name: Execute JavaScript
-        run: node temporary-dist/createOnChainTokenList.js
-
       - name: Check for changes
+        id: check-changes
         run: |
           if [[ -n $(git diff --exit-code) ]]; then
-            echo "Changes detected. Creating a Pull Request."
+            echo "Changes detected."
+            echo "::set-output name=changes::true"
           else
-            echo "No changes detected. Skipping pull request creation."
-            exit 0
+            echo "No changes detected."
+            echo "::set-output name=changes::false"
           fi
+
       - name: Create Pull Request
         id: create-pr
         uses: peter-evans/create-pull-request@v5
@@ -53,18 +53,19 @@ jobs:
           delete-branch: true
           title: 'Update linea-mainnet-token-fulllist.json'
           branch: token-automatic-list
+        if: steps.check-changes.outputs.changes == 'true'
 
       - name: Pull Request Automerge
         id: merge-pr
-        if: steps.create-pr.outputs.pull-request-operation == 'created'
+        if: steps.check-changes.outputs.changes == 'true' && steps.create-pr.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
-            token: ${{ secrets.GITHUB_TOKEN }}
-            pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
-            merge-method: squash
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
+          merge-method: squash
 
       - name: Delete Pull Request Branch
-        if: steps.merge-pr.outputs.pull-request-number == ${{ steps.create-pr.outputs.pull-request-number }}
+        if: steps.check-changes.outputs.changes == 'true' && steps.merge-pr.outputs.pull-request-number == ${{ steps.create-pr.outputs.pull-request-number }}
         run: |
           git push origin --delete token-automatic-list
 
