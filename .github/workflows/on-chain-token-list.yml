@@ -33,19 +33,22 @@ jobs:
       - name: Transpile TypeScript to JavaScript
         run: npx tsc --outDir temporary-dist
 
+      - name: Execute JavaScript
+        run: node temporary-dist/createOnChainTokenList.js
+
       - name: Check for changes
-        id: check-changes
+        id: check-for-changes
         run: |
           if [[ -n $(git diff --exit-code) ]]; then
-            echo "Changes detected."
-            echo "::set-output name=changes::true"
+            echo "Changes detected. Creating a Pull Request."
           else
-            echo "No changes detected."
-            echo "::set-output name=changes::false"
+            echo "No changes detected. Skipping pull request creation."
+            exit 0
           fi
 
       - name: Create Pull Request
         id: create-pr
+        if: steps.check-for-changes.status == 'success'
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -53,19 +56,18 @@ jobs:
           delete-branch: true
           title: 'Update linea-mainnet-token-fulllist.json'
           branch: token-automatic-list
-        if: steps.check-changes.outputs.changes == 'true'
 
       - name: Pull Request Automerge
         id: merge-pr
-        if: steps.check-changes.outputs.changes == 'true' && steps.create-pr.outputs.pull-request-operation == 'created'
+        if: steps.check-for-changes.status == 'success' && steps.create-pr.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
-          merge-method: squash
+            token: ${{ secrets.GITHUB_TOKEN }}
+            pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
+            merge-method: squash
 
       - name: Delete Pull Request Branch
-        if: steps.check-changes.outputs.changes == 'true' && steps.merge-pr.outputs.pull-request-number == ${{ steps.create-pr.outputs.pull-request-number }}
+        if: steps.check-for-changes.status == 'success' && steps.merge-pr.outputs.pull-request-number == ${{ steps.create-pr.outputs.pull-request-number }}
         run: |
           git push origin --delete token-automatic-list
 
