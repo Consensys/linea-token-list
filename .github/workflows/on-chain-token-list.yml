@@ -2,10 +2,11 @@ name: On chain Token List
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: "0 * * * *"
 
 jobs:
   build:
+    if: github.repository == 'Consensys/linea-token-list'
     runs-on: ubuntu-latest
 
     env:
@@ -36,6 +37,7 @@ jobs:
         run: node temporary-dist/createOnChainTokenList.js
 
       - name: Check for changes
+        id: check-for-changes
         run: |
           if [[ -n $(git diff --exit-code) ]]; then
             echo "Changes detected. Creating a Pull Request."
@@ -43,29 +45,36 @@ jobs:
             echo "No changes detected. Skipping pull request creation."
             exit 0
           fi
+
       - name: Create Pull Request
         id: create-pr
+        if: steps.check-for-changes.status == 'success'
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           committer: GitHub <noreply@github.com>
           delete-branch: true
-          title: 'Update linea-mainnet-token-fulllist.json'
+          title: "Update linea-mainnet-token-fulllist.json"
           branch: token-automatic-list
 
       - name: Pull Request Automerge
         id: merge-pr
-        if: steps.create-pr.outputs.pull-request-operation == 'created'
+        if: steps.check-for-changes.status == 'success' && steps.create-pr.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
-            token: ${{ secrets.GITHUB_TOKEN }}
-            pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
-            merge-method: squash
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
+          merge-method: squash
 
       - name: Delete Pull Request Branch
-        if: steps.merge-pr.outputs.pull-request-number == ${{ steps.create-pr.outputs.pull-request-number }}
+        if: steps.check-for-changes.status == 'success' && steps.merge-pr.outputs.pull-request-number == ${{ steps.create-pr.outputs.pull-request-number }}
         run: |
-          git push origin --delete token-automatic-list
+          if git show-ref --verify --quiet "refs/heads/token-automatic-list"; then
+            echo "Branch 'token-automatic-list' exists. Deleting..."
+            git push origin --delete token-automatic-list
+          else
+            echo "Branch 'token-automatic-list' does not exist."
+          fi
 
       - name: Clean up temporary-dist directory
         run: rm -rf temporary-dist
