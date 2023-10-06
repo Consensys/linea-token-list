@@ -69,8 +69,12 @@ jobs:
       - name: Delete Pull Request Branch
         if: steps.check-for-changes.status == 'success' && steps.merge-pr.outputs.pull-request-number == ${{ steps.create-pr.outputs.pull-request-number }}
         run: |
-          git push origin --delete token-automatic-list
-        continue-on-error: true
+          if git show-ref --verify --quiet "refs/heads/token-automatic-list"; then
+            echo "Branch 'token-automatic-list' exists. Deleting..."
+            git push origin --delete token-automatic-list
+          else
+            echo "Branch 'token-automatic-list' does not exist."
+          fi
 
       - name: Clean up temporary-dist directory
         run: rm -rf temporary-dist
