@@ -1,9 +1,8 @@
 name: On chain Token List
 
 on:
-  push:
-    branches:
-      - feat/main
+  schedule:
+    - cron: '0 * * * *'
 
 jobs:
   build:
