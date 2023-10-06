@@ -39,6 +39,7 @@ const config = {
   ERC20_ABI_PATH: 'scripts/abi/ERC20-abi.json',
   ERC20_BYTE32_ABI_PATH: 'scripts/abi/ERC20-byte32-abi.json',
   TOKEN_LIST_PATH: 'json/linea-mainnet-token-fulllist.json',
+  TOKEN_SHORT_LIST_PATH: 'json/linea-mainnet-token-shortlist.json',
 };
 
 // Providers
@@ -63,7 +64,10 @@ const tokenInfoArray: TokenInfo[] = [];
 const uniqueTokenAddresses = new Set<string>();
 
 // Read existing token list
-const existingTokenList = readExistingTokenList();
+const existingTokenList = readJsonFile(config.TOKEN_LIST_PATH);
+
+// Read the short token list
+const tokenShortList = readJsonFile(config.TOKEN_SHORT_LIST_PATH);
 
 if (!existingTokenList.tokens) {
   existingTokenList.tokens = [];
@@ -71,10 +75,9 @@ if (!existingTokenList.tokens) {
 
 // Add existing tokens to the set
 for (const token of existingTokenList.tokens) {
-  if (token.chainId === 59144) {
-    uniqueTokenAddresses.add(ethers.utils.getAddress(token.extension?.rootAddress));
-  } else if (token.chainId === 1) {
-    uniqueTokenAddresses.add(ethers.utils.getAddress(token.address));
+  uniqueTokenAddresses.add(ethers.utils.getAddress(token.address));
+  if (token.extension?.rootAddress) {
+    uniqueTokenAddresses.add(ethers.utils.getAddress(token.extension.rootAddress));
   }
 }
 
@@ -86,6 +89,9 @@ async function main() {
 
     await processTokenEvents(newTokenEvents);
     await processTokenEvents(newTokenDeployedEvents, true);
+
+    // Integrate potential new tokens from short list
+    processTokenShortList();
 
     updateTokenList(tokenInfoArray);
   } catch (error) {
@@ -135,6 +141,17 @@ async function processTokenEvents(events: ethers.Event[], isDeployedEvent: boole
     } catch (error) {
       logger.error(`Error processing token event: ${error}`);
       throw error;
+    }
+  }
+}
+
+function processTokenShortList() {
+  for (const token of tokenShortList.tokens) {
+    const tokenAddress = ethers.utils.getAddress(token.address);
+
+    if (tokenAddress && !uniqueTokenAddresses.has(tokenAddress)) {
+      uniqueTokenAddresses.add(tokenAddress);
+      tokenInfoArray.push(token);
     }
   }
 }
@@ -246,7 +263,7 @@ function getCurrentDate(): string {
 // Update token list
 function updateTokenList(tokenInfoArray: TokenInfo[]): void {
   try {
-    const existingTokenList = readExistingTokenList();
+    const existingTokenList = readJsonFile(config.TOKEN_LIST_PATH);
 
     if (!existingTokenList.tokens) {
       existingTokenList.tokens = [];
@@ -255,23 +272,26 @@ function updateTokenList(tokenInfoArray: TokenInfo[]): void {
     const existingTokenAddresses = new Set<string>();
 
     for (const token of existingTokenList.tokens) {
-      if (token.chainId === 59144) {
-        existingTokenAddresses.add(ethers.utils.getAddress(token.extension?.rootAddress));
-      } else if (token.chainId === 1) {
-        existingTokenAddresses.add(ethers.utils.getAddress(token.address));
+      existingTokenAddresses.add(ethers.utils.getAddress(token.address));
+      if (token.extension?.rootAddress) {
+        existingTokenAddresses.add(ethers.utils.getAddress(token.extension.rootAddress));
       }
     }
 
     // Filter out tokens that are already in the existing token list
-
     const newTokens = tokenInfoArray.filter((info) => {
-      const addressLowerCase = ethers.utils.getAddress(info.extension?.rootAddress!);
+      const addressLowerCase = info.extension?.rootAddress
+        ? ethers.utils.getAddress(info.extension.rootAddress)
+        : ethers.utils.getAddress(info.address);
       return addressLowerCase && !existingTokenAddresses.has(addressLowerCase);
     });
 
     // Check if there are new tokens to add
     if (newTokens.length > 0) {
       existingTokenList.tokens = [...existingTokenList.tokens, ...newTokens];
+      existingTokenList.tokens.sort((a: any, b: any) => {
+        return a.name.localeCompare(b.name);
+      });
       existingTokenList.updatedAt = getCurrentDate();
       const versions = existingTokenList.versions[0];
       versions.minor += 1; // Increment the minor version
@@ -283,10 +303,10 @@ function updateTokenList(tokenInfoArray: TokenInfo[]): void {
   }
 }
 
-// Read existing token list
-function readExistingTokenList(): any {
+// Read and parse a json file
+function readJsonFile(filePath: string): any {
   try {
-    const existingTokenList = JSON.parse(fs.readFileSync(config.TOKEN_LIST_PATH).toString());
+    const existingTokenList = JSON.parse(fs.readFileSync(filePath).toString());
     return existingTokenList;
   } catch (error) {
     logger.error(`Error reading existing token list file: ${error}`);
