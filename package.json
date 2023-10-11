@@ -4,6 +4,7 @@
   "repository": "git@github.com:ConsenSys/linea-token-list.git",
   "author": "ConsenSys",
   "license": "MIT",
+  "homepage": "https://ConsenSys.github.io/linea-token-list/",
   "scripts": {
     "prettify": "prettier --config .prettierrc --write 'json/linea-goerli-token-shortlist.json'",
     "precommit": "npm run prettify",
