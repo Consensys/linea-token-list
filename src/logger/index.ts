@@ -1,5 +1,5 @@
 import { createLogger, format, transports } from 'winston';
-import { name } from '../../package.json';
+import { name } from 'root/package.json';
 
 const isDevMode = process.env.NODE_ENV === 'development';
 

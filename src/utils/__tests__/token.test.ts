@@ -2,7 +2,7 @@ import { config } from 'src/config';
 import { Token } from 'src/models/token';
 
 import { Contract, utils, Event } from 'ethers';
-import { checkTokenExists, fetchTokenInfo, getEventTokenAddresses } from '../token';
+import { checkTokenExists, fetchTokenInfo, getEventTokenAddresses } from 'src/utils/token';
 
 jest.mock('ethers');
 jest.mock('src/config');

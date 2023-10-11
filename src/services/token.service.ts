@@ -1,14 +1,14 @@
 import { Contract, ContractInterface, Event, utils, providers } from 'ethers';
 import _ from 'lodash';
-import { LineaTokenList, Token } from '../models/token';
-import { loadABI } from '../utils/abi';
-import { config } from '../config';
-import { logger } from '../logger';
-import { checkTokenExists, fetchTokenInfo, getEventTokenAddresses } from '../utils/token';
-import { getCurrentDate } from '../utils/date';
-import { saveJsonFile } from '../utils/file';
-import { getBumpedVersions, sortAlphabetically } from '../utils/list';
-import { fetchLogoURI } from '../utils/coinGecko';
+import { LineaTokenList, Token } from 'src/models/token';
+import { loadABI } from 'src/utils/abi';
+import { config } from 'src/config';
+import { logger } from 'src/logger';
+import { checkTokenExists, fetchTokenInfo, getEventTokenAddresses } from 'src/utils/token';
+import { getCurrentDate } from 'src/utils/date';
+import { saveJsonFile } from 'src/utils/file';
+import { getBumpedVersions, sortAlphabetically } from 'src/utils/list';
+import { fetchLogoURI } from 'src/utils/coinGecko';
 
 export class TokenService {
   private tokenList: Token[] = [];
