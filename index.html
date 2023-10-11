@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Tailwind CSS and DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.13.0/dist/full.css" rel="stylesheet">
+    <title>Linea Token Lists</title>
+    <link rel="stylesheet" href="public/style.css">
+</head>
+<body class="bg-black">
+    <header class="shadow-sm pb-6">
+        <div class="mx-auto flex justify-between items-center">
+            <a href="/" class="flex items-center">
+                <img src="public/images/linea.svg" alt="Linea" class="h-8 w-auto">
+            </a>
+            <a href="https://github.com/consenSys/linea-token-list" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black">
+                <img src="public/images/github-mark-white.svg" alt="GitHub" class="h-8 w-auto">
+            </a>
+        </div>
+    </header>
+
+    <div>
+        <h1 class="text-2xl px-4">Linea Mainnet Token Short List</h1>
+        <section id="mainnetShortList" class="flex flex-wrap justify-start">
+            <div id="mainnetShortList"></div>
+        </section>
+    </div>
+    <div>
+        <h1 class="text-2xl px-4">Linea Mainnet Token Full List</h1>
+        <section id="mainnetFullList" class="flex flex-wrap justify-start">
+            <div id="mainnetFullList"></div>
+        </section>
+    </div>
+
+    <script src="public/script.js"></script>
+</body>
+</html>

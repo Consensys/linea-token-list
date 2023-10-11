@@ -1,0 +1,47 @@
+sequenceDiagram
+box rgb(191, 223, 255) GitHub
+participant GitHub Action
+participant GitHub new branch
+participant GitHub main
+end
+
+    loop Every hour
+        GitHub Action->>Script: execute syncMainnetFulllist.ts
+
+        Script->>+GitHub main: Get fulllist.json
+        GitHub main-->>-Script: Fulllist retrieved
+
+        Script->>+Ethereum: Get NewToken events
+        Ethereum-->>-Script: NewToken events retrieved
+
+        Script->>+Ethereum: Get NewTokenDeployed events
+        Ethereum-->>-Script: NewTokenDeployed events retrieved
+
+        loop Every events
+        Script->>Script: Check if token exists
+
+        Script->>+Ethereum: Get token properties
+        Ethereum-->>-Script: Token properties retrieved
+
+    			Script->>+Linea: Get token address from mapping
+        Linea-->>-Script: Token properties retrieved
+
+        Script->>+Coingecko: Get image link
+        Coingecko-->>-Script: Image link retrieved
+
+        Script->>Script: add "canonical-bridge" token
+        end
+
+        Script->>+GitHub main: Get shorlist.json
+        GitHub main-->>-Script: Retrieve shortlist
+        Script->>Script: merge shortlist
+
+        Script->>+GitHub new branch: Create PR
+        GitHub new branch-->>-Script: PR created
+        Script->>+GitHub new branch: Validate PR
+        GitHub new branch->>GitHub main: Merge PR
+        GitHub new branch->>-Script: PR merged
+
+        Script-->>GitHub Action: syncMainnetFulllist.ts terminated
+
+    end
