@@ -22,7 +22,7 @@ export class TokenService {
 
   constructor(
     private l1Provider: providers.JsonRpcProvider,
-    private lineaProvider: providers.JsonRpcProvider,
+    private l2Provider: providers.JsonRpcProvider,
     private existingTokenList: LineaTokenList
   ) {
     // Load contract ABIs
@@ -32,7 +32,7 @@ export class TokenService {
 
     // Instantiate contracts
     this.l1Contract = new Contract(config.CONTRACT_ADDRESS, contractABI, l1Provider);
-    this.l2Contract = new Contract(config.L2_CONTRACT_ADDRESS, contractABI, lineaProvider);
+    this.l2Contract = new Contract(config.L2_CONTRACT_ADDRESS, contractABI, l2Provider);
   }
 
   /**
