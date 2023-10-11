@@ -40,7 +40,7 @@ export const fetchLogoURI = async (tokenInfo: Token): Promise<string | null> => 
  * @param tokenAddress The address of the token being fetched.
  * @param baseURL The base URL being used to fetch.
  */
-const handleFetchingError = (error: any, tokenAddress: string, baseURL: string) => {
+const handleFetchingError = (error: any, tokenAddress: string, baseURL: string): void => {
   if (axios.isAxiosError(error)) {
     const { status, data } = error.response || {};
     if (status === 429) {

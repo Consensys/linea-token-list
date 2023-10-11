@@ -35,7 +35,7 @@ export class TokenService {
   /**
    * Processes the token events
    */
-  async processTokenEvents() {
+  async processTokenEvents(): Promise<void> {
     const newTokenEventFilter = this.l1Contract.filters.NewToken();
     const newTokenDeployedEventFilter = this.l1Contract.filters.NewTokenDeployed();
     const newTokenEvents = await this.l1Contract.queryFilter(newTokenEventFilter);
@@ -61,7 +61,7 @@ export class TokenService {
    * @param event
    * @returns
    */
-  async getContractWithRetry(erc20Address: string, event: Event) {
+  async getContractWithRetry(erc20Address: string, event: Event): Promise<Token | undefined> {
     try {
       const erc20Contract = new Contract(erc20Address, this.erc20ContractABI, this.l1Provider);
       return await fetchTokenInfo(erc20Contract, event.event);
@@ -82,7 +82,7 @@ export class TokenService {
    * @param event
    * @returns
    */
-  async processTokenEvent(event: Event) {
+  async processTokenEvent(event: Event): Promise<Token | undefined> {
     const { tokenAddress, nativeTokenAddress } = getEventTokenAddresses(event);
     const tokenExists = checkTokenExists(this.existingTokenList.tokens, tokenAddress);
     if (tokenExists) {
@@ -109,7 +109,12 @@ export class TokenService {
    * @param nativeTokenAddress
    * @returns
    */
-  async updateTokenInfo(token: Token, event: Event, tokenAddress: string, nativeTokenAddress: string | undefined) {
+  async updateTokenInfo(
+    token: Token,
+    event: Event,
+    tokenAddress: string,
+    nativeTokenAddress: string | undefined
+  ): Promise<Token> {
     if (event.event === 'NewTokenDeployed') {
       token.address = tokenAddress;
       token.chainId = config.ETHEREUM_MAINNET_CHAIN_ID;
@@ -132,7 +137,7 @@ export class TokenService {
    * @param token
    * @returns
    */
-  async fetchAndAssignTokenLogo(token: Token) {
+  async fetchAndAssignTokenLogo(token: Token): Promise<Token | undefined> {
     try {
       const logoURIfromCoinGecko = await fetchLogoURI(token);
       if (logoURIfromCoinGecko) {
@@ -165,8 +170,9 @@ export class TokenService {
 
   /**
    * Adds tokens from the token short list to the token list
+   * @param tokenShortList
    */
-  concatTokenShortList(tokenShortList: LineaTokenList) {
+  concatTokenShortList(tokenShortList: LineaTokenList): void {
     for (const newToken of tokenShortList.tokens) {
       const tokenAddress = utils.getAddress(newToken.address);
       // Find the index of the existing token in the list
@@ -186,9 +192,8 @@ export class TokenService {
 
   /**
    * Sorts the token list alphabetically and saves it to the token list file
-   * @returns
    */
-  exportTokenList() {
+  exportTokenList(): void {
     this.tokenList = sortAlphabetically(this.tokenList);
 
     if (_.isEqual(this.existingTokenList.tokens, this.tokenList)) {
