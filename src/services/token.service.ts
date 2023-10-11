@@ -10,6 +10,9 @@ import { saveJsonFile } from 'src/utils/file';
 import { getBumpedVersions, sortAlphabetically } from 'src/utils/list';
 import { fetchLogoURI } from 'src/utils/coinGecko';
 
+/**
+ * Service to discover ERC20 tokens by processing the Canonical Token Bridge events
+ */
 export class TokenService {
   private tokenList: Token[] = [];
   private erc20ContractABI: ContractInterface;
@@ -23,7 +26,7 @@ export class TokenService {
     private existingTokenList: LineaTokenList
   ) {
     // Load contract ABIs
-    const contractABI = loadABI(config.CONTRACT_ABI_PATH);
+    const contractABI = loadABI(config.TOKEN_BRIDGE_ABI_PATH);
     this.erc20ContractABI = loadABI(config.ERC20_ABI_PATH);
     this.erc20Byte32ContractABI = loadABI(config.ERC20_BYTE32_ABI_PATH);
 

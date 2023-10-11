@@ -63,7 +63,7 @@ describe('TokenService', () => {
   });
 
   it('should instantiate contracts with provided ABIs and addresses', () => {
-    expect(loadABI).toHaveBeenCalledWith(config.CONTRACT_ABI_PATH);
+    expect(loadABI).toHaveBeenCalledWith(config.TOKEN_BRIDGE_ABI_PATH);
     expect(loadABI).toHaveBeenCalledWith(config.ERC20_ABI_PATH);
     expect(loadABI).toHaveBeenCalledWith(config.ERC20_BYTE32_ABI_PATH);
     expect(Contract).toHaveBeenCalledWith(config.CONTRACT_ADDRESS, 'mockABI', mockL1Provider);
