@@ -32,8 +32,8 @@ export class TokenService {
     this.erc20Byte32ContractABI = loadABI(config.ERC20_BYTE32_ABI_PATH);
 
     // Instantiate contracts
-    this.l1Contract = new Contract(config.CONTRACT_ADDRESS, contractABI, l1Provider);
-    this.l2Contract = new Contract(config.L2_CONTRACT_ADDRESS, contractABI, l2Provider);
+    this.l1Contract = new Contract(config.L1_TOKEN_BRIDGE_ADDRESS, contractABI, l1Provider);
+    this.l2Contract = new Contract(config.L2_TOKEN_BRIDGE_ADDRESS, contractABI, l2Provider);
   }
 
   /**

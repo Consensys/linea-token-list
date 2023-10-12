@@ -1,8 +1,8 @@
 export type Config = {
-  PROVIDER_URL: string;
-  LINEA_PROVIDER_URL: string;
-  CONTRACT_ADDRESS: string;
-  L2_CONTRACT_ADDRESS: string;
+  L1_PROVIDER_URL: string;
+  L2_PROVIDER_URL: string;
+  L1_TOKEN_BRIDGE_ADDRESS: string;
+  L2_TOKEN_BRIDGE_ADDRESS: string;
   TOKEN_BRIDGE_ABI_PATH: string;
   ERC20_ABI_PATH: string;
   ERC20_BYTE32_ABI_PATH: string;

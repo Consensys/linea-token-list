@@ -1,10 +1,10 @@
 import Joi from 'joi';
 
 export const configSchema = Joi.object({
-  PROVIDER_URL: Joi.string().required().min(1).message('PROVIDER_URL cannot be empty.'),
-  LINEA_PROVIDER_URL: Joi.string().required().min(1).message('LINEA_PROVIDER_URL cannot be empty.'),
-  CONTRACT_ADDRESS: Joi.string().required().min(1).message('CONTRACT_ADDRESS cannot be empty.'),
-  L2_CONTRACT_ADDRESS: Joi.string().required().min(1).message('L2_CONTRACT_ADDRESS cannot be empty.'),
+  L1_PROVIDER_URL: Joi.string().required().min(1).message('PROVIDER_URL cannot be empty.'),
+  L2_PROVIDER_URL: Joi.string().required().min(1).message('LINEA_PROVIDER_URL cannot be empty.'),
+  L1_TOKEN_BRIDGE_ADDRESS: Joi.string().required().min(1).message('CONTRACT_ADDRESS cannot be empty.'),
+  L2_TOKEN_BRIDGE_ADDRESS: Joi.string().required().min(1).message('L2_CONTRACT_ADDRESS cannot be empty.'),
 
   TOKEN_BRIDGE_ABI_PATH: Joi.string().default('src/abis/token-bridge.abi.json'),
   ERC20_ABI_PATH: Joi.string().default('src/abis/ERC20.abi.json'),

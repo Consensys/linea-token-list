@@ -3,10 +3,10 @@ import { Config } from 'src/models/config';
 require('dotenv').config();
 
 export const config: Config = {
-  PROVIDER_URL: process.env.PROVIDER_URL || '',
-  LINEA_PROVIDER_URL: process.env.LINEA_PROVIDER_URL || '',
-  CONTRACT_ADDRESS: process.env.CONTRACT_ADDRESS || '',
-  L2_CONTRACT_ADDRESS: process.env.L2_CONTRACT_ADDRESS || '',
+  L1_PROVIDER_URL: process.env.PROVIDER_URL || '',
+  L2_PROVIDER_URL: process.env.LINEA_PROVIDER_URL || '',
+  L1_TOKEN_BRIDGE_ADDRESS: process.env.CONTRACT_ADDRESS || '',
+  L2_TOKEN_BRIDGE_ADDRESS: process.env.L2_CONTRACT_ADDRESS || '',
   TOKEN_BRIDGE_ABI_PATH: 'src/abis/token-bridge.abi.json',
   ERC20_ABI_PATH: 'src/abis/ERC20.abi.json',
   ERC20_BYTE32_ABI_PATH: 'src/abis/ERC20-byte32.abi.json',

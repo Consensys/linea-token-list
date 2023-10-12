@@ -4,7 +4,6 @@ import { config } from 'src/config';
 import { logger } from 'src/logger';
 import { readJsonFile } from 'src/utils/file';
 import { TokenService } from 'src/services/token.service';
-import { configSchema } from 'src/config/config.schema';
 import { validateConfig } from 'src/utils/validation';
 
 async function main() {
@@ -12,8 +11,8 @@ async function main() {
     logger.info('Starting check mainnet shortlist');
     validateConfig(config);
 
-    const provider = new ethers.providers.JsonRpcProvider(config.PROVIDER_URL);
-    const lineaProvider = new ethers.providers.JsonRpcProvider(config.LINEA_PROVIDER_URL);
+    const provider = new ethers.providers.JsonRpcProvider(config.L1_PROVIDER_URL);
+    const lineaProvider = new ethers.providers.JsonRpcProvider(config.L2_PROVIDER_URL);
     const tokenShortList = readJsonFile(config.TOKEN_SHORT_LIST_PATH);
     const existingTokenList = readJsonFile(config.TOKEN_LIST_PATH);
 
