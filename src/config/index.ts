@@ -10,7 +10,7 @@ export const config: Config = {
   TOKEN_BRIDGE_ABI_PATH: 'src/abis/token-bridge.abi.json',
   ERC20_ABI_PATH: 'src/abis/ERC20.abi.json',
   ERC20_BYTE32_ABI_PATH: 'src/abis/ERC20-byte32.abi.json',
-  TOKEN_LIST_PATH: 'json/linea-mainnet-token-fulllist.json',
+  TOKEN_FULL_LIST_PATH: 'json/linea-mainnet-token-fulllist.json',
   TOKEN_SHORT_LIST_PATH: 'json/linea-mainnet-token-shortlist.json',
   COINGECKO_URL: 'https://api.coingecko.com/api/v3/coins/1/contract/',
   ETHEREUM_MAINNET_CHAIN_ID: 1,

@@ -1,5 +1,5 @@
 import { Event } from 'ethers';
 
-export interface EventCustom extends Event {
-  chainId?: number;
+export interface EventExtended extends Event {
+  chainId: number;
 }

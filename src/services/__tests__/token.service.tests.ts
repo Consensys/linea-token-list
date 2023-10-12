@@ -66,7 +66,7 @@ describe('TokenService', () => {
     expect(loadABI).toHaveBeenCalledWith(config.TOKEN_BRIDGE_ABI_PATH);
     expect(loadABI).toHaveBeenCalledWith(config.ERC20_ABI_PATH);
     expect(loadABI).toHaveBeenCalledWith(config.ERC20_BYTE32_ABI_PATH);
-    expect(Contract).toHaveBeenCalledWith(config.CONTRACT_ADDRESS, 'mockABI', mockL1Provider);
-    expect(Contract).toHaveBeenCalledWith(config.L2_CONTRACT_ADDRESS, 'mockABI', mockLineaProvider);
+    expect(Contract).toHaveBeenCalledWith(config.L1_TOKEN_BRIDGE_ADDRESS, 'mockABI', mockL1Provider);
+    expect(Contract).toHaveBeenCalledWith(config.L2_TOKEN_BRIDGE_ADDRESS, 'mockABI', mockLineaProvider);
   });
 });

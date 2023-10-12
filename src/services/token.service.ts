@@ -1,4 +1,4 @@
-import { Contract, ContractInterface, Event, utils, providers } from 'ethers';
+import { Contract, ContractInterface, Event, utils, providers, constants } from 'ethers';
 import _ from 'lodash';
 import { ABIType, LineaTokenList, Token, TokenType } from 'src/models/token';
 import { loadABI } from 'src/utils/abi';
@@ -9,10 +9,14 @@ import { getCurrentDate } from 'src/utils/date';
 import { readJsonFile, saveJsonFile } from 'src/utils/file';
 import { getBumpedVersions, sortAlphabetically } from 'src/utils/list';
 import { fetchLogoURI } from 'src/utils/coinGecko';
-import { EventCustom } from 'src/models/event';
+import { EventExtended } from 'src/models/event';
+import { normalizeAddress } from 'src/utils/ethereum';
+import { th } from 'date-fns/locale';
+
+const RESERVED_STATUS = normalizeAddress('0x111');
 
 /**
- * Service to discover ERC20 tokens by processing the Canonical Token Bridge events
+ * Discover ERC20 tokens by processing the Canonical Token Bridge events
  */
 export class TokenService {
   private tokenList: Token[] = [];
@@ -42,17 +46,18 @@ export class TokenService {
   async processTokenEvents(): Promise<void> {
     const newTokenDeployedL1EventFilter = this.l1Contract.filters.NewTokenDeployed();
     const newTokenDeployedL2EventFilter = this.l2Contract.filters.NewTokenDeployed();
-    const newTokenDeployedL1Events: EventCustom[] = await this.l1Contract.queryFilter(newTokenDeployedL1EventFilter);
-    const newTokenDeployedL2Events: EventCustom[] = await this.l2Contract.queryFilter(newTokenDeployedL2EventFilter);
+    const rawL1Events: Event[] = await this.l1Contract.queryFilter(newTokenDeployedL1EventFilter);
+    const rawL2Events: Event[] = await this.l2Contract.queryFilter(newTokenDeployedL2EventFilter);
 
-    newTokenDeployedL1Events.map((event) => {
-      event.chainId = config.ETHEREUM_MAINNET_CHAIN_ID;
-      return event;
-    });
-    newTokenDeployedL2Events.map((event) => {
-      event.chainId = config.LINEA_MAINNET_CHAIN_ID;
-      return event;
-    });
+    // Add chainId to events
+    const newTokenDeployedL1Events: EventExtended[] = rawL1Events.map((event) => ({
+      ...event,
+      chainId: config.ETHEREUM_MAINNET_CHAIN_ID,
+    }));
+    const newTokenDeployedL2Events: EventExtended[] = rawL2Events.map((event) => ({
+      ...event,
+      chainId: config.LINEA_MAINNET_CHAIN_ID,
+    }));
 
     const events = [...newTokenDeployedL1Events, ...newTokenDeployedL2Events];
     for (const event of events) {
@@ -71,11 +76,11 @@ export class TokenService {
   /**
    * Gets the contract with the ERC20 ABI or the ERC20 Byte32 ABI
    * @param erc20Address
-   * @param event
+   * @param chainId
    * @returns
    */
-  async getContractWithRetry(erc20Address: string, event: EventCustom): Promise<Token | undefined> {
-    const provider = event.chainId === config.ETHEREUM_MAINNET_CHAIN_ID ? this.l1Provider : this.l2Provider;
+  async getContractWithRetry(erc20Address: string, chainId: number): Promise<Token | undefined> {
+    const provider = chainId === config.ETHEREUM_MAINNET_CHAIN_ID ? this.l1Provider : this.l2Provider;
     try {
       const erc20Contract = new Contract(erc20Address, this.erc20ContractABI, provider);
       return await fetchTokenInfo(erc20Contract, ABIType.STANDARD);
@@ -96,7 +101,7 @@ export class TokenService {
    * @param event
    * @returns
    */
-  async processTokenEvent(event: Event): Promise<Token | undefined> {
+  async processTokenEvent(event: EventExtended): Promise<Token | undefined> {
     const { tokenAddress, nativeTokenAddress } = getEventTokenAddresses(event);
     const tokenExists = checkTokenExists(this.existingTokenList.tokens, tokenAddress);
     if (tokenExists) {
@@ -106,9 +111,11 @@ export class TokenService {
       logger.info('New token found', { tokenAddress });
     }
 
-    let token = await this.getContractWithRetry(tokenAddress, event);
+    let token = await this.getContractWithRetry(tokenAddress, event.chainId);
     if (token) {
-      token = await this.updateTokenInfo(token, event, tokenAddress, nativeTokenAddress);
+      token = this.updateTokenInfo(token, event.chainId, tokenAddress, nativeTokenAddress, [
+        TokenType.CANONICAL_BRIDGE,
+      ]);
       token = await this.fetchAndAssignTokenLogo(token);
       logger.info('ERC20 info fetched', { token });
       return token;
@@ -123,28 +130,29 @@ export class TokenService {
    * @param nativeTokenAddress
    * @returns
    */
-  async updateTokenInfo(
+  updateTokenInfo(
     token: Token,
-    event: EventCustom,
+    chainId: number,
     tokenAddress: string,
-    nativeTokenAddress: string
-  ): Promise<Token> {
+    nativeTokenAddress: string | undefined,
+    tokenTypes: TokenType[]
+  ): Token {
     token.address = tokenAddress;
-    token.tokenType.push(TokenType.CANONICAL_BRIDGE);
-    if (event.chainId === config.LINEA_MAINNET_CHAIN_ID) {
+    token.tokenType = tokenTypes;
+    if (chainId === config.LINEA_MAINNET_CHAIN_ID) {
       token.chainId = config.LINEA_MAINNET_CHAIN_ID;
       token.chainURI = 'https://lineascan.build/block/0';
       token.tokenId = `https://lineascan.build/address/${tokenAddress}`;
-      if (token.extension) {
+      if (nativeTokenAddress && token.extension) {
         token.extension.rootChainId = config.ETHEREUM_MAINNET_CHAIN_ID;
-        token.extension.rootChainURI = 'https://etherscan.io';
+        token.extension.rootChainURI = 'https://etherscan.io/block/0';
         token.extension.rootAddress = nativeTokenAddress;
       }
     } else {
       token.chainId = config.ETHEREUM_MAINNET_CHAIN_ID;
       token.chainURI = 'https://etherscan.io/block/0';
       token.tokenId = `https://etherscan.io/address/${tokenAddress}`;
-      if (token.extension) {
+      if (nativeTokenAddress && token.extension) {
         token.extension.rootChainId = config.LINEA_MAINNET_CHAIN_ID;
         token.extension.rootChainURI = 'https://lineascan.build/block/0';
         token.extension.rootAddress = nativeTokenAddress;
@@ -211,9 +219,9 @@ export class TokenService {
       tokens: this.tokenList,
     };
 
-    saveJsonFile(config.TOKEN_LIST_PATH, newTokenList);
+    saveJsonFile(config.TOKEN_FULL_LIST_PATH, newTokenList);
     logger.info('Token list updated', {
-      path: config.TOKEN_LIST_PATH,
+      path: config.TOKEN_FULL_LIST_PATH,
       previousTokenCounter: this.existingTokenList.tokens.length,
       newTokenCounter: newTokenList.tokens.length,
     });
@@ -221,26 +229,90 @@ export class TokenService {
 
   async verifyList(path: string) {
     const tokenList = readJsonFile(config.TOKEN_SHORT_LIST_PATH);
+    const checkTokenList = [...tokenList.tokens];
+    for (const token of checkTokenList) {
+      let checkingToken: Token | undefined = {} as Token;
+      switch (token.chainId) {
+        case config.LINEA_MAINNET_CHAIN_ID:
+          try {
+            if (!token.extension?.rootAddress) {
+              checkingToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
+              if (checkingToken) {
+                checkingToken = this.updateTokenInfo(
+                  checkingToken,
+                  config.LINEA_MAINNET_CHAIN_ID,
+                  token.address,
+                  undefined,
+                  [TokenType.NATIVE]
+                );
+                delete checkingToken.extension;
+              }
+            } else {
+              const tokenAddress = utils.getAddress(token.extension.rootAddress);
+              const l1nativeToBridgedToken = await this.l1Contract.nativeToBridgedToken(1, tokenAddress);
+              const l2nativeToBridgedToken = await this.l2Contract.nativeToBridgedToken(1, tokenAddress);
 
-    for (const token of tokenList.tokens) {
-      console.log('========');
-      console.log(token.name);
-
-      if (token.chainId === config.ETHEREUM_MAINNET_CHAIN_ID) {
-        //
-      } else {
-        try {
-          const erc20ContractABI = loadABI(config.ERC20_ABI_PATH);
-          const tokenAddress = utils.getAddress(token.extension.rootAddress);
-          const l1Contract = new Contract(tokenAddress, erc20ContractABI, this.l1Provider);
-          const toto = await fetchTokenInfo(l1Contract, ABIType.STANDARD);
-          console.log('=>', toto);
-        } catch (error) {
-          console.log(error);
-        }
-
-        //
+              if (l1nativeToBridgedToken === RESERVED_STATUS) {
+                checkingToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
+                if (checkingToken) {
+                  checkingToken = this.updateTokenInfo(
+                    checkingToken,
+                    config.LINEA_MAINNET_CHAIN_ID,
+                    token.address,
+                    token.extension?.rootAddress,
+                    [TokenType.BRIDGE_RESERVED, TokenType.EXTERNAL_BRIDGE]
+                  );
+                }
+              } else if (l2nativeToBridgedToken !== constants.AddressZero) {
+                checkingToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
+                if (checkingToken) {
+                  checkingToken = this.updateTokenInfo(
+                    checkingToken,
+                    config.LINEA_MAINNET_CHAIN_ID,
+                    token.address,
+                    token.extension?.rootAddress,
+                    [TokenType.CANONICAL_BRIDGE]
+                  );
+                }
+              }
+            }
+            // if (checkingToken) {
+            //   checkingToken.name = token.name;
+            //   checkingToken.symbol = token.symbol;
+            //   checkingToken.logoURI = token.logoURI;
+            //   checkingToken.createdAt = token.createdAt;
+            //   checkingToken.updatedAt = token.updatedAt;
+            // }
+          } catch (error) {
+            console.log(error);
+          }
+          break;
+        default:
+          throw new Error('Invalid chainId');
       }
+
+      if (!checkingToken) {
+        throw new Error('Token not found');
+      } else if (token.address !== checkingToken.address) {
+        throw new Error('Address mismatch');
+      } else if (token.extension?.rootAddress !== checkingToken.extension?.rootAddress) {
+        throw new Error('rootAddress mismatch');
+      } else if (!_.isEqual(token.tokenType, checkingToken.tokenType)) {
+        token.tokenType = checkingToken.tokenType;
+      }
+    }
+
+    if (_.isEqual(tokenList.tokens, checkTokenList)) {
+      logger.info('Token list verified');
+    } else {
+      console.log('Token list not verified');
+      const newTokenList = {
+        ...this.tokenList,
+        updatedAt: getCurrentDate(),
+        versions: getBumpedVersions(this.existingTokenList.versions),
+        tokens: checkTokenList,
+      };
+      saveJsonFile(config.TOKEN_FULL_LIST_PATH, newTokenList);
     }
   }
 }
