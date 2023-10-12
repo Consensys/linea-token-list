@@ -1,5 +1,5 @@
 import { config } from 'src/config';
-import { Token } from 'src/models/token';
+import { ABIType, Token } from 'src/models/token';
 
 import { Contract, utils, Event } from 'ethers';
 import { checkTokenExists, fetchTokenInfo, getEventTokenAddresses } from 'src/utils/token';
@@ -46,7 +46,7 @@ describe('Token Utility Functions', () => {
         address: '0xmockAddress...',
       } as unknown as Contract;
 
-      const result = await fetchTokenInfo(mockContract, undefined);
+      const result = await fetchTokenInfo(mockContract, ABIType.STANDARD);
 
       expect(result.name).toBe('MockToken');
       expect(result.symbol).toBe('MTK');

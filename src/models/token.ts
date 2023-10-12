@@ -1,5 +1,17 @@
 /* istanbul ignore file */
 
+export enum ABIType {
+  STANDARD = 'standard',
+  BYTE32 = 'byte32',
+}
+
+export enum TokenType {
+  CANONICAL_BRIDGE = 'canonical-bridge',
+  BRIDGE_RESERVED = 'bridge-reserved',
+  EXTERNAL_BRIDGE = 'external-bridge',
+  NATIVE = 'native',
+}
+
 export interface Token {
   chainId: number;
   chainURI: string;

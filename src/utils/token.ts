@@ -1,25 +1,19 @@
 import { Contract, Event, utils } from 'ethers';
 
 import { getCurrentDate } from 'src/utils/date';
-import { Token } from 'src/models/token';
+import { ABIType, Token } from 'src/models/token';
 import { config } from 'src/config';
+import { logger } from 'src/logger';
 
 /**
  * Returns the token address and native token address from an event
  * @param event
  * @returns
  */
-export const getEventTokenAddresses = (event: Event): { tokenAddress: string; nativeTokenAddress?: string } => {
-  let tokenAddress = event?.args?.token;
-  let nativeTokenAddress;
+export const getEventTokenAddresses = (event: Event): { tokenAddress: string; nativeTokenAddress: string } => {
+  const tokenAddress = event?.args?.bridgedToken && utils.getAddress(event.args.bridgedToken);
+  const nativeTokenAddress = event?.args?.nativeToken && utils.getAddress(event?.args?.nativeToken);
 
-  if (event.event === 'NewTokenDeployed') {
-    tokenAddress = event?.args?.bridgedToken;
-    nativeTokenAddress = event?.args?.nativeToken;
-  }
-
-  tokenAddress = tokenAddress && utils.getAddress(tokenAddress);
-  nativeTokenAddress = nativeTokenAddress && utils.getAddress(nativeTokenAddress);
   return { tokenAddress, nativeTokenAddress };
 };
 
@@ -29,7 +23,7 @@ export const getEventTokenAddresses = (event: Event): { tokenAddress: string; na
  * @param eventName
  * @returns
  */
-export async function fetchTokenInfo(erc20Contract: Contract, eventName: string | undefined): Promise<Token> {
+export async function fetchTokenInfo(erc20Contract: Contract, abiType: ABIType): Promise<Token> {
   const [name, symbol, decimals] = await Promise.all([
     erc20Contract.name(),
     erc20Contract.symbol(),
@@ -39,27 +33,17 @@ export async function fetchTokenInfo(erc20Contract: Contract, eventName: string 
   let parsedSymbol = symbol;
   let parsedName = name;
 
-  /* TEMP COMMENT: is it useful to parse bytes32 strings?
-  if (eventName === 'NewTokenDeployed') {
-    // If it's an ERC20 Byte32 contract, parse bytes32 for symbol and name
-    try {
-      parsedName = utils.parseBytes32String(name);
-      parsedSymbol = utils.parseBytes32String(symbol);
-    } catch (error) {
-      if (error instanceof Error) {
-        logger.error('Error parsing bytes32 string', error.message);
-      } else {
-        logger.error('An error occurred while parsing bytes32 string');
-      }
-    }
+  // If it's an ERC20 Byte32 contract, parse bytes32 for symbol and name
+  if (abiType === ABIType.BYTE32) {
+    parsedName = utils.parseBytes32String(name);
+    parsedSymbol = utils.parseBytes32String(symbol);
   }
-  */
 
   const defaultTokenInfo: Token = {
-    chainId: config.LINEA_MAINNET_CHAIN_ID,
-    chainURI: 'https://lineascan.build/block/0',
-    tokenId: 'https://lineascan.build/address/',
-    tokenType: ['canonical-bridge'],
+    chainId: 0,
+    chainURI: '',
+    tokenId: '',
+    tokenType: [],
     address: '',
     name: parsedName,
     symbol: parsedSymbol,
@@ -68,7 +52,7 @@ export async function fetchTokenInfo(erc20Contract: Contract, eventName: string 
     updatedAt: getCurrentDate(),
     extension: {
       rootChainId: 1,
-      rootChainURI: 'https://etherscan.io',
+      rootChainURI: '',
       rootAddress: utils.getAddress(erc20Contract.address),
     },
   };
