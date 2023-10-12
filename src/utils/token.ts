@@ -10,17 +10,10 @@ import { logger } from 'src/logger';
  * @param event
  * @returns
  */
-export const getEventTokenAddresses = (event: Event): { tokenAddress: string; nativeTokenAddress?: string } => {
-  let tokenAddress = event?.args?.token;
-  let nativeTokenAddress;
+export const getEventTokenAddresses = (event: Event): { tokenAddress: string; nativeTokenAddress: string } => {
+  const tokenAddress = event?.args?.bridgedToken && utils.getAddress(event.args.bridgedToken);
+  const nativeTokenAddress = event?.args?.nativeToken && utils.getAddress(event?.args?.nativeToken);
 
-  if (event.event === 'NewTokenDeployed') {
-    tokenAddress = event?.args?.bridgedToken;
-    nativeTokenAddress = event?.args?.nativeToken;
-  }
-
-  tokenAddress = tokenAddress && utils.getAddress(tokenAddress);
-  nativeTokenAddress = nativeTokenAddress && utils.getAddress(nativeTokenAddress);
   return { tokenAddress, nativeTokenAddress };
 };
 
@@ -47,10 +40,10 @@ export async function fetchTokenInfo(erc20Contract: Contract, abiType: ABIType):
   }
 
   const defaultTokenInfo: Token = {
-    chainId: config.LINEA_MAINNET_CHAIN_ID,
-    chainURI: 'https://lineascan.build/block/0',
-    tokenId: 'https://lineascan.build/address/',
-    tokenType: ['canonical-bridge'],
+    chainId: 0,
+    chainURI: '',
+    tokenId: '',
+    tokenType: [],
     address: '',
     name: parsedName,
     symbol: parsedSymbol,
@@ -59,7 +52,7 @@ export async function fetchTokenInfo(erc20Contract: Contract, abiType: ABIType):
     updatedAt: getCurrentDate(),
     extension: {
       rootChainId: 1,
-      rootChainURI: 'https://etherscan.io',
+      rootChainURI: '',
       rootAddress: utils.getAddress(erc20Contract.address),
     },
   };
