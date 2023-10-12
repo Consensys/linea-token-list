@@ -6,7 +6,7 @@ import { config } from 'src/config';
 import { logger } from 'src/logger';
 import { checkTokenExists, fetchTokenInfo, getEventTokenAddresses } from 'src/utils/token';
 import { getCurrentDate } from 'src/utils/date';
-import { saveJsonFile } from 'src/utils/file';
+import { readJsonFile, saveJsonFile } from 'src/utils/file';
 import { getBumpedVersions, sortAlphabetically } from 'src/utils/list';
 import { fetchLogoURI } from 'src/utils/coinGecko';
 import { EventCustom } from 'src/models/event';
@@ -217,5 +217,30 @@ export class TokenService {
       previousTokenCounter: this.existingTokenList.tokens.length,
       newTokenCounter: newTokenList.tokens.length,
     });
+  }
+
+  async verifyList(path: string) {
+    const tokenList = readJsonFile(config.TOKEN_SHORT_LIST_PATH);
+
+    for (const token of tokenList.tokens) {
+      console.log('========');
+      console.log(token.name);
+
+      if (token.chainId === config.ETHEREUM_MAINNET_CHAIN_ID) {
+        //
+      } else {
+        try {
+          const erc20ContractABI = loadABI(config.ERC20_ABI_PATH);
+          const tokenAddress = utils.getAddress(token.extension.rootAddress);
+          const l1Contract = new Contract(tokenAddress, erc20ContractABI, this.l1Provider);
+          const toto = await fetchTokenInfo(l1Contract, ABIType.STANDARD);
+          console.log('=>', toto);
+        } catch (error) {
+          console.log(error);
+        }
+
+        //
+      }
+    }
   }
 }
