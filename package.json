@@ -12,8 +12,8 @@
     "prepare": "husky install",
     "start": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/syncMainnetFulllist.js",
     "dev": "ts-node -r tsconfig-paths/register scripts/syncMainnetFulllist.ts",
-    "shortlist-start": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/checkMainnetShorlist.js",
-    "shortlist-dev": "ts-node -r tsconfig-paths/register scripts/checkMainnetShorlist.ts",
+    "shortlist-start": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/verifyMainnetShorlist.js",
+    "shortlist-dev": "ts-node -r tsconfig-paths/register scripts/verifyMainnetShorlist.ts",
     "test": "jest"
   },
   "dependencies": {

@@ -228,24 +228,28 @@ export class TokenService {
   }
 
   async verifyList(path: string) {
-    const tokenList = readJsonFile(config.TOKEN_SHORT_LIST_PATH);
-    const checkTokenList = [...tokenList.tokens];
+    logger.info('Verify list', { path });
+    const tokenList = readJsonFile(path);
+    const checkTokenList = JSON.parse(JSON.stringify(tokenList.tokens));
+    let index = 0;
     for (const token of checkTokenList) {
-      let checkingToken: Token | undefined = {} as Token;
+      index++;
+      logger.info('Checking token', { name: token.name, position: `${index}/${checkTokenList.length}` });
+      let verifiedToken: Token | undefined = {} as Token;
       switch (token.chainId) {
         case config.LINEA_MAINNET_CHAIN_ID:
           try {
             if (!token.extension?.rootAddress) {
-              checkingToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
-              if (checkingToken) {
-                checkingToken = this.updateTokenInfo(
-                  checkingToken,
+              verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
+              if (verifiedToken) {
+                verifiedToken = this.updateTokenInfo(
+                  verifiedToken,
                   config.LINEA_MAINNET_CHAIN_ID,
                   token.address,
                   undefined,
                   [TokenType.NATIVE]
                 );
-                delete checkingToken.extension;
+                delete verifiedToken.extension;
               }
             } else {
               const tokenAddress = utils.getAddress(token.extension.rootAddress);
@@ -253,10 +257,10 @@ export class TokenService {
               const l2nativeToBridgedToken = await this.l2Contract.nativeToBridgedToken(1, tokenAddress);
 
               if (l1nativeToBridgedToken === RESERVED_STATUS) {
-                checkingToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
-                if (checkingToken) {
-                  checkingToken = this.updateTokenInfo(
-                    checkingToken,
+                verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
+                if (verifiedToken) {
+                  verifiedToken = this.updateTokenInfo(
+                    verifiedToken,
                     config.LINEA_MAINNET_CHAIN_ID,
                     token.address,
                     token.extension?.rootAddress,
@@ -264,10 +268,10 @@ export class TokenService {
                   );
                 }
               } else if (l2nativeToBridgedToken !== constants.AddressZero) {
-                checkingToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
-                if (checkingToken) {
-                  checkingToken = this.updateTokenInfo(
-                    checkingToken,
+                verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
+                if (verifiedToken) {
+                  verifiedToken = this.updateTokenInfo(
+                    verifiedToken,
                     config.LINEA_MAINNET_CHAIN_ID,
                     token.address,
                     token.extension?.rootAddress,
@@ -276,43 +280,80 @@ export class TokenService {
                 }
               }
             }
-            // if (checkingToken) {
-            //   checkingToken.name = token.name;
-            //   checkingToken.symbol = token.symbol;
-            //   checkingToken.logoURI = token.logoURI;
-            //   checkingToken.createdAt = token.createdAt;
-            //   checkingToken.updatedAt = token.updatedAt;
-            // }
           } catch (error) {
-            console.log(error);
+            logger.error('Error checking token', { name: token.name, error });
+            throw error;
           }
           break;
         default:
           throw new Error('Invalid chainId');
       }
 
-      if (!checkingToken) {
+      // Error checking
+      if (!verifiedToken) {
         throw new Error('Token not found');
-      } else if (token.address !== checkingToken.address) {
-        throw new Error('Address mismatch');
-      } else if (token.extension?.rootAddress !== checkingToken.extension?.rootAddress) {
+      } else if (token.address !== verifiedToken.address) {
+        logger.error('address mismatch', {
+          name: token.name,
+          currentTokenAddress: token.address,
+          newTokenAddress: verifiedToken.address,
+        });
+        throw new Error('address mismatch');
+      } else if (token.extension?.rootAddress !== verifiedToken.extension?.rootAddress) {
+        logger.error('rootAddress mismatch', {
+          name: token.name,
+          currentTokenRootAddress: token.extension?.rootAddress,
+          newTokenRootAddress: verifiedToken.extension?.rootAddress,
+        });
         throw new Error('rootAddress mismatch');
-      } else if (!_.isEqual(token.tokenType, checkingToken.tokenType)) {
-        token.tokenType = checkingToken.tokenType;
+      } else if (token.symbol !== verifiedToken.symbol) {
+        logger.error('symbol mismatch', {
+          name: token.name,
+          currentTokenSymbol: token.symbol,
+          newTokenSymbol: verifiedToken.symbol,
+        });
+        throw new Error('symbol mismatch');
+      } else if (token.decimals !== verifiedToken.decimals) {
+        logger.error('decimals mismatch', {
+          name: token.name,
+          currentTokenDecimals: token.decimals,
+          newTokenDecimals: verifiedToken.decimals,
+        });
+        throw new Error('decimals mismatch');
+      }
+
+      // Auto modify
+      if (token.tokenId !== verifiedToken.tokenId) {
+        logger.warn('tokenId mismatch', {
+          name: token.name,
+          currentTokennTokenId: token.tokenId,
+          newTokenTokenId: verifiedToken.tokenId,
+        });
+        token.tokenId = verifiedToken.tokenId;
+      } else if (!_.isEqual(token.tokenType, verifiedToken.tokenType)) {
+        logger.warn('Token type mismatch', {
+          name: token.name,
+          currentTokenType: token.tokenType,
+          newTokenType: verifiedToken.tokenType,
+        });
+        token.tokenType = verifiedToken.tokenType;
       }
     }
 
     if (_.isEqual(tokenList.tokens, checkTokenList)) {
-      logger.info('Token list verified');
+      logger.info('Token list matching');
     } else {
-      console.log('Token list not verified');
+      logger.warn('Token list not matching');
       const newTokenList = {
         ...this.tokenList,
         updatedAt: getCurrentDate(),
         versions: getBumpedVersions(this.existingTokenList.versions),
         tokens: checkTokenList,
       };
-      saveJsonFile(config.TOKEN_FULL_LIST_PATH, newTokenList);
+      saveJsonFile(path, newTokenList);
+      logger.info('Token list updated', {
+        path,
+      });
     }
   }
 }
