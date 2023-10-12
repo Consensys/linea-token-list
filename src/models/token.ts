@@ -1,5 +1,10 @@
 /* istanbul ignore file */
 
+export enum ABIType {
+  STANDARD = 'standard',
+  BYTE32 = 'byte32',
+}
+
 export interface Token {
   chainId: number;
   chainURI: string;

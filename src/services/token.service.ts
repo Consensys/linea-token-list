@@ -1,6 +1,6 @@
 import { Contract, ContractInterface, Event, utils, providers } from 'ethers';
 import _ from 'lodash';
-import { LineaTokenList, Token } from 'src/models/token';
+import { ABIType, LineaTokenList, Token } from 'src/models/token';
 import { loadABI } from 'src/utils/abi';
 import { config } from 'src/config';
 import { logger } from 'src/logger';
@@ -67,12 +67,12 @@ export class TokenService {
   async getContractWithRetry(erc20Address: string, event: Event): Promise<Token | undefined> {
     try {
       const erc20Contract = new Contract(erc20Address, this.erc20ContractABI, this.l1Provider);
-      return await fetchTokenInfo(erc20Contract, event.event);
+      return await fetchTokenInfo(erc20Contract, ABIType.STANDARD);
     } catch (error) {
       logger.warn('Error fetching token info with ERC20 ABI', { address: erc20Address, error });
       try {
         const erc20AltContract = new Contract(erc20Address, this.erc20Byte32ContractABI, this.l1Provider);
-        return await fetchTokenInfo(erc20AltContract, event.event);
+        return await fetchTokenInfo(erc20AltContract, ABIType.BYTE32);
       } catch (error) {
         logger.error('Error fetching token info with ERC20 Byte32 ABI', { address: erc20Address, error });
         return;
@@ -179,15 +179,12 @@ export class TokenService {
     for (const newToken of tokenShortList.tokens) {
       const tokenAddress = utils.getAddress(newToken.address);
       // Find the index of the existing token in the list
-      const existingTokenIndex = this.tokenList.findIndex(
+      const existingToken = this.tokenList.find(
         (existingToken) => utils.getAddress(existingToken.address) === tokenAddress
       );
 
-      // If token exists and is not equal to newToken, replace it.
       // If not exists, add it to the list.
-      if (existingTokenIndex !== -1 && !_.isEqual(this.tokenList[existingTokenIndex], newToken)) {
-        this.tokenList[existingTokenIndex] = newToken;
-      } else {
+      if (!existingToken) {
         this.tokenList.push(newToken);
       }
     }
