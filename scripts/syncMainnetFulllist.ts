@@ -4,10 +4,13 @@ import { config } from 'src/config';
 import { logger } from 'src/logger';
 import { readJsonFile } from 'src/utils/file';
 import { TokenService } from 'src/services/token.service';
+import { validateConfig } from 'src/utils/validation';
 
 async function main() {
   try {
     logger.info('Starting sync mainnet fulllist');
+    validateConfig(config);
+
     const provider = new ethers.providers.JsonRpcProvider(config.PROVIDER_URL);
     const lineaProvider = new ethers.providers.JsonRpcProvider(config.LINEA_PROVIDER_URL);
     const tokenShortList = readJsonFile(config.TOKEN_SHORT_LIST_PATH);

@@ -1,6 +1,8 @@
+import { Config } from 'src/models/config';
+
 require('dotenv').config();
 
-export const config = {
+export const config: Config = {
   PROVIDER_URL: process.env.PROVIDER_URL || '',
   LINEA_PROVIDER_URL: process.env.LINEA_PROVIDER_URL || '',
   CONTRACT_ADDRESS: process.env.CONTRACT_ADDRESS || '',
