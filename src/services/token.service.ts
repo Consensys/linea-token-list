@@ -74,14 +74,15 @@ export class TokenService {
    * @param event
    * @returns
    */
-  async getContractWithRetry(erc20Address: string, event: Event): Promise<Token | undefined> {
+  async getContractWithRetry(erc20Address: string, event: EventCustom): Promise<Token | undefined> {
+    const provider = event.chainId === config.ETHEREUM_MAINNET_CHAIN_ID ? this.l1Provider : this.l2Provider;
     try {
-      const erc20Contract = new Contract(erc20Address, this.erc20ContractABI, this.l1Provider);
+      const erc20Contract = new Contract(erc20Address, this.erc20ContractABI, provider);
       return await fetchTokenInfo(erc20Contract, ABIType.STANDARD);
     } catch (error) {
       logger.warn('Error fetching token info with ERC20 ABI', { address: erc20Address, error });
       try {
-        const erc20AltContract = new Contract(erc20Address, this.erc20Byte32ContractABI, this.l1Provider);
+        const erc20AltContract = new Contract(erc20Address, this.erc20Byte32ContractABI, provider);
         return await fetchTokenInfo(erc20AltContract, ABIType.BYTE32);
       } catch (error) {
         logger.error('Error fetching token info with ERC20 Byte32 ABI', { address: erc20Address, error });
@@ -172,22 +173,6 @@ export class TokenService {
       return undefined;
     }
   }
-
-  /**
-   * Gets the token address from the mapping contract
-   * @param nativeAddress
-   * @returns
-   */
-  // async getTokenAddressFromMapping(nativeAddress: string): Promise<string> {
-  //   try {
-  //     let tokenAddress = await this.l2Contract.nativeToBridgedToken(1, nativeAddress);
-  //     tokenAddress = utils.getAddress(tokenAddress);
-  //     return tokenAddress;
-  //   } catch (error) {
-  //     logger.error('Error calling nativeToBridgedToken', { error });
-  //     throw error;
-  //   }
-  // }
 
   /**
    * Adds tokens from the token short list to the token list
