@@ -43,35 +43,42 @@
         <button data-type="native" class="filter-btn btn">Native</button>
       </div>
     </div>
-
-    <div>
-      <h1 class="text-2xl px-4 mt-4">
-        <a
-          href="https://github.com/Consensys/linea-token-list/blob/main/json/linea-mainnet-token-shortlist.json"
-          target="_blank"
-          class="link"
-          >Linea Mainnet Token Short List</a
-        >
-        <span id="shortListCount" />
-      </h1>
-      <section id="mainnetShortList" class="flex flex-wrap justify-start">
-        <div id="mainnetShortList"></div>
-      </section>
-    </div>
-    <div>
-      <h1 class="text-2xl px-4 mt-4">
-        <a
-          href="https://github.com/Consensys/linea-token-list/blob/main/json/linea-mainnet-token-fulllist.json"
-          target="_blank"
-          class="link"
-          >Linea Mainnet Token Full List</a
-        >
-        <span id="fullListCount" />
-      </h1>
-
-      <section id="mainnetFullList" class="flex flex-wrap justify-start">
-        <div id="mainnetFullList"></div>
-      </section>
+    <div class="space-y-4">
+      <div tabindex="0" class="collapse collapse-arrow">
+        <input type="checkbox" class="peer" id="collapseCheckbox1" checked />
+        <div class="collapse-title text-xl font-medium rounded">
+          <a
+            href="https://github.com/Consensys/linea-token-list/blob/main/json/linea-mainnet-token-shortlist.json"
+            target="_blank"
+            class="link"
+          >
+            Linea Mainnet Token Short List
+          </a>
+          <span id="shortListCount"></span>
+        </div>
+        <div class="collapse-content">
+          <section id="mainnetShortList" class="flex flex-wrap justify-start">
+            <div id="mainnetShortList"></div>
+          </section>
+        </div>
+      </div>
+      <div tabindex="1" class="collapse collapse-arrow">
+        <input type="checkbox" className="peer" id="collapseCheckbox2" checked />
+        <div class="collapse-title text-xl font-medium rounded">
+          <a
+            href="https://github.com/Consensys/linea-token-list/blob/main/json/linea-mainnet-token-fulllist.json"
+            target="_blank"
+            class="link"
+            >Linea Mainnet Token Full List</a
+          >
+          <span id="fullListCount" />
+        </div>
+        <div class="collapse-content">
+          <section id="mainnetFullList" class="flex flex-wrap justify-start">
+            <div id="mainnetFullList"></div>
+          </section>
+        </div>
+      </div>
     </div>
 
     <script src="public/script.js"></script>
