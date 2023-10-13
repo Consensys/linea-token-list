@@ -336,20 +336,28 @@ export class TokenService {
     const l2nativeToBridgedToken = await this.l2Contract.nativeToBridgedToken(1, tokenAddress);
 
     if (l1nativeToBridgedToken === RESERVED_STATUS) {
-      verifiedToken = await this.verifyReservedStatus(token, verifiedToken);
+      verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [
+        TokenType.BRIDGE_RESERVED,
+        TokenType.EXTERNAL_BRIDGE,
+      ]);
     } else if (l2nativeToBridgedToken !== constants.AddressZero) {
-      verifiedToken = await this.verifyNonZeroBridgedToken(token, verifiedToken);
+      verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.CANONICAL_BRIDGE]);
     }
     return verifiedToken;
   }
 
   /**
-   * Verifies the token with a reserved status
+   * Verifies the token with a reserved status or  with a non-zero bridged token
    * @param token
    * @param verifiedToken
+   * @param tokenTypes
    * @returns
    */
-  private async verifyReservedStatus(token: Token, verifiedToken: Token | undefined): Promise<Token | undefined> {
+  private async getVerifiedTokenInfo(
+    token: Token,
+    verifiedToken: Token | undefined,
+    tokenTypes: TokenType[]
+  ): Promise<Token | undefined> {
     verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
     if (verifiedToken) {
       verifiedToken = this.updateTokenInfo(
@@ -357,27 +365,7 @@ export class TokenService {
         config.LINEA_MAINNET_CHAIN_ID,
         token.address,
         token.extension?.rootAddress,
-        [TokenType.BRIDGE_RESERVED, TokenType.EXTERNAL_BRIDGE]
-      );
-    }
-    return verifiedToken;
-  }
-
-  /**
-   * Verifies the token with a non-zero bridged token
-   * @param token
-   * @param verifiedToken
-   * @returns
-   */
-  private async verifyNonZeroBridgedToken(token: Token, verifiedToken: Token | undefined): Promise<Token | undefined> {
-    verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
-    if (verifiedToken) {
-      verifiedToken = this.updateTokenInfo(
-        verifiedToken,
-        config.LINEA_MAINNET_CHAIN_ID,
-        token.address,
-        token.extension?.rootAddress,
-        [TokenType.CANONICAL_BRIDGE]
+        tokenTypes
       );
     }
     return verifiedToken;
