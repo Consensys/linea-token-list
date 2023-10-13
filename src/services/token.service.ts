@@ -196,13 +196,15 @@ export class TokenService {
   concatTokenShortList(tokenShortList: LineaTokenList): void {
     for (const newToken of tokenShortList.tokens) {
       const tokenAddress = utils.getAddress(newToken.address);
-      // Find the index of the existing token in the list
-      const existingToken = this.tokenList.find(
+      const existingTokenIndex = this.tokenList.findIndex(
         (existingToken) => utils.getAddress(existingToken.address) === tokenAddress
       );
 
+      // If token exists and is not equal to newToken, replace it.
       // If not exists, add it to the list.
-      if (!existingToken) {
+      if (existingTokenIndex !== -1 && !_.isEqual(this.tokenList[existingTokenIndex], newToken)) {
+        this.tokenList[existingTokenIndex] = newToken;
+      } else {
         this.tokenList.push(newToken);
       }
     }

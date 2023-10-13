@@ -1,5 +1,6 @@
 import { Contract, Event, utils } from 'ethers';
 import diff from 'deep-diff';
+import _ from 'lodash';
 
 import { ABIType, LineaTokenList, Token } from 'src/models/token';
 import { logger } from 'src/logger';
