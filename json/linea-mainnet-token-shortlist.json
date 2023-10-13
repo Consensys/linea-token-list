@@ -257,7 +257,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x2442Bd7AE83b51F6664De408A385375fe4a84F52",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x2442Bd7AE83b51F6664De408A385375fe4a84F52",
       "name": "Maker",

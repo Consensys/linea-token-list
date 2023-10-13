@@ -261,7 +261,8 @@ export class TokenService {
           newTokenTokenId: verifiedToken.tokenId,
         });
         token.tokenId = verifiedToken.tokenId;
-      } else if (!_.isEqual(token.tokenType, verifiedToken.tokenType)) {
+      }
+      if (!_.isEqual(token.tokenType, verifiedToken.tokenType)) {
         logger.warn('Token type mismatch', {
           name: token.name,
           currentTokenType: token.tokenType,
