@@ -245,7 +245,7 @@ export class TokenService {
 
     const verifyTokenInBatch = async (token: Token, index: number) => {
       logger.info('Checking token', { name: token.name, position: `${index + 1}/${checkTokenList.length}` });
-      let verifiedToken: Token | undefined = await this.verifyToken(token);
+      const verifiedToken: Token | undefined = await this.verifyToken(token);
 
       if (!verifiedToken) {
         throw new Error('Token not found');

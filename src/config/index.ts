@@ -1,6 +1,7 @@
+import { config as dotenvConfig } from 'dotenv';
 import { Config } from 'src/models/config';
 
-require('dotenv').config();
+dotenvConfig();
 
 export const config: Config = {
   L1_PROVIDER_URL: process.env.PROVIDER_URL || '',

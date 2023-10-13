@@ -1,9 +1,8 @@
-import { Contract, utils, providers } from 'ethers';
+import { Contract, providers } from 'ethers';
 
 import { config } from 'src/config';
 import { loadABI } from 'src/utils/abi';
-import { logger } from 'src/logger';
-import { TokenService } from 'src/services/token.service';
+// import { TokenService } from 'src/services/token.service';
 
 jest.mock('ethers', () => ({
   Contract: jest.fn(),
@@ -38,24 +37,22 @@ jest.mock('src/utils/abi', () => ({
 const mockedLoadABI = loadABI as jest.MockedFunction<typeof loadABI>;
 
 describe('TokenService', () => {
-  let tokenService;
+  // let tokenService;
   const mockL1Provider = new providers.JsonRpcProvider();
   const mockLineaProvider = new providers.JsonRpcProvider();
-  const mockExistingTokenList = {
-    type: 'linea',
-    tokenListId: '1',
-    name: 'LineaTokenList',
-    createdAt: '2023-10-11T00:00:00Z',
-    updatedAt: '2023-10-11T00:00:00Z',
-    versions: [],
-    tokens: [],
-  };
+  // const mockExistingTokenList = {
+  //   type: 'linea',
+  //   tokenListId: '1',
+  //   name: 'LineaTokenList',
+  //   createdAt: '2023-10-11T00:00:00Z',
+  //   updatedAt: '2023-10-11T00:00:00Z',
+  //   versions: [],
+  //   tokens: [],
+  // };
 
   beforeEach(() => {
-    // Mock implementations...
     mockedLoadABI.mockImplementation(() => 'mockABI');
-    // Initialize service...
-    tokenService = new TokenService(mockL1Provider, mockLineaProvider, mockExistingTokenList);
+    // tokenService = new TokenService(mockL1Provider, mockLineaProvider, mockExistingTokenList);
   });
 
   afterEach(() => {

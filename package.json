@@ -14,7 +14,8 @@
     "dev": "ts-node -r tsconfig-paths/register scripts/syncMainnetFulllist.ts",
     "verify-start": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/verifyMainnetShorlist.js",
     "verify-dev": "ts-node -r tsconfig-paths/register scripts/verifyMainnetShorlist.ts",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint './src/**/*.ts' --quiet"
   },
   "dependencies": {
     "axios": "^1.5.1",
@@ -35,7 +36,10 @@
     "@types/jest": "^29.5.5",
     "@types/lodash": "^4.14.199",
     "@types/node": "^20.8.4",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
     "babel-jest": "^29.7.0",
+    "eslint": "^8.51.0",
     "husky": "^8.0.0",
     "jest": "^29.7.0",
     "mockdate": "^3.0.5",

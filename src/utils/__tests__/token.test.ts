@@ -1,22 +1,11 @@
 import { config } from 'src/config';
 import { ABIType, Token } from 'src/models/token';
 
-import { Contract, utils, Event } from 'ethers';
+import { Contract, utils } from 'ethers';
 import { checkTokenExists, fetchTokenInfo, getEventTokenAddresses } from 'src/utils/token';
 
 jest.mock('ethers');
 jest.mock('src/config');
-
-// Update interfaces as per your actual model definition
-interface EventArg {
-  token: string;
-  bridgedToken: string;
-  nativeToken: string;
-}
-
-type MyEvent = Event & {
-  args: EventArg;
-};
 
 describe('Token Utility Functions', () => {
   describe('getEventTokenAddresses', () => {
@@ -59,7 +48,6 @@ describe('Token Utility Functions', () => {
   describe('checkTokenExists', () => {
     it('should find and return the token if it exists in the token list by address', () => {
       const mockToken: Token = {
-        // ...token properties
         chainId: config.LINEA_MAINNET_CHAIN_ID,
         chainURI: 'https://lineascan.build/block/0',
         tokenId: 'https://lineascan.build/address/',
