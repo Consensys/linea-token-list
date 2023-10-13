@@ -4,7 +4,7 @@ import { logger } from 'src/logger';
 import { Token } from 'src/models/token';
 import { utils } from 'ethers';
 
-interface CoinMarketcapResponse {
+interface CoinMarketCapResponse {
   logo: string;
 }
 
@@ -16,7 +16,7 @@ interface CoinGeckoResponse {
 
 export enum CryptoService {
   COINGECKO = 'CoinGecko',
-  COINMARKETCAP = 'CoinMarketcap',
+  COINMARKETCAP = 'CoinMarketCap',
 }
 
 export const fetchLogoURI = async (token: Token, service: CryptoService): Promise<string | null> => {
@@ -24,7 +24,7 @@ export const fetchLogoURI = async (token: Token, service: CryptoService): Promis
     case CryptoService.COINGECKO:
       return fetchCoinGeckoLogoURI(token);
     case CryptoService.COINMARKETCAP:
-      return fetchCoinMarketcapLogoURI(token);
+      return fetchCoinMarketCapLogoURI(token);
     default:
       logger.error('Unsupported service', { service });
       return null;
@@ -32,11 +32,11 @@ export const fetchLogoURI = async (token: Token, service: CryptoService): Promis
 };
 
 /**
- * Fetch the logo URI from CoinMarketcap.
+ * Fetch the logo URI from CoinMarketCap.
  * @param tokenInfo
  * @returns
  */
-export const fetchCoinMarketcapLogoURI = async (tokenInfo: Token): Promise<string | null> => {
+export const fetchCoinMarketCapLogoURI = async (tokenInfo: Token): Promise<string | null> => {
   const { COINMARKETCAP_URL, ETHEREUM_MAINNET_CHAIN_ID } = config;
   const { chainId, address, extension } = tokenInfo;
 
@@ -51,7 +51,7 @@ export const fetchCoinMarketcapLogoURI = async (tokenInfo: Token): Promise<strin
 
   try {
     const url = new URL('/v2/cryptocurrency/info', COINMARKETCAP_URL);
-    const response: AxiosResponse<CoinMarketcapResponse> = await axios.get(url.toString(), {
+    const response: AxiosResponse<CoinMarketCapResponse> = await axios.get(url.toString(), {
       params: {
         address: tokenAddress,
       },
