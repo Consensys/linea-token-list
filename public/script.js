@@ -93,7 +93,7 @@ function generateAddress1LinkHTML(token) {
 
   return `<p class="text-gray-500 text-sm flex justify-between">
   <span class='text-gray-400'>${layer}</span>
-  <a href="${token.tokenId}" targe="_blank" class="link text-gray-400">${token.address}</a>
+  <a href="${token.tokenId}" target="_blank" class="link text-gray-400">${token.address}</a>
 </p>`;
 }
 
