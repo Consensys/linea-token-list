@@ -11,11 +11,11 @@ async function main() {
     logger.info('Starting check mainnet shortlist');
     validateConfig(config);
 
-    const provider = new ethers.providers.JsonRpcProvider(config.L1_PROVIDER_URL);
-    const lineaProvider = new ethers.providers.JsonRpcProvider(config.L2_PROVIDER_URL);
+    const l1Provider = new ethers.providers.JsonRpcProvider(config.L1_PROVIDER_URL);
+    const l2Provider = new ethers.providers.JsonRpcProvider(config.L2_PROVIDER_URL);
     const existingTokenList = readJsonFile(config.TOKEN_FULL_LIST_PATH);
 
-    const tokenService = new TokenService(provider, lineaProvider, existingTokenList);
+    const tokenService = new TokenService(l1Provider, l2Provider, existingTokenList);
     await tokenService.verifyList(config.TOKEN_SHORT_LIST_PATH);
 
     logger.info('Check mainnet shortlist succesfully executed');

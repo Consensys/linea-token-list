@@ -109,33 +109,34 @@ export const updateTokenListIfNeeded = (path: string, originalList: LineaTokenLi
  * @param verifiedToken
  */
 export const checkTokenErrors = (token: Token, verifiedToken: Token): void => {
-  if (token.address !== verifiedToken.address) {
-    logger.error('address mismatch', {
-      name: token.name,
-      currentTokenAddress: token.address,
-      newTokenAddress: verifiedToken.address,
+  validateTokenField('address', token.address, verifiedToken.address, token.name);
+  validateTokenField('rootAddress', token.extension?.rootAddress, verifiedToken.extension?.rootAddress, token.name);
+  validateTokenField('symbol', token.symbol, verifiedToken.symbol, token.name);
+  validateTokenField('decimals', token.decimals, verifiedToken.decimals, token.name);
+  validateTokenField('chainId', token.chainId, verifiedToken.chainId, token.name);
+  validateTokenField('rootChainId', token.extension?.rootChainId, verifiedToken.extension?.rootChainId, token.name);
+};
+
+/**
+ * Validates a token field
+ * @param fieldName
+ * @param originalValue
+ * @param verifiedValue
+ * @param tokenName
+ */
+const validateTokenField = (
+  fieldName: string,
+  originalValue: string | number | undefined,
+  verifiedValue: string | number | undefined,
+  tokenName: string
+): void => {
+  if (originalValue !== verifiedValue) {
+    const message = `${fieldName} mismatch`;
+    logger.error(message, {
+      name: tokenName,
+      [`current${fieldName.charAt(0).toUpperCase() + fieldName.slice(1)}`]: originalValue,
+      [`new${fieldName.charAt(0).toUpperCase() + fieldName.slice(1)}`]: verifiedValue,
     });
-    throw new Error('address mismatch');
-  } else if (token.extension?.rootAddress !== verifiedToken.extension?.rootAddress) {
-    logger.error('rootAddress mismatch', {
-      name: token.name,
-      currentTokenRootAddress: token.extension?.rootAddress,
-      newTokenRootAddress: verifiedToken.extension?.rootAddress,
-    });
-    throw new Error('rootAddress mismatch');
-  } else if (token.symbol !== verifiedToken.symbol) {
-    logger.error('symbol mismatch', {
-      name: token.name,
-      currentTokenSymbol: token.symbol,
-      newTokenSymbol: verifiedToken.symbol,
-    });
-    throw new Error('symbol mismatch');
-  } else if (token.decimals !== verifiedToken.decimals) {
-    logger.error('decimals mismatch', {
-      name: token.name,
-      currentTokenDecimals: token.decimals,
-      newTokenDecimals: verifiedToken.decimals,
-    });
-    throw new Error('decimals mismatch');
+    throw new Error(message);
   }
 };
