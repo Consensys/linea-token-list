@@ -291,6 +291,8 @@ export class TokenService {
     let verifiedToken: Token | undefined = {} as Token;
 
     switch (token.chainId) {
+      case config.ETHEREUM_MAINNET_CHAIN_ID:
+        throw new Error('ChainId not supported yet');
       case config.LINEA_MAINNET_CHAIN_ID:
         try {
           if (!token.extension?.rootAddress) {
