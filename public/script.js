@@ -53,17 +53,22 @@ function generateTokensHTML(tokens, elementId) {
           <div class="card-image" style="width: 64px;">
             ${token.logoURI ? `<img src="${token.logoURI}" alt="${token.name}">` : ``}
           </div>
-          <div class="space-y-2">
+          <div class="space-y-2 w-full">
             <p class="font-bold text-md">
               ${token.name}
               <span class="text-gray-400">${token.symbol}</span>
             </p>
-            <p class="text-sm">
-              Decimals: ${token.decimals}
-            </p>
-            <p class="text-sm">
+            <div class="text-sm w-full flex justify-between">
+              <span>Decimals: ${token.decimals}</span>
+              ${
+                highlightAddresses.includes(token.address)
+                  ? `<span class="badge badge-warning">Not in shortlist</span>`
+                  : ``
+              }
+            </div>
+            <div class="text-sm space-x-2 py-2">
               ${generateTokenTypesHTML(token.tokenType)}
-            </p>
+            </div>
           </div>
         </div>
        
