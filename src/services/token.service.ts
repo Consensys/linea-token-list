@@ -283,7 +283,7 @@ export class TokenService {
   }
 
   /**
-   * Verifies the token
+   * Get a verified token by chainId
    * @param token
    * @returns
    */
@@ -347,7 +347,7 @@ export class TokenService {
   }
 
   /**
-   * Verifies the token with a reserved status or  with a non-zero bridged token
+   * Verifies the token with a reserved status or with a non-zero bridged token
    * @param token
    * @param verifiedToken
    * @param tokenTypes
