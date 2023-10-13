@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import { config as dotenvConfig } from 'dotenv';
 import { Config } from 'src/models/config';
 

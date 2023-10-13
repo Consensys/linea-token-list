@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 export type Config = {
   L1_PROVIDER_URL: string;
   L2_PROVIDER_URL: string;

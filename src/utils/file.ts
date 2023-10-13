@@ -36,7 +36,7 @@ export const saveJsonFile = (filePath: string, data: any): void => {
  * @param list
  * @returns
  */
-const formatLineaTokenList = (list: LineaTokenList): LineaTokenList => {
+export const formatLineaTokenList = (list: LineaTokenList): LineaTokenList => {
   return {
     type: list.type,
     tokenListId: list.tokenListId,
@@ -48,7 +48,7 @@ const formatLineaTokenList = (list: LineaTokenList): LineaTokenList => {
   };
 };
 
-const formatToken = (token: Token): Token => {
+export const formatToken = (token: Token): Token => {
   return {
     chainId: token.chainId,
     chainURI: token.chainURI,

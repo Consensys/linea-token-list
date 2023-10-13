@@ -26,9 +26,9 @@ const VERIFY_BATCH_SIZE = 10;
  * Discover ERC20 tokens by processing the Canonical Token Bridge events
  */
 export class TokenService {
-  private tokenList: Token[] = [];
-  private erc20ContractABI: ContractInterface;
-  private erc20Byte32ContractABI: ContractInterface;
+  tokenList: Token[] = [];
+  erc20ContractABI: ContractInterface;
+  erc20Byte32ContractABI: ContractInterface;
   private l1Contract: Contract;
   private l2Contract: Contract;
 
@@ -309,6 +309,12 @@ export class TokenService {
     return verifiedToken;
   }
 
+  /**
+   * Verifies the token without a root address
+   * @param token
+   * @param verifiedToken
+   * @returns
+   */
   private async verifyWithoutRootAddress(token: Token, verifiedToken: Token | undefined): Promise<Token | undefined> {
     verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
     if (verifiedToken) {
