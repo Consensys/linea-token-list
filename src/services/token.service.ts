@@ -82,22 +82,22 @@ export class TokenService {
 
   /**
    * Gets the contract with the ERC20 ABI or the ERC20 Byte32 ABI
-   * @param erc20Address
+   * @param tokenAddress
    * @param chainId
    * @returns
    */
-  async getContractWithRetry(erc20Address: string, chainId: number): Promise<Token | undefined> {
+  async getContractWithRetry(tokenAddress: string, chainId: number): Promise<Token | undefined> {
     const provider = chainId === config.ETHEREUM_MAINNET_CHAIN_ID ? this.l1Provider : this.l2Provider;
     try {
-      const erc20Contract = new Contract(erc20Address, this.erc20ContractABI, provider);
+      const erc20Contract = new Contract(tokenAddress, this.erc20ContractABI, provider);
       return await fetchTokenInfo(erc20Contract, ABIType.STANDARD);
     } catch (error) {
-      logger.warn('Error fetching token info with ERC20 ABI', { address: erc20Address, error });
+      logger.warn('Error fetching token info with ERC20 ABI', { address: tokenAddress, error });
       try {
-        const erc20AltContract = new Contract(erc20Address, this.erc20Byte32ContractABI, provider);
+        const erc20AltContract = new Contract(tokenAddress, this.erc20Byte32ContractABI, provider);
         return await fetchTokenInfo(erc20AltContract, ABIType.BYTE32);
       } catch (error) {
-        logger.error('Error fetching token info with ERC20 Byte32 ABI', { address: erc20Address, error });
+        logger.error('Error fetching token info with ERC20 Byte32 ABI', { address: tokenAddress, error });
         return;
       }
     }
