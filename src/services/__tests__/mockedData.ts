@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import { LineaTokenList } from 'src/models/token';
 
 export const mockTokenShortlist: LineaTokenList = {
