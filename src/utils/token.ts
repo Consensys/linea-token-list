@@ -1,9 +1,11 @@
 import { Contract, Event, utils } from 'ethers';
+import diff from 'deep-diff';
 
-import { getCurrentDate } from 'src/utils/date';
-import { ABIType, Token } from 'src/models/token';
-import { config } from 'src/config';
+import { ABIType, LineaTokenList, Token } from 'src/models/token';
 import { logger } from 'src/logger';
+import { readJsonFile, saveJsonFile } from './file';
+import { getBumpedVersions } from './list';
+import { getCurrentDate } from './date';
 
 /**
  * Returns the token address and native token address from an event
@@ -74,5 +76,65 @@ export const checkTokenExists = (tokenList: Token[], tokenAddress: string): Toke
   const tokenExtension = tokenList.find((token: Token) => token.extension?.rootAddress === tokenAddress);
   if (tokenExtension && tokenExtension.address) {
     return tokenExtension;
+  }
+};
+
+/**
+ * Updates the token list if modifications are found
+ * @param path
+ * @param originalList
+ * @param checkTokenList
+ */
+export const updateTokenListIfNeeded = (path: string, originalList: LineaTokenList, checkTokenList: Token[]): void => {
+  if (_.isEqual(originalList.tokens, checkTokenList)) {
+    logger.info('Token list matching');
+  } else {
+    const tokenList = readJsonFile(path);
+    const differences = diff(originalList.tokens, checkTokenList);
+    const newTokenList = {
+      ...tokenList,
+      updatedAt: getCurrentDate(),
+      versions: getBumpedVersions(tokenList.versions),
+      tokens: checkTokenList,
+    };
+    saveJsonFile(path, newTokenList);
+    logger.info('Token list updated', { path, differences });
+  }
+};
+
+/**
+ * Check token errors
+ * @param token
+ * @param verifiedToken
+ */
+export const checkTokenErrors = (token: Token, verifiedToken: Token): void => {
+  if (token.address !== verifiedToken.address) {
+    logger.error('address mismatch', {
+      name: token.name,
+      currentTokenAddress: token.address,
+      newTokenAddress: verifiedToken.address,
+    });
+    throw new Error('address mismatch');
+  } else if (token.extension?.rootAddress !== verifiedToken.extension?.rootAddress) {
+    logger.error('rootAddress mismatch', {
+      name: token.name,
+      currentTokenRootAddress: token.extension?.rootAddress,
+      newTokenRootAddress: verifiedToken.extension?.rootAddress,
+    });
+    throw new Error('rootAddress mismatch');
+  } else if (token.symbol !== verifiedToken.symbol) {
+    logger.error('symbol mismatch', {
+      name: token.name,
+      currentTokenSymbol: token.symbol,
+      newTokenSymbol: verifiedToken.symbol,
+    });
+    throw new Error('symbol mismatch');
+  } else if (token.decimals !== verifiedToken.decimals) {
+    logger.error('decimals mismatch', {
+      name: token.name,
+      currentTokenDecimals: token.decimals,
+      newTokenDecimals: verifiedToken.decimals,
+    });
+    throw new Error('decimals mismatch');
   }
 };

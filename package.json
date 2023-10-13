@@ -12,13 +12,14 @@
     "prepare": "husky install",
     "start": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/syncMainnetFulllist.js",
     "dev": "ts-node -r tsconfig-paths/register scripts/syncMainnetFulllist.ts",
-    "shortlist-start": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/verifyMainnetShorlist.js",
-    "shortlist-dev": "ts-node -r tsconfig-paths/register scripts/verifyMainnetShorlist.ts",
+    "verify-start": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/verifyMainnetShorlist.js",
+    "verify-dev": "ts-node -r tsconfig-paths/register scripts/verifyMainnetShorlist.ts",
     "test": "jest"
   },
   "dependencies": {
     "axios": "^1.5.1",
     "date-fns": "^2.30.0",
+    "deep-diff": "^1.0.2",
     "dotenv": "^16.3.1",
     "ethers": "5.6.1",
     "fs-extra": "^11.1.1",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-typescript": "^7.23.2",
+    "@types/deep-diff": "^1.0.3",
     "@types/jest": "^29.5.5",
     "@types/lodash": "^4.14.199",
     "@types/node": "^20.8.4",
