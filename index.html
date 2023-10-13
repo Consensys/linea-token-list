@@ -1,39 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Include Tailwind CSS and DaisyUI -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.13.0/dist/full.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.13.0/dist/full.css" rel="stylesheet" />
     <title>Linea Token Lists</title>
-    <link rel="stylesheet" href="public/style.css">
-</head>
-<body class="bg-black">
+    <link rel="stylesheet" href="public/style.css" />
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body class="bg-black">
     <header class="shadow-sm pb-6">
-        <div class="mx-auto flex justify-between items-center">
-            <a href="/" class="flex items-center">
-                <img src="public/images/linea.svg" alt="Linea" class="h-8 w-auto">
-            </a>
-            <a href="https://github.com/consenSys/linea-token-list" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black">
-                <img src="public/images/github-mark-white.svg" alt="GitHub" class="h-8 w-auto">
-            </a>
-        </div>
+      <div class="mx-auto flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="public/images/linea.svg" alt="Linea" class="h-8 w-auto" />
+        </a>
+        <a
+          href="https://github.com/consenSys/linea-token-list"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-600 hover:text-black"
+        >
+          <img src="public/images/github.svg" alt="GitHub" class="h-8 w-auto" />
+        </a>
+      </div>
     </header>
+    <div class="p-4 flex flex-row space-x-4">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search by Name or Symbol..."
+        class="input input-bordered w-full max-w-xs"
+      />
+      <div class="space-x-2 flex flex-row">
+        <button data-type="all" class="filter-btn btn btn-primary">All</button>
+        <button data-type="canonical-bridge" class="filter-btn btn">Canonical Bridge</button>
+        <button data-type="bridge-reserved" class="filter-btn btn">Bridge Reserved</button>
+        <button data-type="external-bridge" class="filter-btn btn">External Bridge</button>
+        <button data-type="native" class="filter-btn btn">Native</button>
+      </div>
+    </div>
 
     <div>
-        <h1 class="text-2xl px-4">Linea Mainnet Token Short List</h1>
-        <section id="mainnetShortList" class="flex flex-wrap justify-start">
-            <div id="mainnetShortList"></div>
-        </section>
+      <h1 class="text-2xl px-4 mt-4">
+        <a
+          href="https://github.com/Consensys/linea-token-list/blob/main/json/linea-mainnet-token-shortlist.json"
+          target="_blank"
+          class="link"
+          >Linea Mainnet Token Short List</a
+        >
+        <span id="shortListCount" />
+      </h1>
+      <section id="mainnetShortList" class="flex flex-wrap justify-start">
+        <div id="mainnetShortList"></div>
+      </section>
     </div>
     <div>
-        <h1 class="text-2xl px-4">Linea Mainnet Token Full List</h1>
-        <section id="mainnetFullList" class="flex flex-wrap justify-start">
-            <div id="mainnetFullList"></div>
-        </section>
+      <h1 class="text-2xl px-4 mt-4">
+        <a
+          href="https://github.com/Consensys/linea-token-list/blob/main/json/linea-mainnet-token-fulllist.json"
+          target="_blank"
+          class="link"
+          >Linea Mainnet Token Full List</a
+        >
+        <span id="fullListCount" />
+      </h1>
+
+      <section id="mainnetFullList" class="flex flex-wrap justify-start">
+        <div id="mainnetFullList"></div>
+      </section>
     </div>
 
     <script src="public/script.js"></script>
-</body>
+  </body>
 </html>

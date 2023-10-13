@@ -1,4 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.highlight {
+  border-color: red !important;
 }
