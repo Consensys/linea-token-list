@@ -13,6 +13,8 @@ export const configSchema = Joi.object({
   TOKEN_SHORT_LIST_PATH: Joi.string().default('json/linea-mainnet-token-shortlist.json'),
 
   COINGECKO_URL: Joi.string().default('https://api.coingecko.com/api/v3/coins/1/contract/'),
+  COINMARKETCAP_URL: Joi.string().default('https://pro-api.coinmarketcap.com'),
+  COINMARKETCAP_API_KEY: Joi.string(),
   ETHEREUM_MAINNET_CHAIN_ID: Joi.number().default(1),
   LINEA_MAINNET_CHAIN_ID: Joi.number().default(59144),
 });

@@ -9,6 +9,8 @@ export type Config = {
   TOKEN_FULL_LIST_PATH: string;
   TOKEN_SHORT_LIST_PATH: string;
   COINGECKO_URL: string;
+  COINMARKETCAP_URL: string;
+  COINMARKETCAP_API_KEY: string;
   ETHEREUM_MAINNET_CHAIN_ID: number;
   LINEA_MAINNET_CHAIN_ID: number;
 };

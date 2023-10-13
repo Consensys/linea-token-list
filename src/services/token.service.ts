@@ -8,10 +8,9 @@ import { checkTokenExists, fetchTokenInfo, getEventTokenAddresses } from 'src/ut
 import { getCurrentDate } from 'src/utils/date';
 import { readJsonFile, saveJsonFile } from 'src/utils/file';
 import { getBumpedVersions, sortAlphabetically } from 'src/utils/list';
-import { fetchLogoURI } from 'src/utils/coinGecko';
+import { CryptoService, fetchLogoURI } from 'src/utils/logo';
 import { EventExtended } from 'src/models/event';
 import { normalizeAddress } from 'src/utils/ethereum';
-import { th } from 'date-fns/locale';
 
 const RESERVED_STATUS = normalizeAddress('0x111');
 
@@ -169,7 +168,7 @@ export class TokenService {
    */
   async fetchAndAssignTokenLogo(token: Token): Promise<Token | undefined> {
     try {
-      const logoURIfromCoinGecko = await fetchLogoURI(token);
+      const logoURIfromCoinGecko = await fetchLogoURI(token, CryptoService.COINGECKO);
       if (logoURIfromCoinGecko) {
         token.logoURI = logoURIfromCoinGecko;
       }
@@ -227,6 +226,10 @@ export class TokenService {
     });
   }
 
+  /**
+   * Verifies the token list
+   * @param path
+   */
   async verifyList(path: string) {
     logger.info('Verify list', { path });
     const tokenList = readJsonFile(path);
@@ -235,92 +238,13 @@ export class TokenService {
     for (const token of checkTokenList) {
       index++;
       logger.info('Checking token', { name: token.name, position: `${index}/${checkTokenList.length}` });
-      let verifiedToken: Token | undefined = {} as Token;
-      switch (token.chainId) {
-        case config.LINEA_MAINNET_CHAIN_ID:
-          try {
-            if (!token.extension?.rootAddress) {
-              verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
-              if (verifiedToken) {
-                verifiedToken = this.updateTokenInfo(
-                  verifiedToken,
-                  config.LINEA_MAINNET_CHAIN_ID,
-                  token.address,
-                  undefined,
-                  [TokenType.NATIVE]
-                );
-                delete verifiedToken.extension;
-              }
-            } else {
-              const tokenAddress = utils.getAddress(token.extension.rootAddress);
-              const l1nativeToBridgedToken = await this.l1Contract.nativeToBridgedToken(1, tokenAddress);
-              const l2nativeToBridgedToken = await this.l2Contract.nativeToBridgedToken(1, tokenAddress);
-
-              if (l1nativeToBridgedToken === RESERVED_STATUS) {
-                verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
-                if (verifiedToken) {
-                  verifiedToken = this.updateTokenInfo(
-                    verifiedToken,
-                    config.LINEA_MAINNET_CHAIN_ID,
-                    token.address,
-                    token.extension?.rootAddress,
-                    [TokenType.BRIDGE_RESERVED, TokenType.EXTERNAL_BRIDGE]
-                  );
-                }
-              } else if (l2nativeToBridgedToken !== constants.AddressZero) {
-                verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
-                if (verifiedToken) {
-                  verifiedToken = this.updateTokenInfo(
-                    verifiedToken,
-                    config.LINEA_MAINNET_CHAIN_ID,
-                    token.address,
-                    token.extension?.rootAddress,
-                    [TokenType.CANONICAL_BRIDGE]
-                  );
-                }
-              }
-            }
-          } catch (error) {
-            logger.error('Error checking token', { name: token.name, error });
-            throw error;
-          }
-          break;
-        default:
-          throw new Error('Invalid chainId');
-      }
+      let verifiedToken: Token | undefined = await this.verifyToken(token);
 
       // Error checking
       if (!verifiedToken) {
         throw new Error('Token not found');
-      } else if (token.address !== verifiedToken.address) {
-        logger.error('address mismatch', {
-          name: token.name,
-          currentTokenAddress: token.address,
-          newTokenAddress: verifiedToken.address,
-        });
-        throw new Error('address mismatch');
-      } else if (token.extension?.rootAddress !== verifiedToken.extension?.rootAddress) {
-        logger.error('rootAddress mismatch', {
-          name: token.name,
-          currentTokenRootAddress: token.extension?.rootAddress,
-          newTokenRootAddress: verifiedToken.extension?.rootAddress,
-        });
-        throw new Error('rootAddress mismatch');
-      } else if (token.symbol !== verifiedToken.symbol) {
-        logger.error('symbol mismatch', {
-          name: token.name,
-          currentTokenSymbol: token.symbol,
-          newTokenSymbol: verifiedToken.symbol,
-        });
-        throw new Error('symbol mismatch');
-      } else if (token.decimals !== verifiedToken.decimals) {
-        logger.error('decimals mismatch', {
-          name: token.name,
-          currentTokenDecimals: token.decimals,
-          newTokenDecimals: verifiedToken.decimals,
-        });
-        throw new Error('decimals mismatch');
       }
+      this.checkTokenErrors(token, verifiedToken);
 
       // Auto modify
       if (token.tokenId !== verifiedToken.tokenId) {
@@ -340,7 +264,116 @@ export class TokenService {
       }
     }
 
-    if (_.isEqual(tokenList.tokens, checkTokenList)) {
+    this.updateTokenListIfNeeded(path, tokenList, checkTokenList);
+  }
+
+  /**
+   * Verifies the token
+   * @param token
+   * @returns
+   */
+  async verifyToken(token: Token): Promise<Token | undefined> {
+    let verifiedToken: Token | undefined = {} as Token;
+    switch (token.chainId) {
+      case config.LINEA_MAINNET_CHAIN_ID:
+        try {
+          if (!token.extension?.rootAddress) {
+            verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
+            if (verifiedToken) {
+              verifiedToken = this.updateTokenInfo(
+                verifiedToken,
+                config.LINEA_MAINNET_CHAIN_ID,
+                token.address,
+                undefined,
+                [TokenType.NATIVE]
+              );
+              delete verifiedToken.extension;
+            }
+          } else {
+            const tokenAddress = utils.getAddress(token.extension.rootAddress);
+            const l1nativeToBridgedToken = await this.l1Contract.nativeToBridgedToken(1, tokenAddress);
+            const l2nativeToBridgedToken = await this.l2Contract.nativeToBridgedToken(1, tokenAddress);
+
+            if (l1nativeToBridgedToken === RESERVED_STATUS) {
+              verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
+              if (verifiedToken) {
+                verifiedToken = this.updateTokenInfo(
+                  verifiedToken,
+                  config.LINEA_MAINNET_CHAIN_ID,
+                  token.address,
+                  token.extension?.rootAddress,
+                  [TokenType.BRIDGE_RESERVED, TokenType.EXTERNAL_BRIDGE]
+                );
+              }
+            } else if (l2nativeToBridgedToken !== constants.AddressZero) {
+              verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
+              if (verifiedToken) {
+                verifiedToken = this.updateTokenInfo(
+                  verifiedToken,
+                  config.LINEA_MAINNET_CHAIN_ID,
+                  token.address,
+                  token.extension?.rootAddress,
+                  [TokenType.CANONICAL_BRIDGE]
+                );
+              }
+            }
+          }
+        } catch (error) {
+          logger.error('Error checking token', { name: token.name, error });
+          throw error;
+        }
+        break;
+      default:
+        throw new Error('Invalid chainId');
+    }
+    return verifiedToken;
+  }
+
+  /**
+   * Check token errors
+   * @param token
+   * @param verifiedToken
+   */
+  checkTokenErrors(token: Token, verifiedToken: Token): void {
+    if (token.address !== verifiedToken.address) {
+      logger.error('address mismatch', {
+        name: token.name,
+        currentTokenAddress: token.address,
+        newTokenAddress: verifiedToken.address,
+      });
+      throw new Error('address mismatch');
+    } else if (token.extension?.rootAddress !== verifiedToken.extension?.rootAddress) {
+      logger.error('rootAddress mismatch', {
+        name: token.name,
+        currentTokenRootAddress: token.extension?.rootAddress,
+        newTokenRootAddress: verifiedToken.extension?.rootAddress,
+      });
+      throw new Error('rootAddress mismatch');
+    } else if (token.symbol !== verifiedToken.symbol) {
+      logger.error('symbol mismatch', {
+        name: token.name,
+        currentTokenSymbol: token.symbol,
+        newTokenSymbol: verifiedToken.symbol,
+      });
+      throw new Error('symbol mismatch');
+    } else if (token.decimals !== verifiedToken.decimals) {
+      logger.error('decimals mismatch', {
+        name: token.name,
+        currentTokenDecimals: token.decimals,
+        newTokenDecimals: verifiedToken.decimals,
+      });
+      throw new Error('decimals mismatch');
+    }
+  }
+
+  /**
+   * Updates the token list if needed
+   * @param path
+   * @param originalList
+   * @param checkTokenList
+   */
+  updateTokenListIfNeeded(path: string, originalList: LineaTokenList, checkTokenList: Token[]): void {
+    if (_.isEqual(originalList.tokens, checkTokenList)) {
       logger.info('Token list matching');
     } else {
       logger.warn('Token list not matching');
@@ -351,9 +384,7 @@ export class TokenService {
         tokens: checkTokenList,
       };
       saveJsonFile(path, newTokenList);
-      logger.info('Token list updated', {
-        path,
-      });
+      logger.info('Token list updated', { path });
     }
   }
 }

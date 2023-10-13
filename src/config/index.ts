@@ -13,6 +13,8 @@ export const config: Config = {
   TOKEN_FULL_LIST_PATH: 'json/linea-mainnet-token-fulllist.json',
   TOKEN_SHORT_LIST_PATH: 'json/linea-mainnet-token-shortlist.json',
   COINGECKO_URL: 'https://api.coingecko.com/api/v3/coins/1/contract/',
+  COINMARKETCAP_URL: 'https://pro-api.coinmarketcap.com',
+  COINMARKETCAP_API_KEY: process.env.COINMARKETCAP_API_KEY || '',
   ETHEREUM_MAINNET_CHAIN_ID: 1,
   LINEA_MAINNET_CHAIN_ID: 59144,
 };
