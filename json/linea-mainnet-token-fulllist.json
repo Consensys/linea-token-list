@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2023-10-13",
+  "updatedAt": "2023-10-17",
   "versions": [
     {
       "major": 1,
-      "minor": 17,
+      "minor": 18,
       "patch": 0
     }
   ],
@@ -30,6 +30,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xff8069906C1BdD7650c889f54639a5fcE486ca3e",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xff8069906C1BdD7650c889f54639a5fcE486ca3e",
+      "name": "Ankr Staked ETH",
+      "symbol": "ankrETH",
+      "decimals": 18,
+      "createdAt": "2023-10-17",
+      "updatedAt": "2023-10-17",
+      "logoURI": "https://assets.coingecko.com/coins/images/13403/large/aETHc.png?1696513165",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xE95A203B1a91a908F9B9CE46459d101078c2c3cb"
       }
     },
     {
@@ -195,6 +215,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xa5d4117511938c71615d5b714B7E58c04C112D16",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xa5d4117511938c71615d5b714B7E58c04C112D16",
+      "name": "izumi Token",
+      "symbol": "iZi",
+      "decimals": 18,
+      "createdAt": "2023-10-17",
+      "updatedAt": "2023-10-17",
+      "logoURI": "https://assets.coingecko.com/coins/images/21791/large/izumi-logo-symbol.png?1696521144",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x9ad37205d608B8b219e6a2573f922094CEc5c200"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x3b2F62d42DB19B30588648bf1c184865D4C3B1D6",
       "tokenType": [
         "canonical-bridge"
@@ -270,6 +310,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xe742f157d65355d51c6Df82f04A703F3081c3e81",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xe742f157d65355d51c6Df82f04A703F3081c3e81",
+      "name": "Matic Token",
+      "symbol": "MATIC",
+      "decimals": 18,
+      "createdAt": "2023-10-17",
+      "updatedAt": "2023-10-17",
+      "logoURI": "https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png?1696505277",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0"
       }
     },
     {
@@ -375,6 +435,45 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x536e731a8Ae166173D8875Ad55567B00F264b7b4",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x536e731a8Ae166173D8875Ad55567B00F264b7b4",
+      "name": "SIDUS",
+      "symbol": "SIDUS",
+      "decimals": 18,
+      "createdAt": "2023-10-17",
+      "updatedAt": "2023-10-17",
+      "logoURI": "https://assets.coingecko.com/coins/images/21401/large/SIDUS_coin_logo.png?1696520765",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x549020a9Cb845220D66d3E9c6D9F9eF61C981102"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xb6489De309cb0b37fce5821D99F7300451eE6F68",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xb6489De309cb0b37fce5821D99F7300451eE6F68",
+      "name": "SOCURE",
+      "symbol": "SCR",
+      "decimals": 18,
+      "createdAt": "2023-10-17",
+      "updatedAt": "2023-10-17",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x540E6FE50A07579968eC37e77f15BEC8DbdB79D9"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x93F4d0ab6a8B4271f4a28Db399b5E30612D21116",
       "tokenType": [
         "native"
@@ -425,6 +524,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xe322E20738386766F769b0a6083f4141083d26d0",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xe322E20738386766F769b0a6083f4141083d26d0",
+      "name": "THORChain ETH.RUNE",
+      "symbol": "RUNE",
+      "decimals": 18,
+      "createdAt": "2023-10-17",
+      "updatedAt": "2023-10-17",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x3155BA85D5F96b2d030a4966AF206230e46849cb"
       }
     },
     {

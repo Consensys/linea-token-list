@@ -204,7 +204,7 @@ export class TokenService {
       // If not exists, add it to the list.
       if (existingTokenIndex !== -1 && !_.isEqual(this.tokenList[existingTokenIndex], newToken)) {
         this.tokenList[existingTokenIndex] = newToken;
-      } else {
+      } else if (existingTokenIndex === -1) {
         this.tokenList.push(newToken);
       }
     }
