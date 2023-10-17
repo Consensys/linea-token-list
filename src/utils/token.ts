@@ -104,7 +104,7 @@ export const updateTokenListIfNeeded = (path: string, originalList: LineaTokenLi
 };
 
 /**
- * Check token errors
+ * Checks if the token fields match
  * @param token
  * @param verifiedToken
  */
@@ -118,7 +118,7 @@ export const checkTokenErrors = (token: Token, verifiedToken: Token): void => {
 };
 
 /**
- * Validates a token field
+ * Compares the original token with the verified token
  * @param fieldName
  * @param originalValue
  * @param verifiedValue

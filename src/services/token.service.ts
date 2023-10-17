@@ -344,10 +344,7 @@ export class TokenService {
     const l2nativeToBridgedToken = await this.l2Contract.nativeToBridgedToken(1, tokenAddress);
 
     if (l1nativeToBridgedToken === RESERVED_STATUS) {
-      verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [
-        TokenType.BRIDGE_RESERVED,
-        TokenType.EXTERNAL_BRIDGE,
-      ]);
+      verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.BRIDGE_RESERVED]);
     } else if (l2nativeToBridgedToken !== constants.AddressZero) {
       verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.CANONICAL_BRIDGE]);
     }
