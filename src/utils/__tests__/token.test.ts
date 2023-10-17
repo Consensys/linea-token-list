@@ -1,22 +1,12 @@
-import { config } from 'src/config';
 import { ABIType, Token } from 'src/models/token';
+import { Contract, utils } from 'ethers';
+import { logger } from 'src/logger';
 
-import { Contract, utils, Event } from 'ethers';
-import { checkTokenExists, fetchTokenInfo, getEventTokenAddresses } from 'src/utils/token';
+import { getCurrentDate } from '../date';
+import { checkTokenErrors, checkTokenExists, fetchTokenInfo, getEventTokenAddresses } from '../token';
 
 jest.mock('ethers');
 jest.mock('src/config');
-
-// Update interfaces as per your actual model definition
-interface EventArg {
-  token: string;
-  bridgedToken: string;
-  nativeToken: string;
-}
-
-type MyEvent = Event & {
-  args: EventArg;
-};
 
 describe('Token Utility Functions', () => {
   describe('getEventTokenAddresses', () => {
@@ -48,19 +38,32 @@ describe('Token Utility Functions', () => {
 
       const result = await fetchTokenInfo(mockContract, ABIType.STANDARD);
 
-      expect(result.name).toBe('MockToken');
-      expect(result.symbol).toBe('MTK');
-      expect(result.decimals).toBe(18);
-      expect(result.address).toBe('');
-      expect(result.extension?.rootAddress).toBe(utils.getAddress(mockContract.address));
+      const expectedToken: Token = {
+        chainId: 0,
+        chainURI: '',
+        tokenId: '',
+        tokenType: [],
+        address: '',
+        name: 'MockToken',
+        symbol: 'MTK',
+        decimals: 18,
+        createdAt: getCurrentDate(),
+        updatedAt: getCurrentDate(),
+        extension: {
+          rootChainId: 1,
+          rootChainURI: '',
+          rootAddress: utils.getAddress(mockContract.address),
+        },
+      };
+
+      expect(result).toEqual(expectedToken);
     });
   });
 
   describe('checkTokenExists', () => {
     it('should find and return the token if it exists in the token list by address', () => {
       const mockToken: Token = {
-        // ...token properties
-        chainId: config.LINEA_MAINNET_CHAIN_ID,
+        chainId: 1,
         chainURI: 'https://lineascan.build/block/0',
         tokenId: 'https://lineascan.build/address/',
         tokenType: ['canonical-bridge'],
@@ -83,6 +86,54 @@ describe('Token Utility Functions', () => {
       const result = checkTokenExists(tokenList, tokenAddress);
 
       expect(result).toEqual(mockToken);
+    });
+  });
+
+  describe('checkTokenErrors', () => {
+    it('should throw an error for mismatched token fields', () => {
+      const token: Token = {
+        chainId: 1,
+        chainURI: '',
+        tokenId: '',
+        tokenType: [],
+        address: '0xTokenAddress1',
+        name: 'TokenName1',
+        symbol: 'SYMBOL1',
+        decimals: 18,
+        createdAt: '2023-10-13T00:00:00Z',
+        updatedAt: '2023-10-13T00:00:00Z',
+        extension: {
+          rootChainId: 1,
+          rootChainURI: '',
+          rootAddress: '0xRootAddress1',
+        },
+      };
+      const verifiedToken: Token = {
+        chainId: 2, // Mismatched field
+        chainURI: '',
+        tokenId: '',
+        tokenType: [],
+        address: '0xTokenAddress1',
+        name: 'TokenName1',
+        symbol: 'SYMBOL1',
+        decimals: 18,
+        createdAt: '2023-10-13T00:00:00Z',
+        updatedAt: '2023-10-13T00:00:00Z',
+        extension: {
+          rootChainId: 1,
+          rootChainURI: '',
+          rootAddress: '0xRootAddress1',
+        },
+      };
+
+      const mockLoggerError = jest.spyOn(logger, 'error');
+
+      expect(() => checkTokenErrors(token, verifiedToken)).toThrowError();
+
+      expect(mockLoggerError).toHaveBeenCalledWith(
+        'chainId mismatch',
+        expect.objectContaining({ currentChainId: 1, newChainId: 2 })
+      );
     });
   });
 });

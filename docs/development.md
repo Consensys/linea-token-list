@@ -24,17 +24,37 @@ Install all the necessary packages via:
 npm i
 ```
 
-### Development Script Execution
+### Development Scripts Execution
 
-Initialize the development script with:
+<b>Verify mainnet shortlist</b>
+
+Run the development script with:
+
+```bash
+npm run verify-dev
+```
+
+<b>Synchronize fulllist</b>
+
+Run the development script with:
+
+```bash
+npm run verify-dev
+```
+
+### Production Scripts Execution
+
+<b>Verify mainnet shortlist</b>
+
+Run the production script with:
 
 ```bash
 npm run dev
 ```
 
-### Production Script Execution
+<b>Synchronize fulllist</b>
 
-Initialize the production script with:
+Run the production script with:
 
 ```bash
 npm run start
@@ -46,6 +66,14 @@ To perform unit tests, execute:
 
 ```bash
 npm run test
+```
+
+## Lint
+
+To perform lint, execute:
+
+```bash
+npm run lint
 ```
 
 ## Managing GitHub Page

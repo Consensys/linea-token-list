@@ -59,30 +59,23 @@ const sampleTokenList: Token[] = [
 describe('Token Utils', () => {
   describe('getBumpedVersions', () => {
     it('should bump the minor version', () => {
-      // Setup
       const versions: Version[] = [
         { major: 1, minor: 0, patch: 0 },
         { major: 0, minor: 5, patch: 3 },
-        // Other versions if necessary...
       ];
 
-      // Execute
       const bumpedVersions = getBumpedVersions(versions);
 
-      // Assert
       expect(bumpedVersions).toEqual([{ major: 1, minor: 1, patch: 0 }]);
     });
   });
 
   describe('sortAlphabetically', () => {
     it('should sort tokens alphabetically by name', () => {
-      // Setup
       const tokens: Token[] = sampleTokenList;
 
-      // Execute
       const sortedTokens = sortAlphabetically(tokens);
 
-      // Assert
       expect(sortedTokens).toEqual([sampleTokenList[1], sampleTokenList[2], sampleTokenList[0]]);
     });
   });

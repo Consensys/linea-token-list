@@ -1,13 +1,13 @@
 import { getCurrentDate } from 'src/utils/date';
-
-// Mocking date-fns format function
-jest.mock('date-fns', () => ({
-  format: jest.fn(() => '2023-10-11'),
-}));
+import { format } from 'date-fns';
 
 describe('getCurrentDate', () => {
   it('should return the current date in yyyy-MM-dd format', () => {
+    const actualDate = new Date();
+    const expectedResult = format(actualDate, 'yyyy-MM-dd');
+
     const result = getCurrentDate();
-    expect(result).toEqual('2023-10-11');
+
+    expect(result).toEqual(expectedResult);
   });
 });
