@@ -52,13 +52,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: 16
 
-      - name: Install NPM dependencies
-        run: npm ci
+      - name: Install dependencies
+        run: npm install
 
       - name: Create temporary-dist directory
         run: mkdir temporary-dist
@@ -66,7 +66,7 @@ jobs:
       - name: Transpile TypeScript to JavaScript
         run: npx tsc --outDir temporary-dist
 
-      - name: Execute verifyMainnetShorlist Script
+      - name: Execute JavaScript
         run: node temporary-dist/verifyMainnetShorlist.js
 
       - name: Clean up temporary-dist directory
