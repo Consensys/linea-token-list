@@ -14,7 +14,7 @@ export const configSchema = Joi.object({
 
   COINGECKO_URL: Joi.string().default('https://api.coingecko.com/api/v3/coins/1/contract/'),
   COINMARKETCAP_URL: Joi.string().default('https://pro-api.coinmarketcap.com'),
-  COINMARKETCAP_API_KEY: Joi.string(),
+  COINMARKETCAP_API_KEY: Joi.string().allow('').optional(),
   ETHEREUM_MAINNET_CHAIN_ID: Joi.number().default(1),
   LINEA_MAINNET_CHAIN_ID: Joi.number().default(59144),
 });
