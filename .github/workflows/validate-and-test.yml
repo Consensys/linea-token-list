@@ -48,6 +48,12 @@ jobs:
   verify_mainnet_shortlist:
     runs-on: ubuntu-latest
 
+    env:
+      PROVIDER_URL: ${{ secrets.PROVIDER_URL }}
+      LINEA_PROVIDER_URL: ${{ secrets.LINEA_PROVIDER_URL }}
+      CONTRACT_ADDRESS: ${{ secrets.CONTRACT_ADDRESS }}
+      L2_TOKEN_BRIDGE: ${{ secrets.L2_TOKEN_BRIDGE }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -60,14 +66,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Create temporary-dist directory
-        run: mkdir temporary-dist
-
-      - name: Transpile TypeScript to JavaScript
-        run: npx tsc --outDir temporary-dist
-
-      - name: Execute JavaScript
-        run: node temporary-dist/verifyMainnetShorlist.js
-
-      - name: Clean up temporary-dist directory
-        run: rm -rf temporary-dist
+      - name: Execute script
+        run: npm run verify-start
