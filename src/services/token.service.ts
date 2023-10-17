@@ -262,10 +262,8 @@ export class TokenService {
         });
         token.tokenId = verifiedToken.tokenId;
       }
-      // Exclude external-bridge from tokenType comparison because it is manually added
-      const filteredCurrentTokenTypes = token.tokenType.filter((type) => type !== 'external-bridge');
-      const filteredVerifiedTokenTypes = verifiedToken.tokenType.filter((type) => type !== 'external-bridge');
-      if (!_.isEqual(filteredCurrentTokenTypes, filteredVerifiedTokenTypes)) {
+
+      if (!_.isEqual(token.tokenType, verifiedToken.tokenType)) {
         logger.warn('Token type mismatch', {
           name: token.name,
           currentTokenType: token.tokenType,
