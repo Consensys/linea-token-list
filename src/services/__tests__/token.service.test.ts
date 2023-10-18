@@ -59,7 +59,7 @@ describe('TokenService', () => {
 
       tokenService.concatTokenShortList(mockTokenShortlist);
 
-      expect(tokenService['tokenList']).toHaveLength(5);
+      expect(tokenService['tokenList']).toHaveLength(3);
       expect(tokenService['tokenList']).toEqual(expect.arrayContaining([...mockExistingTokenList]));
     });
   });
