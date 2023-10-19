@@ -4,10 +4,10 @@ sequenceDiagram
         syncMainnetFulllist->>+linea-mainnet-token-fulllist: Get token full list
         linea-mainnet-token-fulllist-->>-syncMainnetFulllist: token full list
 
-        Script->>+Ethereum: Get NewTokenDeployed events
-        Ethereum-->>-Script: Ethereum NewTokenDeployed events
-        Script->>+Linea: Get NewTokenDeployed events
-        Linea-->>-Script: Linea NewTokenDeployed events
+        syncMainnetFulllist->>+Ethereum: Get NewTokenDeployed events
+        Ethereum-->>-syncMainnetFulllist: Ethereum NewTokenDeployed events
+        syncMainnetFulllist->>+Linea: Get NewTokenDeployed events
+        Linea-->>-syncMainnetFulllist: Linea NewTokenDeployed events
 
         loop Every events
             syncMainnetFulllist->>syncMainnetFulllist: Skip if token exists
