@@ -1,0 +1,17 @@
+sequenceDiagram
+    loop Every hour
+        GitHub Action->>+verifyMainnetShorlist: Execute
+        verifyMainnetShorlist->>+linea-mainnet-token-shortlist: Get token list
+        linea-mainnet-token-shortlist-->>-verifyMainnetShorlist: token list
+
+        loop Every token
+            verifyMainnetShorlist->>+Linea: Get Token contract
+            Linea-->>-verifyMainnetShorlist: Onchain token data
+            verifyMainnetShorlist->>verifyMainnetShorlist: Create verified token
+            verifyMainnetShorlist->>verifyMainnetShorlist: Compare current token and verified token
+            verifyMainnetShorlist-->>GitHub Action: Exit if error are found
+            
+        end
+        verifyMainnetShorlist->>verifyMainnetShorlist: Export the list if changes are found
+        verifyMainnetShorlist-->>-GitHub Action: Gracefull stop
+    end
