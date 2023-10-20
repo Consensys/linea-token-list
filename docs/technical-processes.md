@@ -2,11 +2,11 @@
 
 This document provides an overview of the automated systems in place for managing the Linea Token List. It details the GitHub Actions set up for synchronization, validation, and testing, as well as the scripts executed for token updates, both community-initiated and auto-synced from on-chain data.
 
-## Token list updates
+## Token list updates processes
 
-### 1. Community Token List updates
+### Community Token List updates
 
-#### Description:
+#### Description
 
 Step-by-step procedure through which community members can propose token updates. It begins with a user creating a new branch and ends with the pull request (PR) being merged after validation.
 
@@ -18,13 +18,41 @@ Step-by-step procedure through which community members can propose token updates
 
 Mermaid source: [Community Token List updates diagram](./mermaid/diagrams/community-token-list-updates.mmd)
 
-### 2. Sync on-chain Token List ([sync-mainnet-fulllist.yml](../.github/workflows/sync-mainnet-fulllist.yml))
+### Verify and Test
 
-#### Description:
+#### Description
+
+Validates JSON structures and runs unit tests for every push and pull request on the main branch.
+
+#### Features
+
+- Triggered by pushes and pull requests to the main branch.
+- Validates linea-goerli-token-shortlist.json against its JSON schema.
+- Executes unit tests.
+
+#### Sequence diagram
+
+<div align="center">
+    <img src="./mermaid/images/verify-mainnet-shortlist-action.svg" alt="Description for Community Token List updates" width="50%">
+</div>
+
+Mermaid source: [Community Token List updates diagram](./mermaid/diagrams/verify-mainnet-shortlist-action.mmd)
+
+### File
+
+[.github/workflows/verify-and-test.yml](../.github/workflows/verify-and-test.yml)
+
+### Sync on-chain Token List
+
+#### Description
 
 Automatically syncs the on-chain token list every hour. For an in-depth execution flow, refer to the [Script Execution Guide](./script-execution.md).
 
-#### Features:
+### File
+
+[.github/workflows/sync-mainnet-fulllist.yml](../.github/workflows/sync-mainnet-fulllist.yml)
+
+#### Features
 
 - Runs hourly.
 - Generates an updated token list from on-chain data.
@@ -37,44 +65,44 @@ Automatically syncs the on-chain token list every hour. For an in-depth executio
     <img src="./mermaid/images/sync-mainnet-fulllist-action.svg" alt="Description for Community Token List updates" width="50%">
 </div>
 
-### 3. Verify and Test ([verify-and-test.yml](../.github/workflows/verify-and-test.yml))
-
-#### Description:
-
-Validates JSON structures and runs unit tests for every push and pull request on the main branch.
-
-#### Features:
-
-- Triggered by pushes and pull requests to the main branch.
-- Validates linea-goerli-token-shortlist.json against its JSON schema.
-- Executes unit tests.
-
-#### Sequence diagram
-
-<div align="center">
-    <img src="./mermaid/images/verify-mainnet-shortlist-action.svg" alt="Description for Community Token List updates" width="50%">
-</div>
+Mermaid source: [Community Token List updates diagram](./mermaid/diagrams/sync-mainnet-fulllist-action.mmd)
 
 ## Script Execution
 
 Technical workflows associated with updating the Linea Token List. It covers both community-initiated updates and automated synchronization from on-chain data.
 
-### 1. Automatic Mainnet Token List Verification
+### Automatic Mainnet Token List Verification
+
+#### Description
+
+Script that retrieves the Mainnet Token Shortlist, verifies each token's on-chain data, updates any discrepancies, and gracefully terminates after the entire verification process.
+
+#### Sequence diagram
 
 <div align="center">
     <img src="./mermaid/images/verify-mainnet-shortlist.svg" alt="Automatic Mainnet Token List Verification" width="60%">
 </div>
 
-<b>Description</b>: The sequence diagram shows the hourly GitHub Action that retrieves the Mainnet Token Shortlist, verifies each token's on-chain data, updates any discrepancies, and gracefully terminates after the entire verification process.
-
 Mermaid source: [Automatic Sync Mainnet Token List diagram](./mermaid/diagrams/verify-mainnet-shortlist.mmd)
 
-### 2. Automatic Sync Mainnet Token List
+### File
+
+[scripts/verifyMainnetShortlist.ts](../scripts/verifyMainnetShortlist.ts)
+
+### Automatic Sync Mainnet Token List
+
+#### Description
+
+Script for synchronizing the Mainnet Token List directly from on-chain data. Triggered every hour, it encompasses stages from fetching event data from Ethereum to merging updates into the main branch after validation.
+
+#### Sequence diagram
 
 <div align="center">
     <img src="./mermaid/images/sync-mainnet-fulllist.svg" alt="Automatic Sync Mainnet Token List" width="90%">
 </div>
 
-<b>Description</b>: This diagram elucidates the automated process for synchronizing the Mainnet Token List directly from on-chain data. Triggered every hour, it encompasses stages from fetching event data from Ethereum to merging updates into the main branch after validation.
-
 Mermaid source: [Automatic Sync Mainnet Token List diagram](./mermaid/diagrams/sync-mainnet-fulllist.mmd)
+
+### File
+
+[scripts/syncMainnetFulllist.ts](../scripts/syncMainnetFulllist.ts)
