@@ -2,11 +2,23 @@
 
 This document provides an overview of the automated systems in place for managing the Linea Token List. It details the GitHub Actions set up for synchronization, validation, and testing, as well as the scripts executed for token updates, both community-initiated and auto-synced from on-chain data.
 
-## GitHub Actions
+## Token list updates
 
-This project uses GitHub Actions to routinely synchronize the on-chain token list, to validate JSON structures, and execute unit tests on changes to the main branch.
+### 1. Community Token List updates
 
-### 1. Sync on-chain Token List ([sync-mainnet-fulllist.yml](../.github/workflows/sync-mainnet-fulllist.yml))
+#### Description:
+
+Step-by-step procedure through which community members can propose token updates. It begins with a user creating a new branch and ends with the pull request (PR) being merged after validation.
+
+#### Sequence diagram
+
+<div align="center">
+    <img src="./mermaid/images/community-token-list-updates.svg" alt="Description for Community Token List updates" width="50%">
+</div>
+
+Mermaid source: [Community Token List updates diagram](./mermaid/diagrams/community-token-list-updates.mmd)
+
+### 2. Sync on-chain Token List ([sync-mainnet-fulllist.yml](../.github/workflows/sync-mainnet-fulllist.yml))
 
 #### Description:
 
@@ -25,7 +37,7 @@ Automatically syncs the on-chain token list every hour. For an in-depth executio
     <img src="./mermaid/images/sync-mainnet-fulllist-action.svg" alt="Description for Community Token List updates" width="50%">
 </div>
 
-### 2. Verify and Test ([verify-and-test.yml](../.github/workflows/verify-and-test.yml))
+### 3. Verify and Test ([verify-and-test.yml](../.github/workflows/verify-and-test.yml))
 
 #### Description:
 
@@ -47,17 +59,7 @@ Validates JSON structures and runs unit tests for every push and pull request on
 
 Technical workflows associated with updating the Linea Token List. It covers both community-initiated updates and automated synchronization from on-chain data.
 
-### Community Token List updates
-
-<div align="center">
-    <img src="./mermaid/images/community-token-list-updates.svg" alt="Description for Community Token List updates" width="50%">
-</div>
-
-<b>Description</b>: This flowchart illustrates the step-by-step procedure through which community members can propose token updates. It begins with a user creating a new branch and ends with the pull request (PR) being merged after validation.
-
-Mermaid source: [Community Token List updates diagram](./mermaid/diagrams/community-token-list-updates.mmd)
-
-### Automatic Mainnet Token List Verification
+### 1. Automatic Mainnet Token List Verification
 
 <div align="center">
     <img src="./mermaid/images/verify-mainnet-shortlist.svg" alt="Automatic Mainnet Token List Verification" width="60%">
@@ -67,7 +69,7 @@ Mermaid source: [Community Token List updates diagram](./mermaid/diagrams/commun
 
 Mermaid source: [Automatic Sync Mainnet Token List diagram](./mermaid/diagrams/verify-mainnet-shortlist.mmd)
 
-### Automatic Sync Mainnet Token List
+### 2. Automatic Sync Mainnet Token List
 
 <div align="center">
     <img src="./mermaid/images/sync-mainnet-fulllist.svg" alt="Automatic Sync Mainnet Token List" width="90%">
