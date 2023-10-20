@@ -26,9 +26,11 @@ Validates JSON structures and runs unit tests for every push and pull request on
 
 #### Features
 
-- Triggered by pushes and pull requests to the main branch.
-- Validates linea-goerli-token-shortlist.json against its JSON schema.
+- Triggered by pull requests to the main branch.
 - Executes unit tests.
+- Validates linea-goerli-token-shortlist.json against its JSON schema.
+- Executes verifyMainnetShortlist.
+- Commit changes if changes are detected.
 
 #### Sequence diagram
 
@@ -55,6 +57,7 @@ Automatically syncs the on-chain token list every hour. For an in-depth executio
 #### Features
 
 - Runs hourly.
+- Executes verifyMainnetShortlist.
 - Generates an updated token list from on-chain data.
 - Creates a pull request if changes are detected.
 - Auto-merges and cleans up the PR branch.
