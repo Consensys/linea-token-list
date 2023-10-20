@@ -22,10 +22,10 @@ Automatically syncs the on-chain token list every hour. For an in-depth executio
 #### Sequence diagram
 
 <div align="center">
-    <img src="./mermaid/images/verify-mainnet-shortlist-action.svg" alt="Description for Community Token List updates" width="50%">
+    <img src="./mermaid/images/sync-mainnet-fulllist-action.svg" alt="Description for Community Token List updates" width="50%">
 </div>
 
-### 2. Validate and Test ([verify-and-test.yml](../.github/workflows/verify-and-test.yml))
+### 2. Verify and Test ([verify-and-test.yml](../.github/workflows/verify-and-test.yml))
 
 #### Description:
 
