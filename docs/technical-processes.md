@@ -6,7 +6,7 @@ This document provides an overview of the automated systems in place for managin
 
 This project uses GitHub Actions to routinely synchronize the on-chain token list, to validate JSON structures, and execute unit tests on changes to the main branch.
 
-### 1. Sync on-chain Token List (sync-mainnet-fulllist.yml)
+### 1. Sync on-chain Token List ([sync-mainnet-fulllist.yml](../.github/workflows/sync-mainnet-fulllist.yml))
 
 #### Description:
 
@@ -19,7 +19,7 @@ Automatically syncs the on-chain token list every hour. For an in-depth executio
 - Creates a pull request if changes are detected.
 - Auto-merges and cleans up the PR branch.
 
-### 2. Validate and Test (validate-and-test.yml)
+### 2. Validate and Test ([validate-and-test.yml](../.github/workflows/validate-and-test.yml))
 
 #### Description:
 
