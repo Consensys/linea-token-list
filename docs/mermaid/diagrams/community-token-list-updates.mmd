@@ -1,15 +1,12 @@
 sequenceDiagram
     actor User
+    
     User->>+GitHub new branch: Update Json
     User->>+GitHub new branch: Create PR
     GitHub new branch->>GitHub new branch: Automatic verification
-    GitHub new branch-->>-User: PR Created
+    GitHub new branch-->>-User: PR Validated
 
-    box rgb(191, 223, 255) GitHub
-    participant GitHub new branch
-    participant GitHub main
-    end
-
+    actor Validator
     GitHub new branch->>+Validator: PR Reviewed
     Validator->>-GitHub new branch: PR Validated
-    GitHub new branch->>GitHub main: PR Merged
+    GitHub new branch->>GitHub main branch: PR Merged

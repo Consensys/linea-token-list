@@ -11,7 +11,7 @@
     "husky-run": "node husky.js",
     "prepare": "husky install",
     "start": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/syncMainnetFulllist.js",
-    "verify-start": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/verifyMainnetShorlist.js",
+    "verify-start": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/verifyMainnetShortlist.js",
     "test": "jest",
     "lint": "eslint './src/**/*.ts' --quiet"
   },

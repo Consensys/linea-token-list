@@ -1,9 +1,6 @@
-name: Validate and Test
+name: Verify and Test
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -53,10 +50,13 @@ jobs:
       LINEA_PROVIDER_URL: ${{ secrets.LINEA_PROVIDER_URL }}
       CONTRACT_ADDRESS: ${{ secrets.CONTRACT_ADDRESS }}
       L2_TOKEN_BRIDGE: ${{ secrets.L2_TOKEN_BRIDGE }}
+      HAS_CHANGES: false
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -66,5 +66,27 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Execute script
+      - name: Execute verifyMainnetShortlist
         run: npm run verify-start
+
+      - name: Check for changes
+        run: |
+          if [[ -n $(git diff --exit-code) ]]; then
+            echo "Changes detected. Creating a commit."
+            echo "HAS_CHANGES=true" >> $GITHUB_ENV
+          else
+            echo "No changes detected. Skipping commit creation."
+            exit 0
+          fi
+
+      - name: Commit changes
+        if: env.HAS_CHANGES == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          HUSKY_SKIP_HOOKS=1 git commit -m "Updated by verifyMainnetShortlist script" || echo "No changes to commit"
+
+      - name: Push changes
+        if: env.HAS_CHANGES == 'true'
+        run: git push origin HEAD:refs/heads/${GITHUB_HEAD_REF}
