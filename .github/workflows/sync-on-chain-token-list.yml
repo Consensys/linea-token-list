@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: github.repository == 'phoax/linea-token-list'
+    if: github.repository == 'Consensys/linea-token-list'
     runs-on: ubuntu-latest
 
     env:
