@@ -19,7 +19,13 @@ Automatically syncs the on-chain token list every hour. For an in-depth executio
 - Creates a pull request if changes are detected.
 - Auto-merges and cleans up the PR branch.
 
-### 2. Validate and Test ([validate-and-test.yml](../.github/workflows/validate-and-test.yml))
+#### Sequence diagram
+
+<div align="center">
+    <img src="./mermaid/images/verify-mainnet-shortlist-action.svg" alt="Description for Community Token List updates" width="50%">
+</div>
+
+### 2. Validate and Test ([verify-and-test.yml](../.github/workflows/verify-and-test.yml))
 
 #### Description:
 
@@ -30,6 +36,12 @@ Validates JSON structures and runs unit tests for every push and pull request on
 - Triggered by pushes and pull requests to the main branch.
 - Validates linea-goerli-token-shortlist.json against its JSON schema.
 - Executes unit tests.
+
+#### Sequence diagram
+
+<div align="center">
+    <img src="./mermaid/images/verify-mainnet-shortlist-action.svg" alt="Description for Community Token List updates" width="50%">
+</div>
 
 ## Script Execution
 
@@ -48,12 +60,12 @@ Mermaid source: [Community Token List updates diagram](./mermaid/diagrams/commun
 ### Automatic Mainnet Token List Verification
 
 <div align="center">
-    <img src="./mermaid/images/verify-mainnet-shorlist.svg" alt="Automatic Mainnet Token List Verification" width="60%">
+    <img src="./mermaid/images/verify-mainnet-shortlist.svg" alt="Automatic Mainnet Token List Verification" width="60%">
 </div>
 
 <b>Description</b>: The sequence diagram shows the hourly GitHub Action that retrieves the Mainnet Token Shortlist, verifies each token's on-chain data, updates any discrepancies, and gracefully terminates after the entire verification process.
 
-Mermaid source: [Automatic Sync Mainnet Token List diagram](./mermaid/diagrams/verify-mainnet-shorlist.mmd)
+Mermaid source: [Automatic Sync Mainnet Token List diagram](./mermaid/diagrams/verify-mainnet-shortlist.mmd)
 
 ### Automatic Sync Mainnet Token List
 
