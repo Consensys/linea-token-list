@@ -6,7 +6,7 @@ sequenceDiagram
     GitHub Action->>GitHub Action: npm run test
     GitHub Action->>GitHub Action: Validate JSON
     GitHub Action->>+verifyMainnetShortlist: Execute
-    verifyMainnetShortlist-->>GitHub Action: Gracefull stop
+    verifyMainnetShortlist-->>GitHub Action: graceful stop
     GitHub Action->>GitHub Action: Check for changes
     GitHub Action->>GitHub new branch:commit changes
     GitHub new branch->>-User: Actions successful
