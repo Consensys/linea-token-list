@@ -123,7 +123,7 @@
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0xB4257F31750961C8e536f5cfCBb3079437700416",
       "tokenType": ["canonical-bridge"],
-      "address": "0xB4257F31750961C8e536f5cfCBb3079437700416",
+      "address": "0xf56dc6695cf1f5c364edebc7dc7077ac9b586068",
       "name": "USD Coin",
       "symbol": "USDC",
       "decimals": 6,
