@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2023-09-28",
+  "updatedAt": "2023-10-13",
   "versions": [
     {
       "major": 1,
-      "minor": 10,
+      "minor": 11,
       "patch": 0
     }
   ],
@@ -17,7 +17,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x1578f35532FA091EcED8638730F9dB829930ce16",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x1578f35532FA091EcED8638730F9dB829930ce16",
       "name": "Angle Protocol",
@@ -37,7 +37,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x6bAA318CF7C51C76e17ae1EbE9Bbff96AE017aCB",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x6bAA318CF7C51C76e17ae1EbE9Bbff96AE017aCB",
       "name": "ApeCoin",
@@ -57,7 +57,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x5B16228B94b68C7cE33AF2ACc5663eBdE4dCFA2d",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x5B16228B94b68C7cE33AF2ACc5663eBdE4dCFA2d",
       "name": "ChainLink Token",
@@ -77,7 +77,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x4AF15ec2A0BD43Db75dd04E62FAA3B8EF36b00d5",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x4AF15ec2A0BD43Db75dd04E62FAA3B8EF36b00d5",
       "name": "Dai Stablecoin",
@@ -97,7 +97,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x1f031f8c523b339c7a831355879e3568fa3eb263",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x1f031f8c523b339c7a831355879e3568fa3eb263",
       "name": "DeversiFi Token",
@@ -117,7 +117,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x70359c1eeB98eb3D12eE7178359a4541ff11Cc8E",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x70359c1eeB98eb3D12eE7178359a4541ff11Cc8E",
       "name": "DSLA Protocol",
@@ -137,7 +137,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x0A79e44c99505c7f388CA30c787ff97217E73ecC",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x0A79e44c99505c7f388CA30c787ff97217E73ecC",
       "name": "Frax Share",
@@ -157,7 +157,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xe516a5CFf996cc399EFBb48355FD5Ab83438E7a9",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0xe516a5CFf996cc399EFBb48355FD5Ab83438E7a9",
       "name": "Gnosis Token",
@@ -177,7 +177,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x0e5F2ee8C29e7eBc14e45dA7FF90566d8c407dB7",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x0e5F2ee8C29e7eBc14e45dA7FF90566d8c407dB7",
       "name": "HAPI Protocol",
@@ -197,7 +197,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x3b2F62d42DB19B30588648bf1c184865D4C3B1D6",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x3b2F62d42DB19B30588648bf1c184865D4C3B1D6",
       "name": "Kyber Network Crystal v2",
@@ -217,7 +217,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x0e076AAFd86a71dCEAC65508DAF975425c9D0cB6",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x0e076AAFd86a71dCEAC65508DAF975425c9D0cB6",
       "name": "Lido DAO Token",
@@ -237,7 +237,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x9D36f49D3d42B3A9BcC0f5Ac76fF8ef78fB2bC01",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x9D36f49D3d42B3A9BcC0f5Ac76fF8ef78fB2bC01",
       "name": "Lybra Finance",
@@ -255,9 +255,9 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x8C56017B172226fE024dEa197748FC1eaccC82B1",
+      "tokenId": "https://lineascan.build/address/0x2442Bd7AE83b51F6664De408A385375fe4a84F52",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x2442Bd7AE83b51F6664De408A385375fe4a84F52",
       "name": "Maker",
@@ -277,7 +277,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
       "name": "Pax Dollar",
@@ -297,7 +297,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xA6eb75B11b36FB9175fB94C5b96959879A26C2A8",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0xA6eb75B11b36FB9175fB94C5b96959879A26C2A8",
       "name": "Meta Apes Peel",
@@ -317,7 +317,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x7da14988E4f390C2E34ed41DF1814467D3aDe0c3",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x7da14988E4f390C2E34ed41DF1814467D3aDe0c3",
       "name": "Pepe",
@@ -337,7 +337,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x99AD925C1Dc14Ac7cc6ca1244eeF8043C74E99d5",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x99AD925C1Dc14Ac7cc6ca1244eeF8043C74E99d5",
       "name": "SHIBA INU",
@@ -357,7 +357,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x6EF95B6f3b0F39508e3E04054Be96D5eE39eDE0d",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x6EF95B6f3b0F39508e3E04054Be96D5eE39eDE0d",
       "name": "Symbiosis",
@@ -376,7 +376,9 @@
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x93F4d0ab6a8B4271f4a28Db399b5E30612D21116",
-      "tokenType": [],
+      "tokenType": [
+        "native"
+      ],
       "address": "0x93F4d0ab6a8B4271f4a28Db399b5E30612D21116",
       "name": "Stone Liquidity Ether Token",
       "symbol": "STONE",
@@ -390,7 +392,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xA219439258ca9da29E9Cc4cE5596924745e12B93",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0xA219439258ca9da29E9Cc4cE5596924745e12B93",
       "name": "Tether USD",
@@ -410,7 +412,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x636B22bC471c955A8DB60f28D4795066a8201fa3",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x636B22bC471c955A8DB60f28D4795066a8201fa3",
       "name": "Uniswap",
@@ -430,7 +432,8 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x176211869cA2b568f2A7D4EE941E073a821EE1ff",
       "tokenType": [
-        "bridged"
+        "bridge-reserved",
+        "external-bridge"
       ],
       "address": "0x176211869cA2b568f2A7D4EE941E073a821EE1ff",
       "name": "USD Coin",
@@ -450,7 +453,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x3aAB2285ddcDdaD8edf438C1bAB47e1a9D05a9b4",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x3aAB2285ddcDdaD8edf438C1bAB47e1a9D05a9b4",
       "name": "Wrapped BTC",
@@ -469,7 +472,9 @@
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xe5D7C2a44FfDDf6b295A15c148167daaAf5Cf34f",
-      "tokenType": [],
+      "tokenType": [
+        "native"
+      ],
       "address": "0xe5D7C2a44FfDDf6b295A15c148167daaAf5Cf34f",
       "name": "Wrapped Ether",
       "symbol": "WETH",
@@ -483,7 +488,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xB5beDd42000b71FddE22D3eE8a79Bd49A568fC8F",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0xB5beDd42000b71FddE22D3eE8a79Bd49A568fC8F",
       "name": "Wrapped liquid staked Ether 2.0",
@@ -503,7 +508,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x8C56017B172226fE024dEa197748FC1eaccC82B1",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x8C56017B172226fE024dEa197748FC1eaccC82B1",
       "name": "XFai",

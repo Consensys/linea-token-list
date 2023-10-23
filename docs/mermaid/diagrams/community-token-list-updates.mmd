@@ -1,0 +1,12 @@
+sequenceDiagram
+    actor User
+    
+    User->>+GitHub new branch: Update Json
+    User->>+GitHub new branch: Create PR
+    GitHub new branch->>GitHub new branch: Automatic verification
+    GitHub new branch-->>-User: PR Validated
+
+    actor Validator
+    GitHub new branch->>+Validator: PR Reviewed
+    Validator->>-GitHub new branch: PR Validated
+    GitHub new branch->>GitHub main branch: PR Merged
