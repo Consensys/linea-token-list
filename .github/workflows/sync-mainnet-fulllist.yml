@@ -55,6 +55,7 @@ jobs:
           base: main
 
       - name: Pull Request Automerge
+        if: env.HAS_CHANGES == 'true'
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
