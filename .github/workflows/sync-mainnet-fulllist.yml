@@ -61,12 +61,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
           merge-method: squash
-
-      - name: Delete Pull Request Branch
-        run: |
-          if git show-ref --verify --quiet "refs/heads/token-automatic-list"; then
-            echo "Branch 'token-automatic-list' exists. Deleting..."
-            git push origin --delete token-automatic-list
-          else
-            echo "Branch 'token-automatic-list' does not exist."
-          fi

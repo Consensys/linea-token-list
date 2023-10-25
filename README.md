@@ -1,6 +1,6 @@
 # Linea Token List
 
-This repository maintains a list of ERC20 tokens available on Linea. The list is kept updated by the community.
+This repository maintains a list of ERC20 tokens available on Linea. The list is kept updated by the community. For comprehensive details and additional context, visit our [Linea Token List](https://consensys.github.io/linea-token-list/).
 
 If you want to add a token or validate an addition, please follow the procedures outlined below.
 
