@@ -112,11 +112,11 @@ function generateAddress2LinkHTML(token) {
   // Determine the base URL based on the chainId
   switch (token.chainId) {
     case 1:
-      baseURL = 'https://etherscan.io/address/';
+      baseURL = 'https://lineascan.build/address/';
       layer = 'Linea';
       break;
     case 59144:
-      baseURL = 'https://lineascan.build/address/';
+      baseURL = 'https://etherscan.io/address/';
       layer = 'Ethereum';
       break;
     default:
