@@ -2,24 +2,22 @@
 let allTokens = {};
 let filteredTokens = {};
 
-function fetchTokensAndDisplay(path, elementId) {
-  fetch(path)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok' + response.statusText);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      allTokens[elementId] = data.tokens;
-      filteredTokens[elementId] = data.tokens;
-      const tokensHTML = generateTokensHTML(data.tokens, elementId);
-      document.getElementById(elementId).innerHTML = tokensHTML;
-      updateTokenCounts();
-    })
-    .catch((error) => {
-      console.error('There has been a problem with your fetch operation:', error);
-    });
+async function fetchTokensAndDisplay(path, elementId) {
+  try {
+    const response = await fetch(path);
+    if (!response.ok) {
+      throw new Error('Network response was not ok' + response.statusText);
+    }
+    const data = await response.json();
+
+    allTokens[elementId] = data.tokens;
+    filteredTokens[elementId] = data.tokens;
+    const tokensHTML = generateTokensHTML(data.tokens, elementId);
+    document.getElementById(elementId).innerHTML = tokensHTML;
+    updateTokenCounts();
+  } catch (error) {
+    console.error('There has been a problem with your fetch operation:', error);
+  }
 }
 
 function updateTokenCounts() {
@@ -200,5 +198,7 @@ document.getElementById('searchInput').addEventListener('input', function (e) {
 });
 
 // Fetch and display data from the specified paths
-fetchTokensAndDisplay('./json/linea-mainnet-token-shortlist.json', 'mainnetShortList');
-fetchTokensAndDisplay('./json/linea-mainnet-token-fulllist.json', 'mainnetFullList');
+(async function fetchAndDisplayTokensInOrder() {
+  await fetchTokensAndDisplay('./json/linea-mainnet-token-shortlist.json', 'mainnetShortList');
+  await fetchTokensAndDisplay('./json/linea-mainnet-token-fulllist.json', 'mainnetFullList');
+})();
