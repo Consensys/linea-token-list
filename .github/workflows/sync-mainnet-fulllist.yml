@@ -4,7 +4,6 @@ on:
   # This job is scheduled to run:
   # schedule:
   #   - cron: '0 * * * *' # Every hour (e.g., 1:00, 2:00, ... 24:00)
-
   pull_request:
     branches:
       - main
