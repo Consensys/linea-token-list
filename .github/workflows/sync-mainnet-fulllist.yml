@@ -2,11 +2,8 @@ name: Sync on chain Token List
 
 on:
   # This job is scheduled to run:
-  # schedule:
-  #   - cron: '0 * * * *' # Every hour (e.g., 1:00, 2:00, ... 24:00)
-  pull_request:
-    branches:
-      - main
+  schedule:
+    - cron: '0 * * * *' # Every hour (e.g., 1:00, 2:00, ... 24:00)
 
 jobs:
   build:
@@ -64,12 +61,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
           merge-method: squash
-
-      - name: Delete Pull Request Branch
-        run: |
-          if git show-ref --verify --quiet "refs/heads/token-automatic-list"; then
-            echo "Branch 'token-automatic-list' exists. Deleting..."
-            git push origin --delete token-automatic-list
-          else
-            echo "Branch 'token-automatic-list' does not exist."
-          fi
