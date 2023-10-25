@@ -58,7 +58,7 @@ jobs:
           base: main
 
       - name: Auto approve
-        if: steps.cpr.outputs.pull-request-operation == 'created'
+        if: env.HAS_CHANGES == 'true'
         run: gh pr review --approve "${{ steps.cpr.outputs.pull-request-number }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
