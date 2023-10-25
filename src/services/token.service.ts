@@ -215,7 +215,6 @@ export class TokenService {
    */
   exportTokenList(): void {
     this.tokenList = sortAlphabetically(this.tokenList);
-
     if (_.isEqual(this.existingTokenList.tokens, this.tokenList)) {
       logger.info('No new tokens to add');
       return;
@@ -227,6 +226,7 @@ export class TokenService {
       versions: getBumpedVersions(this.existingTokenList.versions),
       tokens: this.tokenList,
     };
+    newTokenList.tokens = sortAlphabetically(newTokenList.tokens);
 
     saveJsonFile(config.TOKEN_FULL_LIST_PATH, newTokenList);
     logger.info('Token list updated', {
