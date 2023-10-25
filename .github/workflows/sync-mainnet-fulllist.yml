@@ -54,6 +54,12 @@ jobs:
           branch: token-automatic-list
           base: main
 
+      - name: Auto approve
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        run: gh pr review --approve "${{ steps.cpr.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Pull Request Automerge
         if: env.HAS_CHANGES == 'true'
         uses: peter-evans/enable-pull-request-automerge@v3
