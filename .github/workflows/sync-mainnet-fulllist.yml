@@ -3,7 +3,7 @@ name: Sync on chain Token List
 on:
   # This job is scheduled to run:
   schedule:
-    - cron: '0 * * * *' # Every hour (e.g., 1:00, 2:00, ... 24:00)
+    - cron: '0 12 * * *' # Every day at 12:00
 
 jobs:
   build:
