@@ -3,15 +3,34 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2023-10-25",
+  "updatedAt": "2023-11-04",
   "versions": [
     {
       "major": 1,
-      "minor": 20,
+      "minor": 21,
       "patch": 0
     }
   ],
   "tokens": [
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xe0f0035FFaba23872AC4D7F2240c0b5265a000f1",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xe0f0035FFaba23872AC4D7F2240c0b5265a000f1",
+      "name": "ALT",
+      "symbol": "ALT",
+      "decimals": 18,
+      "createdAt": "2023-11-04",
+      "updatedAt": "2023-11-04",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xC1e2A416ea16d2d7FDc8Ff0890C60109a262A176"
+      }
+    },
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
