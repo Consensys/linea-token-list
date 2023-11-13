@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 11,
+      "minor": 12,
       "patch": 0
     }
   ],
@@ -426,6 +426,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xB79DD08EA68A908A97220C76d19A6aA9cBDE4376",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xB79DD08EA68A908A97220C76d19A6aA9cBDE4376",
+      "name": "USD+",
+      "symbol": "USD+",
+      "decimals": 6,
+      "createdAt": "2023-08-16",
+      "updatedAt": "2023-09-26",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/20317.png"
     },
     {
       "chainId": 59144,
