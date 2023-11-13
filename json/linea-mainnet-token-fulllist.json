@@ -621,6 +621,21 @@
       }
     },
     {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1E1F509963A6D33e169D9497b11c7DbFe73B7F13",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x1E1F509963A6D33e169D9497b11c7DbFe73B7F13",
+      "name": "USDT+",
+      "symbol": "USDT+",
+      "decimals": 6,
+      "createdAt": "2023-08-16",
+      "updatedAt": "2023-09-26",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/24962.png"
+    },
+    {
       "chainId": 1,
       "chainURI": "https://etherscan.io/block/0",
       "tokenId": "https://etherscan.io/address/0x6729659F4D81DdbD6Ac48ddDA9C5D62c01081B5D",
