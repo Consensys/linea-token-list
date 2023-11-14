@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 11,
+      "minor": 12,
       "patch": 0
     }
   ],
@@ -430,6 +430,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xB79DD08EA68A908A97220C76d19A6aA9cBDE4376",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xB79DD08EA68A908A97220C76d19A6aA9cBDE4376",
+      "name": "USD+",
+      "symbol": "USD+",
+      "decimals": 6,
+      "createdAt": "2023-08-16",
+      "updatedAt": "2023-09-26",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/20317.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x176211869cA2b568f2A7D4EE941E073a821EE1ff",
       "tokenType": [
         "bridge-reserved",
@@ -447,6 +462,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1E1F509963A6D33e169D9497b11c7DbFe73B7F13",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x1E1F509963A6D33e169D9497b11c7DbFe73B7F13",
+      "name": "USDT+",
+      "symbol": "USDT+",
+      "decimals": 6,
+      "createdAt": "2023-08-16",
+      "updatedAt": "2023-09-26",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/24962.png"
     },
     {
       "chainId": 59144,
