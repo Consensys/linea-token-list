@@ -6,6 +6,8 @@ If you want to add a token or validate an addition, please follow the procedures
 
 ## How to add a Token (for community)
 
+IMPORTANT: Before adding a new token, it is mandatory to verify the token's smart contract. This ensures the authenticity and security of the token. Contract verification should be done through [LineaScan's](https://lineascan.build/) or [Etherscan's](https://etherscan.io/) contract verification tools.
+
 To add a new Token,
 
 1. `Fork` this repository to your own GitHub account, then `clone` your fork and create a new branch.
