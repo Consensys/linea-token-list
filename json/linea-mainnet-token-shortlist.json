@@ -255,6 +255,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1bE3735Dd0C0Eb229fB11094B6c277192349EBbf",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x1bE3735Dd0C0Eb229fB11094B6c277192349EBbf",
+      "name": "LUBE",
+      "symbol": "LUBE",
+      "decimals": 18,
+      "createdAt": "2023-11-19",
+      "updatedAt": "2023-11-19",
+      "logoURI": "",
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x2442Bd7AE83b51F6664De408A385375fe4a84F52",
       "tokenType": [
         "canonical-bridge"
