@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Include Tailwind CSS and DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.13.0/dist/full.css" rel="stylesheet" />
+    <title>Linea Token Lists</title>
+    <link rel="stylesheet" href="public/style.css" />
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body class="bg-black">
+    <header class="shadow-sm pb-2">
+      <div class="mx-auto flex justify-between items-center">
+        <a href="/" class="flex items-center items-center space-x-2">
+          <img src="public/images/linea.svg" alt="Linea" class="h-8 w-auto" />
+          <span class="text-3xl mt-2"> Token Lists</span>
+        </a>
+        <a
+          href="https://github.com/consenSys/linea-token-list"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-600 hover:text-black"
+        >
+          <img src="public/images/github.svg" alt="GitHub" class="h-8 w-auto" />
+        </a>
+      </div>
+    </header>
+    <div class="p-4 mb-4 flex flex-row space-x-4">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search by Name or Symbol..."
+        class="input input-bordered w-full max-w-xs"
+      />
+      <div class="space-x-2 flex flex-row">
+        <button data-type="all" class="filter-btn btn btn-primary">All</button>
+        <button data-type="canonical-bridge" class="filter-btn btn">Canonical Bridge</button>
+        <button data-type="bridge-reserved" class="filter-btn btn">Bridge Reserved</button>
+        <button data-type="external-bridge" class="filter-btn btn">External Bridge</button>
+        <button data-type="native" class="filter-btn btn">Native</button>
+      </div>
+    </div>
+    <div class="space-y-4">
+      <div tabindex="0" class="collapse collapse-arrow">
+        <input type="checkbox" class="peer" id="collapseCheckbox1" checked />
+        <div class="collapse-title text-xl font-medium rounded">
+          Linea Mainnet Token Short List
+          <span id="shortListCount"></span>
+        </div>
+        <div class="collapse-content">
+          <a
+            href="https://github.com/Consensys/linea-token-list/blob/main/json/linea-mainnet-token-shortlist.json"
+            target="_blank"
+            class="link"
+          >
+            linea-mainnet-token-shortlist.json
+          </a>
+          <section id="mainnetShortList" class="flex flex-wrap justify-start">
+            <div id="mainnetShortList"></div>
+          </section>
+        </div>
+      </div>
+      <div tabindex="1" class="collapse collapse-arrow">
+        <input type="checkbox" class="peer" id="collapseCheckbox2" checked />
+        <div class="collapse-title text-xl font-medium rounded">
+          Linea Mainnet Token Full List
+          <span id="fullListCount"></span>
+        </div>
+        <div class="collapse-content">
+          <a
+            href="https://github.com/Consensys/linea-token-list/blob/main/json/linea-mainnet-token-fulllist.json"
+            target="_blank"
+            class="link"
+            >linea-mainnet-token-fulllist.json</a
+          >
+          <section id="mainnetFullList" class="flex flex-wrap justify-start">
+            <div id="mainnetFullList"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script src="public/script.js"></script>
+  </body>
+</html>

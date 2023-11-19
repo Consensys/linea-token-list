@@ -3,12 +3,12 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-goerli-token-shortlist.json",
   "name": "Linea Goerli Token List",
   "createdAt": "2023-06-23",
-  "updatedAt": "2023-06-30",
+  "updatedAt": "2023-09-29",
   "versions": [
     {
       "major": 1,
-      "minor": 1,
-      "patch": 1
+      "minor": 2,
+      "patch": 5
     }
   ],
   "tokens": [
@@ -54,9 +54,9 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
-      "tokenId": "https://goerli.lineascan.build/token/0x6F03052743CD99ce1b29265E377e320CD24Eb632",
-      "tokenType": ["bridged"],
-      "address": "0x6F03052743CD99ce1b29265E377e320CD24Eb632",
+      "tokenId": "https://goerli.lineascan.build/token/0x76292f4799f692C4d3C3a09F44982D4229A0d04B",
+      "tokenType": ["canonical-bridge"],
+      "address": "0x76292f4799f692C4d3C3a09F44982D4229A0d04B",
       "name": "HOP",
       "symbol": "HOP",
       "decimals": 18,
@@ -85,9 +85,27 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
-      "tokenId": "https://goerli.lineascan.build/token/0x7823e8dcc8bfc23ea3ac899eb86921f90e80f499",
-      "tokenType": ["bridged"],
-      "address": "0x7823e8dcc8bfc23ea3ac899eb86921f90e80f499",
+      "tokenId": "https://goerli.lineascan.build/token/0xD14754f4db08D19b5def26D33B94bdb5c3084c8a",
+      "tokenType": ["canonical-bridge"],
+      "address": "0xD14754f4db08D19b5def26D33B94bdb5c3084c8a",
+      "name": "Meta Apes Peel",
+      "symbol": "PEEL",
+      "decimals": 18,
+      "createdAt": "2023-08-24",
+      "updatedAt": "2023-08-30",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/21013.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xd707E82E79660B7576CCd4319595C80C0e303e4A"
+      }
+    },
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0x0a981c2EBE4395562B4EE29FeBd137F2f843b115",
+      "tokenType": ["canonical-bridge"],
+      "address": "0x0a981c2EBE4395562B4EE29FeBd137F2f843b115",
       "name": "Uniswap",
       "symbol": "UNI",
       "decimals": 18,
@@ -103,27 +121,27 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
-      "tokenId": "https://goerli.lineascan.build/token/0xf56dc6695cF1f5c364eDEbC7Dc7077ac9B586068",
-      "tokenType": ["bridged"],
-      "address": "0xf56dc6695cF1f5c364eDEbC7Dc7077ac9B586068",
+      "tokenId": "https://goerli.lineascan.build/token/0xB4257F31750961C8e536f5cfCBb3079437700416",
+      "tokenType": ["bridge-reserved", "external-bridge"],
+      "address": "0xB4257F31750961C8e536f5cfCBb3079437700416",
       "name": "USD Coin",
       "symbol": "USDC",
-      "decimals": 18,
+      "decimals": 6,
       "createdAt": "2023-06-23",
-      "updatedAt": "2023-06-23",
+      "updatedAt": "2023-09-11",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
       "extension": {
         "rootChainId": 5,
         "rootChainURI": "https://goerli.etherscan.io/block/0",
-        "rootAddress": "0xd35cceead182dcee0f148ebac9447da2c4d449c4"
+        "rootAddress": "0x07865c6e87b9f70255377e024ace6630c1eaa37f"
       }
     },
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
-      "tokenId": "https://goerli.lineascan.build/token/0x1990BC6dfe2ef605Bfc08f5A23564dB75642Ad73",
-      "tokenType": ["bridged"],
-      "address": "0x1990BC6dfe2ef605Bfc08f5A23564dB75642Ad73",
+      "tokenId": "https://goerli.lineascan.build/token/0x43a4f69Fa1d2d69397393F6A4Deca9fA05714Af9",
+      "tokenType": ["canonical-bridge"],
+      "address": "0x43a4f69Fa1d2d69397393F6A4Deca9fA05714Af9",
       "name": "USD Tether",
       "symbol": "USDT",
       "decimals": 6,
@@ -159,8 +177,13 @@
       "symbol": "WETH",
       "decimals": 18,
       "createdAt": "2023-06-26",
-      "updatedAt": "2023-06-26",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
+      "updatedAt": "2023-09-15",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png",
+      "extension": {
+        "rootChainId": 5,
+        "rootChainURI": "https://goerli.etherscan.io/block/0",
+        "rootAddress": "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6"
+      }
     }
   ]
 }

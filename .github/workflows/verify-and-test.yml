@@ -1,0 +1,92 @@
+name: Verify and Test
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  unit_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: Install NPM dependencies
+        run: npm ci
+
+      - name: Run NPM tests
+        run: npm run test
+
+  validate_json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install jsonschema
+
+      - name: Validate JSON
+        run: |
+          jsonschema -i ./json/linea-goerli-token-shortlist.json ./json/schema/l2-token-list-schema.json
+
+  verify_mainnet_shortlist:
+    runs-on: ubuntu-latest
+
+    env:
+      PROVIDER_URL: ${{ secrets.PROVIDER_URL }}
+      LINEA_PROVIDER_URL: ${{ secrets.LINEA_PROVIDER_URL }}
+      CONTRACT_ADDRESS: ${{ secrets.CONTRACT_ADDRESS }}
+      L2_TOKEN_BRIDGE: ${{ secrets.L2_TOKEN_BRIDGE }}
+      HAS_CHANGES: false
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Execute verifyMainnetShortlist
+        run: npm run verify-start
+
+      - name: Check for changes
+        run: |
+          if [[ -n $(git diff --exit-code) ]]; then
+            echo "Changes detected. Creating a commit."
+            echo "HAS_CHANGES=true" >> $GITHUB_ENV
+          else
+            echo "No changes detected. Skipping commit creation."
+            exit 0
+          fi
+
+      - name: Commit changes
+        if: env.HAS_CHANGES == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          HUSKY_SKIP_HOOKS=1 git commit -m "Updated by verifyMainnetShortlist script" || echo "No changes to commit"
+
+      - name: Push changes
+        if: env.HAS_CHANGES == 'true'
+        run: git push origin HEAD:refs/heads/${GITHUB_HEAD_REF}

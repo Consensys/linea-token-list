@@ -1,1 +1,13 @@
+# Dependency directories
 node_modules
+
+# Compiled output
+scripts/dist
+dist/
+temporary-dist/
+
+# Config files
+.env
+
+# Coverage directory
+coverage/

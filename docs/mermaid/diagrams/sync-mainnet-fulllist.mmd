@@ -1,0 +1,28 @@
+sequenceDiagram
+    syncMainnetFulllist->>+linea-mainnet-token-fulllist: Get token full list
+    linea-mainnet-token-fulllist-->>-syncMainnetFulllist: token full list
+
+    syncMainnetFulllist->>+Ethereum: Get NewTokenDeployed events
+    Ethereum-->>-syncMainnetFulllist: Ethereum NewTokenDeployed events
+    syncMainnetFulllist->>+Linea: Get NewTokenDeployed events
+    Linea-->>-syncMainnetFulllist: Linea NewTokenDeployed events
+
+    loop Every events
+        syncMainnetFulllist->>syncMainnetFulllist: Skip if token exists
+        syncMainnetFulllist->>+Ethereum: Get Token contract
+        Ethereum-->>-syncMainnetFulllist: Onchain token data
+        syncMainnetFulllist->>+Linea: Get Token contract
+        Linea-->>-syncMainnetFulllist: Onchain token data
+
+        syncMainnetFulllist->>syncMainnetFulllist: Create token
+        syncMainnetFulllist->>+Coingecko: Get image link
+        Coingecko-->>-syncMainnetFulllist: Image link retrieved
+        syncMainnetFulllist->>syncMainnetFulllist: Add token to the list
+    end
+
+    syncMainnetFulllist->>+linea-mainnet-token-shortlist: Get token list
+    linea-mainnet-token-shortlist-->>-syncMainnetFulllist: token list
+    syncMainnetFulllist->>syncMainnetFulllist: Override with short list data
+
+    syncMainnetFulllist->>syncMainnetFulllist: Export the list if changes are found
+    
