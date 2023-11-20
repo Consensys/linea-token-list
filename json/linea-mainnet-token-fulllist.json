@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 25,
+      "minor": 26,
       "patch": 0
     }
   ],
@@ -314,21 +314,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x9D36f49D3d42B3A9BcC0f5Ac76fF8ef78fB2bC01",
+      "tokenId": "https://lineascan.build/address/0x974aFBd15Ad987dB9336F4Ac10d35a4FF32e31C5",
       "tokenType": [
         "canonical-bridge"
       ],
-      "address": "0x9D36f49D3d42B3A9BcC0f5Ac76fF8ef78fB2bC01",
-      "name": "Lybra Finance",
-      "symbol": "LBR",
+      "address": "0x974aFBd15Ad987dB9336F4Ac10d35a4FF32e31C5",
+      "name": "Linear Token",
+      "symbol": "LINA",
       "decimals": 18,
-      "createdAt": "2023-08-22",
-      "updatedAt": "2023-08-22",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/24700.png",
+      "createdAt": "2023-11-20",
+      "updatedAt": "2023-11-20",
+      "logoURI": "https://assets.coingecko.com/coins/images/12509/large/1649227343-linalogo200px.png?1696512324",
       "extension": {
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0xF1182229B71E79E504b1d2bF076C15a277311e05"
+        "rootAddress": "0x3E9BC21C9b189C09dF3eF1B824798658d5011937"
       }
     },
     {
@@ -345,6 +345,26 @@
       "createdAt": "2023-11-19",
       "updatedAt": "2023-11-19",
       "logoURI": "https://pbs.twimg.com/profile_images/1725003585157787648/4nbkBLVA_400x400.jpg"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x9D36f49D3d42B3A9BcC0f5Ac76fF8ef78fB2bC01",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x9D36f49D3d42B3A9BcC0f5Ac76fF8ef78fB2bC01",
+      "name": "Lybra Finance",
+      "symbol": "LBR",
+      "decimals": 18,
+      "createdAt": "2023-08-22",
+      "updatedAt": "2023-08-22",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/24700.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xF1182229B71E79E504b1d2bF076C15a277311e05"
+      }
     },
     {
       "chainId": 59144,
