@@ -3,15 +3,34 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2023-11-20",
+  "updatedAt": "2023-11-22",
   "versions": [
     {
       "major": 1,
-      "minor": 26,
+      "minor": 27,
       "patch": 0
     }
   ],
   "tokens": [
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0xdeE96799De4eF546C552FaDb765AAF7a18C6a8D6",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xdeE96799De4eF546C552FaDb765AAF7a18C6a8D6",
+      "name": "agEUR",
+      "symbol": "agEUR",
+      "decimals": 18,
+      "createdAt": "2023-11-22",
+      "updatedAt": "2023-11-22",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8"
+      }
+    },
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
