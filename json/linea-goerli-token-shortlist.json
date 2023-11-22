@@ -171,7 +171,7 @@
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0x2C1b868d6596a18e32E61B901E4060C872647b6C",
-      "tokenType": ["native"],
+      "tokenType": ["canonical-bridge"],
       "address": "0x2C1b868d6596a18e32E61B901E4060C872647b6C",
       "name": "Wrapped Ethereum",
       "symbol": "WETH",
