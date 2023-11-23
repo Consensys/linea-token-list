@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 16,
+      "minor": 18,
       "patch": 0
     }
   ],
@@ -271,7 +271,9 @@
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xf3B001D64C656e30a62fbaacA003B1336b4ce12A",
-      "tokenType": [],
+      "tokenType": [
+        "native"
+      ],
       "address": "0xf3B001D64C656e30a62fbaacA003B1336b4ce12A",
       "name": "Mai Stablecoin",
       "symbol": "MAI",
@@ -365,7 +367,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x13a7f090d46c74acba98c51786a5c46ed9a474f0",
       "tokenType": [
-        "bridged"
+        "canonical-bridge"
       ],
       "address": "0x13a7f090d46c74acba98c51786a5c46ed9a474f0",
       "name": "ScamFari",
@@ -380,7 +382,7 @@
         "rootAddress": "0x8353b92201f19B4812EeE32EFd325f7EDe123718"
       }
     },
-     {
+    {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x99AD925C1Dc14Ac7cc6ca1244eeF8043C74E99d5",
