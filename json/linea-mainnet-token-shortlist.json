@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2023-11-19",
+  "updatedAt": "2023-11-23",
   "versions": [
     {
       "major": 1,
-      "minor": 14,
+      "minor": 16,
       "patch": 0
     }
   ],
@@ -266,6 +266,19 @@
       "createdAt": "2023-11-19",
       "updatedAt": "2023-11-19",
       "logoURI": "https://pbs.twimg.com/profile_images/1725003585157787648/4nbkBLVA_400x400.jpg"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xf3B001D64C656e30a62fbaacA003B1336b4ce12A",
+      "tokenType": [],
+      "address": "0xf3B001D64C656e30a62fbaacA003B1336b4ce12A",
+      "name": "Mai Stablecoin",
+      "symbol": "MAI",
+      "decimals": 18,
+      "createdAt": "2023-11-20",
+      "updatedAt": "2023-11-20",
+      "logoURI": "https://assets.coingecko.com/coins/images/15264/small/mimatic-red.png"
     },
     {
       "chainId": 59144,
