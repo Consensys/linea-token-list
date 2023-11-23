@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2023-11-22",
+  "updatedAt": "2023-11-23",
   "versions": [
     {
       "major": 1,
-      "minor": 27,
+      "minor": 28,
       "patch": 0
     }
   ],
@@ -692,6 +692,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x68592c5c98c4f4a8a4bc6da2121e65da3d1c0917",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x68592c5c98c4f4a8a4bc6da2121e65da3d1c0917",
+      "name": "USDLR by Stable",
+      "symbol": "USDLR",
+      "decimals": 6,
+      "createdAt": "2023-11-08",
+      "updatedAt": "2023-11-08",
+      "logoURI": "https://storage.googleapis.com/public.withstable.com/logos/usdlr/dark-circle.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x68592c5c98c4f4a8a4bc6da2121e65da3d1c0917"
       }
     },
     {
