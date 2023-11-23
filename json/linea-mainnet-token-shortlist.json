@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2023-11-19",
+  "updatedAt": "2023-11-23",
   "versions": [
     {
       "major": 1,
-      "minor": 14,
+      "minor": 16,
       "patch": 0
     }
   ],
