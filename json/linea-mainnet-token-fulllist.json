@@ -622,6 +622,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xC84f2ce21272f17d92d2a450F1C8567bF0ff448E",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xC84f2ce21272f17d92d2a450F1C8567bF0ff448E",
+      "name": "US KUMA Interest Bearing Token",
+      "symbol": "USK",
+      "decimals": 18,
+      "createdAt": "2023-11-02",
+      "updatedAt": "2023-11-02",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/27290.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xe322E20738386766F769b0a6083f4141083d26d0",
       "tokenType": [
         "canonical-bridge"
