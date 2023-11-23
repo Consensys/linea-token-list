@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 16,
+      "minor": 17,
       "patch": 0
     }
   ],
@@ -271,7 +271,9 @@
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xf3B001D64C656e30a62fbaacA003B1336b4ce12A",
-      "tokenType": [],
+      "tokenType": [
+        "native"
+      ],
       "address": "0xf3B001D64C656e30a62fbaacA003B1336b4ce12A",
       "name": "Mai Stablecoin",
       "symbol": "MAI",
