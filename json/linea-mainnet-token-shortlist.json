@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2023-11-19",
+  "updatedAt": "2023-11-23",
   "versions": [
     {
       "major": 1,
-      "minor": 13,
+      "minor": 14,
       "patch": 0
     }
   ],
@@ -566,6 +566,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x4aa41bC1649C9C3177eD16CaaA11482295fC7441"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x3E5D9D8a63CC8a88748f229999CF59487e90721e",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x3E5D9D8a63CC8a88748f229999CF59487e90721e",
+      "name": "MetalSwap",
+      "symbol": "XMT",
+      "decimals": 18,
+      "createdAt": "2023-11-23",
+      "updatedAt": "2023-11-23",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/15006.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x3E5D9D8a63CC8a88748f229999CF59487e90721e"
       }
     }
   ]
