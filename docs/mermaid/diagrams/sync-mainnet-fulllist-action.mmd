@@ -1,0 +1,13 @@
+sequenceDiagram
+    loop Every hour
+        GitHub Action->>+syncMainnetFulllist: Execute
+        syncMainnetFulllist-->>-GitHub Action: Exit gracefully
+        GitHub Action->>GitHub Action: Check for changes
+        GitHub Action->>+GitHub new branch: Create branch and PR
+        GitHub new branch-->>-GitHub Action: Branch and PR created
+        GitHub Action->>GitHub new branch: Merge PR
+        GitHub new branch->>+GitHub main branch: Merge PR
+        GitHub main branch-->>-GitHub Action: PR merged
+        GitHub Action->>GitHub new branch: Delete branch
+        GitHub new branch-->>GitHub Action: Branch deleted
+    end
