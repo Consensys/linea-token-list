@@ -3,15 +3,34 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2023-11-19",
+  "updatedAt": "2023-11-22",
   "versions": [
     {
       "major": 1,
-      "minor": 24,
+      "minor": 27,
       "patch": 0
     }
   ],
   "tokens": [
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0xdeE96799De4eF546C552FaDb765AAF7a18C6a8D6",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xdeE96799De4eF546C552FaDb765AAF7a18C6a8D6",
+      "name": "agEUR",
+      "symbol": "agEUR",
+      "decimals": 18,
+      "createdAt": "2023-11-22",
+      "updatedAt": "2023-11-22",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8"
+      }
+    },
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
@@ -314,6 +333,41 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x974aFBd15Ad987dB9336F4Ac10d35a4FF32e31C5",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x974aFBd15Ad987dB9336F4Ac10d35a4FF32e31C5",
+      "name": "Linear Token",
+      "symbol": "LINA",
+      "decimals": 18,
+      "createdAt": "2023-11-20",
+      "updatedAt": "2023-11-20",
+      "logoURI": "https://assets.coingecko.com/coins/images/12509/large/1649227343-linalogo200px.png?1696512324",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x3E9BC21C9b189C09dF3eF1B824798658d5011937"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1bE3735Dd0C0Eb229fB11094B6c277192349EBbf",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x1bE3735Dd0C0Eb229fB11094B6c277192349EBbf",
+      "name": "LUBE",
+      "symbol": "LUBE",
+      "decimals": 18,
+      "createdAt": "2023-11-19",
+      "updatedAt": "2023-11-19",
+      "logoURI": "https://pbs.twimg.com/profile_images/1725003585157787648/4nbkBLVA_400x400.jpg"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x9D36f49D3d42B3A9BcC0f5Ac76fF8ef78fB2bC01",
       "tokenType": [
         "canonical-bridge"
@@ -564,6 +618,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xC84f2ce21272f17d92d2a450F1C8567bF0ff448E",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xC84f2ce21272f17d92d2a450F1C8567bF0ff448E",
+      "name": "US KUMA Interest Bearing Token",
+      "symbol": "USK",
+      "decimals": 18,
+      "createdAt": "2023-11-02",
+      "updatedAt": "2023-11-02",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/27290.png"
     },
     {
       "chainId": 59144,
