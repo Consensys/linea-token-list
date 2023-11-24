@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2023-11-23",
+  "updatedAt": "2023-11-24",
   "versions": [
     {
       "major": 1,
-      "minor": 28,
+      "minor": 29,
       "patch": 0
     }
   ],
@@ -388,6 +388,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xf3B001D64C656e30a62fbaacA003B1336b4ce12A",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xf3B001D64C656e30a62fbaacA003B1336b4ce12A",
+      "name": "Mai Stablecoin",
+      "symbol": "MAI",
+      "decimals": 18,
+      "createdAt": "2023-11-20",
+      "updatedAt": "2023-11-20",
+      "logoURI": "https://assets.coingecko.com/coins/images/15264/small/mimatic-red.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x2442Bd7AE83b51F6664De408A385375fe4a84F52",
       "tokenType": [
         "canonical-bridge"
@@ -488,17 +503,17 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x13a7F090D46C74acBA98c51786a5c46eD9A474F0",
+      "tokenId": "https://lineascan.build/address/0x13a7f090d46c74acba98c51786a5c46ed9a474f0",
       "tokenType": [
         "canonical-bridge"
       ],
-      "address": "0x13a7F090D46C74acBA98c51786a5c46eD9A474F0",
-      "name": "Scamfari",
+      "address": "0x13a7f090d46c74acba98c51786a5c46ed9a474f0",
+      "name": "ScamFari",
       "symbol": "SCM",
       "decimals": 18,
-      "createdAt": "2023-10-13",
-      "updatedAt": "2023-10-13",
-      "logoURI": "https://assets.coingecko.com/coins/images/31267/large/Ava_Scamfari_%281%29.png?1696530091",
+      "createdAt": "2023-08-11",
+      "updatedAt": "2023-09-01",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/27863.png",
       "extension": {
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
@@ -622,21 +637,6 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xC84f2ce21272f17d92d2a450F1C8567bF0ff448E",
-      "tokenType": [
-        "native"
-      ],
-      "address": "0xC84f2ce21272f17d92d2a450F1C8567bF0ff448E",
-      "name": "US KUMA Interest Bearing Token",
-      "symbol": "USK",
-      "decimals": 18,
-      "createdAt": "2023-11-02",
-      "updatedAt": "2023-11-02",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/27290.png"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xe322E20738386766F769b0a6083f4141083d26d0",
       "tokenType": [
         "canonical-bridge"
@@ -676,6 +676,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xC84f2ce21272f17d92d2a450F1C8567bF0ff448E",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xC84f2ce21272f17d92d2a450F1C8567bF0ff448E",
+      "name": "US KUMA Interest Bearing Token",
+      "symbol": "USK",
+      "decimals": 18,
+      "createdAt": "2023-11-02",
+      "updatedAt": "2023-11-02",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/27290.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x176211869cA2b568f2A7D4EE941E073a821EE1ff",
       "tokenType": [
         "bridge-reserved",
@@ -697,6 +712,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xB79DD08EA68A908A97220C76d19A6aA9cBDE4376",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xB79DD08EA68A908A97220C76d19A6aA9cBDE4376",
+      "name": "USD+",
+      "symbol": "USD+",
+      "decimals": 6,
+      "createdAt": "2023-08-16",
+      "updatedAt": "2023-09-26",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/20317.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x68592c5c98c4f4a8a4bc6da2121e65da3d1c0917",
       "tokenType": [
         "canonical-bridge"
@@ -713,21 +743,6 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x68592c5c98c4f4a8a4bc6da2121e65da3d1c0917"
       }
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xB79DD08EA68A908A97220C76d19A6aA9cBDE4376",
-      "tokenType": [
-        "native"
-      ],
-      "address": "0xB79DD08EA68A908A97220C76d19A6aA9cBDE4376",
-      "name": "USD+",
-      "symbol": "USD+",
-      "decimals": 6,
-      "createdAt": "2023-08-16",
-      "updatedAt": "2023-09-26",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/20317.png"
     },
     {
       "chainId": 59144,
