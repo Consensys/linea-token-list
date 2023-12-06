@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 31,
+      "minor": 32,
       "patch": 0
     }
   ],
@@ -333,7 +333,7 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/token/0xd83af4fbd77f3ab65c3b1dc4b38d7e67aecf599a",
+      "tokenId": "https://lineascan.build/address/0xd83af4fbd77f3ab65c3b1dc4b38d7e67aecf599a",
       "tokenType": [
         "native"
       ],
