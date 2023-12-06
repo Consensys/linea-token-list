@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2023-11-23",
+  "updatedAt": "2023-12-06",
   "versions": [
     {
       "major": 1,
-      "minor": 19,
+      "minor": 31,
       "patch": 0
     }
   ],
@@ -231,6 +231,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x5a98fcbea516cf06857215779fd812ca3bef1b32"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xd83af4fbd77f3ab65c3b1dc4b38d7e67aecf599a",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xd83af4fbd77f3ab65c3b1dc4b38d7e67aecf599a",
+      "name": "Linea XP",
+      "symbol": "LXP",
+      "decimals": 18,
+      "createdAt": "2023-12-06",
+      "updatedAt": "2023-12-06",
+      "logoURI": "https://linea.build/favicon-32x32.png"
     },
     {
       "chainId": 59144,
