@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2023-12-06",
+  "updatedAt": "2023-12-10",
   "versions": [
     {
       "major": 1,
-      "minor": 32,
+      "minor": 33,
       "patch": 0
     }
   ],
@@ -108,6 +108,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x4d224452801aced8b2f0aebe155379bb5d594381"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x660edb0A46c3f69be9eFF5446318593b9469F9e2",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x660edb0A46c3f69be9eFF5446318593b9469F9e2",
+      "name": "Balancer",
+      "symbol": "BAL",
+      "decimals": 18,
+      "createdAt": "2023-12-10",
+      "updatedAt": "2023-12-10",
+      "logoURI": "https://assets.coingecko.com/coins/images/11683/large/Balancer.png?1696511572",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xba100000625a3754423978a60c9317c58a424e3D"
       }
     },
     {
