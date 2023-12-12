@@ -273,6 +273,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x894134a25a5faC1c2C26F1d8fBf05111a3CB9487",
+      "tokenType": [
+        "external-bridge"
+      ],
+      "address": "0x894134a25a5faC1c2C26F1d8fBf05111a3CB9487",
+      "name": "Gravita Debt Token",
+      "symbol": "GRAI",
+      "decimals": 18,
+      "createdAt": "2023-12-07",
+      "updatedAt": "2023-12-07",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/25337.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x15f74458aE0bFdAA1a96CA1aa779D715Cc1Eefe4"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x0e5F2ee8C29e7eBc14e45dA7FF90566d8c407dB7",
       "tokenType": [
         "canonical-bridge"
