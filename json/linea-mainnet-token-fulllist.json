@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2023-12-10",
+  "updatedAt": "2023-12-12",
   "versions": [
     {
       "major": 1,
-      "minor": 33,
+      "minor": 34,
       "patch": 0
     }
   ],
@@ -275,6 +275,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x894134a25a5faC1c2C26F1d8fBf05111a3CB9487",
       "tokenType": [
+        "bridge-reserved",
         "external-bridge"
       ],
       "address": "0x894134a25a5faC1c2C26F1d8fBf05111a3CB9487",
@@ -666,8 +667,8 @@
       "symbol": "STONE",
       "decimals": 18,
       "createdAt": "2023-09-28",
-      "updatedAt": "2023-09-28",
-      "logoURI": "https://static.shieldex.io/assets/imgs/stone/logo_stone.svg"
+      "updatedAt": "2023-12-07",
+      "logoURI": "https://static.shieldex.io/stone/stone-3.svg"
     },
     {
       "chainId": 59144,
