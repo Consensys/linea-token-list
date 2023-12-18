@@ -28,6 +28,19 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0x265b25e22bcd7f10a5bd6e6410f10537cc7567e8",
+      "tokenType": ["native"],
+      "address": "0x265b25e22bcd7f10a5bd6e6410f10537cc7567e8",
+      "name": "Avalanche",
+      "symbol": "AVAX",
+      "decimals": 18,
+      "createdAt": "2023-03-02",
+      "updatedAt": "2023-03-02", 
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/5805.png"
+    },
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0x5471ea8f739dd37E9B81Be9c5c77754D8AA953E4",
       "tokenType": ["native"],
       "address": "0x5471ea8f739dd37E9B81Be9c5c77754D8AA953E4",
