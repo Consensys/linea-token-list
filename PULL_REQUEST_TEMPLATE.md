@@ -5,4 +5,4 @@ PR checklist:
 - [ ] I've verified and published the contract source
 - [ ] I've kept the token list in alphabetical order based on token symbol
 - [ ] I've updated the `updatedAt` (and potentially `createdAt`) fields
-- [ ] I've update the list version number as per README instruction
+- [ ] I've updated the list version number as per README instruction
