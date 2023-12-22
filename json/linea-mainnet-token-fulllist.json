@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2023-12-12",
+  "updatedAt": "2023-12-22",
   "versions": [
     {
       "major": 1,
-      "minor": 34,
+      "minor": 35,
       "patch": 0
     }
   ],
@@ -594,6 +594,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x8353b92201f19B4812EeE32EFd325f7EDe123718"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x663B43Bd9aC6E45461A73b2115eEFd7278383f20",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x663B43Bd9aC6E45461A73b2115eEFd7278383f20",
+      "name": "SENET",
+      "symbol": "SNT",
+      "decimals": 18,
+      "createdAt": "2023-12-22",
+      "updatedAt": "2023-12-22",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xC309aB7b475A9B2292b1060E0EDf7D158cdddB07"
       }
     },
     {
