@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2023-12-22",
+  "updatedAt": "2024-01-14",
   "versions": [
     {
       "major": 1,
-      "minor": 35,
+      "minor": 36,
       "patch": 0
     }
   ],
@@ -248,6 +248,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3432B6A60D23Ca0dFCa7761B7ab56459D9C964D0"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x762E2cbf28752B8750AbCEf1C37e99989331025e",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x762E2cbf28752B8750AbCEf1C37e99989331025e",
+      "name": "Gitcoin",
+      "symbol": "GTC",
+      "decimals": 18,
+      "createdAt": "2024-01-14",
+      "updatedAt": "2024-01-14",
+      "logoURI": "https://assets.coingecko.com/coins/images/15810/large/gitcoin.png?1696515429",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xDe30da39c46104798bB5aA3fe8B9e0e1F348163F"
       }
     },
     {
