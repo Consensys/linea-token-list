@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-01-14",
+  "updatedAt": "2024-01-18",
   "versions": [
     {
       "major": 1,
-      "minor": 36,
+      "minor": 37,
       "patch": 0
     }
   ],
@@ -966,6 +966,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x4aa41bC1649C9C3177eD16CaaA11482295fC7441"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x796000FAd0d00B003B9dd8e531BA90cff39E01E0",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x796000FAd0d00B003B9dd8e531BA90cff39E01E0",
+      "name": "Yellow Duckies",
+      "symbol": "DUCKIES",
+      "decimals": 8,
+      "createdAt": "2024-01-18",
+      "updatedAt": "2024-01-18",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x90b7E285ab6cf4e3A2487669dba3E339dB8a3320"
       }
     },
     {
