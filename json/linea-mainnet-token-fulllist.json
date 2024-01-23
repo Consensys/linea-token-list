@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-01-18",
+  "updatedAt": "2024-01-23",
   "versions": [
     {
       "major": 1,
-      "minor": 37,
+      "minor": 38,
       "patch": 0
     }
   ],
@@ -494,6 +494,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x6dD9763aA23E03aEc9A8e5c4d8a735E168a6D3c5",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x6dD9763aA23E03aEc9A8e5c4d8a735E168a6D3c5",
+      "name": "Matic Token",
+      "symbol": "MATIC",
+      "decimals": 18,
+      "createdAt": "2024-01-23",
+      "updatedAt": "2024-01-23",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x265B25e22bcd7f10a5bD6E6410F10537Cc7567e8"
       }
     },
     {
