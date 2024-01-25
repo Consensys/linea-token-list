@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-01-23",
+  "updatedAt": "2024-01-25",
   "versions": [
     {
       "major": 1,
-      "minor": 38,
+      "minor": 39,
       "patch": 0
     }
   ],
@@ -440,6 +440,26 @@
       "createdAt": "2023-11-19",
       "updatedAt": "2023-11-19",
       "logoURI": "https://pbs.twimg.com/profile_images/1725003585157787648/4nbkBLVA_400x400.jpg"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x63bA74893621d3d12F13CEc1e86517eC3d329837",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x63bA74893621d3d12F13CEc1e86517eC3d329837",
+      "name": "LUSD Stablecoin",
+      "symbol": "LUSD",
+      "decimals": 18,
+      "createdAt": "2024-01-25",
+      "updatedAt": "2024-01-25",
+      "logoURI": "https://assets.coingecko.com/coins/images/14666/large/Group_3.png?1696514341",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0"
+      }
     },
     {
       "chainId": 59144,
