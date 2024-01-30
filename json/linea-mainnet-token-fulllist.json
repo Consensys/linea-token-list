@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-01-25",
+  "updatedAt": "2024-01-30",
   "versions": [
     {
       "major": 1,
-      "minor": 39,
+      "minor": 40,
       "patch": 0
     }
   ],
@@ -403,8 +403,8 @@
       "symbol": "LXP",
       "decimals": 18,
       "createdAt": "2023-12-06",
-      "updatedAt": "2023-12-06",
-      "logoURI": "https://linea.build/favicon-32x32.png"
+      "updatedAt": "2024-01-23",
+      "logoURI": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/logo/lxp.png"
     },
     {
       "chainId": 59144,
