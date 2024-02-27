@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-02-25",
+  "updatedAt": "2024-02-27",
   "versions": [
     {
       "major": 1,
-      "minor": 41,
+      "minor": 42,
       "patch": 0
     }
   ],
@@ -188,6 +188,27 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x6b175474e89094c44da98b954eedeac495271d0f"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/token/0xa88b54e6b76fb97cdb8ecae868f1458e18a953f4",
+      "tokenType": [
+        "bridge-reserved",
+        "external-bridge"
+      ],
+      "address": "0xa88b54e6b76fb97cdb8ecae868f1458e18a953f4",
+      "name": "Davos.xyz USD",
+      "symbol": "DUSD",
+      "decimals": 18,
+      "createdAt": "2024-02-21",
+      "updatedAt": "2024-02-21",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/23515.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xa48F322F8b3edff967629Af79E027628b9Dd1298"
       }
     },
     {
