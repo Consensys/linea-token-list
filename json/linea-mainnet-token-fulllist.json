@@ -3,15 +3,35 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-02-15",
+  "updatedAt": "2024-03-06",
   "versions": [
     {
       "major": 1,
-      "minor": 41,
+      "minor": 45,
       "patch": 0
     }
   ],
   "tokens": [
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x3d4b2132eD4eA0aa93903713a4dE9F98e625a5c7",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x3d4b2132eD4eA0aa93903713a4dE9F98e625a5c7",
+      "name": "3A Utility Token",
+      "symbol": "A3A",
+      "decimals": 18,
+      "createdAt": "2024-02-25",
+      "updatedAt": "2024-02-25",
+      "logoURI": "https://assets.coingecko.com/coins/images/33135/large/A3A.png?1700801023",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x3F817b28Da4940F018C6b5c0A11C555ebB1264f9"
+      }
+    },
     {
       "chainId": 1,
       "chainURI": "https://etherscan.io/block/0",
@@ -168,6 +188,27 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x6b175474e89094c44da98b954eedeac495271d0f"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/token/0xa88b54e6b76fb97cdb8ecae868f1458e18a953f4",
+      "tokenType": [
+        "bridge-reserved",
+        "external-bridge"
+      ],
+      "address": "0xa88b54e6b76fb97cdb8ecae868f1458e18a953f4",
+      "name": "Davos.xyz USD",
+      "symbol": "DUSD",
+      "decimals": 18,
+      "createdAt": "2024-02-21",
+      "updatedAt": "2024-02-21",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/23515.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xa48F322F8b3edff967629Af79E027628b9Dd1298"
       }
     },
     {
@@ -402,8 +443,8 @@
       "name": "Linda",
       "symbol": "LINDA",
       "decimals": 18,
-      "createdAt": "2024-2-15",
-      "updatedAt": "2024-2-15",
+      "createdAt": "2024-03-06",
+      "updatedAt": "2024-03-06",
       "logoURI": "https://assets.coingecko.com/coins/images/33699/large/linda-logo-200.png?1705166731"
     },
     {
@@ -455,6 +496,25 @@
       "createdAt": "2023-11-19",
       "updatedAt": "2023-11-19",
       "logoURI": "https://pbs.twimg.com/profile_images/1725003585157787648/4nbkBLVA_400x400.jpg"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x4Fa0dE5d9217722A37247808c08Cde1C976879b9",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x4Fa0dE5d9217722A37247808c08Cde1C976879b9",
+      "name": "Lucia",
+      "symbol": "LUCIA",
+      "decimals": 18,
+      "createdAt": "2024-02-29",
+      "updatedAt": "2024-02-29",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x4467f14A5A99D622a84832a066D174682A280386"
+      }
     },
     {
       "chainId": 59144,
@@ -613,6 +673,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1f49a195986d17556eAA3Cf50e210E8E84e3F370",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x1f49a195986d17556eAA3Cf50e210E8E84e3F370",
+      "name": "Orion Protocol",
+      "symbol": "ORN",
+      "decimals": 8,
+      "createdAt": "2024-03-02",
+      "updatedAt": "2024-03-02",
+      "logoURI": "https://assets.coingecko.com/coins/images/11841/large/new_logo.jpeg?1696511712",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x0258F474786DdFd37ABCE6df6BBb1Dd5dfC4434a"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
       "tokenType": [
         "canonical-bridge"
@@ -727,6 +807,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x549020a9Cb845220D66d3E9c6D9F9eF61C981102"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x5e15E8afc627397075ebe0A7C9DC14177429BBFF",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x5e15E8afc627397075ebe0A7C9DC14177429BBFF",
+      "name": "Smart Layer Network Token",
+      "symbol": "SLN",
+      "decimals": 18,
+      "createdAt": "2024-02-29",
+      "updatedAt": "2024-02-29",
+      "logoURI": "https://assets.coingecko.com/coins/images/35397/large/sln.jpeg?1708488815",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xDb82c0d91E057E05600C8F8dc836bEb41da6df14"
       }
     },
     {
