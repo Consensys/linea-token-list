@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-03-02",
+  "updatedAt": "2024-03-10",
   "versions": [
     {
       "major": 1,
-      "minor": 44,
+      "minor": 45,
       "patch": 0
     }
   ],
@@ -1085,6 +1085,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x023617bAbEd6CeF5Da825BEa8363A5a9862E120F",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x023617bAbEd6CeF5Da825BEa8363A5a9862E120F",
+      "name": "WrappedDAI",
+      "symbol": "wDAI",
+      "decimals": 18,
+      "createdAt": "2024-03-10",
+      "updatedAt": "2024-03-10",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x30C724216b890c034e0a1C299Ae641565f85355e"
       }
     },
     {
