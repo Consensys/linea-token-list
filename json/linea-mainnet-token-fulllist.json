@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-03-10",
+  "updatedAt": "2024-03-14",
   "versions": [
     {
       "major": 1,
-      "minor": 45,
+      "minor": 46,
       "patch": 0
     }
   ],
@@ -866,6 +866,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xd38BB40815d2B0c2d2c866e0c72c5728ffC76dd9"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x35482B93941B439dEA2244Cc30A20D1Ed862DF86",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x35482B93941B439dEA2244Cc30A20D1Ed862DF86",
+      "name": "Tellor Tributes",
+      "symbol": "TRB",
+      "decimals": 18,
+      "createdAt": "2024-03-14",
+      "updatedAt": "2024-03-14",
+      "logoURI": "https://assets.coingecko.com/coins/images/9644/large/Blk_icon_current.png?1696509713",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0"
       }
     },
     {
