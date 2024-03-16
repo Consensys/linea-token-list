@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-03-14",
+  "updatedAt": "2024-03-16",
   "versions": [
     {
       "major": 1,
-      "minor": 46,
+      "minor": 47,
       "patch": 0
     }
   ],
@@ -613,6 +613,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0xEE9F48FFED33D78595Aa18523eDB420E6846cbCE",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xEE9F48FFED33D78595Aa18523eDB420E6846cbCE",
+      "name": "Mendi Finance",
+      "symbol": "MENDI",
+      "decimals": 18,
+      "createdAt": "2024-03-16",
+      "updatedAt": "2024-03-16",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x43E8809ea748EFf3204ee01F08872F063e44065f"
       }
     },
     {
