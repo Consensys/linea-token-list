@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-03-28",
+  "updatedAt": "2024-03-29",
   "versions": [
     {
       "major": 1,
-      "minor": 48,
+      "minor": 49,
       "patch": 0
     }
   ],
@@ -269,6 +269,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3aFfCCa64c2A6f4e3B6Bd9c64CD2C969EFd1ECBe"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x32CF07e150971457BbA3b9B7e5665DbD14Bb1C82",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x32CF07e150971457BbA3b9B7e5665DbD14Bb1C82",
+      "name": "ETH Hop Token",
+      "symbol": "hETH",
+      "decimals": 18,
+      "createdAt": "2024-03-29",
+      "updatedAt": "2024-03-29",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0xDc38c5aF436B9652225f92c370A011C673FA7Ba5"
       }
     },
     {
