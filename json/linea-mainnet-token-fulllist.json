@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-03-29",
+  "updatedAt": "2024-03-30",
   "versions": [
     {
       "major": 1,
-      "minor": 49,
+      "minor": 50,
       "patch": 0
     }
   ],
@@ -193,7 +193,7 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/token/0xa88b54e6b76fb97cdb8ecae868f1458e18a953f4",
+      "tokenId": "https://lineascan.build/address/0xa88b54e6b76fb97cdb8ecae868f1458e18a953f4",
       "tokenType": [
         "bridge-reserved",
         "external-bridge"
