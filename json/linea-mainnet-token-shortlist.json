@@ -733,7 +733,21 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3E5D9D8a63CC8a88748f229999CF59487e90721e"
-      }
+      },
+      {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x43E8809ea748EFf3204ee01F08872F063e44065f",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x43E8809ea748EFf3204ee01F08872F063e44065f",
+      "name": "Mendi",
+      "symbol": "MENDI",
+      "decimals": 18,
+      "createdAt": "2023-08-10",
+      "updatedAt": "2023-08-10",
+      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
     }
   ]
 }
