@@ -382,6 +382,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xAAAac83751090C6ea42379626435f805DDF54DC8",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xAAAac83751090C6ea42379626435f805DDF54DC8",
+      "name": "NILE Token",
+      "symbol": "NILE",
+      "decimals": 18,
+      "createdAt": "2024-1-22",
+      "updatedAt": "2024-1-22",
+      "logoURI": "https://i.imgur.com/VyPFhAn.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
       "tokenType": [
         "canonical-bridge"
@@ -734,21 +749,6 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3E5D9D8a63CC8a88748f229999CF59487e90721e"
       }
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xAAAac83751090C6ea42379626435f805DDF54DC8",
-      "tokenType": [
-        "native"
-      ],
-      "address": "0xAAAac83751090C6ea42379626435f805DDF54DC8",
-      "name": "NILE Token",
-      "symbol": "NILE",
-      "decimals": 18,
-      "createdAt": "2024-1-22",
-      "updatedAt": "2024-1-22",
-      "logoURI": "https://i.imgur.com/VyPFhAn.png"
     }
   ]
 }
