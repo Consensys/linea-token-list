@@ -293,6 +293,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x5FBDF89403270a1846F5ae7D113A989F850d1566",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x5FBDF89403270a1846F5ae7D113A989F850d1566",
+      "name": "Foxy",
+      "symbol": "FOXY",
+      "decimals": 18,
+      "createdAt": "2024-4-7",
+      "updatedAt": "2024-4-7",
+      "logoURI": "https://i.ibb.co/MSKkFbf/logo.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x0A79e44c99505c7f388CA30c787ff97217E73ecC",
       "tokenType": [
         "canonical-bridge"
