@@ -347,6 +347,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1a51b19ce03dbe0cb44c1528e34a7edd7771e9af",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x1a51b19CE03dbE0Cb44C1528E34a7EDD7771E9Af",
+      "name": "Lynex",
+      "symbol": "LYNX",
+      "decimals": 18,
+      "createdAt": "2024-02-07",
+      "updatedAt": "2024-02-07",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/29525.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xf3B001D64C656e30a62fbaacA003B1336b4ce12A",
       "tokenType": [
         "native"
