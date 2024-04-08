@@ -748,6 +748,36 @@
       "createdAt": "2023-08-10",
       "updatedAt": "2023-08-10",
       "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
-    }
+      },
+      {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/token/0x150b1e51738cdf0ccfe472594c62d7d6074921ca",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x150b1e51738CdF0cCfe472594C62d7D6074921CA",
+      "name": "sMendi",
+      "symbol": "sMENDI",
+      "decimals": 18,
+      "createdAt": "2023-08-10",
+      "updatedAt": "2023-08-10",
+      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
+      },
+      {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/token/0xcf8dedcdc62317beaedfbee3c77c08425f284486",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xcf8deDCdC62317beAEdfBee3C77C08425F284486",
+      "name": "uMendi",
+      "symbol": "uMENDI",
+      "decimals": 18,
+      "createdAt": "2023-08-10",
+      "updatedAt": "2023-08-10",
+      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
+      }
   ]
 }
