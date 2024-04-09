@@ -734,6 +734,26 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3E5D9D8a63CC8a88748f229999CF59487e90721e"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x15EEfE5B297136b8712291B632404B66A8eF4D25",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x8a94866dF557Bb7FCe88EfF9917237286098e590",
+      "name": "Universal ETH",
+      "symbol": "uniETH",
+      "decimals": 18,
+      "createdAt": "2024-04-09",
+      "updatedAt": "2024-04-09",
+      "logoURI": "https://static.bedrock.technology/bedrock-logo.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xF1376bceF0f78459C0Ed0ba5ddce976F1ddF51F4"
+      }
     }
   ]
 }
