@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-03-30",
+  "updatedAt": "2024-04-10",
   "versions": [
     {
       "major": 1,
-      "minor": 50,
+      "minor": 51,
       "patch": 0
     }
   ],
@@ -148,6 +148,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xba100000625a3754423978a60c9317c58a424e3D"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x743e8f64246dE31Ec88bB88FDE5285CF1f9B3Ef5",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x743e8f64246dE31Ec88bB88FDE5285CF1f9B3Ef5",
+      "name": "Banana Cat",
+      "symbol": "BANANACAT",
+      "decimals": 18,
+      "createdAt": "2024-04-10",
+      "updatedAt": "2024-04-10",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x179Bdd4870d6EACfD273cd4C8cBC4542A4433b8B"
       }
     },
     {
