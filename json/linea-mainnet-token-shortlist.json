@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 38,
+      "minor": 37,
       "patch": 0
     }
   ],
@@ -619,7 +619,6 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x15EEfE5B297136b8712291B632404B66A8eF4D25",
       "tokenType": [
-        "bridge-reserved",
         "external-bridge"
       ],
       "address": "0x15EEfE5B297136b8712291B632404B66A8eF4D25",

@@ -309,7 +309,7 @@ export class TokenService {
       default:
         throw new Error('Invalid chainId');
     }
-    if (verifiedToken && token.tokenType.includes('external-bridge')) {
+    if (verifiedToken && token.tokenType.includes('external-bridge') && !verifiedToken.tokenType.includes('external-bridge')) {
       verifiedToken.tokenType.push('external-bridge');
     }
 
