@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2024-03-29",
+  "updatedAt": "2024-04-10",
   "versions": [
     {
       "major": 1,
-      "minor": 37,
+      "minor": 38,
       "patch": 0
     }
   ],
@@ -172,6 +172,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3aFfCCa64c2A6f4e3B6Bd9c64CD2C969EFd1ECBe"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x5FBDF89403270a1846F5ae7D113A989F850d1566",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x5FBDF89403270a1846F5ae7D113A989F850d1566",
+      "name": "Foxy",
+      "symbol": "FOXY",
+      "decimals": 18,
+      "createdAt": "2024-03-28",
+      "updatedAt": "2024-03-28",
+      "logoURI": "https://i.ibb.co/MSKkFbf/logo.png"
     },
     {
       "chainId": 59144,
@@ -347,6 +362,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1a51b19CE03dbE0Cb44C1528E34a7EDD7771E9Af",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x1a51b19CE03dbE0Cb44C1528E34a7EDD7771E9Af",
+      "name": "Lynex",
+      "symbol": "LYNX",
+      "decimals": 18,
+      "createdAt": "2024-02-07",
+      "updatedAt": "2024-02-07",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/29525.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xf3B001D64C656e30a62fbaacA003B1336b4ce12A",
       "tokenType": [
         "native"
@@ -378,6 +408,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xAAAac83751090C6ea42379626435f805DDF54DC8",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xAAAac83751090C6ea42379626435f805DDF54DC8",
+      "name": "NILE Token",
+      "symbol": "NILE",
+      "decimals": 18,
+      "createdAt": "2024-01-22",
+      "updatedAt": "2024-01-22",
+      "logoURI": "https://i.imgur.com/VyPFhAn.png"
     },
     {
       "chainId": 59144,
@@ -572,6 +617,27 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x15EEfE5B297136b8712291B632404B66A8eF4D25",
+      "tokenType": [
+        "bridge-reserved",
+        "external-bridge"
+      ],
+      "address": "0x15EEfE5B297136b8712291B632404B66A8eF4D25",
+      "name": "Universal ETH",
+      "symbol": "uniETH",
+      "decimals": 18,
+      "createdAt": "2024-03-29",
+      "updatedAt": "2024-03-29",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/23773.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xF1376bceF0f78459C0Ed0ba5ddce976F1ddF51F4"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xB79DD08EA68A908A97220C76d19A6aA9cBDE4376",
       "tokenType": [
         "native"
@@ -734,6 +800,51 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3E5D9D8a63CC8a88748f229999CF59487e90721e"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x43E8809ea748EFf3204ee01F08872F063e44065f",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x43E8809ea748EFf3204ee01F08872F063e44065f",
+      "name": "Mendi Finance",
+      "symbol": "MENDI",
+      "decimals": 18,
+      "createdAt": "2023-08-10",
+      "updatedAt": "2023-08-10",
+      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x150b1e51738CdF0cCfe472594C62d7D6074921CA",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x150b1e51738CdF0cCfe472594C62d7D6074921CA",
+      "name": "Staked Mendi",
+      "symbol": "sMendi",
+      "decimals": 18,
+      "createdAt": "2023-08-17",
+      "updatedAt": "2023-08-17",
+      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xcf8deDCdC62317beAEdfBee3C77C08425F284486",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xcf8deDCdC62317beAEdfBee3C77C08425F284486",
+      "name": "Staked Mendi",
+      "symbol": "uMendi",
+      "decimals": 18,
+      "createdAt": "2023-08-10",
+      "updatedAt": "2023-08-10",
+      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
     }
   ]
 }

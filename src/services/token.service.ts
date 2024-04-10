@@ -352,7 +352,10 @@ export class TokenService {
       verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.BRIDGE_RESERVED]);
     } else if (l2nativeToBridgedToken !== constants.AddressZero) {
       verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.CANONICAL_BRIDGE]);
+    } else {
+      verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.EXTERNAL_BRIDGE]);
     }
+    
     return verifiedToken;
   }
 
