@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-04-12",
+  "updatedAt": "2024-04-13",
   "versions": [
     {
       "major": 1,
-      "minor": 52,
+      "minor": 53,
       "patch": 0
     }
   ],
@@ -128,6 +128,45 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x4d224452801aced8b2f0aebe155379bb5d594381"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1b314022EA496444d3552Aa700C135594f080D72",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x1b314022EA496444d3552Aa700C135594f080D72",
+      "name": "Baby Doge Coin",
+      "symbol": "BabyDoge",
+      "decimals": 9,
+      "createdAt": "2024-04-13",
+      "updatedAt": "2024-04-13",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xAC57De9C1A09FeC648E93EB98875B212DB0d460B"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x92CcE828c4eF31C3762baAc29724dEa03e503e3F",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x92CcE828c4eF31C3762baAc29724dEa03e503e3F",
+      "name": "Badger",
+      "symbol": "BADGER",
+      "decimals": 18,
+      "createdAt": "2024-04-13",
+      "updatedAt": "2024-04-13",
+      "logoURI": "https://assets.coingecko.com/coins/images/13287/large/badger_dao_logo.jpg?1696513059",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x3472A5A71965499acd81997a54BBA8D852C6E53d"
       }
     },
     {
@@ -307,6 +346,26 @@
         "rootChainId": 59144,
         "rootChainURI": "https://lineascan.build/block/0",
         "rootAddress": "0xDc38c5aF436B9652225f92c370A011C673FA7Ba5"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xbf6761aD8C9cB253d026C96327160240Fc2Ce3A6",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xbf6761aD8C9cB253d026C96327160240Fc2Ce3A6",
+      "name": "FLOKI",
+      "symbol": "FLOKI",
+      "decimals": 9,
+      "createdAt": "2024-04-13",
+      "updatedAt": "2024-04-13",
+      "logoURI": "https://assets.coingecko.com/coins/images/16746/large/PNG_image.png?1696516318",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xcf0C122c6b73ff809C693DB761e7BaeBe62b6a2E"
       }
     },
     {
@@ -1119,6 +1178,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x15EEfE5B297136b8712291B632404B66A8eF4D25",
       "tokenType": [
+        "bridge-reserved",
         "external-bridge"
       ],
       "address": "0x15EEfE5B297136b8712291B632404B66A8eF4D25",
