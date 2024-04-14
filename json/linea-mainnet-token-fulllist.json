@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-04-13",
+  "updatedAt": "2024-04-14",
   "versions": [
     {
       "major": 1,
-      "minor": 53,
+      "minor": 54,
       "patch": 0
     }
   ],
@@ -312,6 +312,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x0ba0D56696113Fb41B1f9Ef62ad1AA6559854D18",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x0ba0D56696113Fb41B1f9Ef62ad1AA6559854D18",
+      "name": "Dogelon",
+      "symbol": "ELON",
+      "decimals": 18,
+      "createdAt": "2024-04-14",
+      "updatedAt": "2024-04-14",
+      "logoURI": "https://assets.coingecko.com/coins/images/14962/large/6GxcPRo3_400x400.jpg?1696514622",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x761D38e5ddf6ccf6Cf7c55759d5210750B5D60F3"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x70359c1eeB98eb3D12eE7178359a4541ff11Cc8E",
       "tokenType": [
         "canonical-bridge"
@@ -366,6 +386,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xcf0C122c6b73ff809C693DB761e7BaeBe62b6a2E"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0xc6846c774d5D5330F25003916507a363E03cEc49",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xc6846c774d5D5330F25003916507a363E03cEc49",
+      "name": "Foxy",
+      "symbol": "FOXY",
+      "decimals": 18,
+      "createdAt": "2024-04-14",
+      "updatedAt": "2024-04-14",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x5FBDF89403270a1846F5ae7D113A989F850d1566"
       }
     },
     {
@@ -740,6 +779,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1eee18b41F5888266E89934Ed722cE3D8De346DA",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x1eee18b41F5888266E89934Ed722cE3D8De346DA",
+      "name": "Memecoin",
+      "symbol": "MEME",
+      "decimals": 18,
+      "createdAt": "2024-04-14",
+      "updatedAt": "2024-04-14",
+      "logoURI": "https://assets.coingecko.com/coins/images/32528/large/memecoin_%282%29.png?1698912168",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xb131f4A55907B10d1F0A50d8ab8FA09EC342cd74"
       }
     },
     {
