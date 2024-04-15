@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-04-14",
+  "updatedAt": "2024-04-15",
   "versions": [
     {
       "major": 1,
-      "minor": 54,
+      "minor": 55,
       "patch": 0
     }
   ],
@@ -231,6 +231,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x7d30f39f41988f64C6e8B7C264dfBA9cd54C45AC",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x7d30f39f41988f64C6e8B7C264dfBA9cd54C45AC",
+      "name": "chiliZ",
+      "symbol": "CHZ",
+      "decimals": 18,
+      "createdAt": "2024-04-15",
+      "updatedAt": "2024-04-15",
+      "logoURI": "https://assets.coingecko.com/coins/images/8834/large/CHZ_Token_updated.png?1696508986",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x3506424F91fD33084466F402d5D97f05F8e3b4AF"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x4AF15ec2A0BD43Db75dd04E62FAA3B8EF36b00d5",
       "tokenType": [
         "canonical-bridge"
@@ -386,6 +406,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xcf0C122c6b73ff809C693DB761e7BaeBe62b6a2E"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x7Fd77A7D5916C8437e89Ff89B764c21342C0949c",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x7Fd77A7D5916C8437e89Ff89B764c21342C0949c",
+      "name": "FOX",
+      "symbol": "FOX",
+      "decimals": 18,
+      "createdAt": "2024-04-15",
+      "updatedAt": "2024-04-15",
+      "logoURI": "https://assets.coingecko.com/coins/images/9988/large/FOX.png?1696510025",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d"
       }
     },
     {
@@ -1132,6 +1172,26 @@
       "createdAt": "2023-09-28",
       "updatedAt": "2023-12-07",
       "logoURI": "https://static.shieldex.io/stone/stone-3.svg"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xE01027726466Fa9191455D4d57fb705b3885E9e9",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xE01027726466Fa9191455D4d57fb705b3885E9e9",
+      "name": "SushiToken",
+      "symbol": "SUSHI",
+      "decimals": 18,
+      "createdAt": "2024-04-15",
+      "updatedAt": "2024-04-15",
+      "logoURI": "https://assets.coingecko.com/coins/images/12271/large/512x512_Logo_no_chop.png?1696512101",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x6B3595068778DD592e39A122f4f5a5cF09C90fE2"
+      }
     },
     {
       "chainId": 59144,
