@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-04-15",
+  "updatedAt": "2024-04-16",
   "versions": [
     {
       "major": 1,
-      "minor": 55,
+      "minor": 56,
       "patch": 0
     }
   ],
@@ -192,6 +192,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x25Fd328d3784cFE2B029a5a7679D27041dC4101B",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x25Fd328d3784cFE2B029a5a7679D27041dC4101B",
+      "name": "Banana",
+      "symbol": "BANANA",
+      "decimals": 18,
+      "createdAt": "2024-04-16",
+      "updatedAt": "2024-04-16",
+      "logoURI": "https://assets.coingecko.com/coins/images/31744/large/bgg.jpeg?1696530563",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x38E68A37E401F7271568CecaAc63c6B1e19130B4"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x743e8f64246dE31Ec88bB88FDE5285CF1f9B3Ef5",
       "tokenType": [
         "canonical-bridge"
@@ -206,6 +226,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x179Bdd4870d6EACfD273cd4C8cBC4542A4433b8B"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xa525416d78d77CD483862798242Ae4fC666727BB",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xa525416d78d77CD483862798242Ae4fC666727BB",
+      "name": "Beam",
+      "symbol": "BEAM",
+      "decimals": 18,
+      "createdAt": "2024-04-16",
+      "updatedAt": "2024-04-16",
+      "logoURI": "https://assets.coingecko.com/coins/images/32417/large/chain-logo.png?1698114384",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x62D0A8458eD7719FDAF978fe5929C6D342B0bFcE"
       }
     },
     {
@@ -327,6 +367,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xdddddd4301a082e62e84e43f474f044423921918"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x9F37359869AF765b030B1A7e4475cE8C3Ed77e1b",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x9F37359869AF765b030B1A7e4475cE8C3Ed77e1b",
+      "name": "DODO bird",
+      "symbol": "DODO",
+      "decimals": 18,
+      "createdAt": "2024-04-16",
+      "updatedAt": "2024-04-16",
+      "logoURI": "https://assets.coingecko.com/coins/images/12651/large/dodo_logo.png?1696512458",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x43Dfc4159D86F3A37A5A4B3D4580b888ad7d4DDd"
       }
     },
     {
