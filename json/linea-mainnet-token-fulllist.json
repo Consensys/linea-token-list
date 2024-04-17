@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-04-16",
+  "updatedAt": "2024-04-17",
   "versions": [
     {
       "major": 1,
-      "minor": 56,
+      "minor": 57,
       "patch": 0
     }
   ],
@@ -372,6 +372,25 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xC9B1A0d6cec7F31a8548295D134a0468f636B85D",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xC9B1A0d6cec7F31a8548295D134a0468f636B85D",
+      "name": "Discoin",
+      "symbol": "DISCO",
+      "decimals": 4,
+      "createdAt": "2024-04-17",
+      "updatedAt": "2024-04-17",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x9aACaCC094df2885DF2d1690c3B2B106D0b8F32D"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x9F37359869AF765b030B1A7e4475cE8C3Ed77e1b",
       "tokenType": [
         "canonical-bridge"
@@ -606,6 +625,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x30e88e981FC36cEB772141462EB8f08d014a4012",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x30e88e981FC36cEB772141462EB8f08d014a4012",
+      "name": "GROK",
+      "symbol": "GROK",
+      "decimals": 9,
+      "createdAt": "2024-04-17",
+      "updatedAt": "2024-04-17",
+      "logoURI": "https://assets.coingecko.com/coins/images/32788/large/GROK.png?1707579427",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x8390a1DA07E376ef7aDd4Be859BA74Fb83aA02D5"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x0e5F2ee8C29e7eBc14e45dA7FF90566d8c407dB7",
       "tokenType": [
         "canonical-bridge"
@@ -641,6 +680,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x9ad37205d608B8b219e6a2573f922094CEc5c200"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xb195E26c23aa1AdF66Db73417DEfA32A45F38Ce7",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xb195E26c23aa1AdF66Db73417DEfA32A45F38Ce7",
+      "name": "Kayen",
+      "symbol": "KAYEN",
+      "decimals": 6,
+      "createdAt": "2024-04-17",
+      "updatedAt": "2024-04-17",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x96168402310c70fD7b45adf2Fb3892691E0627D9"
       }
     },
     {
