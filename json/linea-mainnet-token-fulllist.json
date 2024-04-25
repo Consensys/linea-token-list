@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-04-17",
+  "updatedAt": "2024-04-25",
   "versions": [
     {
       "major": 1,
-      "minor": 57,
+      "minor": 58,
       "patch": 0
     }
   ],
@@ -327,6 +327,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xa48F322F8b3edff967629Af79E027628b9Dd1298"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x380D8b3FbDD15Ad5ff4Bc5Fb5393FCd10dc2A68b",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x380D8b3FbDD15Ad5ff4Bc5Fb5393FCd10dc2A68b",
+      "name": "DEcentralized CArbon tokens",
+      "symbol": "DECA",
+      "decimals": 18,
+      "createdAt": "2024-04-25",
+      "updatedAt": "2024-04-25",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x3556A5005D5411603e0115efD9B875FdFb3ad7E9"
       }
     },
     {
