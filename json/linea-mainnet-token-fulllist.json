@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-04-25",
+  "updatedAt": "2024-04-26",
   "versions": [
     {
       "major": 1,
-      "minor": 58,
+      "minor": 59,
       "patch": 0
     }
   ],
@@ -679,6 +679,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xd9c2d319cd7e6177336b0a9c93c21cb48d84fb54"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0xca38498C92C4795851b863A7822C5b0281B15C0B",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xca38498C92C4795851b863A7822C5b0281B15C0B",
+      "name": "Hop",
+      "symbol": "HOP",
+      "decimals": 18,
+      "createdAt": "2024-04-26",
+      "updatedAt": "2024-04-26",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC"
       }
     },
     {
@@ -1573,6 +1592,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x7fCBC6E51A740b6910fCC9eb53E9f4620D9F6131",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x7fCBC6E51A740b6910fCC9eb53E9f4620D9F6131",
+      "name": "Wrapped eETH",
+      "symbol": "weETH",
+      "decimals": 18,
+      "createdAt": "2024-04-26",
+      "updatedAt": "2024-04-26",
+      "logoURI": "https://assets.coingecko.com/coins/images/33033/large/weETH.png?1701438396",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee"
       }
     },
     {
