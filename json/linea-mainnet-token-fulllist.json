@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-04-26",
+  "updatedAt": "2024-05-03",
   "versions": [
     {
       "major": 1,
-      "minor": 59,
+      "minor": 60,
       "patch": 0
     }
   ],
@@ -1164,6 +1164,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x8aE903c6C2203cB5165954988F1eCCd9cA8b4860",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x8aE903c6C2203cB5165954988F1eCCd9cA8b4860",
+      "name": "Renzo Restaked ETH",
+      "symbol": "ezETH",
+      "decimals": 18,
+      "createdAt": "2024-05-03",
+      "updatedAt": "2024-05-03",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x2416092f143378750bb29b79eD961ab195CcEea5"
       }
     },
     {
