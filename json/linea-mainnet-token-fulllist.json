@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-05-03",
+  "updatedAt": "2024-05-07",
   "versions": [
     {
       "major": 1,
-      "minor": 60,
+      "minor": 61,
       "patch": 0
     }
   ],
@@ -1763,6 +1763,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x90b7E285ab6cf4e3A2487669dba3E339dB8a3320"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x4F1f81202286B920e8651a008462196c72E1C80C",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x4F1f81202286B920e8651a008462196c72E1C80C",
+      "name": "ZeroLend",
+      "symbol": "ZERO",
+      "decimals": 18,
+      "createdAt": "2024-05-07",
+      "updatedAt": "2024-05-07",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x78354f8DcCB269a615A7e0a24f9B0718FDC3C7A7"
       }
     },
     {
