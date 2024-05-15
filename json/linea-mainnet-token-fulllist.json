@@ -1031,6 +1031,37 @@
       "updatedAt": "2023-08-10",
       "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
     },
+    ,
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xcc22F6AA610D1b2a0e89EF228079cB3e1831b1D1",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xcc22F6AA610D1b2a0e89EF228079cB3e1831b1D1",
+      "name": "Linea Velocore",
+      "symbol": "LVC",
+      "decimals": 18,
+      "createdAt": "2023-08-03",
+      "updatedAt": "2023-08-03",
+      "logoURI": "https://assets.coingecko.com/coins/images/31537/standard/LVC.png?1696530346"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xAeC06345b26451bdA999d83b361BEaaD6eA93F87",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xAeC06345b26451bdA999d83b361BEaaD6eA93F87",
+      "name": "Locked LVC",
+      "symbol": "veLVC",
+      "decimals": 18,
+      "createdAt": "2023-08-03",
+      "updatedAt": "2023-08-03",
+      "logoURI": "https://bit.ly/3WEJF7N"
+    },
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
