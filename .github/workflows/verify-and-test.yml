@@ -51,7 +51,6 @@ jobs:
       CONTRACT_ADDRESS: ${{ secrets.CONTRACT_ADDRESS }}
       L2_TOKEN_BRIDGE: ${{ secrets.L2_TOKEN_BRIDGE }}
       HAS_CHANGES: false
-      SECRETS_PRESENT: false
 
     steps:
       - name: Checkout code
@@ -67,23 +66,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Check for secrets
-        id: check_secrets
-        run: |
-          if [ -z "${{ secrets.PROVIDER_URL }}" ] || [ -z "${{ secrets.LINEA_PROVIDER_URL }}" ] || [ -z "${{ secrets.CONTRACT_ADDRESS }}" ] || [ -z "${{ secrets.L2_TOKEN_BRIDGE }}" ]; then
-            echo "Secrets are missing."
-            echo "SECRETS_PRESENT=false" >> $GITHUB_ENV
-          else
-            echo "Secrets are present."
-            echo "SECRETS_PRESENT=true" >> $GITHUB_ENV
-  
-
       - name: Execute verifyMainnetShortlist
-        if: env.SECRETS_PRESENT == 'true'
         run: npm run verify-start
 
       - name: Check for changes
-        if: env.SECRETS_PRESENT == 'true'
         run: |
           if [[ -n $(git diff --exit-code) ]]; then
             echo "Changes detected. Creating a commit."
