@@ -7,8 +7,9 @@
   "versions": [
     {
       "major": 1,
-      "minor": 62,
-      "patch": 0
+      "minor": 63,
+      "patch": 0,
+      "updatedAt": "2024-05-15"
     }
   ],
   "tokens": [
@@ -1031,7 +1032,6 @@
       "updatedAt": "2023-08-10",
       "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
     },
-    ,
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
