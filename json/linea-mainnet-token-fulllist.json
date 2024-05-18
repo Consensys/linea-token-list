@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-05-15",
+  "updatedAt": "2024-05-18",
   "versions": [
     {
       "major": 1,
-      "minor": 62,
+      "minor": 63,
       "patch": 0
     }
   ],
@@ -1124,6 +1124,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x0258F474786DdFd37ABCE6df6BBb1Dd5dfC4434a"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x561890F5D43e3d12b5f9C8c1E95cFBfBFEF9753b",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x561890F5D43e3d12b5f9C8c1E95cFBfBFEF9753b",
+      "name": "Paladin Token",
+      "symbol": "PAL",
+      "decimals": 18,
+      "createdAt": "2024-05-18",
+      "updatedAt": "2024-05-18",
+      "logoURI": "https://assets.coingecko.com/coins/images/24558/large/Circle-Logo.png?1696523734",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xAB846Fb6C81370327e784Ae7CbB6d6a6af6Ff4BF"
       }
     },
     {
