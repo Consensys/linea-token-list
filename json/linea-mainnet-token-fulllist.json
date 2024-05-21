@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-05-18",
+  "updatedAt": "2024-05-21",
   "versions": [
     {
       "major": 1,
-      "minor": 63,
+      "minor": 64,
       "patch": 0
     }
   ],
@@ -430,6 +430,25 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x5ed3675867Ae3E3582b819cCB88f48c836E69edE",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x5ed3675867Ae3E3582b819cCB88f48c836E69edE",
+      "name": "Dogecoin",
+      "symbol": "DOGE",
+      "decimals": 8,
+      "createdAt": "2024-05-21",
+      "updatedAt": "2024-05-21",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x4206931337dc273a630d328dA6441786BfaD668f"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x0ba0D56696113Fb41B1f9Ef62ad1AA6559854D18",
       "tokenType": [
         "canonical-bridge"
@@ -782,6 +801,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xcc22F6AA610D1b2a0e89EF228079cB3e1831b1D1",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xcc22F6AA610D1b2a0e89EF228079cB3e1831b1D1",
+      "name": "Linea Velocore",
+      "symbol": "LVC",
+      "decimals": 18,
+      "createdAt": "2023-08-03",
+      "updatedAt": "2023-08-03",
+      "logoURI": "https://assets.coingecko.com/coins/images/31537/standard/LVC.png?1696530346"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xd83af4fbd77f3ab65c3b1dc4b38d7e67aecf599a",
       "tokenType": [
         "native"
@@ -813,6 +847,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3E9BC21C9b189C09dF3eF1B824798658d5011937"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xAeC06345b26451bdA999d83b361BEaaD6eA93F87",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xAeC06345b26451bdA999d83b361BEaaD6eA93F87",
+      "name": "Locked LVC",
+      "symbol": "veLVC",
+      "decimals": 18,
+      "createdAt": "2023-08-03",
+      "updatedAt": "2023-08-03",
+      "logoURI": "https://bit.ly/3WEJF7N"
     },
     {
       "chainId": 59144,
@@ -1030,36 +1079,6 @@
       "createdAt": "2023-08-10",
       "updatedAt": "2023-08-10",
       "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xcc22F6AA610D1b2a0e89EF228079cB3e1831b1D1",
-      "tokenType": [
-        "native"
-      ],
-      "address": "0xcc22F6AA610D1b2a0e89EF228079cB3e1831b1D1",
-      "name": "Linea Velocore",
-      "symbol": "LVC",
-      "decimals": 18,
-      "createdAt": "2023-08-03",
-      "updatedAt": "2023-08-03",
-      "logoURI": "https://assets.coingecko.com/coins/images/31537/standard/LVC.png?1696530346"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xAeC06345b26451bdA999d83b361BEaaD6eA93F87",
-      "tokenType": [
-        "native"
-      ],
-      "address": "0xAeC06345b26451bdA999d83b361BEaaD6eA93F87",
-      "name": "Locked LVC",
-      "symbol": "veLVC",
-      "decimals": 18,
-      "createdAt": "2023-08-03",
-      "updatedAt": "2023-08-03",
-      "logoURI": "https://bit.ly/3WEJF7N"
     },
     {
       "chainId": 59144,
