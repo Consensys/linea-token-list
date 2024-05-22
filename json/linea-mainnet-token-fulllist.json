@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-05-21",
+  "updatedAt": "2024-05-22",
   "versions": [
     {
       "major": 1,
-      "minor": 64,
+      "minor": 65,
       "patch": 0
     }
   ],
@@ -698,6 +698,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xd9c2d319cd7e6177336b0a9c93c21cb48d84fb54"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x5e16Eea284570b340F9718352d46022Da00D21e4",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x5e16Eea284570b340F9718352d46022Da00D21e4",
+      "name": "HarryPotterObamaSonic10Inu",
+      "symbol": "BITCOIN",
+      "decimals": 8,
+      "createdAt": "2024-05-22",
+      "updatedAt": "2024-05-22",
+      "logoURI": "https://assets.coingecko.com/coins/images/30323/large/hpos10i_logo_casino_night-dexview.png?1696529224",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x72e4f9F808C49A2a61dE9C5896298920Dc4EEEa9"
       }
     },
     {
