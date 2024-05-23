@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-05-22",
+  "updatedAt": "2024-05-23",
   "versions": [
     {
       "major": 1,
-      "minor": 65,
+      "minor": 66,
       "patch": 0
     }
   ],
@@ -597,6 +597,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3432B6A60D23Ca0dFCa7761B7ab56459D9C964D0"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x084C2182396161CaBD3a5439EF01B2A514CB9979",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x084C2182396161CaBD3a5439EF01B2A514CB9979",
+      "name": "GameSwift",
+      "symbol": "GSWIFT",
+      "decimals": 18,
+      "createdAt": "2024-05-23",
+      "updatedAt": "2024-05-23",
+      "logoURI": "https://assets.coingecko.com/coins/images/30949/large/GameSwift_Token.png?1696529788",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x580E933D90091b9cE380740E3a4A39c67eB85B4c"
       }
     },
     {
