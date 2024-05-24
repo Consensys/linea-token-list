@@ -427,6 +427,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xE2a6e74118E708f7652FC4c74D2F9Ee5Fa210563",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xE2a6e74118E708f7652FC4c74D2F9Ee5Fa210563",
+      "name": "NotWifGary",
+      "symbol": "$NWG",
+      "decimals": 18,
+      "createdAt": "2024-05-24",
+      "updatedAt": "2024-05-24",
+      "logoURI": "https://notwifgary.xyz/logo512.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
       "tokenType": [
         "canonical-bridge"
