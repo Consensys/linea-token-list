@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-05-23",
+  "updatedAt": "2024-05-25",
   "versions": [
     {
       "major": 1,
-      "minor": 66,
+      "minor": 67,
       "patch": 0
     }
   ],
@@ -1194,6 +1194,21 @@
       "createdAt": "2024-01-22",
       "updatedAt": "2024-01-22",
       "logoURI": "https://i.imgur.com/VyPFhAn.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xE2a6e74118E708f7652FC4c74D2F9Ee5Fa210563",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xE2a6e74118E708f7652FC4c74D2F9Ee5Fa210563",
+      "name": "NotWifGary",
+      "symbol": "$NWG",
+      "decimals": 18,
+      "createdAt": "2024-05-24",
+      "updatedAt": "2024-05-24",
+      "logoURI": "https://notwifgary.xyz/logo512.png"
     },
     {
       "chainId": 59144,
