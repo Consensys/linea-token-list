@@ -890,6 +890,21 @@
       "createdAt": "2023-08-03",
       "updatedAt": "2023-08-03",
       "logoURI": "https://bit.ly/3WEJF7N"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x78354f8DcCB269a615A7e0a24f9B0718FDC3C7A7",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x78354f8DcCB269a615A7e0a24f9B0718FDC3C7A7",
+      "name": "ZeroLend",
+      "symbol": "ZERO",
+      "decimals": 18,
+      "createdAt": "2024-04-24",
+      "updatedAt": "2024-04-24",
+      "logoURI": "https://assets.coingecko.com/coins/images/37375/standard/image.png?1714884543"
     }
   ]
 }
