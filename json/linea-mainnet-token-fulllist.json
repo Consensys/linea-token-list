@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-05-29",
+  "updatedAt": "2024-06-01",
   "versions": [
     {
       "major": 1,
-      "minor": 69,
+      "minor": 70,
       "patch": 0
     }
   ],
@@ -246,6 +246,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x62D0A8458eD7719FDAF978fe5929C6D342B0bFcE"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xc8A7C89d9c5220ef458581354f459B13AA1D6622",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xc8A7C89d9c5220ef458581354f459B13AA1D6622",
+      "name": "Bitcorn",
+      "symbol": "BTC",
+      "decimals": 8,
+      "createdAt": "2024-06-01",
+      "updatedAt": "2024-06-01",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xe8A25C46d623f12B8bA08b583b6fE1bEE3eB31C9"
       }
     },
     {
