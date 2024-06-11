@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-06-01",
+  "updatedAt": "2024-06-11",
   "versions": [
     {
       "major": 1,
-      "minor": 70,
+      "minor": 71,
       "patch": 0
     }
   ],
@@ -791,6 +791,26 @@
         "rootChainId": 59144,
         "rootChainURI": "https://lineascan.build/block/0",
         "rootAddress": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1Fe54cd84eE05e1fFE1516cf55a29CC92740c9D9",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x1Fe54cd84eE05e1fFE1516cf55a29CC92740c9D9",
+      "name": "InceptionLRT restaked ETH",
+      "symbol": "InETH",
+      "decimals": 18,
+      "createdAt": "2024-06-11",
+      "updatedAt": "2024-06-11",
+      "logoURI": "https://coin-images.coingecko.com/coins/images/34127/large/inETH.png?1715036464",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xf073bAC22DAb7FaF4a3Dd6c6189a70D54110525C"
       }
     },
     {
