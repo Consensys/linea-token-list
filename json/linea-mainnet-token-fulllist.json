@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-06-11",
+  "updatedAt": "2024-06-21",
   "versions": [
     {
       "major": 1,
-      "minor": 71,
+      "minor": 72,
       "patch": 0
     }
   ],
@@ -265,6 +265,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xe8A25C46d623f12B8bA08b583b6fE1bEE3eB31C9"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x36607298fBfABAc509B3d24BF02777d372A38DD4",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x36607298fBfABAc509B3d24BF02777d372A38DD4",
+      "name": "Burn Wrapped AJNA",
+      "symbol": "bwAJNA",
+      "decimals": 18,
+      "createdAt": "2024-06-21",
+      "updatedAt": "2024-06-21",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x936Ab482d6bd111910a42849D3A51Ff80BB0A711"
       }
     },
     {
