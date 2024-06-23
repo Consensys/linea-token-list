@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-06-21",
+  "updatedAt": "2024-06-23",
   "versions": [
     {
       "major": 1,
-      "minor": 72,
+      "minor": 73,
       "patch": 0
     }
   ],
@@ -1380,6 +1380,26 @@
         "rootChainId": 59144,
         "rootChainURI": "https://lineascan.build/block/0",
         "rootAddress": "0x2416092f143378750bb29b79eD961ab195CcEea5"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x6016ccDca178246A3A3d7507419aADe7399B16eD",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x6016ccDca178246A3A3d7507419aADe7399B16eD",
+      "name": "rsETH",
+      "symbol": "rsETH",
+      "decimals": 18,
+      "createdAt": "2024-06-23",
+      "updatedAt": "2024-06-23",
+      "logoURI": "https://coin-images.coingecko.com/coins/images/33800/large/Icon___Dark.png?1702991855",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7"
       }
     },
     {
