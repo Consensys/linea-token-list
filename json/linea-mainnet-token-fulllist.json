@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-06-23",
+  "updatedAt": "2024-07-01",
   "versions": [
     {
       "major": 1,
-      "minor": 73,
+      "minor": 74,
       "patch": 0
     }
   ],
@@ -246,6 +246,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x62D0A8458eD7719FDAF978fe5929C6D342B0bFcE"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x7c3505709d1ba68f7fd2a22D2B0C048163bcf659",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x7c3505709d1ba68f7fd2a22D2B0C048163bcf659",
+      "name": "Binance USD",
+      "symbol": "BUSD",
+      "decimals": 18,
+      "createdAt": "2024-07-01",
+      "updatedAt": "2024-07-01",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x7d43AABC515C356145049227CeE54B608342c0ad"
       }
     },
     {
@@ -1549,6 +1568,25 @@
       "createdAt": "2023-08-10",
       "updatedAt": "2023-08-10",
       "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x07bbBef5ac5A6517A781E351e6c9836F40162dbF",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x07bbBef5ac5A6517A781E351e6c9836F40162dbF",
+      "name": "StakeStone Ether",
+      "symbol": "STONE",
+      "decimals": 18,
+      "createdAt": "2024-07-01",
+      "updatedAt": "2024-07-01",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x93F4d0ab6a8B4271f4a28Db399b5E30612D21116"
+      }
     },
     {
       "chainId": 59144,
