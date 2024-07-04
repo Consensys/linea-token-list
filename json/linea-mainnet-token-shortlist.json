@@ -920,6 +920,21 @@
       "createdAt": "2024-04-24",
       "updatedAt": "2024-04-24",
       "logoURI": "https://assets.coingecko.com/coins/images/37375/standard/image.png?1714884543"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/",
+      "tokenType": [
+        "native"
+      ],
+      "address": "",
+      "name": "Unfettered Ecosystem",
+      "symbol": "SOULS",
+      "decimals": 18,
+      "createdAt": "",
+      "updatedAt": "",
+      "logoURI": "https://assets.coingecko.com/coins/images/30591/standard/un.jpg?1696529459"
     }
   ]
 }
