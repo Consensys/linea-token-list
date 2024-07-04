@@ -197,6 +197,21 @@
         "rootChainURI": "https://goerli.etherscan.io/block/0",
         "rootAddress": "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/",
+      "tokenType": [
+        "native"
+      ],
+      "address": "",
+      "name": "Unfettered Ecosystem",
+      "symbol": "SOULS",
+      "decimals": 18,
+      "createdAt": "",
+      "updatedAt": "",
+      "logoURI": "https://assets.coingecko.com/coins/images/30591/standard/un.jpg?1696529459"
     }
   ]
 }
