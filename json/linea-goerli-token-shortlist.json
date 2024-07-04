@@ -202,9 +202,7 @@
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/",
-      "tokenType": [
-        "native"
-      ],
+      "tokenType": ["native"],
       "address": "",
       "name": "Unfettered Ecosystem",
       "symbol": "SOULS",
