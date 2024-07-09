@@ -920,6 +920,21 @@
       "createdAt": "2024-04-24",
       "updatedAt": "2024-04-24",
       "logoURI": "https://assets.coingecko.com/coins/images/37375/standard/image.png?1714884543"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x45DC7323e7357713D92eDEe756733dAda5865fd5",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x45DC7323e7357713D92eDEe756733dAda5865fd5",
+      "name": "The Nemesis",
+      "symbol": "NEMS",
+      "decimals": 18,
+      "createdAt": "2024-09-24",
+      "updatedAt": "2024-09-24",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/25898.png"
     }
   ]
 }
