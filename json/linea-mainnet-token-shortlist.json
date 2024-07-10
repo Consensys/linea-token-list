@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 43,
+      "minor": 44,
       "patch": 0
     }
   ],
@@ -423,6 +423,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x45DC7323e7357713D92eDEe756733dAda5865fd5",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x45DC7323e7357713D92eDEe756733dAda5865fd5",
+      "name": "The Nemesis",
+      "symbol": "NEMS",
+      "decimals": 18,
+      "createdAt": "2024-06-20",
+      "updatedAt": "2024-06-20",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/25898.png"
     },
     {
       "chainId": 59144,
