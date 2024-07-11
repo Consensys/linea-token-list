@@ -8,7 +8,7 @@
     {
       "major": 1,
       "minor": 44,
-      "patch": 0
+      "patch": 1
     }
   ],
   "tokens": [
@@ -437,7 +437,12 @@
       "decimals": 18,
       "createdAt": "2024-06-20",
       "updatedAt": "2024-06-20",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/25898.png"
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/25898.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xb435A47eCea7F5366b2520e45B9beD7E01d2FFAe"
+      }
     },
     {
       "chainId": 59144,
