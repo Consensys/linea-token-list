@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-07-01",
+  "updatedAt": "2024-07-15",
   "versions": [
     {
       "major": 1,
-      "minor": 74,
+      "minor": 75,
       "patch": 0
     }
   ],
@@ -285,6 +285,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xe8A25C46d623f12B8bA08b583b6fE1bEE3eB31C9"
       }
+    },
+     {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x7e37624613ebc2DeeA15b8e710EDFD373175662A",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x7e37624613ebc2DeeA15b8e710EDFD373175662A",
+      "name": "bullinea",
+      "symbol": "BULL",
+      "decimals": 18,
+      "createdAt": "2024-06-19",
+      "updatedAt": "2024-06-19",
+      "logoURI": "https://dd.dexscreener.com/ds-data/tokens/linea/0x7e37624613ebc2deea15b8e710edfd373175662a.png?key=2f90f7"
     },
     {
       "chainId": 59144,
