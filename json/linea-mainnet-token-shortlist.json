@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2024-07-11",
+  "updatedAt": "2024-09-18",
   "versions": [
     {
       "major": 1,
-      "minor": 44,
+      "minor": 45,
       "patch": 1
     }
   ],
@@ -593,6 +593,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xd38BB40815d2B0c2d2c866e0c72c5728ffC76dd9"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xeC859566fC5d7ED84Ac823509F3f7db06C461b20",
+      "tokenType": [
+        "external-bridge"
+      ],
+      "address": "0xeC859566fC5d7ED84Ac823509F3f7db06C461b20",
+      "name": "Unfettered Ecosystem",
+      "symbol": "SOULS",
+      "decimals": 18,
+      "createdAt": "2024-09-13",
+      "updatedAt": "2024-09-18",
+      "logoURI": "https://ibb.co/K98N8sz"
     },
     {
       "chainId": 59144,
