@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 1,
+      "minor": 2,
       "patch": 0
     }
   ],
@@ -42,6 +42,19 @@
       "createdAt": "2024-03-29",
       "updatedAt": "2024-03-29",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
+    },
+    {
+      "chainId": 59141,
+      "chainURI": "https://sepolia.lineascan.build/block/0",
+      "tokenId": "https://sepolia.lineascan.build/address/0xFcAE759E3f149721f674Ea720361a76bBe67Ea8c",
+      "tokenType": ["native"],
+      "address": "0xFcAE759E3f149721f674Ea720361a76bBe67Ea8c",
+      "name": "Dunachain",
+      "symbol": "DUNA",
+      "decimals": 18,
+      "createdAt": "2024-09-26",
+      "updatedAt": "2024-09-27",
+      "logoURI": "https://i.ibb.co/VCpK4bR/1.png" 
     }
   ]
 }
