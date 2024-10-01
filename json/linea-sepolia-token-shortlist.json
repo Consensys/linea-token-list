@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-sepolia-token-shortlist.json",
   "name": "Linea Sepolia Token List",
   "createdAt": "2024-03-29",
-  "updatedAt": "2024-04-26",
+  "updatedAt": "2024-10-01",
   "versions": [
     {
       "major": 1,
-      "minor": 1,
+      "minor": 2,
       "patch": 0
     }
   ],
@@ -15,14 +15,14 @@
     {
       "chainId": 59141,
       "chainURI": "https://sepolia.lineascan.build/block/0",
-      "tokenId": "https://sepolia.lineascan.build/address/0xf17a935A89cB4CBc176cd5afeBCB9805e5Ed7c1A",
+      "tokenId": "https://sepolia.lineascan.build/address/0xFEce4462D57bD51A6A552365A011b95f0E16d9B7",
       "tokenType": ["bridge-reserved", "external-bridge"],
-      "address": "0xf17a935A89cB4CBc176cd5afeBCB9805e5Ed7c1A",
+      "address": "0xFEce4462D57bD51A6A552365A011b95f0E16d9B7",
       "name": "USDC",
       "symbol": "USDC",
       "decimals": 6,
       "createdAt": "2024-03-27",
-      "updatedAt": "2024-03-27",
+      "updatedAt": "2024-10-01",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
       "extension": {
         "rootChainId": 11155111,
