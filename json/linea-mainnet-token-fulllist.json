@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-07-01",
+  "updatedAt": "2024-10-24",
   "versions": [
     {
       "major": 1,
-      "minor": 74,
+      "minor": 75,
       "patch": 0
     }
   ],
@@ -128,6 +128,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x4d224452801aced8b2f0aebe155379bb5d594381"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x0090817169eDf9dbe6a7D373BeAc216D328dd964",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x0090817169eDf9dbe6a7D373BeAc216D328dd964",
+      "name": "Axelar",
+      "symbol": "AXL",
+      "decimals": 6,
+      "createdAt": "2024-10-24",
+      "updatedAt": "2024-10-24",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x23ee2343B892b1BB63503a4FAbc840E0e2C6810f"
       }
     },
     {
@@ -832,6 +851,25 @@
       }
     },
     {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x75F1CE1Bcbb3b27A1298BB0963080Ce628e7Fb7C",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x75F1CE1Bcbb3b27A1298BB0963080Ce628e7Fb7C",
+      "name": "ICHI Vault Liquidity",
+      "symbol": "IV-5-LYNX",
+      "decimals": 18,
+      "createdAt": "2024-10-24",
+      "updatedAt": "2024-10-24",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x92ccb773da4f3974c941974bDb978bAd7efa7744"
+      }
+    },
+    {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x1Fe54cd84eE05e1fFE1516cf55a29CC92740c9D9",
@@ -888,6 +926,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x96168402310c70fD7b45adf2Fb3892691E0627D9"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x6d81B41D10950C9dDCbb3600F52f20329E3bF837",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x6d81B41D10950C9dDCbb3600F52f20329E3bF837",
+      "name": "KelpDao Restaked ETH",
+      "symbol": "rsETH",
+      "decimals": 18,
+      "createdAt": "2024-10-24",
+      "updatedAt": "2024-10-24",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x4186BFC76E2E237523CBC30FD220FE055156b41F"
       }
     },
     {
@@ -1296,10 +1353,10 @@
       ],
       "address": "0xE2a6e74118E708f7652FC4c74D2F9Ee5Fa210563",
       "name": "NotWifGary",
-      "symbol": "$NWG",
+      "symbol": "NWG",
       "decimals": 18,
       "createdAt": "2024-05-24",
-      "updatedAt": "2024-05-24",
+      "updatedAt": "2024-10-01",
       "logoURI": "https://notwifgary.xyz/logo512.png"
     },
     {
@@ -1686,6 +1743,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x45DC7323e7357713D92eDEe756733dAda5865fd5",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x45DC7323e7357713D92eDEe756733dAda5865fd5",
+      "name": "The Nemesis",
+      "symbol": "NEMS",
+      "decimals": 18,
+      "createdAt": "2024-06-20",
+      "updatedAt": "2024-07-11",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/25898.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xb435A47eCea7F5366b2520e45B9beD7E01d2FFAe"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xe322E20738386766F769b0a6083f4141083d26d0",
       "tokenType": [
         "canonical-bridge"
@@ -1701,6 +1778,22 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3155BA85D5F96b2d030a4966AF206230e46849cb"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xeC859566fC5d7ED84Ac823509F3f7db06C461b20",
+      "tokenType": [
+        "bridge-reserved",
+        "external-bridge"
+      ],
+      "address": "0xeC859566fC5d7ED84Ac823509F3f7db06C461b20",
+      "name": "Unfettered Ecosystem",
+      "symbol": "SOULS",
+      "decimals": 18,
+      "createdAt": "2024-09-13",
+      "updatedAt": "2024-09-13",
+      "logoURI": "https://i.ibb.co/FBdsdYq/white-on-black-logomark.png"
     },
     {
       "chainId": 59144,
