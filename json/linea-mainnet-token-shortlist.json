@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2024-10-23",
+  "updatedAt": "2024-10-29",
   "versions": [
     {
       "major": 1,
-      "minor": 46,
+      "minor": 47,
       "patch": 0
     }
   ],
@@ -222,6 +222,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3432B6A60D23Ca0dFCa7761B7ab56459D9C964D0"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x42d4Eb291C00a243C7Cbc2759B47892ED1852a9d",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x42d4Eb291C00a243C7Cbc2759B47892ED1852a9d",
+      "name": "GENESIS",
+      "symbol": "GENESIS",
+      "decimals": 18,
+      "createdAt": "2024-10-20",
+      "updatedAt": "2024-10-20",
+      "logoURI": "https://d12kvghf2eznx1.cloudfront.net/tokens/images/fe58d536-fa14-44eb-96b6-3b2c09f6a004"
     },
     {
       "chainId": 59144,
