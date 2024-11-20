@@ -377,6 +377,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x81BE2aCB2e9291dB6400f9f6a4D0f35f24de2E77",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x81BE2aCB2e9291dB6400f9f6a4D0f35f24de2E77",
+      "name": "Linpuss",
+      "symbol": "LPUSS",
+      "decimals": 18,
+      "createdAt": "2024-11-20",
+      "updatedAt": "2024-11-20",
+      "logoURI": "https://assets.coingecko.com/coins/images/51867/standard/linpuss_logo.png?1732093865"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x1bE3735Dd0C0Eb229fB11094B6c277192349EBbf",
       "tokenType": [
         "native"
