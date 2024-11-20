@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2024-10-29",
+  "updatedAt": "2024-11-20",
   "versions": [
     {
       "major": 1,
-      "minor": 47,
+      "minor": 48,
       "patch": 0
     }
   ],
@@ -373,6 +373,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xF1182229B71E79E504b1d2bF076C15a277311e05"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x81BE2aCB2e9291dB6400f9f6a4D0f35f24de2E77",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x81BE2aCB2e9291dB6400f9f6a4D0f35f24de2E77",
+      "name": "Linpuss",
+      "symbol": "LPUSS",
+      "decimals": 18,
+      "createdAt": "2024-10-31",
+      "updatedAt": "2024-10-31",
+      "logoURI": "https://assets.coingecko.com/coins/images/51867/standard/linpuss_logo.png?1732093865"
     },
     {
       "chainId": 59144,
