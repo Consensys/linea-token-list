@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2024-10-29",
+  "updatedAt": "2024-11-20",
   "versions": [
     {
       "major": 1,
-      "minor": 47,
+      "minor": 48,
       "patch": 0
     }
   ],
@@ -385,8 +385,8 @@
       "name": "Linpuss",
       "symbol": "LPUSS",
       "decimals": 18,
-      "createdAt": "2024-11-20",
-      "updatedAt": "2024-11-20",
+      "createdAt": "2024-10-31",
+      "updatedAt": "2024-10-31",
       "logoURI": "https://assets.coingecko.com/coins/images/51867/standard/linpuss_logo.png?1732093865"
     },
     {
