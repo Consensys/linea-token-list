@@ -986,6 +986,19 @@
       "createdAt": "2024-04-24",
       "updatedAt": "2024-04-24",
       "logoURI": "https://assets.coingecko.com/coins/images/37375/standard/image.png?1714884543"
-    }
+    },
+{
+  "chainId": 59144,
+  "chainURI": "https://lineascan.build/block/0",
+  "tokenId": "https://lineascan.build/token/0x741f2fc08125a86d452d54ef77e24a9ca6da4cb2",
+  "tokenType": ["native"],
+  "address": "0x741f2fc08125a86d452d54ef77e24a9ca6da4cb2",
+  "name": "wheat-sol",
+  "symbol": "SWHIT",
+  "decimals": 18,
+  "createdAt": "2024-11-20",
+  "updatedAt": "2024-11-22",
+  "logoURI": "https://raw.githubusercontent.com/wheat-eco/wheatsol-asset/main/wheatsol.png"
+}
   ]
 }
