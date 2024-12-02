@@ -15,6 +15,19 @@
     {
       "chainId": 59140,
       "chainURI": "https://goerli.lineascan.build/block/0",
+      "tokenId": "https://goerli.lineascan.build/token/0x092b9E25a7D143c83D44c27194F5CeE7c1150F22",
+      "tokenType": ["native"],
+      "address": "0x092b9E25a7D143c83D44c27194F5CeE7c1150F22",
+      "name": "CatWifCap",
+      "symbol": "CWC",
+      "decimals": 18,
+      "createdAt": "2024-12-02",
+      "updatedAt": "2024-12-02",
+      "logoURI": "https://dd.dexscreener.com/ds-data/tokens/linea/0x092b9e25a7d143c83d44c27194f5cee7c1150f22.png?size=lg&key=99da9c"
+    },
+    {
+      "chainId": 59140,
+      "chainURI": "https://goerli.lineascan.build/block/0",
       "tokenId": "https://goerli.lineascan.build/token/0xD2340c4ec834bf43c05B9EcCd60EeD3a20892Dcc",
       "tokenType": ["native"],
       "address": "0xD2340c4ec834bf43c05B9EcCd60EeD3a20892Dcc",

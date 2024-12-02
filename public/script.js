@@ -44,7 +44,7 @@ function generateTokensHTML(tokens, elementId) {
       (token, index) => `
       <div class="token card bg-base-200 ${
         highlightAddresses.includes(token.address) ? 'border border-gray-200' : 'bordered'
-      } shadow-xl space-y-4 m-4" style="width: 480px;">
+      } shadow-xl space-y-4 m-4" style="width: 490px;">
       <div class="card-body space-y-2">
         <div class="flex flex-row space-x-4 items-center">
           <div class="badge badge-primary">${index + 1}</div>
@@ -69,14 +69,43 @@ function generateTokensHTML(tokens, elementId) {
             </div>
           </div>
         </div>
-       
-        ${generateAddress1LinkHTML(token)}
-        ${generateAddress2LinkHTML(token)}
+        <div class="flex items-center">
+         ${generateAddress1LinkHTML(token)}
+          <button class="copy-btn flex items-center ml-2" data-address="${token.address}">
+            <span class="text-xs font-medium">Copy</span>
+          </button>
+        </div>
+         <div class="flex items-center">
+           ${generateAddress2LinkHTML(token)}
+          <button class="copy-btn flex items-center ml-2" data-address="${token?.extension?.rootAddress}">
+            <span class="text-xs font-medium">Copy</span>
+          </button>
+        </div>
+     
       </div>
     </div>
   `
     )
     .join('');
+}
+
+if (typeof navigator !== 'undefined' && navigator?.clipboard) {
+  document.body.addEventListener('click', function (e) {
+    if (e.target.closest('.copy-btn')) {
+      const button = e.target.closest('.copy-btn');
+      const address = button.getAttribute('data-address');
+      if (address) {
+        navigator.clipboard
+          .writeText(address)
+          .then(() => {
+            alert(`Copied: ${address}`);
+          })
+          .catch((err) => {
+            console.error('Failed to copy text: ', err);
+          });
+      }
+    }
+  });
 }
 
 function generateAddress1LinkHTML(token) {
@@ -95,7 +124,7 @@ function generateAddress1LinkHTML(token) {
   }
 
   return `<p class="text-gray-500 text-sm flex justify-between">
-  <span class='text-gray-400'>${layer}</span>
+  <span class='text-gray-400 mr-2'>${layer}</span>
   <a href="${token.tokenId}" target="_blank" class="link text-gray-400">${token.address}</a>
 </p>`;
 }
@@ -126,7 +155,7 @@ function generateAddress2LinkHTML(token) {
   const href = baseURL + token.extension.rootAddress;
 
   return `<p class="text-gray-500 text-sm flex justify-between">
-            <span class='text-gray-400'>${layer}</span>
+            <span class='text-gray-400 mr-2'>${layer}</span>
             <a href="${href}" target="_blank" class="link text-gray-400">${token.extension.rootAddress}</a>
           </p>`;
 }
