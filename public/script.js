@@ -106,8 +106,6 @@ if (typeof navigator !== 'undefined' && navigator?.clipboard) {
       }
     }
   });
-} else {
-  console.error('Clipboard API is not supported in this environment.');
 }
 
 function generateAddress1LinkHTML(token) {
