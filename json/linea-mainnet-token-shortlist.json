@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2024-11-20",
+  "updatedAt": "2024-12-10",
   "versions": [
     {
       "major": 1,
-      "minor": 48,
+      "minor": 49,
       "patch": 0
     }
   ],
@@ -187,6 +187,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3aFfCCa64c2A6f4e3B6Bd9c64CD2C969EFd1ECBe"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x373d04a7f3594ff9011af5084587182c0056721e",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x373d04a7f3594ff9011af5084587182c0056721e",
+      "name": "FAITH",
+      "symbol": "FAITH",
+      "decimals": 18,
+      "createdAt": "2024-05-22",
+      "updatedAt": "2024-05-22",
+      "logoURI": "https://lineascan.build/token/images/faith_32.png"
     },
     {
       "chainId": 59144,
