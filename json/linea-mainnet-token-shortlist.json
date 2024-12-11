@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2024-11-20",
+  "updatedAt": "2024-12-11",
   "versions": [
     {
       "major": 1,
-      "minor": 48,
+      "minor": 49,
       "patch": 0
     }
   ],
@@ -780,7 +780,7 @@
       "decimals": 6,
       "createdAt": "2023-11-08",
       "updatedAt": "2023-11-08",
-      "logoURI": "https://storage.googleapis.com/public.withstable.com/logos/usdlr/dark-circle.png",
+      "logoURI": "https://assets.coingecko.com/coins/images/33115/large/0x68592c5c98c4f4a8a4bc6da2121e65da3d1c0917.png?1700731571",
       "extension": {
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
