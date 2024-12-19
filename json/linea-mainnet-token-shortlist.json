@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2024-12-11",
+  "updatedAt": "2024-12-19",
   "versions": [
     {
       "major": 1,
-      "minor": 49,
+      "minor": 50,
       "patch": 0
     }
   ],
@@ -125,6 +125,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x6b175474e89094c44da98b954eedeac495271d0f"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x4aCde18aCDE7F195E6Fb928E15Dc8D83D67c1f3A",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x4aCde18aCDE7F195E6Fb928E15Dc8D83D67c1f3A",
+      "name": "Deri",
+      "symbol": "DERI",
+      "decimals": 18,
+      "createdAt": "2023-11-19",
+      "updatedAt": "2023-11-19",
+      "logoURI": "https://assets.coingecko.com/coins/images/13931/large/200vs200.jpg?1696513670",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xA487bF43cF3b10dffc97A9A744cbB7036965d3b9"
       }
     },
     {
