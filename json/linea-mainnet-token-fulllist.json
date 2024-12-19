@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-07-01",
+  "updatedAt": "2024-12-19",
   "versions": [
     {
       "major": 1,
-      "minor": 74,
+      "minor": 75,
       "patch": 0
     }
   ],
@@ -49,6 +49,26 @@
         "rootChainId": 59144,
         "rootChainURI": "https://lineascan.build/block/0",
         "rootAddress": "0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xdECCB84c26103Ea45E842cc78a7675b8A7b9d00C",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xdECCB84c26103Ea45E842cc78a7675b8A7b9d00C",
+      "name": "Alchemix ETH",
+      "symbol": "alETH",
+      "decimals": 18,
+      "createdAt": "2024-12-19",
+      "updatedAt": "2024-12-19",
+      "logoURI": "https://coin-images.coingecko.com/coins/images/16271/large/aleth.png?1696515869",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x0100546F2cD4C9D97f798fFC9755E47865FF7Ee6"
       }
     },
     {
@@ -128,6 +148,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x4d224452801aced8b2f0aebe155379bb5d594381"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x0090817169eDf9dbe6a7D373BeAc216D328dd964",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x0090817169eDf9dbe6a7D373BeAc216D328dd964",
+      "name": "Axelar",
+      "symbol": "AXL",
+      "decimals": 6,
+      "createdAt": "2024-12-19",
+      "updatedAt": "2024-12-19",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x23ee2343B892b1BB63503a4FAbc840E0e2C6810f"
       }
     },
     {
@@ -674,6 +713,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xdc2f842c7d605bcBc8EC05a40b8107988c39d858",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xdc2f842c7d605bcBc8EC05a40b8107988c39d858",
+      "name": "Frictionless",
+      "symbol": "FRIC",
+      "decimals": 18,
+      "createdAt": "2024-12-19",
+      "updatedAt": "2024-12-19",
+      "logoURI": "https://coin-images.coingecko.com/coins/images/36783/large/Fric_logo_200X200.png?1712331864",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x23Fa3Aa82858E7aD1F0f04352f4bb7F5E1BbFb68"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x084C2182396161CaBD3a5439EF01B2A514CB9979",
       "tokenType": [
         "canonical-bridge"
@@ -690,6 +749,21 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x580E933D90091b9cE380740E3a4A39c67eB85B4c"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x42d4Eb291C00a243C7Cbc2759B47892ED1852a9d",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x42d4Eb291C00a243C7Cbc2759B47892ED1852a9d",
+      "name": "Genesis",
+      "symbol": "GENESIS",
+      "decimals": 18,
+      "createdAt": "2024-10-20",
+      "updatedAt": "2024-10-20",
+      "logoURI": "https://d12kvghf2eznx1.cloudfront.net/tokens/images/fe58d536-fa14-44eb-96b6-3b2c09f6a004"
     },
     {
       "chainId": 59144,
@@ -832,6 +906,45 @@
       }
     },
     {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x75F1CE1Bcbb3b27A1298BB0963080Ce628e7Fb7C",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x75F1CE1Bcbb3b27A1298BB0963080Ce628e7Fb7C",
+      "name": "ICHI Vault Liquidity",
+      "symbol": "IV-5-LYNX",
+      "decimals": 18,
+      "createdAt": "2024-12-19",
+      "updatedAt": "2024-12-19",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x92ccb773da4f3974c941974bDb978bAd7efa7744"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xcf0f95E34F25d1BB3D9cad3Cbb2EB40dAb7c3841",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xcf0f95E34F25d1BB3D9cad3Cbb2EB40dAb7c3841",
+      "name": "Impermax",
+      "symbol": "IBEX",
+      "decimals": 18,
+      "createdAt": "2024-12-19",
+      "updatedAt": "2024-12-19",
+      "logoURI": "https://coin-images.coingecko.com/coins/images/27606/large/IqwOmX-c_400x400.jpeg?1696526637",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xF655C8567E0f213e6C634CD2A68d992152161dC6"
+      }
+    },
+    {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x1Fe54cd84eE05e1fFE1516cf55a29CC92740c9D9",
@@ -888,6 +1001,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x96168402310c70fD7b45adf2Fb3892691E0627D9"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x6d81B41D10950C9dDCbb3600F52f20329E3bF837",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x6d81B41D10950C9dDCbb3600F52f20329E3bF837",
+      "name": "KelpDao Restaked ETH",
+      "symbol": "rsETH",
+      "decimals": 18,
+      "createdAt": "2024-12-19",
+      "updatedAt": "2024-12-19",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x4186BFC76E2E237523CBC30FD220FE055156b41F"
       }
     },
     {
@@ -983,6 +1115,21 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x81BE2aCB2e9291dB6400f9f6a4D0f35f24de2E77",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x81BE2aCB2e9291dB6400f9f6a4D0f35f24de2E77",
+      "name": "Linpuss",
+      "symbol": "LPUSS",
+      "decimals": 18,
+      "createdAt": "2024-10-31",
+      "updatedAt": "2024-10-31",
+      "logoURI": "https://assets.coingecko.com/coins/images/51867/standard/linpuss_logo.png?1732093865"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xAeC06345b26451bdA999d83b361BEaaD6eA93F87",
       "tokenType": [
         "native"
@@ -1047,6 +1194,26 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xA64fa09531396479Ffbc7393c08745845ABe9110",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0xA64fa09531396479Ffbc7393c08745845ABe9110",
+      "name": "Lybra",
+      "symbol": "LBR",
+      "decimals": 18,
+      "createdAt": "2024-12-19",
+      "updatedAt": "2024-12-19",
+      "logoURI": "https://coin-images.coingecko.com/coins/images/29958/large/New_LBR_V2.png?1696528884",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xed1167b6Dc64E8a366DB86F2E952A482D0981ebd"
       }
     },
     {
@@ -1275,6 +1442,25 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1494da531F89c7Ee9c90d7C245F98DEFc7dA62E4",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x1494da531F89c7Ee9c90d7C245F98DEFc7dA62E4",
+      "name": "NFTEarthOFT",
+      "symbol": "NFTE",
+      "decimals": 18,
+      "createdAt": "2024-12-19",
+      "updatedAt": "2024-12-19",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x8c223a82E07feCB49D602150d7C2B3A4c9630310"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xAAAac83751090C6ea42379626435f805DDF54DC8",
       "tokenType": [
         "native"
@@ -1296,10 +1482,10 @@
       ],
       "address": "0xE2a6e74118E708f7652FC4c74D2F9Ee5Fa210563",
       "name": "NotWifGary",
-      "symbol": "$NWG",
+      "symbol": "NWG",
       "decimals": 18,
       "createdAt": "2024-05-24",
-      "updatedAt": "2024-05-24",
+      "updatedAt": "2024-10-01",
       "logoURI": "https://notwifgary.xyz/logo512.png"
     },
     {
@@ -1478,6 +1664,25 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"
+      }
+    },
+    {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x2F0118D3DB2e4AC97dE923708010d19ae5797a7A",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x2F0118D3DB2e4AC97dE923708010d19ae5797a7A",
+      "name": "Sidus",
+      "symbol": "Sidus",
+      "decimals": 18,
+      "createdAt": "2024-12-19",
+      "updatedAt": "2024-12-19",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0xD96536B77aE5500fE850Add2253bcf640e7824c1"
       }
     },
     {
@@ -1686,6 +1891,26 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x45DC7323e7357713D92eDEe756733dAda5865fd5",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x45DC7323e7357713D92eDEe756733dAda5865fd5",
+      "name": "The Nemesis",
+      "symbol": "NEMS",
+      "decimals": 18,
+      "createdAt": "2024-06-20",
+      "updatedAt": "2024-07-11",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/25898.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xb435A47eCea7F5366b2520e45B9beD7E01d2FFAe"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xe322E20738386766F769b0a6083f4141083d26d0",
       "tokenType": [
         "canonical-bridge"
@@ -1701,6 +1926,22 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3155BA85D5F96b2d030a4966AF206230e46849cb"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xeC859566fC5d7ED84Ac823509F3f7db06C461b20",
+      "tokenType": [
+        "bridge-reserved",
+        "external-bridge"
+      ],
+      "address": "0xeC859566fC5d7ED84Ac823509F3f7db06C461b20",
+      "name": "Unfettered Ecosystem",
+      "symbol": "SOULS",
+      "decimals": 18,
+      "createdAt": "2024-09-13",
+      "updatedAt": "2024-09-13",
+      "logoURI": "https://i.ibb.co/FBdsdYq/white-on-black-logomark.png"
     },
     {
       "chainId": 59144,
@@ -1795,6 +2036,25 @@
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/20317.png"
     },
     {
+      "chainId": 1,
+      "chainURI": "https://etherscan.io/block/0",
+      "tokenId": "https://etherscan.io/address/0x247E3e9ae6E1f12cC6EF8d48866c1F19F6ef0174",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x247E3e9ae6E1f12cC6EF8d48866c1F19F6ef0174",
+      "name": "USDC",
+      "symbol": "USDC",
+      "decimals": 6,
+      "createdAt": "2024-12-19",
+      "updatedAt": "2024-12-19",
+      "extension": {
+        "rootChainId": 59144,
+        "rootChainURI": "https://lineascan.build/block/0",
+        "rootAddress": "0x176211869cA2b568f2A7D4EE941E073a821EE1ff"
+      }
+    },
+    {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x68592c5c98c4f4a8a4bc6da2121e65da3d1c0917",
@@ -1807,7 +2067,7 @@
       "decimals": 6,
       "createdAt": "2023-11-08",
       "updatedAt": "2023-11-08",
-      "logoURI": "https://storage.googleapis.com/public.withstable.com/logos/usdlr/dark-circle.png",
+      "logoURI": "https://assets.coingecko.com/coins/images/33115/large/0x68592c5c98c4f4a8a4bc6da2121e65da3d1c0917.png?1700731571",
       "extension": {
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
@@ -2056,6 +2316,25 @@
         "rootChainId": 59144,
         "rootChainURI": "https://lineascan.build/block/0",
         "rootAddress": "0x78354f8DcCB269a615A7e0a24f9B0718FDC3C7A7"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x201c098b4e46Ed4dA0D6EDE03898B0e7FAbf0c8f",
+      "tokenType": [
+        "canonical-bridge"
+      ],
+      "address": "0x201c098b4e46Ed4dA0D6EDE03898B0e7FAbf0c8f",
+      "name": "ZeroLend",
+      "symbol": "ZERO",
+      "decimals": 18,
+      "createdAt": "2024-12-19",
+      "updatedAt": "2024-12-19",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x2Da17fAf782ae884faf7dB2208BBC66b6E085C22"
       }
     },
     {
