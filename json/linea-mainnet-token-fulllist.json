@@ -3,12 +3,12 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json",
   "name": "Linea Mainnet Token Full List",
   "createdAt": "2023-09-13",
-  "updatedAt": "2024-07-01",
+  "updatedAt": "2025-01-15",
   "versions": [
     {
       "major": 1,
       "minor": 74,
-      "patch": 0
+      "patch": 1
     }
   ],
   "tokens": [
