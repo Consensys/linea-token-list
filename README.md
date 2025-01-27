@@ -20,7 +20,7 @@ cd linea-token-list
 git checkout -b feat/<token-name>
 ```
 
-2. Fill out the [./json/linea-goerli-token-shortlist.json](./json/linea-goerli-token-shortlist.json) with your token's information.
+2. Fill out the [./json/linea-sepolia-token-shortlist.json](./json/linea-goerli-token-shortlist.json) with your token's information.
 
 Example:
 
@@ -28,23 +28,23 @@ Example:
 "tokens": [
 ...
 {
-  "chainId": 59140,
-  "chainURI": "https://goerli.lineascan.build/block/0",
-  "tokenId": "https://goerli.lineascan.build/token/0x7823e8dcc8bfc23ea3ac899eb86921f90e80f499",
-  "tokenType": ["bridged"],
-  "address": "0x7823e8dcc8bfc23ea3ac899eb86921f90e80f499",
-  "name": "Uniswap",
-  "symbol": "UNI",
-  "decimals": 18,
-  "createdAt": "2023-06-26",
-  "updatedAt": "2023-06-26",
-  "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/7083.png",
-  "extension": {
-    "rootChainId": 5,
-    "rootChainURI": "https://goerli.etherscan.io/block/0",
-    "rootAddress": "0x41E5E6045f91B61AACC99edca0967D518fB44CFB"
-  }
-}
+      "chainId": 59141,
+      "chainURI": "https://sepolia.lineascan.build/block/0",
+      "tokenId": "https://sepolia.lineascan.build/address/0xFEce4462D57bD51A6A552365A011b95f0E16d9B7",
+      "tokenType": ["bridge-reserved", "external-bridge"],
+      "address": "0xFEce4462D57bD51A6A552365A011b95f0E16d9B7",
+      "name": "USD//C",
+      "symbol": "USDC",
+      "decimals": 6,
+      "createdAt": "2024-03-27",
+      "updatedAt": "2024-10-01",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
+      "extension": {
+        "rootChainId": 11155111,
+        "rootChainURI": "https://sepolia.etherscan.io/block/0",
+        "rootAddress": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
+      }
+    }
 ...
 ]
 ```
