@@ -1,14 +1,20 @@
 # Linea Token List
 
-This repository maintains a list of ERC20 tokens available on Linea. The list is kept updated by the community. For comprehensive details and additional context, visit our [Linea Token List](https://consensys.github.io/linea-token-list/).
+This repository maintains lists of ERC20 tokens available on Linea. There are two main lists each for Linea Mainnet and Linea Sepolia:
+
+- A full list, automatically updated whenever a new token is bridged to Linea using the canonical bridge, and;
+- A shortlist, which is manually curated by our team, and updated based on submitted PRs.
+
+The information in this repository is also available in a [frontend app](https://consensys.github.io/linea-token-list/).
 
 If you want to add a token or validate an addition, please follow the procedures outlined below.
 
-## How to add a Token (for community)
+## Add a token to the shortlist
 
-IMPORTANT: Before adding a new token, it is mandatory to verify the token's smart contract. This ensures the authenticity and security of the token. Contract verification should be done through [LineaScan's](https://lineascan.build/) or [Etherscan's](https://etherscan.io/) contract verification tools.
+> [!IMPORTANT]
+> Before adding a new token, you must verify the token's smart contract. This ensures the authenticity and security of the token. Contract verification should be done through [LineaScan's](https://lineascan.build/) or [Etherscan's](https://etherscan.io/) contract verification tools.
 
-To add a new Token,
+To add a new token:
 
 1. `Fork` this repository to your own GitHub account, then `clone` your fork and create a new branch.
 
@@ -20,7 +26,7 @@ cd linea-token-list
 git checkout -b feat/<token-name>
 ```
 
-2. Fill out the [./json/linea-goerli-token-shortlist.json](./json/linea-goerli-token-shortlist.json) with your token's information.
+2. Fill out the [./json/linea-goerli-token-shortlist.json](./json/linea-goerli-token-shortlist.json) with your token's information. Make sure you adhere to the [guidelines](#guidelines).
 
 Example:
 
@@ -49,14 +55,14 @@ Example:
 ]
 ```
 
-Description of the fields:
+Fields:
 
 | Name         | Description                                                                                                                                                         | type    | Required?                                                   |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ----------------------------------------------------------- |
 | chainId      | The typically used number identifier for the chain on which the token was issued                                                                                    | number  | Mandatory                                                   |
 | chainURI     | A resolvable URI to the genesis block of the chain on which the token was issued following the RFC 3986 standard                                                    | string  | Mandatory                                                   |
 | tokenId      | A resolvable URI of the token following the RFC 3986 standard to for example the deployment transaction of the token, or a DID identifying the token and its issuer | string  | Mandatory                                                   |
-| tokenType    | Describes the type of token (eg: `canonical-bridge`, `bridge-reserved`, `external-bridge`, `native`), see details bellow.                                           | string  | Mandatory                                                   |
+| tokenType    | Describes the type of token (eg: `canonical-bridge`, `bridge-reserved`, `external-bridge`, `native`), see details below.                                           | string  | Mandatory                                                   |
 | address      | Address of the token smart contract                                                                                                                                 | string  | Mandatory                                                   |
 | name         | Token name                                                                                                                                                          | string  | Mandatory                                                   |
 | symbol       | Token symbol e.g. UNI                                                                                                                                               | string  | Mandatory                                                   |
@@ -71,31 +77,44 @@ Description of the fields:
 
 Token types:
 
-- `canonical-bridge`: token originally on Ethereum, which has been bridged to Linea with <b>Linea Canonical Bridge</b>.
+- `canonical-bridge`: token originally on Ethereum, which has been bridged to Linea with the [Linea canonical bridge](https://bridge.linea.build/) (also known as the native bridge).
 
-  These tokens are automatically discovered.
+  These tokens are automatically added to the full list when bridged.
 
-  <b>Example</b>: DAI on Ethereum Mainnet has this address `0x6b175474e89094c44da98b954eedeac495271d0f`, after being bridged on Linea it has this address `0x4AF15ec2A0BD43Db75dd04E62FAA3B8EF36b00d5`
+  **Example**: DAI on Ethereum Mainnet has this address `0x6b175474e89094c44da98b954eedeac495271d0f`, after being bridged on Linea it has this address `0x4AF15ec2A0BD43Db75dd04E62FAA3B8EF36b00d5`
 
-- `bridge-reserved`: token reserved in the canonical bridge smart contract to prevent any bridged <b>Linea Canonical Bridge</b>.
+- `bridge-reserved`: token reserved in the canonical bridge smart contract to prevent any bridged **Linea Canonical Bridge**.
 
   This type needs to be added manually.
 
-  <b>Example</b>: USDC, WETH.
+  **Example**: USDC, WETH.
 
 - `external-bridge`: token bridged on another layer (Ethereum in general) and Linea using a custom protocol bridge.
 
   This type needs to be added manually.
 
-  <b>Example</b>: PEEL, USDC.
+  **Example**: PEEL, USDC.
 
 - `native`: Token first created on Linea.
 
   This type needs to be added manually.
 
-  <b>Example</b>: WETH.
+  **Example**: WETH.
 
-<b>Additional guidelines</b>:
+3. Commit your changes and push your branch.
+
+> [!NOTE]
+> Only commit the list file. Do not modify the schema or the templates.
+
+4. Go to the [pull requests page](https://github.com/ConsenSys/linea-token-list/pulls) and create a new PR. Make sure to set the base branch as `main`.
+
+A GitHub Actions workflow will automatically verify the integrity of your JSON. If the check passes, validators will review the new list. If all the information are correct, they will approve the token addition.
+
+In case of a failing check, refer to the error message in the [Actions](https://github.com/ConsenSys/linea-token-list/actions) tab. Make necessary modifications and try again.
+
+Happy contributing!
+
+## Guidelines
 
 - Please ensure the completed JSON follows the schema outlined in [./json/schema/l2-token-list-schema.json](./json/schema/l2-token-list-schema.json).
 - Make sure to add the token following alphabetical order of the `symbol` field.
@@ -105,19 +124,7 @@ Token types:
   - Increase `minor` when modifying adding a new token.
   - Increase `major` when changing the structure of the file.
 
-3. Commit your changes and push your branch.
-
-<b>Note</b>: Only commit the list file. Do not modify the schema or the templates.
-
-4. Go to https://github.com/ConsenSys/linea-token-list/pulls and create a new PR. Make sure to set the base branch as `main`.
-
-A GitHub Actions workflow will automatically verify the integrity of your JSON. If the check passes, validators will review the new list. If all the information are correct, they will approve the token addition.
-
-In case of a failing check, refer to the error message in the [Actions](https://github.com/ConsenSys/linea-token-list/actions) tab. Make necessary modifications and try again.
-
-Happy contributing!
-
-## Technical Resources (for Maintainers)
+## Technical resources (for maintainers)
 
 - [Development Guide](./docs/development.md).
 - [Technical Processes](./docs/technical-processes.md).
