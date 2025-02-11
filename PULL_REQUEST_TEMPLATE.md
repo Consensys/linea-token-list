@@ -1,5 +1,5 @@
 Action: add / update / remove token (keep those that applies)
-Context / rational:
+Context / rationale:
 
 PR checklist:
 - [ ] I've verified and published the contract source
