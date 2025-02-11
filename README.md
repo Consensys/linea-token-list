@@ -11,6 +11,8 @@ If you want to add a token or validate an addition, please follow the procedures
 
 ## Add a token to the shortlist
 
+If you represent a project with a token on Linea, it's beneficial to add it to the shortlist. Tokens on this list are reflected in the UI of the Linea canonical bridge.
+
 > [!IMPORTANT]
 > Before adding a new token, you must verify the token's smart contract. This ensures the authenticity and security of the token. Contract verification should be done through [LineaScan's](https://lineascan.build/) or [Etherscan's](https://etherscan.io/) contract verification tools.
 
