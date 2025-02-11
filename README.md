@@ -28,7 +28,7 @@ cd linea-token-list
 git checkout -b feat/<token-name>
 ```
 
-2. Fill out the [./json/linea-goerli-token-shortlist.json](./json/linea-goerli-token-shortlist.json) with your token's information. Make sure you adhere to the [guidelines](#guidelines).
+2. Fill out the [./json/linea-goerli-token-shortlist.json](./json/linea-mainnet-token-shortlist.json) with your token's information. Make sure you adhere to the [guidelines](#guidelines).
 
 Example:
 
