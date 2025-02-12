@@ -40,7 +40,7 @@ jobs:
 
       - name: Validate JSON
         run: |
-          jsonschema -i ./json/linea-goerli-token-shortlist.json ./json/schema/l2-token-list-schema.json
+          jsonschema -i ./json/linea-sepolia-token-shortlist.json ./json/schema/l2-token-list-schema.json
 
   verify_mainnet_shortlist:
     runs-on: ubuntu-latest
