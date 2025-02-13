@@ -14,7 +14,7 @@ If you want to add a token or validate an addition, please follow the procedures
 If you represent a project with a token on Linea, it's beneficial to add it to the shortlist. Tokens on this list are reflected in the UI of the Linea canonical bridge.
 
 > [!IMPORTANT]
-> Before adding a new token, you must verify the token's smart contract on an explorer. This ensures the authenticity and security of the token. Contract verification should be done through [LineaScan's](https://lineascan.build/verifyContract) or via Hardhat's plugin ([`hardhat-verify`](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify)).
+> Before adding a new token, you must verify the token's smart contract on an explorer. This ensures the authenticity and security of the token. You can verify the smart contract through [LineaScan](https://lineascan.build/verifyContract) or [other tools](https://docs.linea.build/get-started/how-to/verify-smart-contract).
 > The same verification should be done on Ethereum L1 and Linea if necessary.
 
 To add a new token:
