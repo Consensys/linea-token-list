@@ -75,6 +75,36 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x374D7860c4f2f604De0191298dD393703Cce84f3",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x374D7860c4f2f604De0191298dD393703Cce84f3",
+      "name": "Aave Linea USDC",
+      "symbol": "aLinUSDC",
+      "decimals": 6,
+      "createdAt": "2025-02-11",
+      "updatedAt": "2025-02-11",
+      "logoURI": "https://assets.coingecko.com/coins/images/14318/standard/aUSDC.e260d492.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x88231dfEC71D4FF5c1e466D08C321944A7adC673",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0x88231dfEC71D4FF5c1e466D08C321944A7adC673",
+      "name": "Aave Linea USDT",
+      "symbol": "aLinUSDT",
+      "decimals": 6,
+      "createdAt": "2025-02-11",
+      "updatedAt": "2025-02-11",
+      "logoURI": "https://assets.coingecko.com/coins/images/14243/standard/aUSDT.78f5faae.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x5B16228B94b68C7cE33AF2ACc5663eBdE4dCFA2d",
       "tokenType": [
         "canonical-bridge"
