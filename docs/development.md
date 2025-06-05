@@ -49,7 +49,7 @@ npm run verify-dev
 Run the production script with:
 
 ```bash
-npm run dev
+npm run verify-start
 ```
 
 <b>Synchronize fulllist</b>
