@@ -1,4 +1,4 @@
-import { Contract, ContractInterface, Event, utils, providers, constants } from 'ethers';
+import { constants, Contract, ContractInterface, Event, providers, utils } from 'ethers';
 import _ from 'lodash';
 
 import { ABIType, LineaTokenList, Token, TokenType } from 'src/models/token';
@@ -88,6 +88,7 @@ export class TokenService {
    */
   async getContractWithRetry(tokenAddress: string, chainId: number): Promise<Token | undefined> {
     const provider = chainId === config.ETHEREUM_MAINNET_CHAIN_ID ? this.l1Provider : this.l2Provider;
+
     try {
       const erc20Contract = new Contract(tokenAddress, this.erc20ContractABI, provider);
       return await fetchTokenInfo(erc20Contract, ABIType.STANDARD);
@@ -132,9 +133,10 @@ export class TokenService {
   /**
    * Updates the token info based on the event
    * @param token
-   * @param event
+   * @param chainId
    * @param tokenAddress
    * @param nativeTokenAddress
+   * @param tokenTypes
    * @returns
    */
   updateTokenInfo(
@@ -176,9 +178,9 @@ export class TokenService {
    */
   async fetchAndAssignTokenLogo(token: Token): Promise<Token | undefined> {
     try {
-      const logoURIfromCoinGecko = await fetchLogoURI(token, CryptoService.COINGECKO);
-      if (logoURIfromCoinGecko) {
-        token.logoURI = logoURIfromCoinGecko;
+      const logoURIFromCoinGecko = await fetchLogoURI(token, CryptoService.COINGECKO);
+      if (logoURIFromCoinGecko) {
+        token.logoURI = logoURIFromCoinGecko;
       }
       return token;
     } catch (error) {
@@ -200,7 +202,7 @@ export class TokenService {
         (existingToken) => utils.getAddress(existingToken.address) === tokenAddress
       );
 
-      // If token exists and is not equal to newToken, replace it.
+      // If a token exists and is not equal to newToken, replace it.
       // If not exists, add it to the list.
       if (existingTokenIndex !== -1 && !_.isEqual(this.tokenList[existingTokenIndex], newToken)) {
         this.tokenList[existingTokenIndex] = newToken;
@@ -257,7 +259,7 @@ export class TokenService {
       if (token.tokenId !== verifiedToken.tokenId) {
         logger.warn('tokenId mismatch', {
           name: token.name,
-          currentTokennTokenId: token.tokenId,
+          currentTokenTokenId: token.tokenId,
           newTokenTokenId: verifiedToken.tokenId,
         });
         token.tokenId = verifiedToken.tokenId;
@@ -309,7 +311,11 @@ export class TokenService {
       default:
         throw new Error('Invalid chainId');
     }
-    if (verifiedToken && token.tokenType.includes('external-bridge') && !verifiedToken.tokenType.includes('external-bridge')) {
+    if (
+      verifiedToken &&
+      token.tokenType.includes('external-bridge') &&
+      !verifiedToken.tokenType.includes('external-bridge')
+    ) {
       verifiedToken.tokenType.push('external-bridge');
     }
 
@@ -355,7 +361,7 @@ export class TokenService {
     } else {
       verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.EXTERNAL_BRIDGE]);
     }
-    
+
     return verifiedToken;
   }
 
