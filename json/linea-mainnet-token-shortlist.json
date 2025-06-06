@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-04-09",
+  "updatedAt": "2025-06-05",
   "versions": [
     {
       "major": 1,
-      "minor": 52,
+      "minor": 53,
       "patch": 1
     }
   ],
@@ -101,6 +101,21 @@
       "createdAt": "2025-02-11",
       "updatedAt": "2025-02-11",
       "logoURI": "https://assets.coingecko.com/coins/images/14243/standard/aUSDT.78f5faae.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xb171EF5cD8d320D52F257924A0E0d41E6f5c40D9",
+      "tokenType": [
+        "native"
+      ],
+      "address": "0xb171EF5cD8d320D52F257924A0E0d41E6f5c40D9",
+      "name": "Bank Of Linea",
+      "symbol": "BOL",
+      "decimals": 18,
+      "createdAt": "2025-05-20",
+      "updatedAt": "2025-05-20",
+      "logoURI": "https://i.ibb.co/CpLQqnMY/logo.png"
     },
     {
       "chainId": 59144,
