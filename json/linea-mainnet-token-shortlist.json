@@ -714,7 +714,7 @@
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xeC859566fC5d7ED84Ac823509F3f7db06C461b20",
       "tokenType": [
-        "bridge-reserved",
+        "native",
         "external-bridge"
       ],
       "address": "0xeC859566fC5d7ED84Ac823509F3f7db06C461b20",

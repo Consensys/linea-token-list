@@ -18,7 +18,7 @@ async function main() {
     const tokenService = new TokenService(l1Provider, l2Provider, existingTokenList);
     await tokenService.verifyList(config.TOKEN_SHORT_LIST_PATH);
 
-    logger.info('Check mainnet shortlist succesfully executed');
+    logger.info('Check mainnet shortlist successfully executed');
   } catch (error) {
     logger.error(`Error in main: ${error}`);
     throw error;
