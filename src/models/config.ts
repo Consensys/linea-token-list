@@ -8,7 +8,6 @@ export type Config = {
   TOKEN_BRIDGE_ABI_PATH: string;
   ERC20_ABI_PATH: string;
   ERC20_BYTE32_ABI_PATH: string;
-  TOKEN_FULL_LIST_PATH: string;
   TOKEN_SHORT_LIST_PATH: string;
   COINGECKO_URL: string;
   COINMARKETCAP_URL: string;

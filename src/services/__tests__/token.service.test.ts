@@ -13,7 +13,7 @@ describe('TokenService', () => {
     l1Provider = new providers.JsonRpcProvider('l1-provider-url');
     l2Provider = new providers.JsonRpcProvider('l2-provider-url');
 
-    tokenService = new TokenService(l1Provider, l2Provider, mockTokenShortlist);
+    tokenService = new TokenService(l1Provider, l2Provider);
   });
 
   describe('fetchAndAssignTokenLogo', () => {

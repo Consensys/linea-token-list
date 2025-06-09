@@ -1,10 +1,7 @@
 # Linea Token List
 
-This repository maintains lists of ERC20 tokens available on Linea. There are two main lists each for Linea Mainnet and
-Linea Sepolia:
-
-- A full list, automatically updated whenever a new token is bridged to Linea using the canonical bridge, and;
-- A shortlist, which is manually curated by our team, and updated based on submitted PRs.
+This repository maintains lists of ERC20 tokens available on Linea. There are two lists: one for Linea Mainnet and one for
+Linea Sepolia. It is manually curated by our team, and updated based on submitted PRs.
 
 The information in this repository is also available in a [frontend app](https://consensys.github.io/linea-token-list/).
 
@@ -66,7 +63,7 @@ Example:
 Fields:
 
 | Name         | Description                                                                                                                                                         | type    | Required?                                                   |
-|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|-------------------------------------------------------------|
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ----------------------------------------------------------- |
 | chainId      | The typically used number identifier for the chain on which the token was issued                                                                                    | number  | Mandatory                                                   |
 | chainURI     | A resolvable URI to the genesis block of the chain on which the token was issued following the RFC 3986 standard                                                    | string  | Mandatory                                                   |
 | tokenId      | A resolvable URI of the token following the RFC 3986 standard to for example the deployment transaction of the token, or a DID identifying the token and its issuer | string  | Mandatory                                                   |
@@ -87,8 +84,6 @@ Token types:
 
 - `canonical-bridge`: token originally on Ethereum, which has been bridged to Linea with
   the [Linea canonical bridge](https://bridge.linea.build/) (also known as the native bridge).
-
-  These tokens are automatically added to the full list when bridged.
 
   **Example**: DAI on Ethereum Mainnet has this address `0x6b175474e89094c44da98b954eedeac495271d0f`, after being
   bridged on Linea it has this address `0x4AF15ec2A0BD43Db75dd04E62FAA3B8EF36b00d5`
@@ -135,11 +130,10 @@ Happy contributing!
 - Make sure to add the token following alphabetical order of the `symbol` field.
 - Update the `updatedAt` (and potentially `createdAt`) fields for the file and the token
 - Update the file version:
-    - Increase `patch` when modifying information of an existing token.
-    - Increase `minor` when modifying adding a new token.
-    - Increase `major` when changing the structure of the file.
+  - Increase `patch` when modifying information of an existing token.
+  - Increase `minor` when modifying adding a new token.
+  - Increase `major` when changing the structure of the file.
 
 ## Technical resources (for maintainers)
 
 - [Development Guide](./docs/development.md).
-- [Technical Processes](./docs/technical-processes.md).
