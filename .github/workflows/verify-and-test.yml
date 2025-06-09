@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
+          node-version: 20
 
       - name: Install NPM dependencies
         run: npm ci
@@ -28,10 +28,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
@@ -54,14 +54,14 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Install dependencies
         run: npm install
@@ -72,21 +72,9 @@ jobs:
       - name: Check for changes
         run: |
           if [[ -n $(git diff --exit-code) ]]; then
-            echo "Changes detected. Creating a commit."
-            echo "HAS_CHANGES=true" >> $GITHUB_ENV
+            echo "Changes detected. Exiting with error."
+          exit 1
           else
-            echo "No changes detected. Skipping commit creation."
+            echo "No changes detected. Exiting successfully."
             exit 0
           fi
-
-      - name: Commit changes
-        if: env.HAS_CHANGES == 'true'
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          HUSKY_SKIP_HOOKS=1 git commit -m "Updated by verifyMainnetShortlist script" || echo "No changes to commit"
-
-      - name: Push changes
-        if: env.HAS_CHANGES == 'true'
-        run: git push origin HEAD:refs/heads/${GITHUB_HEAD_REF}

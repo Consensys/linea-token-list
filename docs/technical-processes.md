@@ -28,7 +28,7 @@ Validates JSON structures and runs unit tests for every push and pull request on
 
 - Triggered by pull requests to the main branch.
 - Executes unit tests.
-- Validates linea-goerli-token-shortlist.json against its JSON schema.
+- Validates linea-sepolia-token-shortlist.json against its JSON schema.
 - Executes verifyMainnetShortlist.
 - Commit changes if changes are detected.
 
