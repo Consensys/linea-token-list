@@ -9,7 +9,6 @@ export const configSchema = Joi.object({
   TOKEN_BRIDGE_ABI_PATH: Joi.string().default('src/abis/token-bridge.abi.json'),
   ERC20_ABI_PATH: Joi.string().default('src/abis/ERC20.abi.json'),
   ERC20_BYTE32_ABI_PATH: Joi.string().default('src/abis/ERC20-byte32.abi.json'),
-  TOKEN_FULL_LIST_PATH: Joi.string().default('json/linea-mainnet-token-fulllist.json'),
   TOKEN_SHORT_LIST_PATH: Joi.string().default('json/linea-mainnet-token-shortlist.json'),
 
   COINGECKO_URL: Joi.string().default('https://api.coingecko.com/api/v3/coins/1/contract/'),

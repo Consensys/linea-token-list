@@ -5,15 +5,7 @@
   "title": "CanonicalTokenList",
   "description": "Canonical Token List",
   "type": "object",
-  "required": [
-    "type",
-    "tokenListId",
-    "name",
-    "createdAt",
-    "updatedAt",
-    "versions",
-    "tokens"
-  ],
+  "required": ["type", "tokenListId", "name", "createdAt", "updatedAt", "versions", "tokens"],
   "properties": {
     "@context": {
       "type": "array"
@@ -34,9 +26,7 @@
       "title": "tokenListId",
       "description": "A resolvable URI to the publicly accessible place where this list can be found following the RFC 3986 standard.",
       "type": "string",
-      "examples": [
-        "https://ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew"
-      ]
+      "examples": ["https://ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew"]
     },
     "name": {
       "$comment": "{\"term\": \"name\", \"@id\": \"https://schema.org/name\"}",
@@ -50,9 +40,7 @@
       "title": "logoURI",
       "description": "URI or URL of the token list logo following the RFC 3986 standard",
       "type": "string",
-      "examples": [
-        "https://ipfs.io/ipns/k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl"
-      ]
+      "examples": ["https://ipfs.io/ipns/k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl"]
     },
     "keywords": {
       "$comment": "{\"term\": \"keywords\", \"@id\": \"https://schema.org/DefinedTerm\"}",
@@ -146,9 +134,7 @@
             "title": "genesisBlockHash",
             "description": "The hash of the genesis block of the chain on which the token was issued.",
             "type": "string",
-            "examples": [
-              "0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b"
-            ]
+            "examples": ["0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b"]
           },
           "tokenIssuerId": {
             "$comment": "{\"term\": \"tokenIssuerId\", \"@id\": \"https://schema.org/identifier\"}",
@@ -171,9 +157,7 @@
             "title": "tokenId",
             "description": "A resolvable URI of the token following the RFC 3986 standard to for example the deployment transaction of the token, or a DID identifying the token and its issuer.",
             "type": "string",
-            "example": [
-              "https://polygonscan.com/address/0x0000000000000000000000000000000000001010"
-            ]
+            "example": ["https://polygonscan.com/address/0x0000000000000000000000000000000000001010"]
           },
           "tokenType": {
             "$comment": "{\"term\": \"tokenType\", \"@id\": \"https://schema.org/StructuredValue\"}",
@@ -194,9 +178,7 @@
             "title": "standard",
             "description": "A resolvable URI to the description of the token standard.",
             "type": "string",
-            "examples": [
-              "https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md"
-            ]
+            "examples": ["https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md"]
           },
           "address": {
             "$comment": "{\"term\": \"address\", \"@id\": \"https://schema.org/identifier\"}",

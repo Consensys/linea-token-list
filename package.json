@@ -6,13 +6,13 @@
   "license": "(MIT OR Apache-2.0)",
   "homepage": "https://consensys.github.io/linea-token-list",
   "scripts": {
-    "prettify": "prettier --config .prettierrc --write 'json/*-shortlist.json'",
-    "prettify:fix": "prettier --config .prettierrc --write --write 'json/*-shortlist.json'",
+    "prettify": "prettier --config .prettierrc --check \"**/*.{json,md,yml,js,ts}\"",
+    "prettify:fix": "npm run prettify -- --write",
+    "prettify:shortlist": "prettier --config .prettierrc --check \"json/*-shortlist.json\"",
+    "prettify:shortlist:fix": "npm run prettify:shortlist -- --write",
     "precommit": "npm run prettify",
-    "husky-run": "node husky.js",
     "prepare": "husky install",
-    "start": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/syncMainnetFulllist.js",
-    "verify-start": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/verifyMainnetShortlist.js && npm run prettify:fix",
+    "verify": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/verifyMainnetShortlist.js && npm run prettify:fix",
     "test": "jest",
     "lint": "eslint './src/**/*.ts' --quiet"
   },

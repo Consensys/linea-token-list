@@ -8,7 +8,7 @@ This document provides guidelines and steps for setting up, developing, and mana
 
 1. Duplicate the Configuration:
 
-```base
+```bash
 cp .env.template .env
 ```
 
@@ -24,40 +24,14 @@ Install all the necessary packages via:
 npm i
 ```
 
-### Development Scripts Execution
-
-<b>Verify mainnet shortlist</b>
-
-Run the development script with:
-
-```bash
-npm run verify-dev
-```
-
-<b>Synchronize fulllist</b>
-
-Run the development script with:
-
-```bash
-npm run verify-dev
-```
-
-### Production Scripts Execution
+### Scripts Execution
 
 <b>Verify mainnet shortlist</b>
 
 Run the production script with:
 
 ```bash
-npm run verify-start
-```
-
-<b>Synchronize fulllist</b>
-
-Run the production script with:
-
-```bash
-npm run start
+npm run verify
 ```
 
 ## Unit tests

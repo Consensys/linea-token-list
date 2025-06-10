@@ -1,22 +1,13 @@
-import { constants, Contract, ContractInterface, Event, providers, utils } from 'ethers';
+import { constants, Contract, ContractInterface, providers, utils } from 'ethers';
 import _ from 'lodash';
 
 import { ABIType, LineaTokenList, Token, TokenType } from 'src/models/token';
 import { loadABI } from 'src/utils/abi';
 import { config } from 'src/config';
 import { logger } from 'src/logger';
-import {
-  checkTokenErrors,
-  checkTokenExists,
-  fetchTokenInfo,
-  getEventTokenAddresses,
-  updateTokenListIfNeeded,
-} from 'src/utils/token';
-import { getCurrentDate } from 'src/utils/date';
-import { readJsonFile, saveJsonFile } from 'src/utils/file';
-import { getBumpedVersions, sortAlphabetically } from 'src/utils/list';
+import { checkTokenErrors, fetchTokenInfo, updateTokenListIfNeeded } from 'src/utils/token';
+import { readJsonFile } from 'src/utils/file';
 import { CryptoService, fetchLogoURI } from 'src/utils/logo';
-import { EventExtended } from 'src/models/event';
 import { normalizeAddress } from 'src/utils/ethereum';
 
 const RESERVED_STATUS = normalizeAddress('0x111');
@@ -34,8 +25,7 @@ export class TokenService {
 
   constructor(
     private l1Provider: providers.JsonRpcProvider,
-    private l2Provider: providers.JsonRpcProvider,
-    private existingTokenList: LineaTokenList
+    private l2Provider: providers.JsonRpcProvider
   ) {
     // Load contract ABIs
     const contractABI = loadABI(config.TOKEN_BRIDGE_ABI_PATH);
@@ -45,39 +35,6 @@ export class TokenService {
     // Instantiate contracts
     this.l1Contract = new Contract(config.L1_TOKEN_BRIDGE_ADDRESS, contractABI, l1Provider);
     this.l2Contract = new Contract(config.L2_TOKEN_BRIDGE_ADDRESS, contractABI, l2Provider);
-  }
-
-  /**
-   * Processes the token events
-   */
-  async processTokenEvents(): Promise<void> {
-    const newTokenDeployedL1EventFilter = this.l1Contract.filters.NewTokenDeployed();
-    const newTokenDeployedL2EventFilter = this.l2Contract.filters.NewTokenDeployed();
-    const rawL1Events: Event[] = await this.l1Contract.queryFilter(newTokenDeployedL1EventFilter);
-    const rawL2Events: Event[] = await this.l2Contract.queryFilter(newTokenDeployedL2EventFilter);
-
-    // Add chainId to events
-    const newTokenDeployedL1Events: EventExtended[] = rawL1Events.map((event) => ({
-      ...event,
-      chainId: config.ETHEREUM_MAINNET_CHAIN_ID,
-    }));
-    const newTokenDeployedL2Events: EventExtended[] = rawL2Events.map((event) => ({
-      ...event,
-      chainId: config.LINEA_MAINNET_CHAIN_ID,
-    }));
-
-    const events = [...newTokenDeployedL1Events, ...newTokenDeployedL2Events];
-    for (const event of events) {
-      try {
-        const token = await this.processTokenEvent(event);
-        if (token) {
-          logger.info('Add new token', { name: token.name });
-          this.tokenList.push(token);
-        }
-      } catch (error) {
-        logger.error('Error processing token event, skip', { error });
-      }
-    }
   }
 
   /**
@@ -101,32 +58,6 @@ export class TokenService {
         logger.error('Error fetching token info with ERC20 Byte32 ABI', { address: tokenAddress, error });
         return;
       }
-    }
-  }
-
-  /**
-   * Processes the token event
-   * @param event
-   * @returns
-   */
-  async processTokenEvent(event: EventExtended): Promise<Token | undefined> {
-    const { tokenAddress, nativeTokenAddress } = getEventTokenAddresses(event);
-    const tokenExists = checkTokenExists(this.existingTokenList.tokens, tokenAddress);
-    if (tokenExists) {
-      logger.info('Token already exists', { name: tokenExists.name, tokenAddress });
-      return tokenExists;
-    } else {
-      logger.info('New token found', { tokenAddress });
-    }
-
-    let token = await this.getContractWithRetry(tokenAddress, event.chainId);
-    if (token) {
-      token = this.updateTokenInfo(token, event.chainId, tokenAddress, nativeTokenAddress, [
-        TokenType.CANONICAL_BRIDGE,
-      ]);
-      token = await this.fetchAndAssignTokenLogo(token);
-      logger.info('ERC20 info fetched', { token });
-      return token;
     }
   }
 
@@ -210,32 +141,6 @@ export class TokenService {
         this.tokenList.push(newToken);
       }
     }
-  }
-
-  /**
-   * Sorts the token list alphabetically and saves it to the token list file
-   */
-  exportTokenList(): void {
-    this.tokenList = sortAlphabetically(this.tokenList);
-    if (_.isEqual(this.existingTokenList.tokens, this.tokenList)) {
-      logger.info('No new tokens to add');
-      return;
-    }
-
-    const newTokenList = {
-      ...this.existingTokenList,
-      updatedAt: getCurrentDate(),
-      versions: getBumpedVersions(this.existingTokenList.versions),
-      tokens: this.tokenList,
-    };
-    newTokenList.tokens = sortAlphabetically(newTokenList.tokens);
-
-    saveJsonFile(config.TOKEN_FULL_LIST_PATH, newTokenList);
-    logger.info('Token list updated', {
-      path: config.TOKEN_FULL_LIST_PATH,
-      previousTokenCounter: this.existingTokenList.tokens.length,
-      newTokenCounter: newTokenList.tokens.length,
-    });
   }
 
   /**
@@ -350,16 +255,29 @@ export class TokenService {
       throw new Error('Extension or rootAddress is undefined');
     }
 
-    const tokenAddress = utils.getAddress(token.extension.rootAddress);
-    const l1nativeToBridgedToken = await this.l1Contract.nativeToBridgedToken(1, tokenAddress);
-    const l2nativeToBridgedToken = await this.l2Contract.nativeToBridgedToken(1, tokenAddress);
+    const l1nativeToBridgedToken = await this.l1Contract.nativeToBridgedToken(
+      token.extension.rootChainId,
+      token.extension.rootAddress
+    );
+    const l2nativeToBridgedToken = await this.l2Contract.nativeToBridgedToken(
+      token.extension.rootChainId,
+      token.extension.rootAddress
+    );
 
     if (l1nativeToBridgedToken === RESERVED_STATUS) {
-      verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.BRIDGE_RESERVED]);
+      if (token.extension.rootChainId === config.ETHEREUM_MAINNET_CHAIN_ID) {
+        verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.BRIDGE_RESERVED]);
+      } else {
+        verifiedToken = token;
+      }
     } else if (l2nativeToBridgedToken !== constants.AddressZero) {
       verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.CANONICAL_BRIDGE]);
     } else {
-      verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.EXTERNAL_BRIDGE]);
+      if (token.extension.rootChainId === config.ETHEREUM_MAINNET_CHAIN_ID) {
+        verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.EXTERNAL_BRIDGE]);
+      } else {
+        verifiedToken = token;
+      }
     }
 
     return verifiedToken;

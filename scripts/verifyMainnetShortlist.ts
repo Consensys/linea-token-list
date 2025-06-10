@@ -2,7 +2,6 @@ import 'module-alias/register';
 import { ethers } from 'ethers';
 import { config } from 'src/config';
 import { logger } from 'src/logger';
-import { readJsonFile } from 'src/utils/file';
 import { TokenService } from 'src/services/token.service';
 import { validateConfig } from 'src/utils/validation';
 
@@ -13,9 +12,8 @@ async function main() {
 
     const l1Provider = new ethers.providers.JsonRpcProvider(config.L1_PROVIDER_URL);
     const l2Provider = new ethers.providers.JsonRpcProvider(config.L2_PROVIDER_URL);
-    const existingTokenList = readJsonFile(config.TOKEN_FULL_LIST_PATH);
 
-    const tokenService = new TokenService(l1Provider, l2Provider, existingTokenList);
+    const tokenService = new TokenService(l1Provider, l2Provider);
     await tokenService.verifyList(config.TOKEN_SHORT_LIST_PATH);
 
     logger.info('Check mainnet shortlist successfully executed');

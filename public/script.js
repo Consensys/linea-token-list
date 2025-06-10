@@ -12,8 +12,7 @@ async function fetchTokensAndDisplay(path, elementId) {
 
     allTokens[elementId] = data.tokens;
     filteredTokens[elementId] = data.tokens;
-    const tokensHTML = generateTokensHTML(data.tokens, elementId);
-    document.getElementById(elementId).innerHTML = tokensHTML;
+    document.getElementById(elementId).innerHTML = generateTokensHTML(data.tokens, elementId);
     updateTokenCounts();
   } catch (error) {
     console.error('There has been a problem with your fetch operation:', error);
@@ -22,58 +21,39 @@ async function fetchTokensAndDisplay(path, elementId) {
 
 function updateTokenCounts() {
   const shortListTokens = filteredTokens['mainnetShortList'];
-  const fullListTokens = filteredTokens['mainnetFullList'];
 
   document.getElementById('shortListCount').innerText = `(${shortListTokens ? shortListTokens.length : 0} tokens)`;
-  document.getElementById('fullListCount').innerText = `(${fullListTokens ? fullListTokens.length : 0} tokens)`;
 }
 
-function generateTokensHTML(tokens, elementId) {
-  let highlightAddresses = [];
-
-  // Highlight logic for mainnetFullList
-  if (elementId === 'mainnetFullList') {
-    const shortListAddresses = filteredTokens['mainnetShortList']?.map((token) => token.address) || [];
-    highlightAddresses = tokens
-      .map((token) => token.address)
-      .filter((address) => !shortListAddresses.includes(address));
-  }
-
+function generateTokensHTML(tokens) {
   return tokens
     .map(
       (token, index) => `
-      <div class="token card bg-base-200 ${
-        highlightAddresses.includes(token.address) ? 'border border-gray-200' : 'bordered'
-      } shadow-xl space-y-4 m-4" style="width: 480px;">
-      <div class="card-body space-y-2">
-        <div class="flex flex-row space-x-4 items-center">
-          <div class="badge badge-primary">${index + 1}</div>
-          <div class="card-image" style="width: 64px;">
-            ${token.logoURI ? `<img src="${token.logoURI}" alt="${token.name}">` : ``}
-          </div>
-          <div class="space-y-2 w-full">
-            <p class="font-bold text-md">
-              ${token.name}
-              <span class="text-gray-400">${token.symbol}</span>
-            </p>
-            <div class="text-sm w-full flex justify-between">
-              <span>Decimals: ${token.decimals}</span>
-              ${
-                highlightAddresses.includes(token.address)
-                  ? `<span class="badge badge-warning">Not in shortlist</span>`
-                  : ``
-              }
+      <div class="token card bg-base-200 bordered shadow-xl space-y-4 m-4" style="width: 480px;">
+        <div class="card-body space-y-2">
+          <div class="flex flex-row space-x-4 items-center">
+            <div class="badge badge-primary">${index + 1}</div>
+            <div class="card-image" style="width: 64px;">
+              ${token.logoURI ? `<img src="${token.logoURI}" alt="${token.name}">` : ``}
             </div>
-            <div class="text-sm space-x-2 py-2">
-              ${generateTokenTypesHTML(token.tokenType)}
+            <div class="space-y-2 w-full">
+              <p class="font-bold text-md">
+                ${token.name}
+                <span class="text-gray-400">${token.symbol}</span>
+              </p>
+              <div class="text-sm w-full flex justify-between">
+                <span>Decimals: ${token.decimals}</span>
+              </div>
+              <div class="text-sm space-x-2 py-2">
+                ${generateTokenTypesHTML(token.tokenType)}
+              </div>
             </div>
           </div>
+         
+          ${generateAddress1LinkHTML(token)}
+          ${generateAddress2LinkHTML(token)}
         </div>
-       
-        ${generateAddress1LinkHTML(token)}
-        ${generateAddress2LinkHTML(token)}
       </div>
-    </div>
   `
     )
     .join('');
@@ -145,7 +125,6 @@ document.querySelectorAll('.filter-btn').forEach((button) => {
 
     // Filter and display tokens
     filterAndDisplayTokens(type, 'mainnetShortList');
-    filterAndDisplayTokens(type, 'mainnetFullList');
   });
 });
 
@@ -161,8 +140,7 @@ function filterAndDisplayTokens(type, elementId) {
 
   // Generate HTML and update display
   filteredTokens[elementId] = tokensToDisplay;
-  const tokensHTML = generateTokensHTML(tokensToDisplay, elementId);
-  document.getElementById(elementId).innerHTML = tokensHTML;
+  document.getElementById(elementId).innerHTML = generateTokensHTML(tokensToDisplay, elementId);
 
   updateTokenCounts();
 }
@@ -187,11 +165,10 @@ document.getElementById('searchInput').addEventListener('input', function (e) {
     return nameMatch && typeMatch;
   };
 
-  // Apply filter function to both short and full lists, and update HTML
-  ['mainnetShortList', 'mainnetFullList'].forEach((elementId) => {
+  // Apply filter function to the short list, and update HTML
+  ['mainnetShortList'].forEach((elementId) => {
     filteredTokens[elementId] = allTokens[elementId].filter(tokenFilter);
-    const tokensHTML = generateTokensHTML(filteredTokens[elementId], elementId);
-    document.getElementById(elementId).innerHTML = tokensHTML;
+    document.getElementById(elementId).innerHTML = generateTokensHTML(filteredTokens[elementId], elementId);
   });
 
   updateTokenCounts();
@@ -200,5 +177,4 @@ document.getElementById('searchInput').addEventListener('input', function (e) {
 // Fetch and display data from the specified paths
 (async function fetchAndDisplayTokensInOrder() {
   await fetchTokensAndDisplay('./json/linea-mainnet-token-shortlist.json', 'mainnetShortList');
-  await fetchTokensAndDisplay('./json/linea-mainnet-token-fulllist.json', 'mainnetFullList');
 })();

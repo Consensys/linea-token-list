@@ -9,8 +9,7 @@ import { ContractInterface } from 'ethers';
  */
 export const loadABI = (abiPath: string): ContractInterface => {
   try {
-    const abi = JSON.parse(fs.readFileSync(abiPath).toString());
-    return abi;
+    return JSON.parse(fs.readFileSync(abiPath).toString());
   } catch (error) {
     logger.error('Error loading ABI', { from: abiPath }, { error });
     throw error;

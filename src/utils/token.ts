@@ -23,7 +23,7 @@ export const getEventTokenAddresses = (event: Event): { tokenAddress: string; na
 /**
  * Fetches the token info from the contract
  * @param erc20Contract
- * @param eventName
+ * @param abiType
  * @returns
  */
 export async function fetchTokenInfo(erc20Contract: Contract, abiType: ABIType): Promise<Token> {
@@ -42,7 +42,7 @@ export async function fetchTokenInfo(erc20Contract: Contract, abiType: ABIType):
     parsedSymbol = utils.parseBytes32String(symbol);
   }
 
-  const defaultTokenInfo: Token = {
+  return {
     chainId: 0,
     chainURI: '',
     tokenId: '',
@@ -59,8 +59,6 @@ export async function fetchTokenInfo(erc20Contract: Contract, abiType: ABIType):
       rootAddress: utils.getAddress(erc20Contract.address),
     },
   };
-
-  return defaultTokenInfo;
 }
 
 /**
