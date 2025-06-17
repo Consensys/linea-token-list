@@ -1,16 +1,12 @@
 [
   { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
   {
-    "inputs": [
-      { "internalType": "address", "name": "token", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "token", "type": "address" }],
     "name": "AlreadyBridgedToken",
     "type": "error"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "token", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "token", "type": "address" }],
     "name": "AlreadyBrigedToNativeTokenSet",
     "type": "error"
   },
@@ -24,23 +20,17 @@
     "type": "error"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "token", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "token", "type": "address" }],
     "name": "NotReserved",
     "type": "error"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "spender", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }],
     "name": "PermitNotAllowingBridge",
     "type": "error"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "owner", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }],
     "name": "PermitNotFromSender",
     "type": "error"
   },
@@ -56,32 +46,24 @@
     "type": "error"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "token", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "token", "type": "address" }],
     "name": "ReservedToken",
     "type": "error"
   },
   { "inputs": [], "name": "SenderNotAuthorized", "type": "error" },
   {
-    "inputs": [
-      { "internalType": "address", "name": "token", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "token", "type": "address" }],
     "name": "StatusAddressNotAllowed",
     "type": "error"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "token", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "token", "type": "address" }],
     "name": "TokenNotDeployed",
     "type": "error"
   },
   { "inputs": [], "name": "ZeroAddressNotAllowed", "type": "error" },
   {
-    "inputs": [
-      { "internalType": "uint256", "name": "amount", "type": "uint256" }
-    ],
+    "inputs": [{ "internalType": "uint256", "name": "amount", "type": "uint256" }],
     "name": "ZeroAmountNotAllowed",
     "type": "error"
   },
@@ -421,9 +403,7 @@
     "type": "function"
   },
   {
-    "inputs": [
-      { "internalType": "address[]", "name": "_tokens", "type": "address[]" }
-    ],
+    "inputs": [{ "internalType": "address[]", "name": "_tokens", "type": "address[]" }],
     "name": "confirmDeployment",
     "outputs": [],
     "stateMutability": "payable",
@@ -522,9 +502,7 @@
     "type": "function"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "_token", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "_token", "type": "address" }],
     "name": "removeReserved",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -591,9 +569,7 @@
     "type": "function"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "_token", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "_token", "type": "address" }],
     "name": "setReserved",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -621,9 +597,7 @@
     "type": "function"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "newOwner", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }],
     "name": "transferOwnership",
     "outputs": [],
     "stateMutability": "nonpayable",

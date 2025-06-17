@@ -15,7 +15,6 @@ describe('validateConfig', () => {
     TOKEN_BRIDGE_ABI_PATH: 'path1',
     ERC20_ABI_PATH: 'path2',
     ERC20_BYTE32_ABI_PATH: 'path3',
-    TOKEN_FULL_LIST_PATH: 'path4',
     TOKEN_SHORT_LIST_PATH: 'path5',
     COINGECKO_URL: 'http://coingecko.com',
     COINMARKETCAP_URL: 'http://coinmarketcap.com',
