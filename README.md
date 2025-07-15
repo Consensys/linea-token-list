@@ -1,3 +1,4 @@
+
 # Linea Token List
 
 This repository maintains lists of ERC20 tokens available on Linea. There are two lists: one for Linea Mainnet and one for
