@@ -1,3 +1,27 @@
+# Linea Token List
+
+This repository maintains a comprehensive list of tokens officially supported by the Linea network.  
+Linea is a zkEVM rollup developed by Consensys, designed to scale Ethereum securely and efficiently.
+
+## Purpose of this Repository
+
+- Provide a standardized token list for developers and integrators.
+- Facilitate easy integration with wallets, dApps, and blockchain services built on Linea.
+
+## How to Contribute
+
+To add or modify tokens:
+
+1. Fork this repository.
+2. Make your edits.
+3. Create a Pull Request clearly describing the reason for your changes.
+
+For more details, please visit the [official Linea documentation](https://linea.build).
+
+## License
+
+This project is licensed under the Apache-2.0 License.
+
 
 # Linea Token List
 
