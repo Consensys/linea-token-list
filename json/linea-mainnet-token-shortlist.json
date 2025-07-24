@@ -227,6 +227,20 @@
       }
     },
     {
+  "chainId": 59144,
+  "chainURI": "https://lineascan.build/block/0",
+  "tokenId": "https://lineascan.build/address/0xEb1fD1dBB8aDDA4fa2b5A5C4bcE34F6F20d125D2",
+  "tokenType": ["native"],
+  "address": "0xEb1fD1dBB8aDDA4fa2b5A5C4bcE34F6F20d125D2",
+  "name": "Donald Toad Coin",
+  "symbol": "DTC",
+  "decimals": 18,
+  "createdAt": "2025-07-24",
+  "updatedAt": "2025-07-24",
+  "logoURI": "https://drive.google.com/uc?export=view&id=1SBaECyZSGj0NVhuNVdU5n0DKiUtqxD7m"
+},
+
+    {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x5FBDF89403270a1846F5ae7D113A989F850d1566",
