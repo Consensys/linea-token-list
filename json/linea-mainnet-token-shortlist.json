@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-06-05",
+  "updatedAt": "2025-08-07",
   "versions": [
     {
       "major": 1,
-      "minor": 53,
+      "minor": 54,
       "patch": 1
     }
   ],
@@ -589,6 +589,19 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xEfD81eeC32B9A8222D1842ec3d99c7532C31e348",
+      "tokenType": ["native"],
+      "address": "0xEfD81eeC32B9A8222D1842ec3d99c7532C31e348",
+      "name": "Etherex",
+      "symbol": "REX",
+      "decimals": 18,
+      "createdAt": "2025-08-07",
+      "updatedAt": "2025-08-07",
+      "logoURI": "https://raw.githubusercontent.com/etherex-finance/etherex-assets/refs/heads/main/blockchains/linea/assets/0xEfD81eeC32B9A8222D1842ec3d99c7532C31e348/logo.png"
     },
     {
       "chainId": 59144,
