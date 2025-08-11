@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 54,
+      "minor": 55,
       "patch": 1
     }
   ],
@@ -336,6 +336,19 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xd9c2d319cd7e6177336b0a9c93c21cb48d84fb54"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xcf0f95e34f25d1bb3d9cad3cbb2eb40dab7c3841",
+      "tokenType": ["external-bridge"],
+      "address": "0xcf0f95e34f25d1bb3d9cad3cbb2eb40dab7c3841",
+      "name": "Impermax",
+      "symbol": "IBEX",
+      "decimals": 18,
+      "createdAt": "2024-10-11",
+      "updatedAt": "2025-08-11",
+      "logoURI": "https://assets.coingecko.com/coins/images/27606/standard/IqwOmX-c_400x400.jpeg?1696526637"
     },
     {
       "chainId": 59144,
