@@ -3,7 +3,7 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-08-07",
+  "updatedAt": "2025-08-12",
   "versions": [
     {
       "major": 1,
@@ -347,7 +347,7 @@
       "symbol": "IBEX",
       "decimals": 18,
       "createdAt": "2024-10-11",
-      "updatedAt": "2025-08-11",
+      "updatedAt": "2025-08-12",
       "logoURI": "https://assets.coingecko.com/coins/images/27606/standard/IqwOmX-c_400x400.jpeg?1696526637",
       "extension": {
         "rootChainId": 1,
