@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-08-12",
+  "updatedAt": "2025-08-28",
   "versions": [
     {
       "major": 1,
-      "minor": 55,
+      "minor": 56,
       "patch": 1
     }
   ],
@@ -96,7 +96,7 @@
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x880a3ae90f989030708a529abd841589053c1dc2",
-      "tokenType": ["native"], 
+      "tokenType": ["native"],
       "address": "0x880A3Ae90f989030708A529ABd841589053c1dC2",
       "name": "Beaver Coin",
       "symbol": "BEAVER",
@@ -522,6 +522,19 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xacA92E438df0B2401fF60dA7E4337B687a2435DA",
+      "tokenType": ["native"],
+      "address": "0xacA92E438df0B2401fF60dA7E4337B687a2435DA",
+      "name": "MetaMask USD",
+      "symbol": "mUSD",
+      "decimals": 6,
+      "createdAt": "2025-08-28",
+      "updatedAt": "2025-08-28",
+      "logoURI": "https://static.cx.metamask.io/api/v2/tokenIcons/assets/eip155/59144/erc20/0xaca92e438df0b2401ff60da7e4337b687a2435da.png"
     },
     {
       "chainId": 59144,
