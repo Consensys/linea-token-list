@@ -3,7 +3,7 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-08-28",
+  "updatedAt": "2025-08-29",
   "versions": [
     {
       "major": 1,
@@ -646,6 +646,19 @@
       "createdAt": "2025-08-07",
       "updatedAt": "2025-08-07",
       "logoURI": "https://assets.coingecko.com/coins/images/68009/standard/etherex.jpg"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xe4eEB461Ad1e4ef8b8EF71a33694CCD84Af051C4",
+      "tokenType": ["native"],
+      "address": "0xe4eEB461Ad1e4ef8b8EF71a33694CCD84Af051C4",
+      "name": "Etherex Liquid Staking Token",
+      "symbol": "REX33",
+      "decimals": 18,
+      "createdAt": "2025-08-11",
+      "updatedAt": "2025-08-11",
+      "logoURI": "https://raw.githubusercontent.com/etherex-finance/etherex-assets/refs/heads/main/blockchains/linea/assets/0xe4eEB461Ad1e4ef8b8EF71a33694CCD84Af051C4/logo.png"
     },
     {
       "chainId": 59144,
