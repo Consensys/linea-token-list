@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 56,
+      "minor": 57,
       "patch": 1
     }
   ],
@@ -95,7 +95,7 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x880a3ae90f989030708a529abd841589053c1dc2",
+      "tokenId": "https://lineascan.build/address/0x880A3Ae90f989030708A529ABd841589053c1dC2",
       "tokenType": ["native"],
       "address": "0x880A3Ae90f989030708A529ABd841589053c1dC2",
       "name": "Beaver Coin",

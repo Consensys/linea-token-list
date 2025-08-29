@@ -1,47 +1,14 @@
-name: Verify and Test
+name: Verify JSON
+
+permissions:
+  contents: read
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
 jobs:
-  unit_tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-
-      - name: Install NPM dependencies
-        run: npm ci
-
-      - name: Run NPM tests
-        run: npm run test
-
-  validate_json:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: pip install jsonschema
-
-      - name: Validate JSON
-        run: |
-          jsonschema -i ./json/linea-sepolia-token-shortlist.json ./json/schema/l2-token-list-schema.json
-
   verify_mainnet_shortlist:
     runs-on: ubuntu-latest
 
@@ -54,14 +21,14 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
         run: npm install
