@@ -433,7 +433,7 @@
       "decimals": 18,
       "createdAt": "2025-07-30",
       "updatedAt": "2025-07-30",
-      "logoURI": "https://assets.coingecko.com/coins/images/68507/standard/linea-logo.jpeg",
+      "logoURI": "https://linea.build/icons/token_round.png",
       "extension": {
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
