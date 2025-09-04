@@ -428,7 +428,7 @@
       "tokenId": "https://lineascan.build/address/0x1789e0043623282d5dcc7f213d703c6d8bafbb04",
       "tokenType": ["canonical-bridge"],
       "address": "0x1789e0043623282d5dcc7f213d703c6d8bafbb04",
-      "name": "Linea Token",
+      "name": "Linea",
       "symbol": "LINEA",
       "decimals": 18,
       "createdAt": "2025-07-30",
