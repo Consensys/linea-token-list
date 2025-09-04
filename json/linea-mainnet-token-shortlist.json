@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-08-29",
+  "updatedAt": "2025-09-03",
   "versions": [
     {
       "major": 1,
-      "minor": 57,
+      "minor": 58,
       "patch": 1
     }
   ],
@@ -422,6 +422,24 @@
         "rootAddress": "0x5a98fcbea516cf06857215779fd812ca3bef1b32"
       }
     },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x1789e0043623282d5dcc7f213d703c6d8bafbb04",
+      "tokenType": ["canonical-bridge"],
+      "address": "0x1789e0043623282d5dcc7f213d703c6d8bafbb04",
+      "name": "Linea",
+      "symbol": "LINEA",
+      "decimals": 18,
+      "createdAt": "2025-07-30",
+      "updatedAt": "2025-07-30",
+      "logoURI": "https://linea.build/icons/token_round.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x1789e0043623282d5dcc7f213d703c6d8bafbb04"
+      }
+    },    
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
