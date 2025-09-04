@@ -439,7 +439,7 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x1789e0043623282d5dcc7f213d703c6d8bafbb04"
       }
-    },    
+    },
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
