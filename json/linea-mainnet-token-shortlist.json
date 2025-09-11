@@ -3,7 +3,7 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-09-03",
+  "updatedAt": "2025-09-11",
   "versions": [
     {
       "major": 1,
@@ -57,8 +57,8 @@
       "name": "Ajira Pay Finance",
       "symbol": "AJP",
       "decimals": 18,
-      "createdAt": "2025-09-11",
-      "updatedAt": "2025-09-11",
+      "createdAt": "2025-09-04",
+      "updatedAt": "2025-09-04",
       "logoURI": "https://lavender-fascinating-wildcat-857.mypinata.cloud/ipfs/bafkreiczrrhpr2hj6ppwuhpfzu2bhpjyuhkrb3xee4bha4artzpcgr2f5e"
     },
     {
