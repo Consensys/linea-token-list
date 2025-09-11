@@ -51,6 +51,19 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x7324A70d1A70Cf0E9dAb2ea8335Ced1EC100bcF3",
+      "tokenType": ["native"],
+      "address": "0x7324A70d1A70Cf0E9dAb2ea8335Ced1EC100bcF3",
+      "name": "Ajira Pay Finance",
+      "symbol": "AJP",
+      "decimals": 18,
+      "createdAt": "2025-09-04",
+      "updatedAt": "2025-09-04",
+      "logoURI": "https://lavender-fascinating-wildcat-857.mypinata.cloud/ipfs/bafkreiczrrhpr2hj6ppwuhpfzu2bhpjyuhkrb3xee4bha4artzpcgr2f5e"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x6bAA318CF7C51C76e17ae1EbE9Bbff96AE017aCB",
       "tokenType": ["canonical-bridge"],
       "address": "0x6bAA318CF7C51C76e17ae1EbE9Bbff96AE017aCB",
