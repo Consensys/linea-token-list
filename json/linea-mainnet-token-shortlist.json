@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-09-03",
+  "updatedAt": "2025-09-11",
   "versions": [
     {
       "major": 1,
-      "minor": 58,
+      "minor": 59,
       "patch": 1
     }
   ],
@@ -47,6 +47,19 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x7324A70d1A70Cf0E9dAb2ea8335Ced1EC100bcF3",
+      "tokenType": ["native"],
+      "address": "0x7324A70d1A70Cf0E9dAb2ea8335Ced1EC100bcF3",
+      "name": "Ajira Pay Finance",
+      "symbol": "AJP",
+      "decimals": 18,
+      "createdAt": "2025-09-04",
+      "updatedAt": "2025-09-04",
+      "logoURI": "https://lavender-fascinating-wildcat-857.mypinata.cloud/ipfs/bafkreiczrrhpr2hj6ppwuhpfzu2bhpjyuhkrb3xee4bha4artzpcgr2f5e"
     },
     {
       "chainId": 59144,
