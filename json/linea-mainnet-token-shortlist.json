@@ -566,6 +566,19 @@
       "createdAt": "2025-08-28",
       "updatedAt": "2025-08-28",
       "logoURI": "https://static.cx.metamask.io/api/v2/tokenIcons/assets/eip155/59144/erc20/0xaca92e438df0b2401ff60da7e4337b687a2435da.png"
+     },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x67454b41baf8d29751cc64f60e3c62b5634567a4",
+      "tokenType": ["native"],
+      "address": "0x67454b41bAF8D29751Cc64f60E3C62B5634567A4",
+      "name": "Tbag",
+      "symbol": "TBAG",
+      "decimals": 18,
+      "createdAt": "2025-09-30",
+      "updatedAt": "2025-09-30",
+      "logoURI": "https://static.wixstatic.com/shapes/a73a36_776677fd17864a71b0925b7e2e0010af.svg"
     },
     {
       "chainId": 59144,
@@ -578,12 +591,7 @@
       "decimals": 18,
       "createdAt": "2024-06-20",
       "updatedAt": "2024-07-11",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/25898.png",
-      "extension": {
-        "rootChainId": 1,
-        "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0xb435A47eCea7F5366b2520e45B9beD7E01d2FFAe"
-      }
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/25898.png"
     },
     {
       "chainId": 59144,
