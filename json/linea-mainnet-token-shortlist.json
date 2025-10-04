@@ -1059,14 +1059,19 @@
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x023617bAbEd6CeF5Da825BEa8363A5a9862E120F",
-      "tokenType": ["native"],
+      "tokenType": ["canonical-bridge"],
       "address": "0x023617bAbEd6CeF5Da825BEa8363A5a9862E120F",
       "name": "Wrapped Dai",
       "symbol": "WDAI",
       "decimals": 18,
       "createdAt": "2024-03-09",
       "updatedAt": "2025-10-03",
-      "logoURI": "https://github.com/publu/wrapped-dai/blob/4e86f67adfe680945af952f2b5c638df70ff58e3/public/images/wdai_logo.png"
+      "logoURI": "https://github.com/publu/wrapped-dai/blob/4e86f67adfe680945af952f2b5c638df70ff58e3/public/images/wdai_logo.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x30C724216b890c034e0a1C299Ae641565f85355e"
+      }
     },
     {
       "chainId": 59144,
