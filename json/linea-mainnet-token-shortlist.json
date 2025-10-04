@@ -1058,6 +1058,19 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x023617bAbEd6CeF5Da825BEa8363A5a9862E120F",
+      "tokenType": ["native"],
+      "address": "0x023617bAbEd6CeF5Da825BEa8363A5a9862E120F",
+      "name": "Wrapped Dai",
+      "symbol": "WDAI",
+      "decimals": 18,
+      "createdAt": "2024-03-09",
+      "updatedAt": "2025-10-03",
+      "logoURI": "https://github.com/publu/wrapped-dai/blob/4e86f67adfe680945af952f2b5c638df70ff58e3/public/images/wdai_logo.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x78354f8DcCB269a615A7e0a24f9B0718FDC3C7A7",
       "tokenType": ["native"],
       "address": "0x78354f8DcCB269a615A7e0a24f9B0718FDC3C7A7",
