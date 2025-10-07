@@ -3,12 +3,12 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-09-11",
+  "updatedAt": "2025-10-07",
   "versions": [
     {
       "major": 1,
       "minor": 59,
-      "patch": 1
+      "patch": 2
     }
   ],
   "tokens": [
@@ -1066,7 +1066,7 @@
       "decimals": 18,
       "createdAt": "2024-03-09",
       "updatedAt": "2025-10-03",
-      "logoURI": "https://github.com/publu/wrapped-dai/blob/4e86f67adfe680945af952f2b5c638df70ff58e3/public/images/wdai_logo.png",
+      "logoURI": "https://harlequin-reluctant-parrotfish-147.mypinata.cloud/ipfs/bafkreidq3ezldzocsvmemshsgaq2mg35nl7bfm2xihc3zx3ppt2vu5vqc4",
       "extension": {
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
