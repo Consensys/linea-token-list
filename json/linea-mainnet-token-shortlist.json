@@ -7,8 +7,8 @@
   "versions": [
     {
       "major": 1,
-      "minor": 60,
-      "patch": 0
+      "minor": 59,
+      "patch": 3
     }
   ],
   "tokens": [
@@ -208,7 +208,7 @@
       "symbol": "DOGE",
       "decimals": 18,
       "createdAt": "2024-05-20",
-      "updatedAt": "2025-10-07",
+      "updatedAt": "2024-05-20",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/74.png",
       "extension": {
         "rootChainId": 1,
