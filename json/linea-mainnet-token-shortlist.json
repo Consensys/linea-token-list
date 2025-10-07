@@ -207,8 +207,8 @@
       "name": "Dogecoin",
       "symbol": "DOGE",
       "decimals": 18,
-      "createdAt": "2025-09-30",
-      "updatedAt": "2025-09-30",
+      "createdAt": "2024-05-20",
+      "updatedAt": "2024-05-20",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/74.png",
       "extension": {
         "rootChainId": 1,
