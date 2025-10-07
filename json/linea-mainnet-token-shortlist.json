@@ -779,6 +779,19 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x67454b41bAF8D29751Cc64f60E3C62B5634567A4",
+      "tokenType": ["native"],
+      "address": "0x67454b41bAF8D29751Cc64f60E3C62B5634567A4",
+      "name": "Tbag",
+      "symbol": "TBAG",
+      "decimals": 18,
+      "createdAt": "2025-09-30",
+      "updatedAt": "2025-10-07",
+      "logoURI": "https://static.wixstatic.com/shapes/a73a36_776677fd17864a71b0925b7e2e0010af.svg"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xA219439258ca9da29E9Cc4cE5596924745e12B93",
       "tokenType": ["canonical-bridge"],
       "address": "0xA219439258ca9da29E9Cc4cE5596924745e12B93",
