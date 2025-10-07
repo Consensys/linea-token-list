@@ -3,12 +3,12 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-09-11",
+  "updatedAt": "2025-10-07",
   "versions": [
     {
       "major": 1,
       "minor": 59,
-      "patch": 1
+      "patch": 2
     }
   ],
   "tokens": [
@@ -1054,6 +1054,24 @@
       "createdAt": "2023-08-03",
       "updatedAt": "2023-08-03",
       "logoURI": "https://bit.ly/3WEJF7N"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x023617bAbEd6CeF5Da825BEa8363A5a9862E120F",
+      "tokenType": ["canonical-bridge"],
+      "address": "0x023617bAbEd6CeF5Da825BEa8363A5a9862E120F",
+      "name": "Wrapped Dai",
+      "symbol": "WDAI",
+      "decimals": 18,
+      "createdAt": "2024-03-09",
+      "updatedAt": "2024-03-09",
+      "logoURI": "https://harlequin-reluctant-parrotfish-147.mypinata.cloud/ipfs/bafkreidq3ezldzocsvmemshsgaq2mg35nl7bfm2xihc3zx3ppt2vu5vqc4",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x30C724216b890c034e0a1C299Ae641565f85355e"
+      }
     },
     {
       "chainId": 59144,
