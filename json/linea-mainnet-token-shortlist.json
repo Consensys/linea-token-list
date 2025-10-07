@@ -3,7 +3,7 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-09-11",
+  "updatedAt": "2025-10-07",
   "versions": [
     {
       "major": 1,
@@ -786,7 +786,7 @@
       "symbol": "TBAG",
       "decimals": 18,
       "createdAt": "2025-09-30",
-      "updatedAt": "2025-09-30",
+      "updatedAt": "2025-10-07",
       "logoURI": "https://static.wixstatic.com/shapes/a73a36_776677fd17864a71b0925b7e2e0010af.svg"
     },
     {
