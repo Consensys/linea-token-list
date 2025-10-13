@@ -3,15 +3,33 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-sepolia-token-shortlist.json",
   "name": "Linea Sepolia Token List",
   "createdAt": "2024-03-29",
-  "updatedAt": "2024-10-01",
+  "updatedAt": "2025-10-07",
   "versions": [
     {
       "major": 1,
-      "minor": 2,
+      "minor": 3,
       "patch": 0
     }
   ],
   "tokens": [
+    {
+      "chainId": 59141,
+      "chainURI": "https://sepolia.lineascan.build/block/0",
+      "tokenId": "https://sepolia.lineascan.build/address/0x0869E86479D60D07DF0E31312E7207c6cf470e31",
+      "tokenType": ["canonical-bridge"],
+      "address": "0x0869E86479D60D07DF0E31312E7207c6cf470e31",
+      "name": "Foo",
+      "symbol": "FOO",
+      "decimals": 18,
+      "createdAt": "2025-10-07",
+      "updatedAt": "2025-10-07",
+      "logoURI": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/500px-Smiley.svg.png",
+      "extension": {
+        "rootChainId": 11155111,
+        "rootChainURI": "https://sepolia.etherscan.io/block/0",
+        "rootAddress": "0xEb8708CaFB403c90d5475bB623636896cE78faCf"
+      }
+    },
     {
       "chainId": 59141,
       "chainURI": "https://sepolia.lineascan.build/block/0",
