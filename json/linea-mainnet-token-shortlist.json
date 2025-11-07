@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 63,
+      "minor": 64,
       "patch": 0
     }
   ],
@@ -375,6 +375,19 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xf655c8567e0f213e6c634cd2a68d992152161dc6"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x60d01ec2d5e98ac51c8b4cf84dfcce98d527c747",
+      "tokenType": ["native"],
+      "address": "0x60d01ec2d5e98ac51c8b4cf84dfcce98d527c747",
+      "name": "izumi Token",
+      "symbol": "iZi",
+      "decimals": 18,
+      "createdAt": "2025-11-07T10:03:48.116Z",
+      "updatedAt": "2025-11-07T10:03:48.116Z",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/5HjdkVgJPFTnLf0agf7ait/95878a7a79f54e156365c425bb54024a/image.png"
     },
     {
       "chainId": 59144,
