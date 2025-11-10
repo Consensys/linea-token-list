@@ -878,6 +878,19 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xd221cf22B2B9643b44ba0873E08eC1952D52508a",
+      "tokenType": ["native"],
+      "address": "0xd221cf22B2B9643b44ba0873E08eC1952D52508a",
+      "name": "TATERZ",
+      "symbol": "TATERZ",
+      "decimals": 18,
+      "createdAt": "2025-11-10T13:35:04.174Z",
+      "updatedAt": "2025-11-10T13:35:04.174Z",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/1jGcrN7biBE7xE3Qx2PEaN/6fbf788b4c68a54c994a3cd1d7420ad9/image.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x636B22bC471c955A8DB60f28D4795066a8201fa3",
       "tokenType": ["canonical-bridge"],
       "address": "0x636B22bC471c955A8DB60f28D4795066a8201fa3",
