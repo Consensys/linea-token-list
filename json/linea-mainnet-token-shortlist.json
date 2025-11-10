@@ -15,6 +15,19 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x67454b41baf8d29751cc64f60e3c62b5634567a4",
+      "tokenType": ["native"],
+      "address": "0x67454b41baf8d29751cc64f60e3c62b5634567a4",
+      "name": "TBAG",
+      "symbol": "$TBAG",
+      "decimals": 18,
+      "createdAt": "2025-11-10T14:19:03.147Z",
+      "updatedAt": "2025-11-10T14:19:03.147Z",
+      "logoURI": "https://coin-images.coingecko.com/coins/images/69384/large/TokenIcon.png?1758357855"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x3d4b2132eD4eA0aa93903713a4dE9F98e625a5c7",
       "tokenType": ["canonical-bridge"],
       "address": "0x3d4b2132eD4eA0aa93903713a4dE9F98e625a5c7",
