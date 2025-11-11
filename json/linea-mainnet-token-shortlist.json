@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 59,
+      "minor": 60,
       "patch": 4
     }
   ],
@@ -64,24 +64,6 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x6bAA318CF7C51C76e17ae1EbE9Bbff96AE017aCB",
-      "tokenType": ["canonical-bridge"],
-      "address": "0x6bAA318CF7C51C76e17ae1EbE9Bbff96AE017aCB",
-      "name": "ApeCoin",
-      "symbol": "APE",
-      "decimals": 18,
-      "createdAt": "2023-08-08",
-      "updatedAt": "2023-08-08",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/18876.png",
-      "extension": {
-        "rootChainId": 1,
-        "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0x4d224452801aced8b2f0aebe155379bb5d594381"
-      }
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x374D7860c4f2f604De0191298dD393703Cce84f3",
       "tokenType": ["native"],
       "address": "0x374D7860c4f2f604De0191298dD393703Cce84f3",
@@ -108,6 +90,24 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x6bAA318CF7C51C76e17ae1EbE9Bbff96AE017aCB",
+      "tokenType": ["canonical-bridge"],
+      "address": "0x6bAA318CF7C51C76e17ae1EbE9Bbff96AE017aCB",
+      "name": "ApeCoin",
+      "symbol": "APE",
+      "decimals": 18,
+      "createdAt": "2023-08-08",
+      "updatedAt": "2023-08-08",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/18876.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x4d224452801aced8b2f0aebe155379bb5d594381"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x880A3Ae90f989030708A529ABd841589053c1dC2",
       "tokenType": ["native"],
       "address": "0x880A3Ae90f989030708A529ABd841589053c1dC2",
@@ -130,24 +130,6 @@
       "createdAt": "2025-05-20",
       "updatedAt": "2025-05-20",
       "logoURI": "https://i.ibb.co/CpLQqnMY/logo.png"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x5B16228B94b68C7cE33AF2ACc5663eBdE4dCFA2d",
-      "tokenType": ["canonical-bridge"],
-      "address": "0x5B16228B94b68C7cE33AF2ACc5663eBdE4dCFA2d",
-      "name": "ChainLink Token",
-      "symbol": "LINK",
-      "decimals": 18,
-      "createdAt": "2023-08-08",
-      "updatedAt": "2023-08-08",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/1975.png",
-      "extension": {
-        "rootChainId": 1,
-        "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0x514910771af9ca656af840dff83e8264ecf986ca"
-      }
     },
     {
       "chainId": 59144,
@@ -201,6 +183,37 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x70359c1eeB98eb3D12eE7178359a4541ff11Cc8E",
+      "tokenType": ["canonical-bridge"],
+      "address": "0x70359c1eeB98eb3D12eE7178359a4541ff11Cc8E",
+      "name": "DSLA Protocol",
+      "symbol": "DSLA",
+      "decimals": 18,
+      "createdAt": "2023-08-22",
+      "updatedAt": "2023-08-22",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/5423.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x3aFfCCa64c2A6f4e3B6Bd9c64CD2C969EFd1ECBe"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xEb1fD1dBB8aDDA4fa2b5A5C4bcE34F6F20d125D2",
+      "tokenType": ["native"],
+      "address": "0xEb1fD1dBB8aDDA4fa2b5A5C4bcE34F6F20d125D2",
+      "name": "Donald Toad Coin",
+      "symbol": "DTC",
+      "decimals": 18,
+      "createdAt": "2025-07-25",
+      "updatedAt": "2025-07-25",
+      "logoURI": "https://assets.coingecko.com/coins/images/51996/standard/Donald_Toad_Transparent.png?1732459916"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xa88b54e6b76fb97cdb8ecae868f1458e18a953f4",
       "tokenType": ["bridge-reserved", "external-bridge"],
       "address": "0xa88b54e6b76fb97cdb8ecae868f1458e18a953f4",
@@ -233,37 +246,6 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xdddddd4301a082e62e84e43f474f044423921918"
       }
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x70359c1eeB98eb3D12eE7178359a4541ff11Cc8E",
-      "tokenType": ["canonical-bridge"],
-      "address": "0x70359c1eeB98eb3D12eE7178359a4541ff11Cc8E",
-      "name": "DSLA Protocol",
-      "symbol": "DSLA",
-      "decimals": 18,
-      "createdAt": "2023-08-22",
-      "updatedAt": "2023-08-22",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/5423.png",
-      "extension": {
-        "rootChainId": 1,
-        "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0x3aFfCCa64c2A6f4e3B6Bd9c64CD2C969EFd1ECBe"
-      }
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xEb1fD1dBB8aDDA4fa2b5A5C4bcE34F6F20d125D2",
-      "tokenType": ["native"],
-      "address": "0xEb1fD1dBB8aDDA4fa2b5A5C4bcE34F6F20d125D2",
-      "name": "Donald Toad Coin",
-      "symbol": "DTC",
-      "decimals": 18,
-      "createdAt": "2025-07-25",
-      "updatedAt": "2025-07-25",
-      "logoURI": "https://assets.coingecko.com/coins/images/51996/standard/Donald_Toad_Transparent.png?1732459916"
     },
     {
       "chainId": 59144,
@@ -402,19 +384,19 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x63bA74893621d3d12F13CEc1e86517eC3d329837",
+      "tokenId": "https://lineascan.build/address/0x9D36f49D3d42B3A9BcC0f5Ac76fF8ef78fB2bC01",
       "tokenType": ["canonical-bridge"],
-      "address": "0x63bA74893621d3d12F13CEc1e86517eC3d329837",
-      "name": "LUSD Stablecoin",
-      "symbol": "LUSD",
+      "address": "0x9D36f49D3d42B3A9BcC0f5Ac76fF8ef78fB2bC01",
+      "name": "Lybra Finance",
+      "symbol": "LBR",
       "decimals": 18,
-      "createdAt": "2024-01-24",
-      "updatedAt": "2024-01-24",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/9566.png",
+      "createdAt": "2023-08-22",
+      "updatedAt": "2023-08-22",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/24700.png",
       "extension": {
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0"
+        "rootAddress": "0xF1182229B71E79E504b1d2bF076C15a277311e05"
       }
     },
     {
@@ -456,32 +438,19 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xd83af4fbd77f3ab65c3b1dc4b38d7e67aecf599a",
-      "tokenType": ["native"],
-      "address": "0xd83af4fbd77f3ab65c3b1dc4b38d7e67aecf599a",
-      "name": "Linea XP",
-      "symbol": "LXP",
-      "decimals": 18,
-      "createdAt": "2023-12-06",
-      "updatedAt": "2024-01-23",
-      "logoURI": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/logo/lxp.png"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x9D36f49D3d42B3A9BcC0f5Ac76fF8ef78fB2bC01",
+      "tokenId": "https://lineascan.build/address/0x5B16228B94b68C7cE33AF2ACc5663eBdE4dCFA2d",
       "tokenType": ["canonical-bridge"],
-      "address": "0x9D36f49D3d42B3A9BcC0f5Ac76fF8ef78fB2bC01",
-      "name": "Lybra Finance",
-      "symbol": "LBR",
+      "address": "0x5B16228B94b68C7cE33AF2ACc5663eBdE4dCFA2d",
+      "name": "ChainLink Token",
+      "symbol": "LINK",
       "decimals": 18,
-      "createdAt": "2023-08-22",
-      "updatedAt": "2023-08-22",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/24700.png",
+      "createdAt": "2023-08-08",
+      "updatedAt": "2023-08-08",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/1975.png",
       "extension": {
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0xF1182229B71E79E504b1d2bF076C15a277311e05"
+        "rootAddress": "0x514910771af9ca656af840dff83e8264ecf986ca"
       }
     },
     {
@@ -513,6 +482,50 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x63bA74893621d3d12F13CEc1e86517eC3d329837",
+      "tokenType": ["canonical-bridge"],
+      "address": "0x63bA74893621d3d12F13CEc1e86517eC3d329837",
+      "name": "LUSD Stablecoin",
+      "symbol": "LUSD",
+      "decimals": 18,
+      "createdAt": "2024-01-24",
+      "updatedAt": "2024-01-24",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/9566.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xcc22F6AA610D1b2a0e89EF228079cB3e1831b1D1",
+      "tokenType": ["native"],
+      "address": "0xcc22F6AA610D1b2a0e89EF228079cB3e1831b1D1",
+      "name": "Linea Velocore",
+      "symbol": "LVC",
+      "decimals": 18,
+      "createdAt": "2023-08-03",
+      "updatedAt": "2023-08-03",
+      "logoURI": "https://assets.coingecko.com/coins/images/31537/standard/LVC.png?1696530346"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xd83af4fbd77f3ab65c3b1dc4b38d7e67aecf599a",
+      "tokenType": ["native"],
+      "address": "0xd83af4fbd77f3ab65c3b1dc4b38d7e67aecf599a",
+      "name": "Linea XP",
+      "symbol": "LXP",
+      "decimals": 18,
+      "createdAt": "2023-12-06",
+      "updatedAt": "2024-01-23",
+      "logoURI": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/logo/lxp.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x1a51b19CE03dbE0Cb44C1528E34a7EDD7771E9Af",
       "tokenType": ["native"],
       "address": "0x1a51b19CE03dbE0Cb44C1528E34a7EDD7771E9Af",
@@ -535,6 +548,19 @@
       "createdAt": "2023-11-20",
       "updatedAt": "2023-11-20",
       "logoURI": "https://assets.coingecko.com/coins/images/15264/small/mimatic-red.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x43E8809ea748EFf3204ee01F08872F063e44065f",
+      "tokenType": ["native"],
+      "address": "0x43E8809ea748EFf3204ee01F08872F063e44065f",
+      "name": "Mendi Finance",
+      "symbol": "MENDI",
+      "decimals": 18,
+      "createdAt": "2023-08-10",
+      "updatedAt": "2023-08-10",
+      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
     },
     {
       "chainId": 59144,
@@ -614,24 +640,6 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
-      "tokenType": ["canonical-bridge"],
-      "address": "0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
-      "name": "Pax Dollar",
-      "symbol": "USDP",
-      "decimals": 18,
-      "createdAt": "2023-08-21",
-      "updatedAt": "2023-08-21",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3330.png",
-      "extension": {
-        "rootChainId": 1,
-        "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0x8E870D67F660D95d5be530380D0eC0bd388289E1"
-      }
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xA6eb75B11b36FB9175fB94C5b96959879A26C2A8",
       "tokenType": ["canonical-bridge"],
       "address": "0xA6eb75B11b36FB9175fB94C5b96959879A26C2A8",
@@ -694,6 +702,19 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x12bbdc004a0e9085ff94df1717336ecbc9f9e5fe",
+      "tokenType": ["native"],
+      "address": "0x12bbdc004a0e9085ff94df1717336ecbc9f9e5fe",
+      "name": "RUSTY",
+      "symbol": "RUSTY",
+      "decimals": 18,
+      "createdAt": "2025-11-11T05:33:49.171Z",
+      "updatedAt": "2025-11-11T05:33:49.171Z",
+      "logoURI": "https://coin-images.coingecko.com/coins/images/68367/large/photo_2025-08-16_14-15-37.jpg?1755513766"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x13a7f090d46c74acba98c51786a5c46ed9a474f0",
       "tokenType": ["canonical-bridge"],
       "address": "0x13a7f090d46c74acba98c51786a5c46ed9a474f0",
@@ -748,6 +769,19 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x150b1e51738CdF0cCfe472594C62d7D6074921CA",
+      "tokenType": ["native"],
+      "address": "0x150b1e51738CdF0cCfe472594C62d7D6074921CA",
+      "name": "Staked Mendi",
+      "symbol": "sMendi",
+      "decimals": 18,
+      "createdAt": "2023-08-17",
+      "updatedAt": "2023-08-17",
+      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xeC859566fC5d7ED84Ac823509F3f7db06C461b20",
       "tokenType": ["bridge-reserved", "external-bridge"],
       "address": "0xeC859566fC5d7ED84Ac823509F3f7db06C461b20",
@@ -779,33 +813,15 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xA219439258ca9da29E9Cc4cE5596924745e12B93",
-      "tokenType": ["canonical-bridge"],
-      "address": "0xA219439258ca9da29E9Cc4cE5596924745e12B93",
-      "name": "Tether USD",
-      "symbol": "USDT",
-      "decimals": 6,
-      "createdAt": "2023-08-08",
-      "updatedAt": "2023-08-08",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png",
-      "extension": {
-        "rootChainId": 1,
-        "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7"
-      }
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xC84f2ce21272f17d92d2a450F1C8567bF0ff448E",
+      "tokenId": "https://lineascan.build/address/0xcf8deDCdC62317beAEdfBee3C77C08425F284486",
       "tokenType": ["native"],
-      "address": "0xC84f2ce21272f17d92d2a450F1C8567bF0ff448E",
-      "name": "US KUMA Interest Bearing Token",
-      "symbol": "USK",
+      "address": "0xcf8deDCdC62317beAEdfBee3C77C08425F284486",
+      "name": "Staked Mendi",
+      "symbol": "uMendi",
       "decimals": 18,
-      "createdAt": "2023-11-02",
-      "updatedAt": "2023-11-02",
-      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/27290.png"
+      "createdAt": "2023-08-10",
+      "updatedAt": "2023-08-10",
+      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
     },
     {
       "chainId": 59144,
@@ -895,6 +911,42 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
+      "tokenType": ["canonical-bridge"],
+      "address": "0xd2bc272EA0154A93bf00191c8a1DB23E67643EC5",
+      "name": "Pax Dollar",
+      "symbol": "USDP",
+      "decimals": 18,
+      "createdAt": "2023-08-21",
+      "updatedAt": "2023-08-21",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3330.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x8E870D67F660D95d5be530380D0eC0bd388289E1"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xA219439258ca9da29E9Cc4cE5596924745e12B93",
+      "tokenType": ["canonical-bridge"],
+      "address": "0xA219439258ca9da29E9Cc4cE5596924745e12B93",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "createdAt": "2023-08-08",
+      "updatedAt": "2023-08-08",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x1E1F509963A6D33e169D9497b11c7DbFe73B7F13",
       "tokenType": ["native"],
       "address": "0x1E1F509963A6D33e169D9497b11c7DbFe73B7F13",
@@ -904,6 +956,32 @@
       "createdAt": "2023-08-16",
       "updatedAt": "2023-09-26",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/24962.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xC84f2ce21272f17d92d2a450F1C8567bF0ff448E",
+      "tokenType": ["native"],
+      "address": "0xC84f2ce21272f17d92d2a450F1C8567bF0ff448E",
+      "name": "US KUMA Interest Bearing Token",
+      "symbol": "USK",
+      "decimals": 18,
+      "createdAt": "2023-11-02",
+      "updatedAt": "2023-11-02",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/27290.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xAeC06345b26451bdA999d83b361BEaaD6eA93F87",
+      "tokenType": ["native"],
+      "address": "0xAeC06345b26451bdA999d83b361BEaaD6eA93F87",
+      "name": "Locked LVC",
+      "symbol": "veLVC",
+      "decimals": 18,
+      "createdAt": "2023-08-03",
+      "updatedAt": "2023-08-03",
+      "logoURI": "https://bit.ly/3WEJF7N"
     },
     {
       "chainId": 59144,
@@ -921,6 +999,24 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x023617bAbEd6CeF5Da825BEa8363A5a9862E120F",
+      "tokenType": ["canonical-bridge"],
+      "address": "0x023617bAbEd6CeF5Da825BEa8363A5a9862E120F",
+      "name": "Wrapped Dai",
+      "symbol": "wDAI",
+      "decimals": 18,
+      "createdAt": "2024-03-09",
+      "updatedAt": "2024-03-09",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/4tHtSuU1jJnNMMs9su5d3E/1c05da70f431a7f545c90b70c7d49ef7/wdai_logo.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x30C724216b890c034e0a1C299Ae641565f85355e"
       }
     },
     {
@@ -988,89 +1084,6 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3E5D9D8a63CC8a88748f229999CF59487e90721e"
-      }
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x43E8809ea748EFf3204ee01F08872F063e44065f",
-      "tokenType": ["native"],
-      "address": "0x43E8809ea748EFf3204ee01F08872F063e44065f",
-      "name": "Mendi Finance",
-      "symbol": "MENDI",
-      "decimals": 18,
-      "createdAt": "2023-08-10",
-      "updatedAt": "2023-08-10",
-      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x150b1e51738CdF0cCfe472594C62d7D6074921CA",
-      "tokenType": ["native"],
-      "address": "0x150b1e51738CdF0cCfe472594C62d7D6074921CA",
-      "name": "Staked Mendi",
-      "symbol": "sMendi",
-      "decimals": 18,
-      "createdAt": "2023-08-17",
-      "updatedAt": "2023-08-17",
-      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xcf8deDCdC62317beAEdfBee3C77C08425F284486",
-      "tokenType": ["native"],
-      "address": "0xcf8deDCdC62317beAEdfBee3C77C08425F284486",
-      "name": "Staked Mendi",
-      "symbol": "uMendi",
-      "decimals": 18,
-      "createdAt": "2023-08-10",
-      "updatedAt": "2023-08-10",
-      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xcc22F6AA610D1b2a0e89EF228079cB3e1831b1D1",
-      "tokenType": ["native"],
-      "address": "0xcc22F6AA610D1b2a0e89EF228079cB3e1831b1D1",
-      "name": "Linea Velocore",
-      "symbol": "LVC",
-      "decimals": 18,
-      "createdAt": "2023-08-03",
-      "updatedAt": "2023-08-03",
-      "logoURI": "https://assets.coingecko.com/coins/images/31537/standard/LVC.png?1696530346"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xAeC06345b26451bdA999d83b361BEaaD6eA93F87",
-      "tokenType": ["native"],
-      "address": "0xAeC06345b26451bdA999d83b361BEaaD6eA93F87",
-      "name": "Locked LVC",
-      "symbol": "veLVC",
-      "decimals": 18,
-      "createdAt": "2023-08-03",
-      "updatedAt": "2023-08-03",
-      "logoURI": "https://bit.ly/3WEJF7N"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x023617bAbEd6CeF5Da825BEa8363A5a9862E120F",
-      "tokenType": ["canonical-bridge"],
-      "address": "0x023617bAbEd6CeF5Da825BEa8363A5a9862E120F",
-      "name": "Wrapped Dai",
-      "symbol": "wDAI",
-      "decimals": 18,
-      "createdAt": "2024-03-09",
-      "updatedAt": "2024-03-09",
-      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/4tHtSuU1jJnNMMs9su5d3E/1c05da70f431a7f545c90b70c7d49ef7/wdai_logo.png",
-      "extension": {
-        "rootChainId": 1,
-        "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0x30C724216b890c034e0a1C299Ae641565f85355e"
       }
     },
     {
