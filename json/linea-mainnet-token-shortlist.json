@@ -3,12 +3,12 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-10-10",
+  "updatedAt": "2025-11-20",
   "versions": [
     {
       "major": 1,
-      "minor": 60,
-      "patch": 4
+      "minor": 61,
+      "patch": 0
     }
   ],
   "tokens": [
@@ -708,8 +708,8 @@
       "name": "RUSTY",
       "symbol": "RUSTY",
       "decimals": 18,
-      "createdAt": "2025-11-11T05:33:49.171Z",
-      "updatedAt": "2025-11-11T05:33:49.171Z",
+      "createdAt": "2025-11-11",
+      "updatedAt": "2025-11-11",
       "logoURI": "https://coin-images.coingecko.com/coins/images/68367/large/photo_2025-08-16_14-15-37.jpg?1755513766"
     },
     {
