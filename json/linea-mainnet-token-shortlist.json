@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 61,
+      "minor": 62,
       "patch": 0
     }
   ],
@@ -809,6 +809,19 @@
       "createdAt": "2023-09-28",
       "updatedAt": "2023-12-07",
       "logoURI": "https://static.shieldex.io/stone/stone-3.svg"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2",
+      "tokenType": ["native"],
+      "address": "0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2",
+      "name": "Staked USDe",
+      "symbol": "sUSDe",
+      "decimals": 18,
+      "createdAt": "2025-11-10",
+      "updatedAt": "2025-11-10",
+      "logoURI": "https://coin-images.coingecko.com/coins/images/33669/large/sUSDe-Symbol-Color.png?1716307680"
     },
     {
       "chainId": 59144,
