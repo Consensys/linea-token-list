@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2025-11-20",
+  "updatedAt": "2025-11-24",
   "versions": [
     {
       "major": 1,
-      "minor": 62,
+      "minor": 63,
       "patch": 0
     }
   ],
@@ -21,8 +21,8 @@
       "name": "TBAG",
       "symbol": "$TBAG",
       "decimals": 18,
-      "createdAt": "2025-11-10T14:19:03.147Z",
-      "updatedAt": "2025-11-10T14:19:03.147Z",
+      "createdAt": "2025-11-10",
+      "updatedAt": "2025-11-10",
       "logoURI": "https://coin-images.coingecko.com/coins/images/69384/large/TokenIcon.png?1758357855"
     },
     {
