@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 63,
+      "minor": 64,
       "patch": 0
     }
   ],
@@ -259,6 +259,19 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xdddddd4301a082e62e84e43f474f044423921918"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x65e413F21BF468Fed23996A8E701dD67FDf22B83",
+      "tokenType": ["native"],
+      "address": "0x65e413F21BF468Fed23996A8E701dD67FDf22B83",
+      "name": "Dyson Sphere",
+      "symbol": "$DYSN",
+      "decimals": 18,
+      "createdAt": "2024-06-17",
+      "updatedAt": "2024-06-17",
+      "logoURI": "https://lineascan.build/token/images/dysnfinnace_32.png"
     },
     {
       "chainId": 59144,
