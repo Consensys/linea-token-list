@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 64,
+      "minor": 65,
       "patch": 0
     }
   ],
@@ -272,6 +272,19 @@
       "createdAt": "2024-06-17",
       "updatedAt": "2024-06-17",
       "logoURI": "https://lineascan.build/token/images/dysnfinnace_32.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x0000000000000000000000000000000000000000",
+      "tokenType": ["native"],
+      "address": "0x0000000000000000000000000000000000000000",
+      "name": "Ether",
+      "symbol": "ETH",
+      "decimals": 18,
+      "createdAt": "2025-11-27T17:29:00.752Z",
+      "updatedAt": "2025-11-27T17:29:00.752Z",
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png"
     },
     {
       "chainId": 59144,
