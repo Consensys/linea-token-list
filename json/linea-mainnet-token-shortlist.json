@@ -8,7 +8,7 @@
     {
       "major": 1,
       "minor": 64,
-      "patch": 0
+      "patch": 1
     }
   ],
   "tokens": [
@@ -264,7 +264,7 @@
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x65e413F21BF468Fed23996A8E701dD67FDf22B83",
-      "tokenType": ["native"],
+      "tokenType": ["canonical-bridge"],
       "address": "0x65e413F21BF468Fed23996A8E701dD67FDf22B83",
       "name": "Dyson Sphere",
       "symbol": "DYSN",
