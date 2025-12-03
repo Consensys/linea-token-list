@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 64,
+      "minor": 65,
       "patch": 0
     }
   ],
@@ -42,6 +42,19 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3F817b28Da4940F018C6b5c0A11C555ebB1264f9"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x29380Ed69d0012E2Fa825B7ECC8751ebB21Aa79d",
+      "tokenType": ["native"],
+      "address": "0x29380Ed69d0012E2Fa825B7ECC8751ebB21Aa79d",
+      "name": "ABT",
+      "symbol": "ABT",
+      "decimals": 18,
+      "createdAt": "2025-12-01",
+      "updatedAt": "2025-12-01",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/1jYxqbettZFT8i4cVyFAze/ea5feeb097f94febfc6f89423a80b0bb/image.png"
     },
     {
       "chainId": 59144,
