@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 65,
+      "minor": 66,
       "patch": 0
     }
   ],
@@ -884,8 +884,8 @@
       "name": "TATERZ",
       "symbol": "TATERZ",
       "decimals": 18,
-      "createdAt": "2025-11-10T13:35:04.174Z",
-      "updatedAt": "2025-11-10T13:35:04.174Z",
+      "createdAt": "2025-11-10",
+      "updatedAt": "2025-11-10",
       "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/1jGcrN7biBE7xE3Qx2PEaN/6fbf788b4c68a54c994a3cd1d7420ad9/image.png"
     },
     {
