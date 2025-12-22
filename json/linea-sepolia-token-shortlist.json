@@ -33,6 +33,24 @@
     {
       "chainId": 59141,
       "chainURI": "https://sepolia.lineascan.build/block/0",
+      "tokenId": "https://sepolia.lineascan.build/token/0x4f3b44bdddb0e2f94a85d75294d0a38e211be6a8",
+      "tokenType": ["canonical-bridge"],
+      "address": "0x4f3B44bDDDB0e2f94a85D75294D0a38e211Be6A8",
+      "name": "Status",
+      "symbol": "STT",
+      "decimals": 18,
+      "createdAt": "2025-12-22",
+      "updatedAt": "2025-12-22",
+      "logoURI": "https://assets.coingecko.com/coins/images/779/standard/status.png",
+      "extension": {
+        "rootChainId": 11155111,
+        "rootChainURI": "https://sepolia.etherscan.io/block/0",
+        "rootAddress": "0xE452027cdEF746c7Cd3DB31CB700428b16cD8E51"
+      }
+    },
+    {
+      "chainId": 59141,
+      "chainURI": "https://sepolia.lineascan.build/block/0",
       "tokenId": "https://sepolia.lineascan.build/address/0xFEce4462D57bD51A6A552365A011b95f0E16d9B7",
       "tokenType": ["bridge-reserved", "external-bridge"],
       "address": "0xFEce4462D57bD51A6A552365A011b95f0E16d9B7",
@@ -60,24 +78,6 @@
       "createdAt": "2024-03-29",
       "updatedAt": "2024-03-29",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
-    },
-    {
-      "chainId": 59141,
-      "chainURI": "https://sepolia.lineascan.build/block/0",
-      "tokenId": "https://sepolia.lineascan.build/token/0x4f3b44bdddb0e2f94a85d75294d0a38e211be6a8",
-      "tokenType": ["canonical-bridge"],
-      "address": "0x4f3B44bDDDB0e2f94a85D75294D0a38e211Be6A8",
-      "name": "Status",
-      "symbol": "STT",
-      "decimals": 18,
-      "createdAt": "2025-12-22",
-      "updatedAt": "2025-12-22",
-      "logoURI": "https://assets.coingecko.com/coins/images/779/standard/status.png",
-      "extension": {
-        "rootChainId": 11155111,
-        "rootChainURI": "https://sepolia.etherscan.io/block/0",
-        "rootAddress": "0xE452027cdEF746c7Cd3DB31CB700428b16cD8E51"
-      }
     }
   ]
 }

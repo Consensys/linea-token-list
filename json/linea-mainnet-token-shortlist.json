@@ -844,6 +844,24 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xa3c26a308ac52520320ebcafdba0bb0aaa105ee8",
+      "tokenType": ["canonical-bridge"],
+      "address": "0xA3C26A308aC52520320ebCAFDBA0bB0Aaa105ee8",
+      "name": "Status",
+      "symbol": "SNT",
+      "decimals": 18,
+      "createdAt": "2025-12-22",
+      "updatedAt": "2025-12-22",
+      "logoURI": "https://assets.coingecko.com/coins/images/779/standard/status.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0x744d70fdbe2ba4cf95131626614a1763df805b9e"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x93F4d0ab6a8B4271f4a28Db399b5E30612D21116",
       "tokenType": ["native"],
       "address": "0x93F4d0ab6a8B4271f4a28Db399b5E30612D21116",
@@ -1168,24 +1186,6 @@
       "createdAt": "2024-04-24",
       "updatedAt": "2024-04-24",
       "logoURI": "https://assets.coingecko.com/coins/images/37375/standard/image.png?1714884543"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xa3c26a308ac52520320ebcafdba0bb0aaa105ee8",
-      "tokenType": ["canonical-bridge"],
-      "address": "0xA3C26A308aC52520320ebCAFDBA0bB0Aaa105ee8",
-      "name": "Status",
-      "symbol": "SNT",
-      "decimals": 18,
-      "createdAt": "2025-12-22",
-      "updatedAt": "2025-12-22",
-      "logoURI": "https://assets.coingecko.com/coins/images/779/standard/status.png",
-      "extension": {
-        "rootChainId": 1,
-        "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0x744d70fdbe2ba4cf95131626614a1763df805b9e"
-      }
     }
   ]
 }
