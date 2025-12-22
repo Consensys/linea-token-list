@@ -33,7 +33,7 @@
     {
       "chainId": 59141,
       "chainURI": "https://sepolia.lineascan.build/block/0",
-      "tokenId": "https://sepolia.lineascan.build/token/0x4f3b44bdddb0e2f94a85d75294d0a38e211be6a8",
+      "tokenId": "https://sepolia.lineascan.build/address/0x4f3b44bdddb0e2f94a85d75294d0a38e211be6a8",
       "tokenType": ["canonical-bridge"],
       "address": "0x4f3B44bDDDB0e2f94a85D75294D0a38e211Be6A8",
       "name": "Status",
