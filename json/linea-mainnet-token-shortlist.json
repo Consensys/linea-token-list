@@ -7,11 +7,24 @@
   "versions": [
     {
       "major": 1,
-      "minor": 74,
+      "minor": 67,
       "patch": 1
     }
   ],
   "tokens": [
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x8717d1bd821fd8faf023fd6fb6087512182b477f",
+      "tokenType": ["native"],
+      "address": "0x8717d1bd821fd8faf023fd6fb6087512182b477f",
+      "name": "1CHOOSE",
+      "symbol": "1CHOOSE",
+      "decimals": 18,
+      "createdAt": "2026-01-04",
+      "updatedAt": "2026-01-04",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/7oNplDT8jL70nhxhHENL0A/318bb1adbd1cadb85d83f0499fa2fbea/image.png"
+    },
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
