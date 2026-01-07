@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 67,
+      "minor": 68,
       "patch": 1
     }
   ],
@@ -112,6 +112,19 @@
       "createdAt": "2025-02-11",
       "updatedAt": "2025-02-11",
       "logoURI": "https://assets.coingecko.com/coins/images/14243/standard/aUSDT.78f5faae.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x662dd54895a653ba2a2b35c762c4a0e7b467feab",
+      "tokenType": ["native"],
+      "address": "0x662dd54895a653ba2a2b35c762c4a0e7b467feab",
+      "name": "AnnexVZ",
+      "symbol": "ANXVZ",
+      "decimals": 18,
+      "createdAt": "2026-01-07",
+      "updatedAt": "2026-01-07",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/5N69W6Bs5VQWzHU46odgJk/c09de71fb6fb940cec30bfa598536dac/image.png"
     },
     {
       "chainId": 59144,
@@ -870,19 +883,6 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0xcf8deDCdC62317beAEdfBee3C77C08425F284486",
-      "tokenType": ["native"],
-      "address": "0xcf8deDCdC62317beAEdfBee3C77C08425F284486",
-      "name": "Staked Mendi",
-      "symbol": "uMendi",
-      "decimals": 18,
-      "createdAt": "2023-08-10",
-      "updatedAt": "2023-08-10",
-      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xd221cf22B2B9643b44ba0873E08eC1952D52508a",
       "tokenType": ["native"],
       "address": "0xd221cf22B2B9643b44ba0873E08eC1952D52508a",
@@ -892,6 +892,19 @@
       "createdAt": "2025-11-10",
       "updatedAt": "2025-11-10",
       "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/1jGcrN7biBE7xE3Qx2PEaN/6964b7dfd9939fc2e765ac0f4e0e0448/Tater_Totz.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xcf8deDCdC62317beAEdfBee3C77C08425F284486",
+      "tokenType": ["native"],
+      "address": "0xcf8deDCdC62317beAEdfBee3C77C08425F284486",
+      "name": "Staked Mendi",
+      "symbol": "uMendi",
+      "decimals": 18,
+      "createdAt": "2023-08-10",
+      "updatedAt": "2023-08-10",
+      "logoURI": "https://assets.coingecko.com/coins/images/31418/standard/mendi_finance_token_logo_v1.png?1696530233"
     },
     {
       "chainId": 59144,
