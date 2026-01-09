@@ -21,17 +21,26 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version-file: '.nvmrc'
+          cache: 'npm'
 
-      - name: Install NPM dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: Run NPM tests
-        run: npm run test
+      - name: Run TypeScript check
+        run: npx tsc --noEmit
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Run tests
+        run: npm test
+
+      - name: Check formatting
+        run: npm run prettify
 
   validate_json:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -39,11 +48,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.12'
 
       - name: Install dependencies
         run: pip install jsonschema
 
-      - name: Validate JSON
-        run: |
-          jsonschema -i ./json/linea-sepolia-token-shortlist.json ./json/schema/l2-token-list-schema.json
+      - name: Validate Sepolia token list
+        run: jsonschema -i ./json/linea-sepolia-token-shortlist.json ./json/schema/l2-token-list-schema.json
+
+      - name: Validate Mainnet token list
+        run: jsonschema -i ./json/linea-mainnet-token-shortlist.json ./json/schema/l2-token-list-schema.json

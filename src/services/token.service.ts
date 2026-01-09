@@ -1,7 +1,7 @@
-import { constants, Contract, ContractInterface, providers, utils } from 'ethers';
-import _ from 'lodash';
+import { type PublicClient, type Abi, type Address, getAddress, zeroAddress } from 'viem';
 
 import { ABIType, LineaTokenList, Token, TokenType } from 'src/models/token';
+import { isEqual } from 'src/utils/compare';
 import { loadABI } from 'src/utils/abi';
 import { config } from 'src/config';
 import { logger } from 'src/logger';
@@ -10,50 +10,63 @@ import { readJsonFile } from 'src/utils/file';
 import { CryptoService, fetchLogoURI } from 'src/utils/logo';
 import { normalizeAddress } from 'src/utils/ethereum';
 
-const RESERVED_STATUS = normalizeAddress('0x111');
+const RESERVED_STATUS: Address = normalizeAddress('0x111');
 const VERIFY_BATCH_SIZE = 10;
+
+/**
+ * Token Bridge ABI subset for nativeToBridgedToken function
+ */
+const TOKEN_BRIDGE_ABI = [
+  {
+    inputs: [
+      { internalType: 'uint256', name: '', type: 'uint256' },
+      { internalType: 'address', name: '', type: 'address' },
+    ],
+    name: 'nativeToBridgedToken',
+    outputs: [{ internalType: 'address', name: '', type: 'address' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+] as const;
 
 /**
  * Discover ERC20 tokens by processing the Canonical Token Bridge events
  */
 export class TokenService {
   tokenList: Token[] = [];
-  erc20ContractABI: ContractInterface;
-  erc20Byte32ContractABI: ContractInterface;
-  private l1Contract: Contract;
-  private l2Contract: Contract;
+  erc20ContractABI: Abi;
+  erc20Byte32ContractABI: Abi;
+  private readonly l1BridgeAddress: Address;
+  private readonly l2BridgeAddress: Address;
 
   constructor(
-    private l1Provider: providers.JsonRpcProvider,
-    private l2Provider: providers.JsonRpcProvider
+    private l1Client: PublicClient,
+    private l2Client: PublicClient
   ) {
     // Load contract ABIs
-    const contractABI = loadABI(config.TOKEN_BRIDGE_ABI_PATH);
     this.erc20ContractABI = loadABI(config.ERC20_ABI_PATH);
     this.erc20Byte32ContractABI = loadABI(config.ERC20_BYTE32_ABI_PATH);
 
-    // Instantiate contracts
-    this.l1Contract = new Contract(config.L1_TOKEN_BRIDGE_ADDRESS, contractABI, l1Provider);
-    this.l2Contract = new Contract(config.L2_TOKEN_BRIDGE_ADDRESS, contractABI, l2Provider);
+    // Validate and store bridge addresses
+    this.l1BridgeAddress = getAddress(config.L1_TOKEN_BRIDGE_ADDRESS);
+    this.l2BridgeAddress = getAddress(config.L2_TOKEN_BRIDGE_ADDRESS);
   }
 
   /**
-   * Gets the contract with the ERC20 ABI or the ERC20 Byte32 ABI
-   * @param tokenAddress
-   * @param chainId
-   * @returns
+   * Gets the token info, falling back to Byte32 ABI if standard fails
+   * @param tokenAddress - Token contract address
+   * @param chainId - Chain ID
+   * @returns Token info or undefined
    */
-  async getContractWithRetry(tokenAddress: string, chainId: number): Promise<Token | undefined> {
-    const provider = chainId === config.ETHEREUM_MAINNET_CHAIN_ID ? this.l1Provider : this.l2Provider;
+  async getContractWithRetry(tokenAddress: Address, chainId: number): Promise<Token | undefined> {
+    const client = chainId === config.ETHEREUM_MAINNET_CHAIN_ID ? this.l1Client : this.l2Client;
 
     try {
-      const erc20Contract = new Contract(tokenAddress, this.erc20ContractABI, provider);
-      return await fetchTokenInfo(erc20Contract, ABIType.STANDARD);
+      return await fetchTokenInfo(client, tokenAddress, this.erc20ContractABI, ABIType.STANDARD);
     } catch (error) {
       logger.warn('Error fetching token info with ERC20 ABI', { address: tokenAddress, error });
       try {
-        const erc20AltContract = new Contract(tokenAddress, this.erc20Byte32ContractABI, provider);
-        return await fetchTokenInfo(erc20AltContract, ABIType.BYTE32);
+        return await fetchTokenInfo(client, tokenAddress, this.erc20Byte32ContractABI, ABIType.BYTE32);
       } catch (error) {
         logger.error('Error fetching token info with ERC20 Byte32 ABI', { address: tokenAddress, error });
         return;
@@ -63,12 +76,12 @@ export class TokenService {
 
   /**
    * Updates the token info based on the event
-   * @param token
-   * @param chainId
-   * @param tokenAddress
-   * @param nativeTokenAddress
-   * @param tokenTypes
-   * @returns
+   * @param token - Token object to update
+   * @param chainId - Chain ID
+   * @param tokenAddress - Token address
+   * @param nativeTokenAddress - Native token address (for bridged tokens)
+   * @param tokenTypes - Token types
+   * @returns Updated token
    */
   updateTokenInfo(
     token: Token,
@@ -104,8 +117,8 @@ export class TokenService {
 
   /**
    * Fetches the token logo from CoinGecko
-   * @param token
-   * @returns
+   * @param token - Token object
+   * @returns Token with logo or undefined
    */
   async fetchAndAssignTokenLogo(token: Token): Promise<Token | undefined> {
     try {
@@ -114,7 +127,7 @@ export class TokenService {
         token.logoURI = logoURIFromCoinGecko;
       }
       return token;
-    } catch (error) {
+    } catch {
       logger.warn('Error fetching logoURI, skip token until next script execution', {
         name: token.name,
       });
@@ -124,18 +137,18 @@ export class TokenService {
 
   /**
    * Adds tokens from the token short list to the token list
-   * @param tokenShortList
+   * @param tokenShortList - Token list to merge
    */
   concatTokenShortList(tokenShortList: LineaTokenList): void {
     for (const newToken of tokenShortList.tokens) {
-      const tokenAddress = utils.getAddress(newToken.address);
+      const tokenAddress: Address = getAddress(newToken.address);
       const existingTokenIndex = this.tokenList.findIndex(
-        (existingToken) => utils.getAddress(existingToken.address) === tokenAddress
+        (existingToken) => getAddress(existingToken.address) === tokenAddress
       );
 
       // If a token exists and is not equal to newToken, replace it.
       // If not exists, add it to the list.
-      if (existingTokenIndex !== -1 && !_.isEqual(this.tokenList[existingTokenIndex], newToken)) {
+      if (existingTokenIndex !== -1 && !isEqual(this.tokenList[existingTokenIndex], newToken)) {
         this.tokenList[existingTokenIndex] = newToken;
       } else if (existingTokenIndex === -1) {
         this.tokenList.push(newToken);
@@ -145,7 +158,7 @@ export class TokenService {
 
   /**
    * Verifies the token list
-   * @param path
+   * @param path - Path to token list JSON
    */
   async verifyList(path: string) {
     logger.info('Verify list', { path });
@@ -170,7 +183,7 @@ export class TokenService {
         token.tokenId = verifiedToken.tokenId;
       }
 
-      if (!_.isEqual(token.tokenType, verifiedToken.tokenType)) {
+      if (!isEqual(token.tokenType, verifiedToken.tokenType)) {
         logger.warn('Token type mismatch', {
           name: token.name,
           currentTokenType: token.tokenType,
@@ -192,8 +205,8 @@ export class TokenService {
 
   /**
    * Get a verified token by chainId
-   * @param token
-   * @returns
+   * @param token - Token to verify
+   * @returns Verified token or undefined
    */
   async verifyToken(token: Token): Promise<Token | undefined> {
     let verifiedToken: Token | undefined = {} as Token;
@@ -229,12 +242,13 @@ export class TokenService {
 
   /**
    * Verifies the token without a root address
-   * @param token
-   * @param verifiedToken
-   * @returns
+   * @param token - Token to verify
+   * @param verifiedToken - Placeholder for verified token
+   * @returns Verified token or undefined
    */
   private async verifyWithoutRootAddress(token: Token, verifiedToken: Token | undefined): Promise<Token | undefined> {
-    verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
+    const tokenAddress: Address = getAddress(token.address);
+    verifiedToken = await this.getContractWithRetry(tokenAddress, config.LINEA_MAINNET_CHAIN_ID);
     if (verifiedToken) {
       verifiedToken = this.updateTokenInfo(verifiedToken, config.LINEA_MAINNET_CHAIN_ID, token.address, undefined, [
         TokenType.NATIVE,
@@ -246,23 +260,30 @@ export class TokenService {
 
   /**
    * Verifies the token with a root address
-   * @param token
-   * @param verifiedToken
-   * @returns
+   * @param token - Token to verify
+   * @param verifiedToken - Placeholder for verified token
+   * @returns Verified token or undefined
    */
   private async verifyWithRootAddress(token: Token, verifiedToken: Token | undefined): Promise<Token | undefined> {
     if (!token.extension?.rootAddress) {
       throw new Error('Extension or rootAddress is undefined');
     }
 
-    const l1nativeToBridgedToken = await this.l1Contract.nativeToBridgedToken(
-      token.extension.rootChainId,
-      token.extension.rootAddress
-    );
-    const l2nativeToBridgedToken = await this.l2Contract.nativeToBridgedToken(
-      token.extension.rootChainId,
-      token.extension.rootAddress
-    );
+    const rootAddress: Address = getAddress(token.extension.rootAddress);
+
+    const l1nativeToBridgedToken = await this.l1Client.readContract({
+      address: this.l1BridgeAddress,
+      abi: TOKEN_BRIDGE_ABI,
+      functionName: 'nativeToBridgedToken',
+      args: [BigInt(token.extension.rootChainId), rootAddress],
+    });
+
+    const l2nativeToBridgedToken = await this.l2Client.readContract({
+      address: this.l2BridgeAddress,
+      abi: TOKEN_BRIDGE_ABI,
+      functionName: 'nativeToBridgedToken',
+      args: [BigInt(token.extension.rootChainId), rootAddress],
+    });
 
     if (l1nativeToBridgedToken === RESERVED_STATUS) {
       if (token.extension.rootChainId === config.ETHEREUM_MAINNET_CHAIN_ID) {
@@ -270,7 +291,7 @@ export class TokenService {
       } else {
         verifiedToken = token;
       }
-    } else if (l2nativeToBridgedToken !== constants.AddressZero) {
+    } else if (l2nativeToBridgedToken !== zeroAddress) {
       verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.CANONICAL_BRIDGE]);
     } else {
       if (token.extension.rootChainId === config.ETHEREUM_MAINNET_CHAIN_ID) {
@@ -285,17 +306,18 @@ export class TokenService {
 
   /**
    * Verifies the token with a reserved status or with a non-zero bridged token
-   * @param token
-   * @param verifiedToken
-   * @param tokenTypes
-   * @returns
+   * @param token - Token to verify
+   * @param verifiedToken - Placeholder for verified token
+   * @param tokenTypes - Token types to assign
+   * @returns Verified token or undefined
    */
   private async getVerifiedTokenInfo(
     token: Token,
     verifiedToken: Token | undefined,
     tokenTypes: TokenType[]
   ): Promise<Token | undefined> {
-    verifiedToken = await this.getContractWithRetry(token.address, config.LINEA_MAINNET_CHAIN_ID);
+    const tokenAddress: Address = getAddress(token.address);
+    verifiedToken = await this.getContractWithRetry(tokenAddress, config.LINEA_MAINNET_CHAIN_ID);
     if (verifiedToken) {
       verifiedToken = this.updateTokenInfo(
         verifiedToken,

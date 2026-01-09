@@ -9,6 +9,7 @@ module.exports = {
     '^src/(.*)$': '<rootDir>/src/$1',
     '^root/(.*)$': '<rootDir>/$1',
   },
+  modulePathIgnorePatterns: ['<rootDir>/scripts/dist/'],
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!**/node_modules/**', '!**/dist/**', '!**/tests/**'],
 };

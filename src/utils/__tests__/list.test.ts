@@ -1,6 +1,6 @@
 import { Token, Version } from 'src/models/token';
 import { getCurrentDate } from 'src/utils/date';
-import { getBumpedVersions, sortAlphabetically } from 'src/utils/list';
+import { getBumpedVersions, sortTokensByName } from 'src/utils/list';
 
 const sampleTokenList: Token[] = [
   {
@@ -70,13 +70,22 @@ describe('Token Utils', () => {
     });
   });
 
-  describe('sortAlphabetically', () => {
-    it('should sort tokens alphabetically by name', () => {
+  describe('sortTokensByName', () => {
+    it('should sort tokens alphabetically by name field', () => {
       const tokens: Token[] = sampleTokenList;
 
-      const sortedTokens = sortAlphabetically(tokens);
+      const sortedTokens = sortTokensByName(tokens);
 
       expect(sortedTokens).toEqual([sampleTokenList[1], sampleTokenList[2], sampleTokenList[0]]);
+    });
+
+    it('should not mutate the original array', () => {
+      const tokens: Token[] = [...sampleTokenList];
+      const originalOrder = tokens.map((t) => t.name);
+
+      sortTokensByName(tokens);
+
+      expect(tokens.map((t) => t.name)).toEqual(originalOrder);
     });
   });
 });

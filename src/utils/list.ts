@@ -16,10 +16,10 @@ export const getBumpedVersions = (versions: Version[]): Version[] => {
 };
 
 /**
- * Returns the token address from the mapping
- * @param tokenList
- * @returns
+ * Sorts tokens alphabetically by their name field
+ * @param tokenList - Array of tokens to sort
+ * @returns A new sorted array (does not mutate the original)
  */
-export const sortAlphabetically = (tokenList: Token[]): Token[] => {
+export const sortTokensByName = (tokenList: Token[]): Token[] => {
   return [...tokenList].sort((a, b) => a.name.localeCompare(b.name));
 };

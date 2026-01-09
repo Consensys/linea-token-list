@@ -1,8 +1,9 @@
 import Joi from 'joi';
 
 export const configSchema = Joi.object({
-  L1_PROVIDER_URL: Joi.string().required().min(1).message('L1_PROVIDER_URL cannot be empty.'),
-  L2_PROVIDER_URL: Joi.string().required().min(1).message('L2_PROVIDER_URL cannot be empty.'),
+  // Provider URLs are optional - fallback to public endpoints if not provided
+  L1_PROVIDER_URL: Joi.string().allow('').optional(),
+  L2_PROVIDER_URL: Joi.string().allow('').optional(),
   L1_TOKEN_BRIDGE_ADDRESS: Joi.string().required().min(1).message('L1_TOKEN_BRIDGE_ADDRESS cannot be empty.'),
   L2_TOKEN_BRIDGE_ADDRESS: Joi.string().required().min(1).message('L2_TOKEN_BRIDGE_ADDRESS cannot be empty.'),
 

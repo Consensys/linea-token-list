@@ -9,12 +9,16 @@ This document provides guidelines and steps for setting up, developing, and mana
 1. Duplicate the Configuration:
 
 ```bash
-cp .env.template .env
+cp .env.example .env
 ```
 
-2. API Key Setup:
+2. API Key Setup (Optional):
 
 Modify `.env` and substitute `<YOUR_INFURA_API_KEY>` with your actual Infura API Key.
+
+> [!NOTE]
+> Provider URLs are optional. If not provided, the verification script will automatically fallback to public RPC
+> endpoints (Llama, Ankr, PublicNode for Ethereum; Linea official RPC for Linea).
 
 ### Dependency Installation
 
@@ -49,12 +53,6 @@ To perform lint, execute:
 ```bash
 npm run lint
 ```
-
-## Managing GitHub Page
-
-The GitHub page content is generated using [index.html](../index.html).
-
-Use the `Live Server` extension in Visual Studio Code to preview this page.
 
 ## Manually add a token to the list
 
@@ -155,7 +153,7 @@ Happy contributing!
 
 - Please ensure the completed JSON follows the schema outlined
   in [./json/schema/l2-token-list-schema.json](./json/schema/l2-token-list-schema.json).
-- Make sure to add the token following alphabetical order of the `symbol` field.
+- Make sure to add the token following alphabetical order of the `name` field. Tokens are automatically sorted by name when saved.
 - Update the `updatedAt` (and potentially `createdAt`) fields for the file and the token
 - Update the file version:
   - Increase `patch` when modifying information of an existing token.
