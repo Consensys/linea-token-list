@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
     "module": "commonjs",
+    "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
       "src/*": ["src/*"],
@@ -12,6 +14,9 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "scripts/dist"
-  }
+    "outDir": "scripts/dist",
+    "types": ["node", "jest"]
+  },
+  "include": ["src/**/*", "scripts/**/*"],
+  "exclude": ["node_modules", "scripts/dist", "**/node_modules/**"]
 }
