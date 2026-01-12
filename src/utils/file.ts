@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { logger } from 'src/logger';
 import { LineaTokenList, Token } from 'src/models/token';
+import { sortTokensByName } from './list';
 
 /**
  * Reads a JSON file
@@ -32,11 +33,13 @@ export const saveJsonFile = (filePath: string, data: any): void => {
 };
 
 /**
- * Orders the properties of a LineaTokenList object, including nested Token objects
+ * Orders the properties of a LineaTokenList object, including nested Token objects.
+ * Tokens are always sorted alphabetically by name.
  * @param list
  * @returns
  */
 export const formatLineaTokenList = (list: LineaTokenList): LineaTokenList => {
+  const sortedTokens = sortTokensByName(list.tokens);
   return {
     type: list.type,
     tokenListId: list.tokenListId,
@@ -44,7 +47,7 @@ export const formatLineaTokenList = (list: LineaTokenList): LineaTokenList => {
     createdAt: list.createdAt,
     updatedAt: list.updatedAt,
     versions: list.versions,
-    tokens: list.tokens.map(formatToken),
+    tokens: sortedTokens.map(formatToken),
   };
 };
 
