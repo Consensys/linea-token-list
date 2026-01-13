@@ -5,7 +5,7 @@
   "author": "Consensys Software Inc.",
   "license": "(MIT OR Apache-2.0)",
   "engines": {
-    "node": "22.21.1",
+    "node": "22.22.0",
     "npm": ">=10.0.0"
   },
   "packageManager": "npm@10.9.2",
