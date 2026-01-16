@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2026-01-09",
+  "updatedAt": "2026-01-16",
   "versions": [
     {
       "major": 1,
-      "minor": 68,
+      "minor": 69,
       "patch": 1
     }
   ],
@@ -832,8 +832,8 @@
       "name": "Status",
       "symbol": "SNT",
       "decimals": 18,
-      "createdAt": "2025-12-22",
-      "updatedAt": "2025-12-22",
+      "createdAt": "2025-12-18",
+      "updatedAt": "2025-12-18",
       "logoURI": "https://assets.coingecko.com/coins/images/779/standard/status.png",
       "extension": {
         "rootChainId": 1,

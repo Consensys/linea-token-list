@@ -39,8 +39,8 @@
       "name": "Status",
       "symbol": "STT",
       "decimals": 18,
-      "createdAt": "2025-12-22",
-      "updatedAt": "2025-12-22",
+      "createdAt": "2024-12-12",
+      "updatedAt": "2025-12-12",
       "logoURI": "https://assets.coingecko.com/coins/images/779/standard/status.png",
       "extension": {
         "rootChainId": 11155111,
