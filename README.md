@@ -4,8 +4,6 @@ This repository maintains lists of ERC20 tokens available on Linea. There are tw
 for Linea Sepolia. It is manually curated by our team, and updated based on submitted PRs via
 the [Linea Developer Hub](https://developer.linea.build).
 
-The information in this repository is also available in a [frontend app](https://consensys.github.io/linea-token-list/).
-
 If you want to add a token or validate an addition, please follow the procedures outlined below.
 
 ## Add a token to the shortlist

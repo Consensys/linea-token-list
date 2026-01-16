@@ -1,45 +1,43 @@
-import { Contract, Event, utils } from 'ethers';
+import { type PublicClient, type Abi, type Address, type Hex, getAddress, hexToString } from 'viem';
 import diff from 'deep-diff';
-import _ from 'lodash';
 
 import { ABIType, LineaTokenList, Token } from 'src/models/token';
+import { isEqual } from './compare';
 import { logger } from 'src/logger';
 import { readJsonFile, saveJsonFile } from './file';
 import { getBumpedVersions } from './list';
 import { getCurrentDate } from './date';
 
 /**
- * Returns the token address and native token address from an event
- * @param event
- * @returns
+ * Fetches the token info from an ERC20 contract
+ * @param client - Viem PublicClient
+ * @param address - Token contract address
+ * @param abi - ERC20 ABI to use
+ * @param abiType - Whether to parse as bytes32 or string
+ * @returns Token object with fetched info
  */
-export const getEventTokenAddresses = (event: Event): { tokenAddress: string; nativeTokenAddress: string } => {
-  const tokenAddress = event?.args?.bridgedToken && utils.getAddress(event.args.bridgedToken);
-  const nativeTokenAddress = event?.args?.nativeToken && utils.getAddress(event?.args?.nativeToken);
-
-  return { tokenAddress, nativeTokenAddress };
-};
-
-/**
- * Fetches the token info from the contract
- * @param erc20Contract
- * @param abiType
- * @returns
- */
-export async function fetchTokenInfo(erc20Contract: Contract, abiType: ABIType): Promise<Token> {
+export async function fetchTokenInfo(
+  client: PublicClient,
+  address: Address,
+  abi: Abi,
+  abiType: ABIType
+): Promise<Token> {
   const [name, symbol, decimals] = await Promise.all([
-    erc20Contract.name(),
-    erc20Contract.symbol(),
-    erc20Contract.decimals(),
+    client.readContract({ address, abi, functionName: 'name' }),
+    client.readContract({ address, abi, functionName: 'symbol' }),
+    client.readContract({ address, abi, functionName: 'decimals' }),
   ]);
 
-  let parsedSymbol = symbol;
-  let parsedName = name;
+  let parsedName: string;
+  let parsedSymbol: string;
 
   // If it's an ERC20 Byte32 contract, parse bytes32 for symbol and name
   if (abiType === ABIType.BYTE32) {
-    parsedName = utils.parseBytes32String(name);
-    parsedSymbol = utils.parseBytes32String(symbol);
+    parsedName = hexToString(name as Hex, { size: 32 }).replace(/\0/g, '');
+    parsedSymbol = hexToString(symbol as Hex, { size: 32 }).replace(/\0/g, '');
+  } else {
+    parsedName = name as string;
+    parsedSymbol = symbol as string;
   }
 
   return {
@@ -56,16 +54,16 @@ export async function fetchTokenInfo(erc20Contract: Contract, abiType: ABIType):
     extension: {
       rootChainId: 1,
       rootChainURI: '',
-      rootAddress: utils.getAddress(erc20Contract.address),
+      rootAddress: getAddress(address),
     },
   };
 }
 
 /**
  * Checks if the token exists in the token list
- * @param tokenList
- * @param tokenAddress
- * @returns
+ * @param tokenList - List of tokens to search
+ * @param tokenAddress - Address to look for
+ * @returns Token if found, undefined otherwise
  */
 export const checkTokenExists = (tokenList: Token[], tokenAddress: string): Token | undefined => {
   const token = tokenList.find((token: Token) => token.address === tokenAddress);
@@ -80,12 +78,12 @@ export const checkTokenExists = (tokenList: Token[], tokenAddress: string): Toke
 
 /**
  * Updates the token list if modifications are found
- * @param path
- * @param originalList
- * @param checkTokenList
+ * @param path - Path to the token list JSON file
+ * @param originalList - Original token list
+ * @param checkTokenList - Token list to compare against
  */
 export const updateTokenListIfNeeded = (path: string, originalList: LineaTokenList, checkTokenList: Token[]): void => {
-  if (_.isEqual(originalList.tokens, checkTokenList)) {
+  if (isEqual(originalList.tokens, checkTokenList)) {
     logger.info('Token list matching');
   } else {
     const tokenList = readJsonFile(path);
@@ -103,8 +101,8 @@ export const updateTokenListIfNeeded = (path: string, originalList: LineaTokenLi
 
 /**
  * Checks if the token fields match
- * @param token
- * @param verifiedToken
+ * @param token - Token from JSON
+ * @param verifiedToken - Token from chain
  */
 export const checkTokenErrors = (token: Token, verifiedToken: Token): void => {
   validateTokenField('address', token.address, verifiedToken.address, token.name);
@@ -117,10 +115,10 @@ export const checkTokenErrors = (token: Token, verifiedToken: Token): void => {
 
 /**
  * Compares the original token with the verified token
- * @param fieldName
- * @param originalValue
- * @param verifiedValue
- * @param tokenName
+ * @param fieldName - Field being validated
+ * @param originalValue - Value from JSON
+ * @param verifiedValue - Value from chain
+ * @param tokenName - Token name for logging
  */
 const validateTokenField = (
   fieldName: string,

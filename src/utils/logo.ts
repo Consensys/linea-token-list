@@ -1,8 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
+import { isAddress, getAddress, type Address } from 'viem';
 import { config } from 'src/config';
 import { logger } from 'src/logger';
 import { Token } from 'src/models/token';
-import { utils } from 'ethers';
 
 interface CoinMarketCapResponse {
   logo: string;
@@ -42,12 +42,12 @@ export const fetchCoinMarketCapLogoURI = async (tokenInfo: Token): Promise<strin
 
   const tokenAddress = chainId === ETHEREUM_MAINNET_CHAIN_ID ? address : extension?.rootAddress;
 
-  if (!tokenAddress) {
-    logger.warn('No token address provided', { tokenInfo });
+  if (!tokenAddress || !isAddress(tokenAddress)) {
+    logger.warn('No valid token address provided', { tokenInfo });
     return null;
   }
 
-  const normalizedAddress = utils.getAddress(tokenAddress); // Assuming utils.getAddress is a function that normalizes/validates the address.
+  const normalizedAddress: Address = getAddress(tokenAddress);
 
   try {
     const url = new URL('/v2/cryptocurrency/info', COINMARKETCAP_URL);
@@ -78,12 +78,12 @@ export const fetchCoinGeckoLogoURI = async (token: Token): Promise<string | null
 
   const tokenAddress = chainId === ETHEREUM_MAINNET_CHAIN_ID ? address : extension?.rootAddress;
 
-  if (!tokenAddress) {
-    logger.warn('No token address provided', { token });
+  if (!tokenAddress || !isAddress(tokenAddress)) {
+    logger.warn('No valid token address provided', { token });
     return null;
   }
 
-  const normalizedAddress = utils.getAddress(tokenAddress); // Assuming utils.getAddress is a function that normalizes/validates the address.
+  const normalizedAddress: Address = getAddress(tokenAddress);
 
   try {
     const url = new URL(normalizedAddress.toLowerCase(), COINGECKO_URL);
@@ -102,7 +102,7 @@ export const fetchCoinGeckoLogoURI = async (token: Token): Promise<string | null
  * @param tokenAddress The address of the token being fetched.
  * @param baseURL The base URL being used to fetch.
  */
-const handleFetchingError = (error: any, tokenAddress: string, baseURL: string): void => {
+const handleFetchingError = (error: unknown, tokenAddress: Address, baseURL: string): void => {
   if (axios.isAxiosError(error)) {
     const { status, data } = error.response || {};
     if (status === 429) {
