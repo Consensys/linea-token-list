@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 75,
+      "minor": 68,
       "patch": 1
     }
   ],
@@ -786,6 +786,19 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x3c56229dbc7dbe69908e3ad3e2ba9016b30e83c5",
+      "tokenType": ["native"],
+      "address": "0x3c56229dbc7dbe69908e3ad3e2ba9016b30e83c5",
+      "name": "PUPI",
+      "symbol": "PUPI",
+      "decimals": 18,
+      "createdAt": "2026-01-30",
+      "updatedAt": "2026-01-30",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/7yjfRa5W6AJUo6XdfOi4NQ/85b069795fba8ba44364f9b1751f2e4e/image.png"
     },
     {
       "chainId": 59144,
