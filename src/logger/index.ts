@@ -1,10 +1,11 @@
 import { createLogger, format, transports } from 'winston';
 import { name } from 'root/package.json';
+import { serialize } from 'src/utils/serialize';
 
 const isDevMode = process.env.NODE_ENV === 'development';
 
 const customFormat = format.printf(({ level, message, timestamp, service, ...metadata }) => {
-  const metaString = Object.keys(metadata).length ? JSON.stringify(metadata, null) : '';
+  const metaString = Object.keys(metadata).length ? serialize(metadata) : '';
   return `${level} ${timestamp} (${service}): ${message}${metaString ? `\n\t${metaString}` : ''}`;
 });
 
