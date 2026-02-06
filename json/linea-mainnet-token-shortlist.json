@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 70,
+      "minor": 71,
       "patch": 1
     }
   ],
@@ -1088,6 +1088,19 @@
       "createdAt": "2023-08-16",
       "updatedAt": "2023-09-26",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/24962.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x5c1bf4b7563c460282617a0304e3cde133200f70",
+      "tokenType": ["native"],
+      "address": "0x5c1bf4b7563c460282617a0304e3cde133200f70",
+      "name": "Volatile",
+      "symbol": "VOLATILE",
+      "decimals": 18,
+      "createdAt": "2026-02-06",
+      "updatedAt": "2026-02-06",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/71D9IOuxhQhQ599XV9wXGj/a1afff24bc0f7ec3e46e24f3ff470cfb/image.png"
     },
     {
       "chainId": 59144,
