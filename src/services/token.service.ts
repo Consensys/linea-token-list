@@ -12,6 +12,10 @@ import { normalizeAddress } from 'src/utils/ethereum';
 
 const RESERVED_STATUS: Address = normalizeAddress('0x111');
 const VERIFY_BATCH_SIZE = 10;
+const ETHEREUM_CHAIN_URI = 'https://etherscan.io/block/0';
+const LINEA_CHAIN_URI = 'https://lineascan.build/block/0';
+const ETHEREUM_ADDRESS_URI_PREFIX = 'https://etherscan.io/address/';
+const LINEA_ADDRESS_URI_PREFIX = 'https://lineascan.build/address/';
 
 /**
  * Token Bridge ABI subset for nativeToBridgedToken function
@@ -28,6 +32,12 @@ const TOKEN_BRIDGE_ABI = [
     type: 'function',
   },
 ] as const;
+
+type BridgeMappings = {
+  l1RootToBridgedToken: Address;
+  l2RootToBridgedToken: Address;
+  l1LineaToEthereumToken: Address;
+};
 
 /**
  * Discover ERC20 tokens by processing the Canonical Token Bridge events
@@ -58,7 +68,7 @@ export class TokenService {
    * @param chainId - Chain ID
    * @returns Token info or undefined
    */
-  async getContractWithRetry(tokenAddress: Address, chainId: number): Promise<Token | undefined> {
+  async fetchTokenMetadataWithAbiFallback(tokenAddress: Address, chainId: number): Promise<Token | undefined> {
     const client = chainId === config.ETHEREUM_MAINNET_CHAIN_ID ? this.l1Client : this.l2Client;
 
     try {
@@ -83,7 +93,7 @@ export class TokenService {
    * @param tokenTypes - Token types
    * @returns Updated token
    */
-  updateTokenInfo(
+  applyChainMetadata(
     token: Token,
     chainId: number,
     tokenAddress: string,
@@ -92,24 +102,15 @@ export class TokenService {
   ): Token {
     token.address = tokenAddress;
     token.tokenType = tokenTypes;
-    if (chainId === config.LINEA_MAINNET_CHAIN_ID) {
-      token.chainId = config.LINEA_MAINNET_CHAIN_ID;
-      token.chainURI = 'https://lineascan.build/block/0';
-      token.tokenId = `https://lineascan.build/address/${tokenAddress}`;
-      if (nativeTokenAddress && token.extension) {
-        token.extension.rootChainId = config.ETHEREUM_MAINNET_CHAIN_ID;
-        token.extension.rootChainURI = 'https://etherscan.io/block/0';
-        token.extension.rootAddress = nativeTokenAddress;
-      }
-    } else {
-      token.chainId = config.ETHEREUM_MAINNET_CHAIN_ID;
-      token.chainURI = 'https://etherscan.io/block/0';
-      token.tokenId = `https://etherscan.io/address/${tokenAddress}`;
-      if (nativeTokenAddress && token.extension) {
-        token.extension.rootChainId = config.LINEA_MAINNET_CHAIN_ID;
-        token.extension.rootChainURI = 'https://lineascan.build/block/0';
-        token.extension.rootAddress = nativeTokenAddress;
-      }
+    const chainData = this.resolveChainMetadata(chainId);
+    token.chainId = chainData.chainId;
+    token.chainURI = chainData.chainURI;
+    token.tokenId = `${chainData.tokenAddressPrefix}${tokenAddress}`;
+
+    if (nativeTokenAddress && token.extension) {
+      token.extension.rootChainId = chainData.rootChainId;
+      token.extension.rootChainURI = chainData.rootChainURI;
+      token.extension.rootAddress = nativeTokenAddress;
     }
 
     return token;
@@ -135,11 +136,16 @@ export class TokenService {
     }
   }
 
+  async enrichTokensWithLogos(tokens: Token[]): Promise<Token[]> {
+    const enrichedTokens = await Promise.all(tokens.map((token) => this.fetchAndAssignTokenLogo(token)));
+    return enrichedTokens.filter((token): token is Token => token !== undefined);
+  }
+
   /**
    * Adds tokens from the token short list to the token list
    * @param tokenShortList - Token list to merge
    */
-  concatTokenShortList(tokenShortList: LineaTokenList): void {
+  mergeShortlistTokens(tokenShortList: LineaTokenList): void {
     for (const newToken of tokenShortList.tokens) {
       const tokenAddress: Address = getAddress(newToken.address);
       const existingTokenIndex = this.tokenList.findIndex(
@@ -163,44 +169,46 @@ export class TokenService {
   async verifyList(path: string) {
     logger.info('Verify list', { path });
     const tokenList = readJsonFile(path);
-    const checkTokenList = JSON.parse(JSON.stringify(tokenList.tokens));
-
-    const verifyTokenInBatch = async (token: Token, index: number) => {
-      logger.info('Checking token', { name: token.name, position: `${index + 1}/${checkTokenList.length}` });
-      const verifiedToken: Token | undefined = await this.verifyToken(token);
-
-      if (!verifiedToken) {
-        throw new Error('Token not found');
-      }
-      checkTokenErrors(token, verifiedToken);
-
-      if (token.tokenId !== verifiedToken.tokenId) {
-        logger.warn('tokenId mismatch', {
-          name: token.name,
-          currentTokenTokenId: token.tokenId,
-          newTokenTokenId: verifiedToken.tokenId,
-        });
-        token.tokenId = verifiedToken.tokenId;
-      }
-
-      if (!isEqual(token.tokenType, verifiedToken.tokenType)) {
-        logger.warn('Token type mismatch', {
-          name: token.name,
-          currentTokenType: token.tokenType,
-          newTokenType: verifiedToken.tokenType,
-        });
-        token.tokenType = verifiedToken.tokenType;
-      }
-    };
+    const checkTokenList: Token[] = JSON.parse(JSON.stringify(tokenList.tokens));
 
     for (let i = 0; i < checkTokenList.length; i += VERIFY_BATCH_SIZE) {
-      // Get the next batch of tokens
       const tokenBatch = checkTokenList.slice(i, i + VERIFY_BATCH_SIZE);
-      // Process each token in the batch in parallel and wait for all to finish
-      await Promise.all(tokenBatch.map((token: Token, j: number) => verifyTokenInBatch(token, i + j)));
+      await Promise.all(tokenBatch.map((token, j) => this.verifyAndSyncToken(token, i + j, checkTokenList.length)));
     }
 
     updateTokenListIfNeeded(path, tokenList, checkTokenList);
+  }
+
+  private async verifyAndSyncToken(token: Token, index: number, totalTokens: number): Promise<void> {
+    logger.info('Checking token', { name: token.name, position: `${index + 1}/${totalTokens}` });
+    const verifiedToken = await this.verifyToken(token);
+
+    if (!verifiedToken) {
+      throw new Error('Token not found');
+    }
+
+    checkTokenErrors(token, verifiedToken);
+    this.syncVerifiedTokenFields(token, verifiedToken);
+  }
+
+  private syncVerifiedTokenFields(currentToken: Token, verifiedToken: Token): void {
+    if (currentToken.tokenId !== verifiedToken.tokenId) {
+      logger.warn('tokenId mismatch', {
+        name: currentToken.name,
+        currentTokenTokenId: currentToken.tokenId,
+        newTokenTokenId: verifiedToken.tokenId,
+      });
+      currentToken.tokenId = verifiedToken.tokenId;
+    }
+
+    if (!isEqual(currentToken.tokenType, verifiedToken.tokenType)) {
+      logger.warn('Token type mismatch', {
+        name: currentToken.name,
+        currentTokenType: currentToken.tokenType,
+        newTokenType: verifiedToken.tokenType,
+      });
+      currentToken.tokenType = verifiedToken.tokenType;
+    }
   }
 
   /**
@@ -209,7 +217,7 @@ export class TokenService {
    * @returns Verified token or undefined
    */
   async verifyToken(token: Token): Promise<Token | undefined> {
-    let verifiedToken: Token | undefined = {} as Token;
+    let verifiedToken: Token | undefined;
 
     switch (token.chainId) {
       case config.ETHEREUM_MAINNET_CHAIN_ID:
@@ -217,9 +225,9 @@ export class TokenService {
       case config.LINEA_MAINNET_CHAIN_ID:
         try {
           if (!token.extension?.rootAddress) {
-            verifiedToken = await this.verifyWithoutRootAddress(token, verifiedToken);
+            verifiedToken = await this.verifyNativeToken(token);
           } else {
-            verifiedToken = await this.verifyWithRootAddress(token, verifiedToken);
+            verifiedToken = await this.verifyTokenWithRootMapping(token);
           }
         } catch (error) {
           logger.error('Error checking token', { name: token.name, error });
@@ -229,12 +237,8 @@ export class TokenService {
       default:
         throw new Error('Invalid chainId');
     }
-    if (
-      verifiedToken &&
-      token.tokenType.includes('external-bridge') &&
-      !verifiedToken.tokenType.includes('external-bridge')
-    ) {
-      verifiedToken.tokenType.push('external-bridge');
+    if (verifiedToken && this.shouldCarryExternalBridgeType(token, verifiedToken)) {
+      verifiedToken.tokenType.push(TokenType.EXTERNAL_BRIDGE);
     }
 
     return verifiedToken;
@@ -243,83 +247,158 @@ export class TokenService {
   /**
    * Verifies the token without a root address
    * @param token - Token to verify
-   * @param verifiedToken - Placeholder for verified token
    * @returns Verified token or undefined
    */
-  private async verifyWithoutRootAddress(token: Token, verifiedToken: Token | undefined): Promise<Token | undefined> {
+  private async verifyNativeToken(token: Token): Promise<Token | undefined> {
     const tokenAddress: Address = getAddress(token.address);
-    verifiedToken = await this.getContractWithRetry(tokenAddress, config.LINEA_MAINNET_CHAIN_ID);
+    const verifiedToken = await this.fetchTokenMetadataWithAbiFallback(tokenAddress, config.LINEA_MAINNET_CHAIN_ID);
     if (verifiedToken) {
-      verifiedToken = this.updateTokenInfo(verifiedToken, config.LINEA_MAINNET_CHAIN_ID, token.address, undefined, [
-        TokenType.NATIVE,
-      ]);
-      delete verifiedToken.extension;
+      const updatedToken = this.applyChainMetadata(
+        verifiedToken,
+        config.LINEA_MAINNET_CHAIN_ID,
+        token.address,
+        undefined,
+        [TokenType.NATIVE]
+      );
+      delete updatedToken.extension;
+      return updatedToken;
     }
-    return verifiedToken;
+    return undefined;
   }
 
   /**
    * Verifies the token with a root address
    * @param token - Token to verify
-   * @param verifiedToken - Placeholder for verified token
    * @returns Verified token or undefined
    */
-  private async verifyWithRootAddress(token: Token, verifiedToken: Token | undefined): Promise<Token | undefined> {
+  private async verifyTokenWithRootMapping(token: Token): Promise<Token | undefined> {
     if (!token.extension?.rootAddress) {
       throw new Error('Extension or rootAddress is undefined');
     }
 
     const rootAddress: Address = getAddress(token.extension.rootAddress);
+    const bridgeMappings = await this.fetchBridgeMappings(token, token.extension.rootChainId, rootAddress);
 
-    const l1nativeToBridgedToken = await this.l1Client.readContract({
-      address: this.l1BridgeAddress,
-      abi: TOKEN_BRIDGE_ABI,
-      functionName: 'nativeToBridgedToken',
-      args: [BigInt(token.extension.rootChainId), rootAddress],
+    const bridgeTokenType = this.classifyBridgeTokenType({
+      token,
+      rootAddress,
+      ...bridgeMappings,
     });
 
-    const l2nativeToBridgedToken = await this.l2Client.readContract({
-      address: this.l2BridgeAddress,
-      abi: TOKEN_BRIDGE_ABI,
-      functionName: 'nativeToBridgedToken',
-      args: [BigInt(token.extension.rootChainId), rootAddress],
-    });
-
-    if (l1nativeToBridgedToken === RESERVED_STATUS) {
-      if (token.extension.rootChainId === config.ETHEREUM_MAINNET_CHAIN_ID) {
-        verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.BRIDGE_RESERVED]);
-      } else {
-        verifiedToken = token;
-      }
-    } else if (l2nativeToBridgedToken !== zeroAddress) {
-      verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.CANONICAL_BRIDGE]);
-    } else {
-      if (token.extension.rootChainId === config.ETHEREUM_MAINNET_CHAIN_ID) {
-        verifiedToken = await this.getVerifiedTokenInfo(token, verifiedToken, [TokenType.EXTERNAL_BRIDGE]);
-      } else {
-        verifiedToken = token;
-      }
+    if (!bridgeTokenType) {
+      return token;
     }
 
-    return verifiedToken;
+    return this.fetchAndApplyVerifiedToken(token, [bridgeTokenType]);
+  }
+
+  private async fetchBridgeMappings(token: Token, rootChainId: number, rootAddress: Address): Promise<BridgeMappings> {
+    const tokenAddress: Address = getAddress(token.address);
+    const [l1RootToBridgedToken, l2RootToBridgedToken, l1LineaToEthereumToken] = await Promise.all([
+      this.l1Client.readContract({
+        address: this.l1BridgeAddress,
+        abi: TOKEN_BRIDGE_ABI,
+        functionName: 'nativeToBridgedToken',
+        args: [BigInt(rootChainId), rootAddress],
+      }),
+      this.l2Client.readContract({
+        address: this.l2BridgeAddress,
+        abi: TOKEN_BRIDGE_ABI,
+        functionName: 'nativeToBridgedToken',
+        args: [BigInt(rootChainId), rootAddress],
+      }),
+      this.l1Client.readContract({
+        address: this.l1BridgeAddress,
+        abi: TOKEN_BRIDGE_ABI,
+        functionName: 'nativeToBridgedToken',
+        args: [BigInt(token.chainId), tokenAddress],
+      }),
+    ]);
+
+    return {
+      l1RootToBridgedToken,
+      l2RootToBridgedToken,
+      l1LineaToEthereumToken,
+    };
+  }
+
+  private classifyBridgeTokenType({
+    token,
+    rootAddress,
+    l1RootToBridgedToken,
+    l2RootToBridgedToken,
+    l1LineaToEthereumToken,
+  }: {
+    token: Token;
+    rootAddress: Address;
+    l1RootToBridgedToken: Address;
+    l2RootToBridgedToken: Address;
+    l1LineaToEthereumToken: Address;
+  }): TokenType | undefined {
+    const isEthereumRoot = token.extension?.rootChainId === config.ETHEREUM_MAINNET_CHAIN_ID;
+    if (!isEthereumRoot) {
+      return undefined;
+    }
+
+    if (l1RootToBridgedToken === RESERVED_STATUS) {
+      return TokenType.BRIDGE_RESERVED;
+    }
+
+    const isCanonicalFromL1ToL2 = l2RootToBridgedToken !== zeroAddress;
+    const isCanonicalFromL2ToL1 = l1LineaToEthereumToken !== zeroAddress && l1LineaToEthereumToken === rootAddress;
+
+    if (isCanonicalFromL1ToL2 || isCanonicalFromL2ToL1) {
+      return TokenType.CANONICAL_BRIDGE;
+    }
+
+    return TokenType.EXTERNAL_BRIDGE;
+  }
+
+  private shouldCarryExternalBridgeType(originalToken: Token, verifiedToken: Token): boolean {
+    return (
+      originalToken.tokenType.includes(TokenType.EXTERNAL_BRIDGE) &&
+      !verifiedToken.tokenType.includes(TokenType.EXTERNAL_BRIDGE) &&
+      !verifiedToken.tokenType.includes(TokenType.CANONICAL_BRIDGE)
+    );
+  }
+
+  private resolveChainMetadata(chainId: number): {
+    chainId: number;
+    chainURI: string;
+    tokenAddressPrefix: string;
+    rootChainId: number;
+    rootChainURI: string;
+  } {
+    if (chainId === config.LINEA_MAINNET_CHAIN_ID) {
+      return {
+        chainId: config.LINEA_MAINNET_CHAIN_ID,
+        chainURI: LINEA_CHAIN_URI,
+        tokenAddressPrefix: LINEA_ADDRESS_URI_PREFIX,
+        rootChainId: config.ETHEREUM_MAINNET_CHAIN_ID,
+        rootChainURI: ETHEREUM_CHAIN_URI,
+      };
+    }
+
+    return {
+      chainId: config.ETHEREUM_MAINNET_CHAIN_ID,
+      chainURI: ETHEREUM_CHAIN_URI,
+      tokenAddressPrefix: ETHEREUM_ADDRESS_URI_PREFIX,
+      rootChainId: config.LINEA_MAINNET_CHAIN_ID,
+      rootChainURI: LINEA_CHAIN_URI,
+    };
   }
 
   /**
    * Verifies the token with a reserved status or with a non-zero bridged token
    * @param token - Token to verify
-   * @param verifiedToken - Placeholder for verified token
    * @param tokenTypes - Token types to assign
    * @returns Verified token or undefined
    */
-  private async getVerifiedTokenInfo(
-    token: Token,
-    verifiedToken: Token | undefined,
-    tokenTypes: TokenType[]
-  ): Promise<Token | undefined> {
+  private async fetchAndApplyVerifiedToken(token: Token, tokenTypes: TokenType[]): Promise<Token | undefined> {
     const tokenAddress: Address = getAddress(token.address);
-    verifiedToken = await this.getContractWithRetry(tokenAddress, config.LINEA_MAINNET_CHAIN_ID);
+    const verifiedToken = await this.fetchTokenMetadataWithAbiFallback(tokenAddress, config.LINEA_MAINNET_CHAIN_ID);
     if (verifiedToken) {
-      verifiedToken = this.updateTokenInfo(
+      return this.applyChainMetadata(
         verifiedToken,
         config.LINEA_MAINNET_CHAIN_ID,
         token.address,
@@ -327,6 +406,6 @@ export class TokenService {
         tokenTypes
       );
     }
-    return verifiedToken;
+    return undefined;
   }
 }
