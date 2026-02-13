@@ -7,7 +7,6 @@ import { config } from 'src/config';
 import { logger } from 'src/logger';
 import { checkTokenErrors, fetchTokenInfo, updateTokenListIfNeeded } from 'src/utils/token';
 import { readJsonFile } from 'src/utils/file';
-import { CryptoService, fetchLogoURI } from 'src/utils/logo';
 import { normalizeAddress } from 'src/utils/ethereum';
 
 const RESERVED_STATUS: Address = normalizeAddress('0x111');
@@ -114,31 +113,6 @@ export class TokenService {
     }
 
     return token;
-  }
-
-  /**
-   * Fetches the token logo from CoinGecko
-   * @param token - Token object
-   * @returns Token with logo or undefined
-   */
-  async fetchAndAssignTokenLogo(token: Token): Promise<Token | undefined> {
-    try {
-      const logoURIFromCoinGecko = await fetchLogoURI(token, CryptoService.COINGECKO);
-      if (logoURIFromCoinGecko) {
-        token.logoURI = logoURIFromCoinGecko;
-      }
-      return token;
-    } catch {
-      logger.warn('Error fetching logoURI, skip token until next script execution', {
-        name: token.name,
-      });
-      return undefined;
-    }
-  }
-
-  async enrichTokensWithLogos(tokens: Token[]): Promise<Token[]> {
-    const enrichedTokens = await Promise.all(tokens.map((token) => this.fetchAndAssignTokenLogo(token)));
-    return enrichedTokens.filter((token): token is Token => token !== undefined);
   }
 
   /**

@@ -25,20 +25,6 @@ describe('TokenService', () => {
     tokenService = new TokenService(l1Client, l2Client);
   });
 
-  describe('fetchAndAssignTokenLogo', () => {
-    it('should fetch and assign the token logo URI', async () => {
-      const token: Token = mockExistingTokenList[0];
-      const mockLogoURI = 'https://s2.coinmarketcap.com/static/img/coins/64x64/15024.png';
-
-      const fetchLogoURIMock = jest.spyOn(tokenService, 'fetchAndAssignTokenLogo');
-      fetchLogoURIMock.mockResolvedValue(mockExistingTokenList[0]);
-
-      const result = await tokenService.fetchAndAssignTokenLogo(token);
-
-      expect(result?.logoURI).toEqual(mockLogoURI);
-    });
-  });
-
   describe('applyChainMetadata', () => {
     it('should update token info for Linea mainnet chain', () => {
       const baseToken: Token = {
