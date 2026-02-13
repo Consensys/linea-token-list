@@ -33,8 +33,8 @@ const TOKEN_BRIDGE_ABI = [
 ] as const;
 
 type BridgeMappings = {
-  l1RootToBridgedToken: Address;
-  l2RootToBridgedToken: Address;
+  l1RootStatusMapping: Address;
+  l2EthereumToLineaToken: Address;
   l1LineaToEthereumToken: Address;
 };
 
@@ -268,7 +268,7 @@ export class TokenService {
 
   private async fetchBridgeMappings(token: Token, rootChainId: number, rootAddress: Address): Promise<BridgeMappings> {
     const tokenAddress: Address = getAddress(token.address);
-    const [l1RootToBridgedToken, l2RootToBridgedToken, l1LineaToEthereumToken] = await Promise.all([
+    const [l1RootStatusMapping, l2EthereumToLineaToken, l1LineaToEthereumToken] = await Promise.all([
       this.l1Client.readContract({
         address: this.l1BridgeAddress,
         abi: TOKEN_BRIDGE_ABI,
@@ -290,8 +290,8 @@ export class TokenService {
     ]);
 
     return {
-      l1RootToBridgedToken,
-      l2RootToBridgedToken,
+      l1RootStatusMapping,
+      l2EthereumToLineaToken,
       l1LineaToEthereumToken,
     };
   }
@@ -299,14 +299,14 @@ export class TokenService {
   private classifyBridgeTokenType({
     token,
     rootAddress,
-    l1RootToBridgedToken,
-    l2RootToBridgedToken,
+    l1RootStatusMapping,
+    l2EthereumToLineaToken,
     l1LineaToEthereumToken,
   }: {
     token: Token;
     rootAddress: Address;
-    l1RootToBridgedToken: Address;
-    l2RootToBridgedToken: Address;
+    l1RootStatusMapping: Address;
+    l2EthereumToLineaToken: Address;
     l1LineaToEthereumToken: Address;
   }): TokenType | undefined {
     const isEthereumRoot = token.extension?.rootChainId === config.ETHEREUM_MAINNET_CHAIN_ID;
@@ -314,11 +314,15 @@ export class TokenService {
       return undefined;
     }
 
-    if (l1RootToBridgedToken === RESERVED_STATUS) {
+    if (
+      l1RootStatusMapping === RESERVED_STATUS ||
+      l2EthereumToLineaToken === RESERVED_STATUS ||
+      l1LineaToEthereumToken === RESERVED_STATUS
+    ) {
       return TokenType.BRIDGE_RESERVED;
     }
 
-    const isCanonicalFromL1ToL2 = l2RootToBridgedToken !== zeroAddress;
+    const isCanonicalFromL1ToL2 = l2EthereumToLineaToken !== zeroAddress;
     const isCanonicalFromL2ToL1 = l1LineaToEthereumToken !== zeroAddress && l1LineaToEthereumToken === rootAddress;
 
     if (isCanonicalFromL1ToL2 || isCanonicalFromL2ToL1) {
