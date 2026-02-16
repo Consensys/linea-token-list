@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 68,
+      "minor": 76,
       "patch": 1
     }
   ],
@@ -797,7 +797,7 @@
       "symbol": "PUPI",
       "decimals": 18,
       "createdAt": "2026-01-30",
-      "updatedAt": "2026-01-30",
+      "updatedAt": "2026-02-16",
       "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/7yjfRa5W6AJUo6XdfOi4NQ/85b069795fba8ba44364f9b1751f2e4e/image.png"
     },
     {
