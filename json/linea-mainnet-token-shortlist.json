@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 71,
+      "minor": 72,
       "patch": 1
     }
   ],
@@ -1137,6 +1137,19 @@
       "createdAt": "2023-08-08",
       "updatedAt": "2023-08-08",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x2c2Dc9770c1185e76920C8e763c4833B7a02Dd1A",
+      "tokenType": ["native"],
+      "address": "0x2c2Dc9770c1185e76920C8e763c4833B7a02Dd1A",
+      "name": "Wormy",
+      "symbol": "WRMY",
+      "decimals": 18,
+      "createdAt": "2025-12-09",
+      "updatedAt": "2025-12-09",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/5ucn47Sy04FShrb8treDqS/aefdc06e6769e2425ee14f8bd9882cf5/image.png"
     },
     {
       "chainId": 59144,
