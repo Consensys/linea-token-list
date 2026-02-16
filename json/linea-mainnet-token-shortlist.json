@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 73,
+      "minor": 74,
       "patch": 1
     }
   ],
@@ -332,7 +332,7 @@
       "symbol": "FLAG",
       "decimals": 18,
       "createdAt": "2025-12-30",
-      "updatedAt": "2025-12-30",
+      "updatedAt": "2026-02-16",
       "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/1PiTC5Ry1s30slazDLauMf/044962435f9e73539026557df9fc088a/image.png"
     },
     {
