@@ -25,21 +25,7 @@ describe('TokenService', () => {
     tokenService = new TokenService(l1Client, l2Client);
   });
 
-  describe('fetchAndAssignTokenLogo', () => {
-    it('should fetch and assign the token logo URI', async () => {
-      const token: Token = mockExistingTokenList[0];
-      const mockLogoURI = 'https://s2.coinmarketcap.com/static/img/coins/64x64/15024.png';
-
-      const fetchLogoURIMock = jest.spyOn(tokenService, 'fetchAndAssignTokenLogo');
-      fetchLogoURIMock.mockResolvedValue(mockExistingTokenList[0]);
-
-      const result = await tokenService.fetchAndAssignTokenLogo(token);
-
-      expect(result?.logoURI).toEqual(mockLogoURI);
-    });
-  });
-
-  describe('updateTokenInfo', () => {
+  describe('applyChainMetadata', () => {
     it('should update token info for Linea mainnet chain', () => {
       const baseToken: Token = {
         chainId: 0,
@@ -62,7 +48,7 @@ describe('TokenService', () => {
       const tokenAddress = '0x1234567890123456789012345678901234567890';
       const nativeTokenAddress = '0x0987654321098765432109876543210987654321';
 
-      const result = tokenService.updateTokenInfo(
+      const result = tokenService.applyChainMetadata(
         baseToken,
         config.LINEA_MAINNET_CHAIN_ID,
         tokenAddress,
@@ -102,7 +88,7 @@ describe('TokenService', () => {
       const tokenAddress = '0x1234567890123456789012345678901234567890';
       const nativeTokenAddress = '0x0987654321098765432109876543210987654321';
 
-      const result = tokenService.updateTokenInfo(
+      const result = tokenService.applyChainMetadata(
         baseToken,
         config.ETHEREUM_MAINNET_CHAIN_ID,
         tokenAddress,
@@ -136,9 +122,13 @@ describe('TokenService', () => {
 
       const tokenAddress = '0x1234567890123456789012345678901234567890';
 
-      const result = tokenService.updateTokenInfo(baseToken, config.LINEA_MAINNET_CHAIN_ID, tokenAddress, undefined, [
-        TokenType.NATIVE,
-      ]);
+      const result = tokenService.applyChainMetadata(
+        baseToken,
+        config.LINEA_MAINNET_CHAIN_ID,
+        tokenAddress,
+        undefined,
+        [TokenType.NATIVE]
+      );
 
       expect(result.chainId).toBe(config.LINEA_MAINNET_CHAIN_ID);
       expect(result.address).toBe(tokenAddress);
@@ -168,7 +158,7 @@ describe('TokenService', () => {
       const tokenAddress = '0x1234567890123456789012345678901234567890';
       const nativeTokenAddress = '0x0987654321098765432109876543210987654321';
 
-      const result = tokenService.updateTokenInfo(
+      const result = tokenService.applyChainMetadata(
         baseToken,
         config.LINEA_MAINNET_CHAIN_ID,
         tokenAddress,
@@ -180,11 +170,11 @@ describe('TokenService', () => {
     });
   });
 
-  describe('concatTokenShortList', () => {
+  describe('mergeShortlistTokens', () => {
     it('should add new tokens to the token list', () => {
       tokenService['tokenList'] = [...mockExistingTokenList];
 
-      tokenService.concatTokenShortList(mockTokenShortlist);
+      tokenService.mergeShortlistTokens(mockTokenShortlist);
 
       expect(tokenService['tokenList']).toHaveLength(3);
       expect(tokenService['tokenList']).toEqual(
@@ -198,7 +188,7 @@ describe('TokenService', () => {
     it('should replace existing tokens in the token list if they are different', () => {
       tokenService['tokenList'] = mockExistingTokenList;
 
-      tokenService.concatTokenShortList(mockTokenShortlist);
+      tokenService.mergeShortlistTokens(mockTokenShortlist);
 
       expect(tokenService['tokenList']).toHaveLength(3);
       expect(tokenService['tokenList']).toEqual(expect.arrayContaining([mockTokenShortlist.tokens[0]]));
@@ -207,7 +197,7 @@ describe('TokenService', () => {
     it('should not modify the token list if existing tokens are the same', () => {
       tokenService['tokenList'] = [...mockExistingTokenList];
 
-      tokenService.concatTokenShortList(mockTokenShortlist);
+      tokenService.mergeShortlistTokens(mockTokenShortlist);
 
       expect(tokenService['tokenList']).toHaveLength(3);
       expect(tokenService['tokenList']).toEqual(expect.arrayContaining([...mockExistingTokenList]));
@@ -216,7 +206,7 @@ describe('TokenService', () => {
     it('should handle empty token list', () => {
       tokenService['tokenList'] = [];
 
-      tokenService.concatTokenShortList(mockTokenShortlist);
+      tokenService.mergeShortlistTokens(mockTokenShortlist);
 
       expect(tokenService['tokenList']).toHaveLength(2);
       expect(tokenService['tokenList']).toEqual(mockTokenShortlist.tokens);
@@ -239,7 +229,7 @@ describe('TokenService', () => {
         ],
       };
 
-      tokenService.concatTokenShortList(shortlistWithSameAddress);
+      tokenService.mergeShortlistTokens(shortlistWithSameAddress);
 
       expect(tokenService['tokenList']).toHaveLength(1);
       expect(tokenService['tokenList'][0].logoURI).toBe('https://updated-logo-url.com/logo.png');

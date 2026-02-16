@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2026-02-04",
+  "updatedAt": "2026-02-12",
   "versions": [
     {
       "major": 1,
-      "minor": 70,
+      "minor": 71,
       "patch": 1
     }
   ],
@@ -282,7 +282,7 @@
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x65e413F21BF468Fed23996A8E701dD67FDf22B83",
-      "tokenType": ["external-bridge"],
+      "tokenType": ["canonical-bridge"],
       "address": "0x65e413F21BF468Fed23996A8E701dD67FDf22B83",
       "name": "Dyson Sphere",
       "symbol": "DYSN",
