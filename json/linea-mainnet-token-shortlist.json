@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 67,
+      "minor": 74,
       "patch": 1
     }
   ],
@@ -277,6 +277,19 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x3aFfCCa64c2A6f4e3B6Bd9c64CD2C969EFd1ECBe"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xF312Ec9f8087C87fbF3439B0369eA233a1EE4A7D",
+      "tokenType": ["native"],
+      "address": "0xF312Ec9f8087C87fbF3439B0369eA233a1EE4A7D",
+      "name": "Dust",
+      "symbol": "DUST",
+      "decimals": 18,
+      "createdAt": "2025-12-31",
+      "updatedAt": "2026-02-16",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/2ufO5OvcM7IvY4cq05MMCJ/9b6804c3450b62dc84f0fc17f778b67a/image.png"
     },
     {
       "chainId": 59144,
