@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 67,
+      "minor": 75,
       "patch": 1
     }
   ],
@@ -22,7 +22,7 @@
       "symbol": "1CHOOSE",
       "decimals": 18,
       "createdAt": "2026-01-04",
-      "updatedAt": "2026-01-04",
+      "updatedAt": "2026-02-16",
       "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/7oNplDT8jL70nhxhHENL0A/318bb1adbd1cadb85d83f0499fa2fbea/image.png"
     },
     {
