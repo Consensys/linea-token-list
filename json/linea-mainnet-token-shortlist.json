@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 72,
+      "minor": 73,
       "patch": 1
     }
   ],
@@ -809,6 +809,19 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x60C2d7AF58dA5915Af06F5E7a0e49fc98271A4b3",
+      "tokenType": ["native"],
+      "address": "0x60C2d7AF58dA5915Af06F5E7a0e49fc98271A4b3",
+      "name": "Shortia Token",
+      "symbol": "SHRT",
+      "decimals": 18,
+      "createdAt": "2025-12-28",
+      "updatedAt": "2026-02-16",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/3Ez4dkRa1nQSNO9fuAdZSY/36697bda38846396c9d75b6504e19e07/image.png"
     },
     {
       "chainId": 59144,
