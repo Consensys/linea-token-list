@@ -12,9 +12,6 @@ export const configSchema = Joi.object({
   ERC20_BYTE32_ABI_PATH: Joi.string().default('src/abis/ERC20-byte32.abi.json'),
   TOKEN_SHORT_LIST_PATH: Joi.string().default('json/linea-mainnet-token-shortlist.json'),
 
-  COINGECKO_URL: Joi.string().default('https://api.coingecko.com/api/v3/coins/1/contract/'),
-  COINMARKETCAP_URL: Joi.string().default('https://pro-api.coinmarketcap.com'),
-  COINMARKETCAP_API_KEY: Joi.string().allow('').optional(),
   ETHEREUM_MAINNET_CHAIN_ID: Joi.number().default(1),
   LINEA_MAINNET_CHAIN_ID: Joi.number().default(59144),
 });

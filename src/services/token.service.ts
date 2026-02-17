@@ -142,7 +142,7 @@ export class TokenService {
    */
   async verifyList(path: string) {
     logger.info('Verify list', { path });
-    const tokenList = readJsonFile(path);
+    const tokenList = readJsonFile(path) as LineaTokenList;
     const checkTokenList: Token[] = JSON.parse(JSON.stringify(tokenList.tokens));
 
     for (let i = 0; i < checkTokenList.length; i += VERIFY_BATCH_SIZE) {

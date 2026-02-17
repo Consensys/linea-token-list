@@ -60,23 +60,6 @@ export async function fetchTokenInfo(
 }
 
 /**
- * Checks if the token exists in the token list
- * @param tokenList - List of tokens to search
- * @param tokenAddress - Address to look for
- * @returns Token if found, undefined otherwise
- */
-export const checkTokenExists = (tokenList: Token[], tokenAddress: string): Token | undefined => {
-  const token = tokenList.find((token: Token) => token.address === tokenAddress);
-  if (token && token.extension?.rootAddress) {
-    return token;
-  }
-  const tokenExtension = tokenList.find((token: Token) => token.extension?.rootAddress === tokenAddress);
-  if (tokenExtension && tokenExtension.address) {
-    return tokenExtension;
-  }
-};
-
-/**
  * Updates the token list if modifications are found
  * @param path - Path to the token list JSON file
  * @param originalList - Original token list
@@ -86,9 +69,9 @@ export const updateTokenListIfNeeded = (path: string, originalList: LineaTokenLi
   if (isEqual(originalList.tokens, checkTokenList)) {
     logger.info('Token list matching');
   } else {
-    const tokenList = readJsonFile(path);
+    const tokenList = readJsonFile(path) as LineaTokenList;
     const differences = diff(originalList.tokens, checkTokenList);
-    const newTokenList = {
+    const newTokenList: LineaTokenList = {
       ...tokenList,
       updatedAt: getCurrentDate(),
       versions: getBumpedVersions(tokenList.versions),
