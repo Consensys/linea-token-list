@@ -2,26 +2,19 @@
   "name": "linea-token-list",
   "version": "2.0.0",
   "repository": "git@github.com:Consensys/linea-token-list.git",
-  "author": "Consensys Software Inc.",
   "license": "(MIT OR Apache-2.0)",
-  "engines": {
-    "node": "22.22.0",
-    "npm": ">=10.0.0"
-  },
-  "packageManager": "npm@10.9.2",
+  "author": "Consensys Software Inc.",
   "scripts": {
-    "prettify": "prettier --config .prettierrc --check \"**/*.{json,md,yml,js,ts}\"",
-    "prettify:fix": "npm run prettify -- --write",
-    "prettify:shortlist": "prettier --config .prettierrc --check \"json/*-shortlist.json\"",
-    "prettify:shortlist:fix": "npm run prettify:shortlist -- --write",
-    "precommit": "npm run prettify",
-    "prepare": "husky install",
-    "verify": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/verifyMainnetShortlist.js && npm run prettify:fix",
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "husky",
+    "prettier": "prettier --check \"**/*.{json,md,yml,js,ts}\"",
+    "prettier:fix": "npm run prettier -- --write",
     "test": "jest",
-    "lint": "eslint './src/**/*.ts' --quiet"
+    "typecheck": "tsc --noEmit",
+    "verify": "tsc && node -r tsconfig-paths/register scripts/dist/scripts/verifyMainnetShortlist.js && npm run prettier:fix"
   },
   "dependencies": {
-    "axios": "^1.13.5",
     "deep-diff": "^1.0.2",
     "dotenv": "^16.6.1",
     "joi": "^17.13.3",
@@ -30,30 +23,24 @@
     "winston": "^3.19.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.28.5",
-    "@babel/preset-typescript": "^7.28.5",
     "@types/deep-diff": "^1.0.5",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.15.33",
-    "@typescript-eslint/eslint-plugin": "^8.32.1",
-    "@typescript-eslint/parser": "^8.32.1",
-    "babel-jest": "^29.7.0",
-    "eslint": "^8.57.1",
+    "eslint": "^9.39.2",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
-    "mockdate": "^3.0.5",
     "prettier": "^3.7.4",
     "ts-jest": "^29.4.6",
-    "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.0"
+  },
+  "packageManager": "npm@10.9.2",
+  "engines": {
+    "node": "22.22.0",
+    "npm": ">=10.0.0"
   },
   "_moduleAliases": {
     "src": "scripts/dist/src"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run precommit"
-    }
   }
 }

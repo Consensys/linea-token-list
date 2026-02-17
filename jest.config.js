@@ -1,15 +1,15 @@
 module.exports = {
   testEnvironment: 'node',
   transform: {
-    '^.+\\.tsx?$': 'babel-jest',
+    '^.+\\.ts$': 'ts-jest',
   },
   testRegex: '(/__tests__/.*\\.(test|spec)\\.ts?$)|(\\.(test|spec)\\.ts?$)',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleFileExtensions: ['ts', 'js', 'json', 'node'],
   moduleNameMapper: {
     '^src/(.*)$': '<rootDir>/src/$1',
     '^root/(.*)$': '<rootDir>/$1',
   },
   modulePathIgnorePatterns: ['<rootDir>/scripts/dist/'],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!**/node_modules/**', '!**/dist/**', '!**/tests/**'],
+  collectCoverageFrom: ['src/**/*.ts', '!**/node_modules/**', '!**/dist/**', '!**/tests/**'],
 };

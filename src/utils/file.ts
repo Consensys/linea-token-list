@@ -8,7 +8,7 @@ import { sortTokensByName } from './list';
  * @param filePath
  * @returns
  */
-export const readJsonFile = (filePath: string): any => {
+export const readJsonFile = (filePath: string): unknown => {
   try {
     return JSON.parse(fs.readFileSync(filePath).toString());
   } catch (error) {
@@ -22,7 +22,7 @@ export const readJsonFile = (filePath: string): any => {
  * @param filePath
  * @param data
  */
-export const saveJsonFile = (filePath: string, data: any): void => {
+export const saveJsonFile = (filePath: string, data: LineaTokenList): void => {
   try {
     const formattedData = formatLineaTokenList(data);
     fs.writeFileSync(filePath, JSON.stringify(formattedData, null, 2));

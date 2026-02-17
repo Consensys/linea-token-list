@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Run TypeScript check
-        run: npx tsc --noEmit
+        run: npm run typecheck
 
       - name: Run linter
         run: npm run lint
@@ -37,16 +37,16 @@ jobs:
         run: npm test
 
       - name: Check formatting
-        run: npm run prettify
+        run: npm run prettier
 
   validate_json:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 

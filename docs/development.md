@@ -1,161 +1,151 @@
-# Linea Token List - Development Guide
+# Linea Token List -- Development Guide
 
-This document provides guidelines and steps for setting up, developing, and managing the Linea Token List project.
+This document provides guidelines and steps for setting up, developing, and managing
+the Linea Token List project.
 
 ## Quick Start
 
-### Configuration Setup
+```bash
+cp .env.example .env   # configure optional provider URLs
+npm install
+npm test               # run the unit-test suite
+```
 
-1. Duplicate the Configuration:
+## Configuration
+
+Duplicate the example configuration:
 
 ```bash
 cp .env.example .env
 ```
 
-2. API Key Setup (Optional):
+Provider URLs are optional. If not provided, the verification script automatically falls
+back to public RPC endpoints (Llama, Ankr, PublicNode for Ethereum; the official Linea
+RPC for Linea). To use Infura, replace `<YOUR_INFURA_API_KEY>` in `.env` with your
+actual Infura API key.
 
-Modify `.env` and substitute `<YOUR_INFURA_API_KEY>` with your actual Infura API Key.
+See the [Environment Variables](#environment-variables) section for a full reference.
 
-> [!NOTE]
-> Provider URLs are optional. If not provided, the verification script will automatically fallback to public RPC
-> endpoints (Llama, Ankr, PublicNode for Ethereum; Linea official RPC for Linea).
+## Scripts
 
-### Dependency Installation
+| Command                | Description                                                            |
+| ---------------------- | ---------------------------------------------------------------------- |
+| `npm test`             | Run the unit-test suite (Jest)                                         |
+| `npm run lint`         | Check for lint errors (ESLint)                                         |
+| `npm run lint:fix`     | Auto-fix lint errors                                                   |
+| `npm run prettier`     | Check formatting (Prettier)                                            |
+| `npm run prettier:fix` | Auto-fix formatting                                                    |
+| `npm run verify`       | Compile TypeScript, verify mainnet shortlist on-chain, and auto-format |
 
-Install all the necessary packages via:
+## Environment Variables
 
-```bash
-npm i
-```
+| Variable              | Required | Default                                      | Description                                     |
+| --------------------- | -------- | -------------------------------------------- | ----------------------------------------------- |
+| `NODE_ENV`            | No       | --                                           | Set to `development` for verbose logging        |
+| `PROVIDER_URL`        | No       | Public endpoints                             | Ethereum L1 JSON-RPC provider URL (e.g. Infura) |
+| `LINEA_PROVIDER_URL`  | No       | Public endpoints                             | Linea L2 JSON-RPC provider URL (e.g. Infura)    |
+| `CONTRACT_ADDRESS`    | No       | `0x051F1D88f0aF5763fB888eC4378b4D8B29ea3319` | L1 token bridge contract address                |
+| `L2_CONTRACT_ADDRESS` | No       | `0x353012dc4a9A6cF55c941bADC267f82004A8ceB9` | L2 token bridge contract address                |
 
-### Scripts Execution
+## Manually Add a Token to the List
 
-<b>Verify mainnet shortlist</b>
+1. Edit [`json/linea-mainnet-token-shortlist.json`](../json/linea-mainnet-token-shortlist.json)
+   (or [`json/linea-sepolia-token-shortlist.json`](../json/linea-sepolia-token-shortlist.json)
+   for testnet) with the token information. Make sure you follow the
+   [guidelines](#guidelines) below.
 
-Run the production script with:
+   Example entry:
 
-```bash
-npm run verify
-```
+   ```json
+   {
+     "chainId": 59144,
+     "chainURI": "https://lineascan.build/block/0",
+     "tokenId": "https://lineascan.build/address/0x...",
+     "tokenType": ["canonical-bridge"],
+     "address": "0x...",
+     "name": "Token Name",
+     "symbol": "TKN",
+     "decimals": 18,
+     "createdAt": "2025-01-15",
+     "updatedAt": "2025-01-15",
+     "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/0000.png",
+     "extension": {
+       "rootChainId": 1,
+       "rootChainURI": "https://etherscan.io/block/0",
+       "rootAddress": "0x..."
+     }
+   }
+   ```
 
-## Unit tests
+2. Commit your changes and push your branch.
 
-To perform unit tests, execute:
+   > **Note:** Only commit the list file. Do not modify the schema or the templates.
 
-```bash
-npm run test
-```
+3. Go to the [pull requests page](https://github.com/Consensys/linea-token-list/pulls)
+   and create a new PR. Make sure to set the base branch as `main`.
 
-## Lint
+A GitHub Actions workflow automatically verifies the integrity of your JSON. If the check
+passes, validators will review the new list. If all the information is correct, they will
+approve the token addition.
 
-To perform lint, execute:
+If a check fails, refer to the error message in the
+[Actions](https://github.com/Consensys/linea-token-list/actions) tab. Make any necessary
+modifications and try again.
 
-```bash
-npm run lint
-```
+## Token Entry Fields
 
-## Manually add a token to the list
+| Field                    | Type     | Required    | Description                                                                       |
+| ------------------------ | -------- | ----------- | --------------------------------------------------------------------------------- |
+| `chainId`                | number   | Yes         | Chain identifier where the token was issued                                       |
+| `chainURI`               | string   | Yes         | Resolvable URI to the genesis block of the chain (RFC 3986)                       |
+| `tokenId`                | string   | Yes         | Resolvable URI to the token deployment transaction or DID (RFC 3986)              |
+| `tokenType`              | string[] | Yes         | Token type(s): `canonical-bridge`, `bridge-reserved`, `external-bridge`, `native` |
+| `address`                | string   | Yes         | Token smart contract address                                                      |
+| `name`                   | string   | Yes         | Token name                                                                        |
+| `symbol`                 | string   | Yes         | Token symbol (e.g. `UNI`)                                                         |
+| `decimals`               | integer  | Yes         | Number of decimals                                                                |
+| `createdAt`              | string   | Yes         | Date when the token was added to the list                                         |
+| `updatedAt`              | string   | Yes         | Date when the token listing was last updated                                      |
+| `logoURI`                | string   | No          | URI or URL of the token logo (RFC 3986)                                           |
+| `extension`              | object   | Conditional | Required if the token has been bridged                                            |
+| `extension.rootChainId`  | number   | Conditional | Chain identifier of the token's native chain                                      |
+| `extension.rootChainURI` | string   | Conditional | URI to the genesis block of the native chain                                      |
+| `extension.rootAddress`  | string   | Conditional | Token address on its native chain                                                 |
 
-1. Fill out the [linea-mainnet-token-shortlist.json](./json/linea-mainnet-token-shortlist.json) with the token's
-   information. Make sure you adhere to the [guidelines](#guidelines).
+## Token Types
 
-Example:
+- **`canonical-bridge`** -- Token originally on Ethereum, bridged to Linea with the
+  [Linea canonical bridge](https://bridge.linea.build/) (also known as the native bridge).
 
-```json
-"tokens": [
-    ...
-    {
-        "chainId": 59141,
-        "chainURI": "https://sepolia.lineascan.build/block/0",
-        "tokenId": "https://sepolia.lineascan.build/address/0xFEce4462D57bD51A6A552365A011b95f0E16d9B7",
-        "tokenType": ["bridge-reserved", "external-bridge"],
-        "address": "0xFEce4462D57bD51A6A552365A011b95f0E16d9B7",
-        "name": "USD//C",
-        "symbol": "USDC",
-        "decimals": 6,
-        "createdAt": "2024-03-27",
-        "updatedAt": "2024-10-01",
-        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
-        "extension": {
-            "rootChainId": 11155111,
-            "rootChainURI": "https://sepolia.etherscan.io/block/0",
-            "rootAddress": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
-        }
-    }
-    ...
-]
-```
+  _Example:_ DAI on Ethereum (`0x6b175474e89094c44da98b954eedeac495271d0f`) bridged to
+  Linea (`0x4AF15ec2A0BD43Db75dd04E62FAA3B8EF36b00d5`).
 
-Fields:
+- **`bridge-reserved`** -- Token reserved in the canonical bridge smart contract to
+  prevent bridging via the Linea canonical bridge. Must be added manually.
 
-| Name         | Description                                                                                                                                                         | type    | Required?                                                   |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ----------------------------------------------------------- |
-| chainId      | The typically used number identifier for the chain on which the token was issued                                                                                    | number  | Mandatory                                                   |
-| chainURI     | A resolvable URI to the genesis block of the chain on which the token was issued following the RFC 3986 standard                                                    | string  | Mandatory                                                   |
-| tokenId      | A resolvable URI of the token following the RFC 3986 standard to for example the deployment transaction of the token, or a DID identifying the token and its issuer | string  | Mandatory                                                   |
-| tokenType    | Describes the type of token (eg: `canonical-bridge`, `bridge-reserved`, `external-bridge`, `native`), see details below.                                            | string  | Mandatory                                                   |
-| address      | Address of the token smart contract                                                                                                                                 | string  | Mandatory                                                   |
-| name         | Token name                                                                                                                                                          | string  | Mandatory                                                   |
-| symbol       | Token symbol e.g. UNI                                                                                                                                               | string  | Mandatory                                                   |
-| decimals     | Allowed number of decimals for the listed token                                                                                                                     | integer | Mandatory                                                   |
-| createdAt    | Date when the token was added to the list                                                                                                                           | string  | Mandatory                                                   |
-| updatedAt    | Date when the token listing was updated                                                                                                                             | string  | Mandatory                                                   |
-| logoURI      | URI or URL of the token logo following the RFC 3986 standard                                                                                                        | string  | Optional                                                    |
-| extension    | Extension to specify information about the token on its native chain if it was bridged                                                                              | Array   | Mandatory if the token has been bridged, otherwise optional |
-| rootChainId  | The typically used number identifier for the chain on which the token was originally issued                                                                         | number  | Mandatory if the token has been bridged, otherwise optional |
-| rootChainURI | A resolvable URI to the genesis block of the root chain on which the token was originally issued following the RFC 3986 standard                                    | string  | Mandatory if the token has been bridged, otherwise optional |
-| rootAddress  | Address of the token on its native chain                                                                                                                            | string  | Mandatory if the token has been bridged, otherwise optional |
+  _Example:_ USDC, WETH.
 
-Token types:
+- **`external-bridge`** -- Token bridged between another layer (usually Ethereum) and
+  Linea using a third-party bridge protocol. Must be added manually.
 
-- `canonical-bridge`: token originally on Ethereum, which has been bridged to Linea with
-  the [Linea canonical bridge](https://bridge.linea.build/) (also known as the native bridge).
+  _Example:_ PEEL, USDC.
 
-  **Example**: DAI on Ethereum Mainnet has this address `0x6b175474e89094c44da98b954eedeac495271d0f`, after being
-  bridged on Linea it has this address `0x4AF15ec2A0BD43Db75dd04E62FAA3B8EF36b00d5`
+- **`native`** -- Token first created on Linea. Must be added manually.
 
-- `bridge-reserved`: token reserved in the canonical bridge smart contract to prevent any bridged **Linea Canonical
-  Bridge**.
-
-  This type needs to be added manually.
-
-  **Example**: USDC, WETH.
-
-- `external-bridge`: token bridged on another layer (Ethereum in general) and Linea using a custom protocol bridge.
-
-  This type needs to be added manually.
-
-  **Example**: PEEL, USDC.
-
-- `native`: Token first created on Linea.
-
-  This type needs to be added manually.
-
-  **Example**: WETH.
-
-3. Commit your changes and push your branch.
-
-> [!NOTE]
-> Only commit the list file. Do not modify the schema or the templates.
-
-4. Go to the [pull requests page](https://github.com/ConsenSys/linea-token-list/pulls) and create a new PR. Make sure to
-   set the base branch as `main`.
-
-A GitHub Actions workflow will automatically verify the integrity of your JSON. If the check passes, validators will
-review the new list. If all the information are correct, they will approve the token addition.
-
-In case of a failing check, refer to the error message in
-the [Actions](https://github.com/ConsenSys/linea-token-list/actions) tab. Make necessary modifications and try again.
-
-Happy contributing!
+  _Example:_ WETH.
 
 ## Guidelines
 
-- Please ensure the completed JSON follows the schema outlined
-  in [./json/schema/l2-token-list-schema.json](./json/schema/l2-token-list-schema.json).
-- Make sure to add the token following alphabetical order of the `name` field. Tokens are automatically sorted by name when saved.
-- Update the `updatedAt` (and potentially `createdAt`) fields for the file and the token
+- Entries must conform to the JSON schema at
+  [`json/schema/l2-token-list-schema.json`](../json/schema/l2-token-list-schema.json).
+- Tokens are automatically sorted alphabetically by `name` when saved.
+- Update the `updatedAt` field (and `createdAt` if applicable) for both the file and the
+  token entry.
 - Update the file version:
   - Increase `patch` when modifying information of an existing token.
   - Increase `minor` when adding a new token.
   - Increase `major` when changing the structure of the file.
+
+## License
+
+Dual-licensed under [MIT](../LICENSE-MIT) or [Apache-2.0](../LICENSE-APACHE).

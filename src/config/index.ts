@@ -1,7 +1,6 @@
-/* istanbul ignore file */
-
 import { config as dotenvConfig } from 'dotenv';
 import { Config } from 'src/models/config';
+import { validateConfig } from 'src/utils/validation';
 
 dotenvConfig();
 
@@ -14,9 +13,8 @@ export const config: Config = {
   ERC20_ABI_PATH: 'src/abis/ERC20.abi.json',
   ERC20_BYTE32_ABI_PATH: 'src/abis/ERC20-byte32.abi.json',
   TOKEN_SHORT_LIST_PATH: 'json/linea-mainnet-token-shortlist.json',
-  COINGECKO_URL: 'https://api.coingecko.com/api/v3/coins/1/contract/',
-  COINMARKETCAP_URL: 'https://pro-api.coinmarketcap.com',
-  COINMARKETCAP_API_KEY: process.env.COINMARKETCAP_API_KEY || '',
   ETHEREUM_MAINNET_CHAIN_ID: 1,
   LINEA_MAINNET_CHAIN_ID: 59144,
 };
+
+validateConfig(config);

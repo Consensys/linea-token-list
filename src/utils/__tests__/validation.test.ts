@@ -16,9 +16,6 @@ describe('validateConfig', () => {
     ERC20_ABI_PATH: 'path2',
     ERC20_BYTE32_ABI_PATH: 'path3',
     TOKEN_SHORT_LIST_PATH: 'path5',
-    COINGECKO_URL: 'http://coingecko.com',
-    COINMARKETCAP_URL: 'http://coinmarketcap.com',
-    COINMARKETCAP_API_KEY: 'key',
     ETHEREUM_MAINNET_CHAIN_ID: 1,
     LINEA_MAINNET_CHAIN_ID: 59144,
   };

@@ -3,7 +3,7 @@ import { ABIType, Token } from 'src/models/token';
 import { logger } from 'src/logger';
 
 import { getCurrentDate } from '../date';
-import { checkTokenErrors, checkTokenExists, fetchTokenInfo } from '../token';
+import { checkTokenErrors, fetchTokenInfo } from '../token';
 
 // Mock viem's readContract
 jest.mock('viem', () => {
@@ -82,71 +82,6 @@ describe('Token Utility Functions', () => {
 
       expect(result.name).toBe('MakerDAO');
       expect(result.symbol).toBe('MKR');
-    });
-  });
-
-  describe('checkTokenExists', () => {
-    it('should find and return the token if it exists in the token list by address', () => {
-      const mockToken: Token = {
-        chainId: 1,
-        chainURI: 'https://lineascan.build/block/0',
-        tokenId: 'https://lineascan.build/address/',
-        tokenType: ['canonical-bridge'],
-        address: '0x3155BA85D5F96b2d030a4966AF206230e46849cb',
-        name: 'MockToken',
-        symbol: 'MTK',
-        decimals: 18,
-        createdAt: '2023-10-13T00:00:00Z',
-        updatedAt: '2023-10-13T00:00:00Z',
-        extension: {
-          rootChainId: 1,
-          rootChainURI: 'https://etherscan.io',
-          rootAddress: '0x8E870D67F660D95d5be530380D0eC0bd388289E1',
-        },
-      };
-
-      const tokenList: Token[] = [mockToken];
-      const tokenAddress = '0x3155BA85D5F96b2d030a4966AF206230e46849cb';
-
-      const result = checkTokenExists(tokenList, tokenAddress);
-
-      expect(result).toEqual(mockToken);
-    });
-
-    it('should find token by extension rootAddress', () => {
-      const mockToken: Token = {
-        chainId: 1,
-        chainURI: 'https://lineascan.build/block/0',
-        tokenId: 'https://lineascan.build/address/',
-        tokenType: ['canonical-bridge'],
-        address: '0x3155BA85D5F96b2d030a4966AF206230e46849cb',
-        name: 'MockToken',
-        symbol: 'MTK',
-        decimals: 18,
-        createdAt: '2023-10-13T00:00:00Z',
-        updatedAt: '2023-10-13T00:00:00Z',
-        extension: {
-          rootChainId: 1,
-          rootChainURI: 'https://etherscan.io',
-          rootAddress: '0x8E870D67F660D95d5be530380D0eC0bd388289E1',
-        },
-      };
-
-      const tokenList: Token[] = [mockToken];
-      const rootAddress = '0x8E870D67F660D95d5be530380D0eC0bd388289E1';
-
-      const result = checkTokenExists(tokenList, rootAddress);
-
-      expect(result).toEqual(mockToken);
-    });
-
-    it('should return undefined if token is not found', () => {
-      const tokenList: Token[] = [];
-      const tokenAddress = '0x3155BA85D5F96b2d030a4966AF206230e46849cb';
-
-      const result = checkTokenExists(tokenList, tokenAddress);
-
-      expect(result).toBeUndefined();
     });
   });
 
