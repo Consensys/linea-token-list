@@ -790,6 +790,19 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x3c56229DBc7dbE69908E3Ad3e2Ba9016b30E83C5",
+      "tokenType": ["native"],
+      "address": "0x3c56229DBc7dbE69908E3Ad3e2Ba9016b30E83C5",
+      "name": "Pupi",
+      "symbol": "PUPI",
+      "decimals": 18,
+      "createdAt": "2026-03-08",
+      "updatedAt": "2026-03-08",
+      "logoURI": "https://raw.githubusercontent.com/matthix73-alt/pupi-assets/main/logo.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x12bbdc004a0e9085ff94df1717336ecbc9f9e5fe",
       "tokenType": ["native"],
       "address": "0x12bbdc004a0e9085ff94df1717336ecbc9f9e5fe",
@@ -1238,19 +1251,6 @@
       "createdAt": "2024-04-24",
       "updatedAt": "2024-04-24",
       "logoURI": "https://assets.coingecko.com/coins/images/37375/standard/image.png?1714884543"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x3c56229DBc7dbE69908E3Ad3e2Ba9016b30E83C5",
-      "tokenType": ["native"],
-      "address": "0x3c56229DBc7dbE69908E3Ad3e2Ba9016b30E83C5",
-      "name": "Pupi",
-      "symbol": "PUPI",
-      "decimals": 18,
-      "createdAt": "2026-03-08",
-      "updatedAt": "2026-03-08",
-      "logoURI": "https://raw.githubusercontent.com/matthix73-alt/pupi-assets/main/logo.png"
     }
   ]
 }
