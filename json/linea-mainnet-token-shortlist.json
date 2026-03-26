@@ -3,11 +3,11 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2026-03-08",
+  "updatedAt": "2026-03-26",
   "versions": [
     {
       "major": 1,
-      "minor": 76,
+      "minor": 77,
       "patch": 1
     }
   ],
@@ -716,14 +716,19 @@
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0xacA92E438df0B2401fF60dA7E4337B687a2435DA",
-      "tokenType": ["native"],
+      "tokenType": ["canonical-bridge"],
       "address": "0xacA92E438df0B2401fF60dA7E4337B687a2435DA",
       "name": "MetaMask USD",
       "symbol": "mUSD",
       "decimals": 6,
       "createdAt": "2025-08-28",
       "updatedAt": "2025-08-28",
-      "logoURI": "https://static.cx.metamask.io/api/v2/tokenIcons/assets/eip155/59144/erc20/0xaca92e438df0b2401ff60da7e4337b687a2435da.png"
+      "logoURI": "https://static.cx.metamask.io/api/v2/tokenIcons/assets/eip155/59144/erc20/0xaca92e438df0b2401ff60da7e4337b687a2435da.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xacA92E438df0B2401fF60dA7E4337B687a2435DA"
+      }
     },
     {
       "chainId": 59144,
@@ -1144,6 +1149,19 @@
     {
       "chainId": 59144,
       "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x2c2Dc9770c1185e76920C8e763c4833B7a02Dd1A",
+      "tokenType": ["native"],
+      "address": "0x2c2Dc9770c1185e76920C8e763c4833B7a02Dd1A",
+      "name": "Wormy",
+      "symbol": "WRMY",
+      "decimals": 18,
+      "createdAt": "2025-12-09",
+      "updatedAt": "2025-12-09",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/5ucn47Sy04FShrb8treDqS/aefdc06e6769e2425ee14f8bd9882cf5/image.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
       "tokenId": "https://lineascan.build/address/0x3aAB2285ddcDdaD8edf438C1bAB47e1a9D05a9b4",
       "tokenType": ["canonical-bridge"],
       "address": "0x3aAB2285ddcDdaD8edf438C1bAB47e1a9D05a9b4",
@@ -1189,19 +1207,6 @@
       "createdAt": "2023-08-08",
       "updatedAt": "2023-08-08",
       "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
-    },
-    {
-      "chainId": 59144,
-      "chainURI": "https://lineascan.build/block/0",
-      "tokenId": "https://lineascan.build/address/0x2c2Dc9770c1185e76920C8e763c4833B7a02Dd1A",
-      "tokenType": ["native"],
-      "address": "0x2c2Dc9770c1185e76920C8e763c4833B7a02Dd1A",
-      "name": "Wormy",
-      "symbol": "WRMY",
-      "decimals": 18,
-      "createdAt": "2025-12-09",
-      "updatedAt": "2025-12-09",
-      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/5ucn47Sy04FShrb8treDqS/aefdc06e6769e2425ee14f8bd9882cf5/image.png"
     },
     {
       "chainId": 59144,
