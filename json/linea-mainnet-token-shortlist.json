@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 77,
+      "minor": 78,
       "patch": 1
     }
   ],
@@ -802,8 +802,8 @@
       "symbol": "PUPI",
       "decimals": 18,
       "createdAt": "2026-03-08",
-      "updatedAt": "2026-03-08",
-      "logoURI": "https://raw.githubusercontent.com/matthix73-alt/pupi-assets/main/logo.png"
+      "updatedAt": "2026-03-26",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/7yjfRa5W6AJUo6XdfOi4NQ/85b069795fba8ba44364f9b1751f2e4e/image.png"
     },
     {
       "chainId": 59144,
