@@ -8,7 +8,7 @@ the [Linea Developer Hub](https://developer.linea.build).
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/) v22.22.0 (see [`.nvmrc`](./.nvmrc))
+- [Node.js](https://nodejs.org/) v22.22.2 (see [`.nvmrc`](./.nvmrc))
 - [npm](https://docs.npmjs.com/) v10.0.0+ (ships with Node.js; pinned to `10.9.2` via `packageManager`)
 
 ## Getting Started
