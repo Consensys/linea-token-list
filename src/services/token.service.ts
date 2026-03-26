@@ -212,7 +212,9 @@ export class TokenService {
         throw new Error('Invalid chainId');
     }
     if (verifiedToken && this.shouldCarryExternalBridgeType(token, verifiedToken)) {
-      verifiedToken.tokenType.push(TokenType.EXTERNAL_BRIDGE);
+      verifiedToken.tokenType = verifiedToken.tokenType
+        .filter((t) => t !== TokenType.CANONICAL_BRIDGE)
+        .concat(TokenType.EXTERNAL_BRIDGE);
     }
 
     return verifiedToken;
@@ -335,8 +337,7 @@ export class TokenService {
   private shouldCarryExternalBridgeType(originalToken: Token, verifiedToken: Token): boolean {
     return (
       originalToken.tokenType.includes(TokenType.EXTERNAL_BRIDGE) &&
-      !verifiedToken.tokenType.includes(TokenType.EXTERNAL_BRIDGE) &&
-      !verifiedToken.tokenType.includes(TokenType.CANONICAL_BRIDGE)
+      !verifiedToken.tokenType.includes(TokenType.EXTERNAL_BRIDGE)
     );
   }
 
