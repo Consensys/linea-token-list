@@ -3,7 +3,7 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2026-05-10",
+  "updatedAt": "2026-05-11",
   "versions": [
     {
       "major": 1,
@@ -820,7 +820,7 @@
       "symbol": "PUPI",
       "decimals": 18,
       "createdAt": "2026-03-08",
-      "updatedAt": "2026-03-26",
+      "updatedAt": "2026-05-10",
       "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/7yjfRa5W6AJUo6XdfOi4NQ/85b069795fba8ba44364f9b1751f2e4e/image.png"
     },
     {
