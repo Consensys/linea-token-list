@@ -741,12 +741,7 @@
       "decimals": 18,
       "createdAt": "2026-05-10",
       "updatedAt": "2026-05-10",
-      "logoURI": "https://raw.githubusercontent.com/foamyfalconlabs/chain-mac/main/mac-logo-256.png",
-        "extension": {
-        "rootChainId": 1,
-        "rootChainURI": "https://etherscan.io/block/0",
-        "rootAddress": "0x5291Ae7F79594214086Deaae0626dD6cbD5FB488"
-      }
+      "logoURI": "https://raw.githubusercontent.com/foamyfalconlabs/chain-mac/main/mac-logo-256.png"
     },
     {
       "chainId": 59144,
