@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 78,
+      "minor": 79,
       "patch": 1
     }
   ],
@@ -156,6 +156,19 @@
       "createdAt": "2024-12-04",
       "updatedAt": "2024-12-04",
       "logoURI": "https://assets.coingecko.com/coins/images/68370/standard/91ba3d27-4051-4329-b6cc-36bda5872b4d.jpeg?1755634398"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0xf5c6825015280cdfd0b56903f9f8b5a2233476f5",
+      "tokenType": ["native"],
+      "address": "0xf5C6825015280CdfD0b56903F9F8B5A2233476F5",
+      "name": "Binance Coin",
+      "symbol": "BNB",
+      "decimals": 18,
+      "createdAt": "2026-05-12",
+      "updatedAt": "2026-05-12",
+      "logoURI": "https://coin-images.coingecko.com/coins/images/53084/large/wrapped_bnb.png?1735264592"
     },
     {
       "chainId": 59144,
