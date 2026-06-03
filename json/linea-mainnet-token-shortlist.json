@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 78,
+      "minor": 79,
       "patch": 1
     }
   ],
@@ -543,6 +543,19 @@
       "createdAt": "2023-12-06",
       "updatedAt": "2024-01-23",
       "logoURI": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/logo/lxp.png"
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x02F289E429655d0C0D713A7dFD26850A81f7cFC5",
+      "tokenType": ["native"],
+      "address": "0x02F289E429655d0C0D713A7dFD26850A81f7cFC5",
+      "name": "LineaDAT",
+      "symbol": "LINEADAT",
+      "decimals": 18,
+      "createdAt": "2026-06-03",
+      "updatedAt": "2026-06-03",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/5h4tKtuwY7VfxlQvHOCjYy/ec8fd5e3dd566138770b7c13ab6086d9/image.png"
     },
     {
       "chainId": 59144,
