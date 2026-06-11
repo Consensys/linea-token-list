@@ -17,7 +17,7 @@
   "dependencies": {
     "deep-diff": "^1.0.2",
     "dotenv": "^16.6.1",
-    "joi": "^17.13.3",
+    "joi": "^18.2.1",
     "module-alias": "^2.2.3",
     "viem": "^2.51.3",
     "winston": "^3.19.0"
