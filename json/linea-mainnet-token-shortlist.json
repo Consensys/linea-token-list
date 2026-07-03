@@ -7,7 +7,7 @@
   "versions": [
     {
       "major": 1,
-      "minor": 78,
+      "minor": 79,
       "patch": 1
     }
   ],
@@ -481,6 +481,19 @@
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0xdeFA4e8a7bcBA345F687a2f1456F5Edd9CE97202"
       }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x02F289E429655d0C0D713A7dFD26850A81f7cFC5",
+      "tokenType": ["native"],
+      "address": "0x02F289E429655d0C0D713A7dFD26850A81f7cFC5",
+      "name": "LDAT",
+      "symbol": "LDAT",
+      "decimals": 18,
+      "createdAt": "2026-06-22",
+      "updatedAt": "2026-06-22",
+      "logoURI": "https://images.ctfassets.net/4j2tco9amoqh/1yJeLBT8PfDZ752Q6W6Ahd/7a63016d417ed8edd5656b9d4e0ca200/image.png"
     },
     {
       "chainId": 59144,
