@@ -19,7 +19,7 @@
     "dotenv": "^16.6.1",
     "joi": "^18.2.1",
     "module-alias": "^2.2.3",
-    "viem": "^2.51.3",
+    "viem": "^2.55.0",
     "winston": "^3.19.0"
   },
   "devDependencies": {
