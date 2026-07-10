@@ -3,12 +3,12 @@
   "tokenListId": "https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-shortlist.json",
   "name": "Linea Mainnet Token List",
   "createdAt": "2023-07-13",
-  "updatedAt": "2026-03-26",
+  "updatedAt": "2026-07-10",
   "versions": [
     {
       "major": 1,
-      "minor": 79,
-      "patch": 1
+      "minor": 80,
+      "patch": 0
     }
   ],
   "tokens": [
@@ -173,6 +173,24 @@
         "rootChainId": 1,
         "rootChainURI": "https://etherscan.io/block/0",
         "rootAddress": "0x514910771af9ca656af840dff83e8264ecf986ca"
+      }
+    },
+    {
+      "chainId": 59144,
+      "chainURI": "https://lineascan.build/block/0",
+      "tokenId": "https://lineascan.build/address/0x0ece76334fb560f2b1a49a60e38cf726b02203f0",
+      "tokenType": ["canonical-bridge"],
+      "address": "0x0ece76334fb560f2b1a49a60e38cf726b02203f0",
+      "name": "Compound",
+      "symbol": "COMP",
+      "decimals": 18,
+      "createdAt": "2023-08-03",
+      "updatedAt": "2023-08-03",
+      "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/5692.png",
+      "extension": {
+        "rootChainId": 1,
+        "rootChainURI": "https://etherscan.io/block/0",
+        "rootAddress": "0xc00e94Cb662C3520282E6f5717214004A7f26888"
       }
     },
     {
